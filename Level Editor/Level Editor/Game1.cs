@@ -28,6 +28,8 @@ namespace Level_Editor
         public int DrawLayer = 0;
         public int DrawTile = 0;
         public bool EditingCode = false;
+        public bool MakeUnpassable = false;
+        public bool MakePassable = true;
         public string CurrentCodeValue = "";
         public string HoverCodeValue = "";
 
@@ -123,6 +125,7 @@ namespace Level_Editor
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            
             Camera.Position = new Vector2(hscroll.Value, vscroll.Value);
 
             MouseState ms = Mouse.GetState();
@@ -133,12 +136,15 @@ namespace Level_Editor
                     if (ms.LeftButton == ButtonState.Pressed) { 
                         TileMap.SetTileAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X),TileMap.GetCellByPixelY((int)mouseLoc.Y),DrawLayer, DrawTile);
                     }
-                    if ((ms.RightButton == ButtonState.Pressed) && (lastMouseState.RightButton == ButtonState.Released)) {
+                    if ((ms.RightButton == ButtonState.Pressed)) {
                         if (EditingCode) {
                             TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).CodeValue = CurrentCodeValue;
                         }
-                        else {
-                            TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).TogglePassable();
+                        else if(MakePassable) {
+                            TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).Passable = true;
+                        }
+                        else if (MakeUnpassable) {
+                            TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).Passable = false;
                         }
                     }
                     HoverCodeValue = TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).CodeValue;

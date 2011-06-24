@@ -8,6 +8,7 @@ namespace Level_Editor
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        [STAThread]
         static void Main(string[] args)
         {
             MapEditor form = new MapEditor();

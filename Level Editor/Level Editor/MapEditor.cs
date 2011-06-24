@@ -12,13 +12,15 @@ using Tile_Engine;
 
 namespace Level_Editor
 {
+    
     public partial class MapEditor : Form
     {
         public Game1 game;
+        private string cwd;
 
         public MapEditor()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,7 +63,7 @@ namespace Level_Editor
         }
 
         private void MapEditor_Load(object sender, EventArgs e)
-        {
+        {            
             LoadImageList();
             FixScrollBarScales();
             cboCodeValues.Items.Clear();
@@ -79,7 +81,7 @@ namespace Level_Editor
 
             cboMapNumber.SelectedIndex = 0;
             TileMap.EditorMode = true;
-            backgroundToolStripMenuItem.Checked = true;
+            backgroundToolStripMenuItem.Checked = true;                        
         }
 
         private void MapEditor_Resize(object sender, EventArgs e)
@@ -127,6 +129,8 @@ namespace Level_Editor
         {
             if (radioPassable.Checked){
                 game.EditingCode = false;
+                game.MakePassable = true;
+                game.MakeUnpassable = false;
             } else game.EditingCode = true;
         }
 
@@ -173,7 +177,7 @@ namespace Level_Editor
         private void loadMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try {
-                TileMap.LoadMap(new FileStream(Application.StartupPath + @"/MAP" + cboMapNumber.Items[cboMapNumber.SelectedIndex] + ".MAP", FileMode.Open));
+                TileMap.LoadMap(new FileStream(cwd+ @"/MAP" + cboMapNumber.Items[cboMapNumber.SelectedIndex] + ".MAP", FileMode.Open));
             }
             catch {
                 System.Diagnostics.Debug.Print("Unable to load map file");
@@ -183,23 +187,78 @@ namespace Level_Editor
 
         private void saveMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TileMap.SaveMap(new FileStream(Application.StartupPath + @"/MAP" + cboMapNumber.Items[cboMapNumber.SelectedIndex] + ".MAP", FileMode.Create));
+            TileMap.SaveMap(new FileStream(cwd + @"/MAP" + cboMapNumber.Items[cboMapNumber.SelectedIndex] + ".MAP", FileMode.Create));
         }
 
         private void clearMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TileMap.ClearMap();
-        }
-
-        private void cboMapNumber_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+        }        
 
         private void MapEditor_FormClosed(object sender, FormClosedEventArgs e)
         {
             game.Exit();
             Application.Exit();
         }
+
+        private void radioUnpassable_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioUnpassable.Checked)
+            {
+                game.EditingCode = false;
+                game.MakePassable = false;
+                game.MakeUnpassable = true;
+            }            
+        }
+
+        private void radioCode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioCode.Checked)
+            {
+                game.EditingCode = true;
+                game.MakePassable = false;
+                game.MakeUnpassable = false;
+            }            
+        }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            folderBrowser.ShowDialog();
+            cwd = folderBrowser.SelectedPath;
+            cwdLabel.Text = cwd;
+            StreamWriter sw = new StreamWriter(Application.StartupPath + @"config.cfg");
+            sw.WriteLine(cwd);
+            sw.Close();
+        }
+
+        private void MapEditor_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader(Application.StartupPath + @"config.cfg");
+                cwd = sr.ReadLine();
+                sr.Close();
+                cwdLabel.Text = cwd;
+            }
+            catch {
+                folderBrowser.ShowDialog();
+                cwd = folderBrowser.SelectedPath;
+                cwdLabel.Text = cwd;
+                StreamWriter sw = new StreamWriter(Application.StartupPath + @"config.cfg");
+                sw.WriteLine(cwd);
+                sw.Close();
+            }
+            if (cwd == "")
+            {
+                folderBrowser.ShowDialog();
+                cwd = folderBrowser.SelectedPath;
+                cwdLabel.Text = cwd;
+            }
+        }
+
+        
+        
     }
 }
