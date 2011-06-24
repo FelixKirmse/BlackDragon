@@ -68,11 +68,13 @@ namespace Gemstone_Hunter
             LoadLevel(currentLevel);
             respawnLocation = saveRespawn;
             player.WorldLocation = respawnLocation;
+            Camera.Position = Camera.WorldToScreen(player.WorldLocation);
         }
         #endregion
 
         #region Update and Draw
         public static void Update(GameTime gameTime) {
+            System.Diagnostics.Debug.WriteLine(player.WorldLocation);
             if (!player.Dead) {
                 checkCurrentCellCode();
                 for (int x = gemstones.Count - 1; x >= 0; --x) {

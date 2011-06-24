@@ -66,7 +66,7 @@ namespace Gemstone_Hunter
             pericles8 = Content.Load<SpriteFont>(@"fonts/pericles8");
             titleScreen = Content.Load<Texture2D>(@"textures/TitleScreen");
 
-            Camera.WorldRectangle = new Rectangle(0, 0, 160 * 48, 12 * 48);
+            Camera.WorldRectangle = new Rectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.MapHeight * TileMap.TileHeight);
             Camera.Position = Vector2.Zero;
             Camera.ViewPortWidth = 800;
             Camera.ViewPortHeight = 600;

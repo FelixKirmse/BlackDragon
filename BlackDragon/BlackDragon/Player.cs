@@ -147,6 +147,16 @@ namespace Gemstone_Hunter
                 Camera.Move(new Vector2(screenLocX - 500, 0));
             }
             if (screenLocX < 200) Camera.Move(new Vector2(screenLocX - 200, 0));
+
+            int screenLocY = (int)Camera.WorldToScreen(worldLocation).Y;
+            if (screenLocY > 500)
+            {
+                Camera.Move(new Vector2(0,screenLocY - 500));
+            }
+            if (screenLocY < 100) Camera.Move(new Vector2(0,screenLocY - 100));
+
+           
+
         }
 
         private void checkLevelTransition() {
