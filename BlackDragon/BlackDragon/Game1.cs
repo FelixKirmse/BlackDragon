@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Tile_Engine;
 
-namespace Gemstone_Hunter
+namespace BlackDragon
 {
     /// <summary>
     /// This is the main type for your game

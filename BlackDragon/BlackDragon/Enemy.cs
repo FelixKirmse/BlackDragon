@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Tile_Engine;
 
-namespace Gemstone_Hunter
+namespace BlackDragon
 {
     public class Enemy : GameObject
     {

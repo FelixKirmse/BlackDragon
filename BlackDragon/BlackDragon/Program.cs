@@ -1,6 +1,6 @@
 using System;
 
-namespace Gemstone_Hunter
+namespace BlackDragon
 {
 #if WINDOWS || XBOX
     static class Program

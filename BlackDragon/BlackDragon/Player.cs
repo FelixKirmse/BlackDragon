@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 using Tile_Engine;
 
-namespace Gemstone_Hunter
+namespace BlackDragon
 {
     public class Player : GameObject
     {

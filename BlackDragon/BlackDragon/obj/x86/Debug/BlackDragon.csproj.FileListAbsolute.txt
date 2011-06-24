@@ -30,11 +30,11 @@ I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\obj\x86\Debug\Resolv
 I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\obj\x86\Debug\Gemstone Hunter.exe
 I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\obj\x86\Debug\Gemstone Hunter.pdb
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Gemstone Hunter.exe
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Gemstone Hunter.pdb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Tile Engine.dll
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Tile Engine.pdb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\ResolveAssemblyReference.cache
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\Gemstone Hunter.exe
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\Gemstone Hunter.pdb
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\BlackDragon.exe
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\BlackDragon.pdb
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\BlackDragon.exe
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\BlackDragon.pdb

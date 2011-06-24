@@ -59,6 +59,7 @@
             this.cwdButton = new System.Windows.Forms.Button();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.cwdLabel = new System.Windows.Forms.Label();
+            this.startGameButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -305,7 +306,7 @@
             this.cboMapNumber.Location = new System.Drawing.Point(84, 452);
             this.cboMapNumber.Name = "cboMapNumber";
             this.cboMapNumber.Size = new System.Drawing.Size(94, 21);
-            this.cboMapNumber.TabIndex = 7;            
+            this.cboMapNumber.TabIndex = 7;
             // 
             // timerGameUpdate
             // 
@@ -336,11 +337,22 @@
             this.cwdLabel.Size = new System.Drawing.Size(0, 13);
             this.cwdLabel.TabIndex = 9;
             // 
+            // startGameButton
+            // 
+            this.startGameButton.Location = new System.Drawing.Point(17, 508);
+            this.startGameButton.Name = "startGameButton";
+            this.startGameButton.Size = new System.Drawing.Size(159, 23);
+            this.startGameButton.TabIndex = 10;
+            this.startGameButton.Text = "Start Game";
+            this.startGameButton.UseVisualStyleBackColor = true;
+            this.startGameButton.Click += new System.EventHandler(this.startGameButton_Click);
+            // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 636);
+            this.Controls.Add(this.startGameButton);
             this.Controls.Add(this.cwdLabel);
             this.Controls.Add(this.cwdButton);
             this.Controls.Add(this.cboMapNumber);
@@ -401,5 +413,6 @@
         private System.Windows.Forms.Button cwdButton;
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
         private System.Windows.Forms.Label cwdLabel;
+        private System.Windows.Forms.Button startGameButton;
     }
 }

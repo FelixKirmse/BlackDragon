@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Graphics;
 using Tile_Engine;
 
-namespace Gemstone_Hunter
+namespace BlackDragon
 {
     public static class LevelManager
     {

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using System.IO;
 using Tile_Engine;
@@ -168,6 +169,7 @@ namespace Level_Editor
             if (hScrollBar1.Maximum < 0) {
                 FixScrollBarScales();
             }
+            if(Form.ActiveForm == this)
             game.Tick();
             if (game.HoverCodeValue != lblCurrentCode.Text) {
                 lblCurrentCode.Text = game.HoverCodeValue;
@@ -256,6 +258,12 @@ namespace Level_Editor
                 cwd = folderBrowser.SelectedPath;
                 cwdLabel.Text = cwd;
             }
+        }
+
+        private void startGameButton_Click(object sender, EventArgs e)
+        {
+            Process.Start(cwd + @"\..\..\BlackDragon.exe");
+            System.Diagnostics.Debug.Print(cwd + @"\..\..\BlackDragon.exe");
         }
 
         
