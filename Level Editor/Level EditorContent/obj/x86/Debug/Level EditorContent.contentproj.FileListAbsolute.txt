@@ -1,0 +1,3 @@
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level EditorContent\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Projects\Gemstone Hunter\Level Editor\Level EditorContent\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Projects\BlackDragon\Level Editor\Level EditorContent\obj\x86\Debug\ResolveAssemblyReference.cache

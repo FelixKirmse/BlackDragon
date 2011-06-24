@@ -1,0 +1,102 @@
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\fonts\pericles8.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Gem.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Gem.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Run.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Die.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Idle.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Run.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Die.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Idle.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Run.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Die.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Idle.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Run.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Celebrate.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Die.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TitleScreen.xnb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Level Editor.exe
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Level Editor.pdb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Tile Engine.dll
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Tile Engine.pdb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Level Editor.exe
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Level Editor.pdb
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Level_Editor.MapEditor.resources
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Nidhogg\Documents\Visual Studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Nidhogg\documents\visual studio 2010\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.png
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\fonts\pericles8.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Gem.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Gem.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Run.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Die.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Idle.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Run.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Die.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Idle.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Run.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Die.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Idle.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Run.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Celebrate.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Die.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TitleScreen.xnb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.png
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Level Editor.exe
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Level Editor.pdb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Tile Engine.dll
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\bin\x86\Debug\Tile Engine.pdb
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Level_Editor.MapEditor.resources
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\GenerateResource.read.1.tlog
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\GenerateResource.write.1.tlog
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Level Editor.exe
+I:\Projects\Gemstone Hunter\Level Editor\Level Editor\obj\x86\Debug\Level Editor.pdb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\fonts\pericles8.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Gem.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Gem.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Run.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Die.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Idle.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Run.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Die.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Idle.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Run.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Die.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Idle.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Run.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Celebrate.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Die.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TitleScreen.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.png
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Level Editor.exe
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Level Editor.pdb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Tile Engine.dll
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Tile Engine.pdb
+I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\Level_Editor.MapEditor.resources
+I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\GenerateResource.read.1.tlog
+I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\GenerateResource.write.1.tlog
+I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\Level Editor.exe
+I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\Level Editor.pdb
