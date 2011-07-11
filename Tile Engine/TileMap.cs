@@ -15,6 +15,17 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Tile_Engine
 {
+    [Serializable]
+    public class MapRow
+    {
+        public List<MapSquare> MapCellRow = new List<MapSquare>();
+
+        public void AddRow(int background, int interactive, int foreground, string code, bool passable)
+        {
+            MapCellRow.Add(new MapSquare(background, interactive, foreground, code, passable));
+        }
+    }
+
     public static class TileMap
     {
         #region Declarations
@@ -26,8 +37,10 @@ namespace Tile_Engine
         private const int skyTile = 0;
         private const int transparentTile = 278;
         private const int whiteTile = 1791;
+        
+        static private List<MapRow> MapCellColumns = new List<MapRow>();
 
-        static private MapSquare[,] mapCells = new MapSquare[MapWidth, MapHeight];
+        //static private MapSquare[,] mapCells = new MapSquare[MapWidth, MapHeight];
 
         public static bool EditorMode = false;
 
@@ -38,12 +51,18 @@ namespace Tile_Engine
         #region Initialization
         public static void Initialize(Texture2D tileTexture) {
             tileSheet = tileTexture;
-            for (int x = 0; x < MapWidth; ++x) {
-                for (int y = 0; y < MapHeight; ++y) {
-                    for (int z = 0; z < MapLayers; ++z) {
-                        mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
-                    }
+            for (int x = 0; x < MapWidth; ++x)
+            {
+                MapRow newColumn = new MapRow();
+                for (int y = 0; y < MapHeight; ++y)
+                {
+
+                    newColumn.AddRow(skyTile, transparentTile, transparentTile, "", true);
+
+                    //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
+
                 }
+                MapCellColumns.Add(newColumn);
             }
         }
         #endregion
@@ -124,20 +143,23 @@ namespace Tile_Engine
         #region Information about MapSquare objects
         public static MapSquare GetMapSquareAtCell(int tileX, int tileY) {
             if ((tileX >= 0) && (tileX < MapWidth) && (tileY >= 0) && (tileY < MapHeight)) {
-                return mapCells[tileX, tileY];
+                return MapCellColumns[tileX].MapCellRow[tileY];
+                // return mapCells[tileX, tileY];
             }
             else return null;
         }
 
         public static void SetMapSquareAtCell(int tileX, int tileY, MapSquare tile) {
             if ((tileX >= 0) && (tileX < MapWidth) && (tileY >= 0) && (tileY < MapHeight)) {
-                mapCells[tileX, tileY] = tile;
+                MapCellColumns[tileX].MapCellRow[tileY] = tile;
+                //mapCells[tileX, tileY] = tile;
             }
         }
 
         public static void SetTileAtCell(int tileX, int tileY, int layer, int tileIndex) {
             if ((tileX >= 0) && (tileX < MapWidth) && (tileY >= 0) && (tileY < MapHeight)) {
-                mapCells[tileX, tileY].LayerTiles[layer] = tileIndex;
+                MapCellColumns[tileX].MapCellRow[tileY].LayerTiles[layer] = tileIndex;
+                //mapCells[tileX, tileY].LayerTiles[layer] = tileIndex;
             }
         }
 
@@ -162,7 +184,7 @@ namespace Tile_Engine
                 for (int y = startY; y <= endY; ++y) {
                     for (int z = 0; z < MapLayers; ++z) {
                         if ((x >= 0) && (y >= 0) && (x < MapWidth) && (y < MapHeight)) {
-                            spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(mapCells[x, y].LayerTiles[z]), Color.White, 0.0f, Vector2.Zero, SpriteEffects.None, 1f - ((float)z * 0.1f));
+                            spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(MapCellColumns[x].MapCellRow[y].LayerTiles[z]), Color.White, 0.0f, Vector2.Zero, SpriteEffects.None, 1f - ((float)z * 0.1f));
                         }
                     }
                     if (EditorMode) {
@@ -179,10 +201,11 @@ namespace Tile_Engine
             if (!CellIsPassable(x, y)) {
                 spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(whiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
             }
-            if (mapCells[x, y].CodeValue != "") {
+            if (MapCellColumns[x].MapCellRow[y].CodeValue != "")
+            {
                 Rectangle screenRect = CellScreenRectangle(x, y);
 
-                spriteBatch.DrawString(spriteFont, mapCells[x, y].CodeValue, new Vector2(screenRect.X, screenRect.Y), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                spriteBatch.DrawString(spriteFont, MapCellColumns[x].MapCellRow[y].CodeValue, new Vector2(screenRect.X, screenRect.Y), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
             }
         }
         #endregion
@@ -190,27 +213,40 @@ namespace Tile_Engine
         #region Loading and Saving
         public static void SaveMap(FileStream fileStream) {
             BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fileStream, mapCells);
+            formatter.Serialize(fileStream, MapCellColumns);
             fileStream.Close();
         }
 
         public static void LoadMap(FileStream fileStream) {
             try {
+                MapCellColumns.Clear();
                 BinaryFormatter formatter = new BinaryFormatter();
-                mapCells = (MapSquare[,])formatter.Deserialize(fileStream);
+                MapCellColumns = (List<MapRow>)formatter.Deserialize(fileStream);
                 fileStream.Close();
+
+                MapWidth = MapCellColumns.Count;
+                MapHeight = MapCellColumns[0].MapCellRow.Count;
             } catch {
                 ClearMap();
+                fileStream.Close();
             }
         }
 
-        public static void ClearMap() {
-            for (int x = 0; x < MapWidth; ++x) {
-                for (int y = 0; y < MapHeight; ++y) {
-                    for (int z = 0; z < MapLayers; ++z) {
-                        mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
-                    }
+        public static void ClearMap()
+        {
+            MapCellColumns.Clear();
+            for (int x = 0; x < MapWidth; ++x)
+            {
+                MapRow newColumn = new MapRow();
+                for (int y = 0; y < MapHeight; ++y)
+                {
+                    
+                    newColumn.AddRow(skyTile, transparentTile, transparentTile, "", true);
+                    
+                    //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
+
                 }
+                MapCellColumns.Add(newColumn);
             }
         }
         #endregion

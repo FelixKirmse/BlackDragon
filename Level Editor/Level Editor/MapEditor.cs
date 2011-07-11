@@ -180,6 +180,8 @@ namespace Level_Editor
         {
             try {
                 TileMap.LoadMap(new FileStream(cwd+ @"/MAP" + cboMapNumber.Items[cboMapNumber.SelectedIndex] + ".MAP", FileMode.Open));
+                tileMapHeightInput.Text = TileMap.MapHeight.ToString();
+                tileMapWidthInput.Text = TileMap.MapWidth.ToString();
             }
             catch {
                 System.Diagnostics.Debug.Print("Unable to load map file");
@@ -264,16 +266,18 @@ namespace Level_Editor
         {
             Process.Start(cwd + @"\..\..\BlackDragon.exe");
             System.Diagnostics.Debug.Print(cwd + @"\..\..\BlackDragon.exe");
-        }
+        }       
 
-        private void tileMapWidthInput_TextChanged(object sender, EventArgs e)
+        private void tileMapWidthInput_Leave(object sender, EventArgs e)
         {
             TileMap.MapWidth = Convert.ToInt32(tileMapWidthInput.Text);
+            TileMap.ClearMap();
         }
 
-        private void tileMapHeightInput_TextChanged(object sender, EventArgs e)
+        private void tileMapHeightInput_Leave(object sender, EventArgs e)
         {
             TileMap.MapHeight = Convert.ToInt32(tileMapHeightInput.Text);
+            TileMap.ClearMap();
         }
 
         

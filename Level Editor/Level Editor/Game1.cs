@@ -132,22 +132,25 @@ namespace Level_Editor
 
             if ((ms.X > 0) && (ms.Y > 0) && (ms.X < Camera.ViewPortWidth) && (ms.Y < Camera.ViewPortHeight)) {
                 Vector2 mouseLoc = Camera.ScreenToWorld(new Vector2(ms.X, ms.Y));
+                int cellX = (int)MathHelper.Clamp(TileMap.GetCellByPixelX((int)mouseLoc.X), 0, TileMap.MapWidth - 1);
+                int cellY = (int)MathHelper.Clamp(TileMap.GetCellByPixelY((int)mouseLoc.Y), 0 , TileMap.MapHeight - 1);                
+
                 if (Camera.WorldRectangle.Contains((int)mouseLoc.X, (int)mouseLoc.Y)) {
-                    if (ms.LeftButton == ButtonState.Pressed) { 
-                        TileMap.SetTileAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X),TileMap.GetCellByPixelY((int)mouseLoc.Y),DrawLayer, DrawTile);
+                    if (ms.LeftButton == ButtonState.Pressed) {
+                        TileMap.SetTileAtCell(cellX, cellY, DrawLayer, DrawTile);
                     }
                     if ((ms.RightButton == ButtonState.Pressed)) {
                         if (EditingCode) {
-                            TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).CodeValue = CurrentCodeValue;
+                            TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue = CurrentCodeValue;
                         }
                         else if(MakePassable) {
-                            TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).Passable = true;
+                            TileMap.GetMapSquareAtCell(cellX, cellY).Passable = true;
                         }
                         else if (MakeUnpassable) {
-                            TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).Passable = false;
+                            TileMap.GetMapSquareAtCell(cellX, cellY).Passable = false;
                         }
                     }
-                    HoverCodeValue = TileMap.GetMapSquareAtCell(TileMap.GetCellByPixelX((int)mouseLoc.X), TileMap.GetCellByPixelY((int)mouseLoc.Y)).CodeValue;
+                    HoverCodeValue = TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue;
                 }
             }
             lastMouseState = ms;

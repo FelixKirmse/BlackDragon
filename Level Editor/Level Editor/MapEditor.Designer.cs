@@ -368,7 +368,8 @@
             this.tileMapWidthInput.Name = "tileMapWidthInput";
             this.tileMapWidthInput.Size = new System.Drawing.Size(100, 20);
             this.tileMapWidthInput.TabIndex = 12;
-            this.tileMapWidthInput.TextChanged += new System.EventHandler(this.tileMapWidthInput_TextChanged);
+            
+            this.tileMapWidthInput.Leave += new System.EventHandler(this.tileMapWidthInput_Leave);
             // 
             // tileMapHeightInput
             // 
@@ -376,7 +377,8 @@
             this.tileMapHeightInput.Name = "tileMapHeightInput";
             this.tileMapHeightInput.Size = new System.Drawing.Size(100, 20);
             this.tileMapHeightInput.TabIndex = 13;
-            this.tileMapHeightInput.TextChanged += new System.EventHandler(this.tileMapHeightInput_TextChanged);
+            
+            this.tileMapHeightInput.Leave += new System.EventHandler(this.tileMapHeightInput_Leave);
             // 
             // tileMapWidthLabel
             // 
