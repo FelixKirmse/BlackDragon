@@ -61,6 +61,10 @@
             this.cwdLabel = new System.Windows.Forms.Label();
             this.startGameButton = new System.Windows.Forms.Button();
             this.tileIndexLabel = new System.Windows.Forms.Label();
+            this.tileMapWidthInput = new System.Windows.Forms.TextBox();
+            this.tileMapHeightInput = new System.Windows.Forms.TextBox();
+            this.tileMapWidthLabel = new System.Windows.Forms.Label();
+            this.tileMapHeightLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -71,9 +75,9 @@
             this.pctSurface.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctSurface.Location = new System.Drawing.Point(184, 27);
+            this.pctSurface.Location = new System.Drawing.Point(184, 192);
             this.pctSurface.Name = "pctSurface";
-            this.pctSurface.Size = new System.Drawing.Size(663, 551);
+            this.pctSurface.Size = new System.Drawing.Size(663, 386);
             this.pctSurface.TabIndex = 0;
             this.pctSurface.TabStop = false;
             // 
@@ -180,14 +184,16 @@
             // 
             // listTiles
             // 
+            this.listTiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.listTiles.HideSelection = false;
             this.listTiles.LargeImageList = this.imgListTiles;
             this.listTiles.Location = new System.Drawing.Point(10, 27);
             this.listTiles.MultiSelect = false;
             this.listTiles.Name = "listTiles";
-            this.listTiles.Size = new System.Drawing.Size(173, 315);
+            this.listTiles.Size = new System.Drawing.Size(437, 159);
             this.listTiles.TabIndex = 2;
-            this.listTiles.TileSize = new System.Drawing.Size(48, 48);
+            this.listTiles.TileSize = new System.Drawing.Size(32, 32);
             this.listTiles.UseCompatibleStateImageBehavior = false;
             this.listTiles.View = System.Windows.Forms.View.Tile;
             this.listTiles.SelectedIndexChanged += new System.EventHandler(this.listTiles_SelectedIndexChanged);
@@ -220,7 +226,7 @@
             this.groupBoxRightClick.Controls.Add(this.txtNewCode);
             this.groupBoxRightClick.Controls.Add(this.radioCode);
             this.groupBoxRightClick.Controls.Add(this.radioPassable);
-            this.groupBoxRightClick.Location = new System.Drawing.Point(10, 346);
+            this.groupBoxRightClick.Location = new System.Drawing.Point(10, 192);
             this.groupBoxRightClick.Name = "groupBoxRightClick";
             this.groupBoxRightClick.Size = new System.Drawing.Size(173, 103);
             this.groupBoxRightClick.TabIndex = 5;
@@ -294,7 +300,7 @@
             // lblMapNumber
             // 
             this.lblMapNumber.AutoSize = true;
-            this.lblMapNumber.Location = new System.Drawing.Point(12, 452);
+            this.lblMapNumber.Location = new System.Drawing.Point(12, 298);
             this.lblMapNumber.Name = "lblMapNumber";
             this.lblMapNumber.Size = new System.Drawing.Size(71, 13);
             this.lblMapNumber.TabIndex = 6;
@@ -304,7 +310,7 @@
             // 
             this.cboMapNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMapNumber.FormattingEnabled = true;
-            this.cboMapNumber.Location = new System.Drawing.Point(84, 452);
+            this.cboMapNumber.Location = new System.Drawing.Point(84, 298);
             this.cboMapNumber.Name = "cboMapNumber";
             this.cboMapNumber.Size = new System.Drawing.Size(94, 21);
             this.cboMapNumber.TabIndex = 7;
@@ -317,7 +323,7 @@
             // 
             // cwdButton
             // 
-            this.cwdButton.Location = new System.Drawing.Point(10, 479);
+            this.cwdButton.Location = new System.Drawing.Point(10, 325);
             this.cwdButton.Name = "cwdButton";
             this.cwdButton.Size = new System.Drawing.Size(160, 23);
             this.cwdButton.TabIndex = 8;
@@ -340,7 +346,7 @@
             // 
             // startGameButton
             // 
-            this.startGameButton.Location = new System.Drawing.Point(10, 508);
+            this.startGameButton.Location = new System.Drawing.Point(10, 354);
             this.startGameButton.Name = "startGameButton";
             this.startGameButton.Size = new System.Drawing.Size(159, 23);
             this.startGameButton.TabIndex = 10;
@@ -351,16 +357,54 @@
             // tileIndexLabel
             // 
             this.tileIndexLabel.AutoSize = true;
-            this.tileIndexLabel.Location = new System.Drawing.Point(12, 547);
+            this.tileIndexLabel.Location = new System.Drawing.Point(12, 393);
             this.tileIndexLabel.Name = "tileIndexLabel";
             this.tileIndexLabel.Size = new System.Drawing.Size(0, 13);
             this.tileIndexLabel.TabIndex = 11;
+            // 
+            // tileMapWidthInput
+            // 
+            this.tileMapWidthInput.Location = new System.Drawing.Point(65, 420);
+            this.tileMapWidthInput.Name = "tileMapWidthInput";
+            this.tileMapWidthInput.Size = new System.Drawing.Size(100, 20);
+            this.tileMapWidthInput.TabIndex = 12;
+            this.tileMapWidthInput.TextChanged += new System.EventHandler(this.tileMapWidthInput_TextChanged);
+            // 
+            // tileMapHeightInput
+            // 
+            this.tileMapHeightInput.Location = new System.Drawing.Point(65, 446);
+            this.tileMapHeightInput.Name = "tileMapHeightInput";
+            this.tileMapHeightInput.Size = new System.Drawing.Size(100, 20);
+            this.tileMapHeightInput.TabIndex = 13;
+            this.tileMapHeightInput.TextChanged += new System.EventHandler(this.tileMapHeightInput_TextChanged);
+            // 
+            // tileMapWidthLabel
+            // 
+            this.tileMapWidthLabel.AutoSize = true;
+            this.tileMapWidthLabel.Location = new System.Drawing.Point(7, 423);
+            this.tileMapWidthLabel.Name = "tileMapWidthLabel";
+            this.tileMapWidthLabel.Size = new System.Drawing.Size(56, 13);
+            this.tileMapWidthLabel.TabIndex = 14;
+            this.tileMapWidthLabel.Text = "MapWidth";
+            // 
+            // tileMapHeightLabel
+            // 
+            this.tileMapHeightLabel.AutoSize = true;
+            this.tileMapHeightLabel.Location = new System.Drawing.Point(7, 449);
+            this.tileMapHeightLabel.Name = "tileMapHeightLabel";
+            this.tileMapHeightLabel.Size = new System.Drawing.Size(59, 13);
+            this.tileMapHeightLabel.TabIndex = 15;
+            this.tileMapHeightLabel.Text = "MapHeight";
             // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 636);
+            this.Controls.Add(this.tileMapHeightLabel);
+            this.Controls.Add(this.tileMapWidthLabel);
+            this.Controls.Add(this.tileMapHeightInput);
+            this.Controls.Add(this.tileMapWidthInput);
             this.Controls.Add(this.tileIndexLabel);
             this.Controls.Add(this.startGameButton);
             this.Controls.Add(this.cwdLabel);
@@ -425,5 +469,9 @@
         private System.Windows.Forms.Label cwdLabel;
         private System.Windows.Forms.Button startGameButton;
         private System.Windows.Forms.Label tileIndexLabel;
+        private System.Windows.Forms.TextBox tileMapWidthInput;
+        private System.Windows.Forms.TextBox tileMapHeightInput;
+        private System.Windows.Forms.Label tileMapWidthLabel;
+        private System.Windows.Forms.Label tileMapHeightLabel;
     }
 }

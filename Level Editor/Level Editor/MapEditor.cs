@@ -33,13 +33,18 @@ namespace Level_Editor
         private void LoadImageList() {
             string filepath = Application.StartupPath + @"/Content/textures/pkmtiles.png";
             Bitmap tileSheet = new Bitmap(filepath);
-            int tilecount = 0;
+            int tilecount = 0;            
             for (int y = 0; y < tileSheet.Height / TileMap.TileHeight; ++y) {
                 for (int x = 0; x < tileSheet.Width / TileMap.TileWidth; ++x) {
-                    Bitmap newBitmap = tileSheet.Clone(new System.Drawing.Rectangle(x * TileMap.TileWidth, y * TileMap.TileHeight, TileMap.TileWidth, TileMap.TileHeight), System.Drawing.Imaging.PixelFormat.DontCare);
-                    imgListTiles.Images.Add(newBitmap);
-                    string itemName = tilecount.ToString();                    
+                    imgListTiles.Images.Add(new Bitmap(Application.StartupPath + "/rpgtiles/"+tilecount.ToString()+".bmp"));
+                    string itemName = tilecount.ToString();
                     listTiles.Items.Add(new ListViewItem(itemName, tilecount++));
+                    
+                    /*Bitmap newBitmap = tileSheet.Clone(new System.Drawing.Rectangle(x * TileMap.TileWidth, y * TileMap.TileHeight, TileMap.TileWidth, TileMap.TileHeight), System.Drawing.Imaging.PixelFormat.DontCare);
+                    imgListTiles.Images.Add(newBitmap);
+                    string itemName = tilecount.ToString();    
+                    newBitmap.Save(Application.StartupPath + "/rpgtiles/"+tilecount.ToString()+".bmp");
+                    listTiles.Items.Add(new ListViewItem(itemName, tilecount++));   */                 
                 }
             }
         }
@@ -259,6 +264,16 @@ namespace Level_Editor
         {
             Process.Start(cwd + @"\..\..\BlackDragon.exe");
             System.Diagnostics.Debug.Print(cwd + @"\..\..\BlackDragon.exe");
+        }
+
+        private void tileMapWidthInput_TextChanged(object sender, EventArgs e)
+        {
+            TileMap.MapWidth = Convert.ToInt32(tileMapWidthInput.Text);
+        }
+
+        private void tileMapHeightInput_TextChanged(object sender, EventArgs e)
+        {
+            TileMap.MapHeight = Convert.ToInt32(tileMapHeightInput.Text);
         }
 
         
