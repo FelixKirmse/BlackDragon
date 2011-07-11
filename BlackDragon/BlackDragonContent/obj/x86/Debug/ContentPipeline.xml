@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\fonts\pericles8.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\pericles8.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Gem.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Gem.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\PlatformTiles.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\PlatformTiles.xnb</Output>
       <Time>2011-06-24T10:10:48+02:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\Gem.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Gem.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterA\Run.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterA\Run.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterB\Die.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterB\Die.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterB\Idle.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterB\Idle.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterB\Run.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterB\Run.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterC\Die.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterC\Die.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -106,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterC\Idle.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterC\Idle.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -115,7 +115,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterC\Run.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterC\Run.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -124,7 +124,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterD\Die.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterD\Die.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -133,7 +133,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterD\Idle.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterD\Idle.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -142,7 +142,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\MonsterD\Run.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterD\Run.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -151,7 +151,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\Player\Celebrate.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Celebrate.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -160,7 +160,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\Player\Die.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Die.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -169,7 +169,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -178,7 +178,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -187,7 +187,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
@@ -196,8 +196,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\textures\TitleScreen.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TitleScreen.xnb</Output>
       <Time>2011-06-12T14:04:32+02:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\pkmtiles.png</Source>
+      <Name>textures\pkmtiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\pkmtiles.xnb</Output>
+      <Time>2011-07-11T12:50:24+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -205,10 +214,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone HunterContent\</RootDirectory>
-      <LoggerRootDirectory>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\</LoggerRootDirectory>
-      <IntermediateDirectory>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone HunterContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone Hunter\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>I:\Projects\BlackDragon\BlackDragon\BlackDragonContent\</RootDirectory>
+      <LoggerRootDirectory>I:\Projects\BlackDragon\BlackDragon\BlackDragon\</LoggerRootDirectory>
+      <IntermediateDirectory>I:\Projects\BlackDragon\BlackDragon\BlackDragonContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

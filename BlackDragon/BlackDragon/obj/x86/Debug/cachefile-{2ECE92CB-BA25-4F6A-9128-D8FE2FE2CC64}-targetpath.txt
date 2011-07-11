@@ -20,5 +20,6 @@ Content\textures\Sprites\Player\Idle.xnb
 Content\textures\Sprites\Player\Jump.xnb
 Content\textures\Sprites\Player\Run.xnb
 Content\textures\TitleScreen.xnb
+Content\textures\pkmtiles.xnb
 Content\maps\MAP000.MAP
 Content\maps\MAP001.MAP

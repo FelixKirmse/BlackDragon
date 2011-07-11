@@ -18,12 +18,14 @@ namespace Tile_Engine
     public static class TileMap
     {
         #region Declarations
-        public const int TileWidth = 32;
-        public const int TileHeight = 32;
+        public const int TileWidth = 16;
+        public const int TileHeight = 16;
         public const int MapWidth = 256;
-        public const int MapHeight = 32;
+        public const int MapHeight = 256;
         public const int MapLayers = 3;
-        private const int skyTile = 2;
+        private const int skyTile = 0;
+        private const int transparentTile = 278;
+        private const int whiteTile = 1791;
 
         static private MapSquare[,] mapCells = new MapSquare[MapWidth, MapHeight];
 
@@ -39,7 +41,7 @@ namespace Tile_Engine
             for (int x = 0; x < MapWidth; ++x) {
                 for (int y = 0; y < MapHeight; ++y) {
                     for (int z = 0; z < MapLayers; ++z) {
-                        mapCells[x, y] = new MapSquare(skyTile, 0, 0, "", true);
+                        mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
                     }
                 }
             }
@@ -175,7 +177,7 @@ namespace Tile_Engine
                 return;
             }
             if (!CellIsPassable(x, y)) {
-                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(1), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(whiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
             }
             if (mapCells[x, y].CodeValue != "") {
                 Rectangle screenRect = CellScreenRectangle(x, y);
@@ -206,7 +208,7 @@ namespace Tile_Engine
             for (int x = 0; x < MapWidth; ++x) {
                 for (int y = 0; y < MapHeight; ++y) {
                     for (int z = 0; z < MapLayers; ++z) {
-                        mapCells[x, y] = new MapSquare(skyTile, 0, 0, "", true);
+                        mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
                     }
                 }
             }

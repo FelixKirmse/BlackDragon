@@ -199,6 +199,15 @@
       <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TitleScreen.xnb</Output>
       <Time>2011-06-12T13:51:52+02:00</Time>
     </Item>
+    <Item>
+      <Source>textures\pkmtiles.png</Source>
+      <Name>textures\pkmtiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\pkmtiles.xnb</Output>
+      <Time>2011-07-11T12:50:24+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

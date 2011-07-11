@@ -60,6 +60,7 @@
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.cwdLabel = new System.Windows.Forms.Label();
             this.startGameButton = new System.Windows.Forms.Button();
+            this.tileIndexLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -316,7 +317,7 @@
             // 
             // cwdButton
             // 
-            this.cwdButton.Location = new System.Drawing.Point(16, 479);
+            this.cwdButton.Location = new System.Drawing.Point(10, 479);
             this.cwdButton.Name = "cwdButton";
             this.cwdButton.Size = new System.Drawing.Size(160, 23);
             this.cwdButton.TabIndex = 8;
@@ -339,7 +340,7 @@
             // 
             // startGameButton
             // 
-            this.startGameButton.Location = new System.Drawing.Point(17, 508);
+            this.startGameButton.Location = new System.Drawing.Point(10, 508);
             this.startGameButton.Name = "startGameButton";
             this.startGameButton.Size = new System.Drawing.Size(159, 23);
             this.startGameButton.TabIndex = 10;
@@ -347,11 +348,20 @@
             this.startGameButton.UseVisualStyleBackColor = true;
             this.startGameButton.Click += new System.EventHandler(this.startGameButton_Click);
             // 
+            // tileIndexLabel
+            // 
+            this.tileIndexLabel.AutoSize = true;
+            this.tileIndexLabel.Location = new System.Drawing.Point(12, 547);
+            this.tileIndexLabel.Name = "tileIndexLabel";
+            this.tileIndexLabel.Size = new System.Drawing.Size(0, 13);
+            this.tileIndexLabel.TabIndex = 11;
+            // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 636);
+            this.Controls.Add(this.tileIndexLabel);
             this.Controls.Add(this.startGameButton);
             this.Controls.Add(this.cwdLabel);
             this.Controls.Add(this.cwdButton);
@@ -414,5 +424,6 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
         private System.Windows.Forms.Label cwdLabel;
         private System.Windows.Forms.Button startGameButton;
+        private System.Windows.Forms.Label tileIndexLabel;
     }
 }

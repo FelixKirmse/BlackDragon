@@ -62,7 +62,7 @@ namespace BlackDragon
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            TileMap.Initialize(Content.Load<Texture2D>(@"Textures/PlatformTiles"));
+            TileMap.Initialize(Content.Load<Texture2D>(@"Textures/pkmtiles"));
             pericles8 = Content.Load<SpriteFont>(@"fonts/pericles8");
             titleScreen = Content.Load<Texture2D>(@"textures/TitleScreen");
 

@@ -126,7 +126,7 @@
       <Project>{B182F8AE-FD0D-4B57-BC85-E51A63CE99CC}</Project>
       <Name>Tile Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gemstone HunterContent\BlackDragonContent.contentproj">
+    <ProjectReference Include="..\BlackDragonContent\BlackDragonContent.contentproj">
       <Name>BlackDragonContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
       <Project>{2ECE92CB-BA25-4F6A-9128-D8FE2FE2CC64}</Project>

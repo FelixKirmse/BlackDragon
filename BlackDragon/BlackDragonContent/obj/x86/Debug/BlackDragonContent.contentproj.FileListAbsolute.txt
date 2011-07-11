@@ -1,1 +1,2 @@
 I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone HunterContent\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Projects\BlackDragon\BlackDragon\BlackDragonContent\obj\x86\Debug\ResolveAssemblyReference.cache

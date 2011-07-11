@@ -31,20 +31,14 @@ namespace Level_Editor
         }
 
         private void LoadImageList() {
-            string filepath = Application.StartupPath + @"/Content/textures/PlatformTiles.png";
+            string filepath = Application.StartupPath + @"/Content/textures/pkmtiles.png";
             Bitmap tileSheet = new Bitmap(filepath);
             int tilecount = 0;
             for (int y = 0; y < tileSheet.Height / TileMap.TileHeight; ++y) {
                 for (int x = 0; x < tileSheet.Width / TileMap.TileWidth; ++x) {
                     Bitmap newBitmap = tileSheet.Clone(new System.Drawing.Rectangle(x * TileMap.TileWidth, y * TileMap.TileHeight, TileMap.TileWidth, TileMap.TileHeight), System.Drawing.Imaging.PixelFormat.DontCare);
                     imgListTiles.Images.Add(newBitmap);
-                    string itemName = "";
-                    if (tilecount == 0) {
-                        itemName = "Empty";
-                    }
-                    if (tilecount == 1) {
-                        itemName = "White";
-                    }
+                    string itemName = tilecount.ToString();                    
                     listTiles.Items.Add(new ListViewItem(itemName, tilecount++));
                 }
             }
@@ -123,6 +117,7 @@ namespace Level_Editor
         {
             if (listTiles.SelectedIndices.Count > 0) {
                 game.DrawTile = listTiles.SelectedIndices[0];
+                tileIndexLabel.Text = listTiles.SelectedIndices[0].ToString();
             }
         }
 
