@@ -100,5 +100,7 @@ I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\GenerateResource
 I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\GenerateResource.write.1.tlog
 I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\Level Editor.exe
 I:\Projects\BlackDragon\Level Editor\Level Editor\obj\x86\Debug\Level Editor.pdb
-I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\pkmtiles.xnb
-I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\pkmtiles.png
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\rpg.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\platform.xnb
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\rpg.png
+I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\platform.png

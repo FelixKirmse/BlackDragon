@@ -31,12 +31,15 @@ namespace Tile_Engine
         #region Declarations
         public const int TileWidth = 16;
         public const int TileHeight = 16;
-        public static int MapWidth = 256;
-        public static int MapHeight = 256;
+        public static int MapWidth = 50;
+        public static int MapHeight = 50;
         public const int MapLayers = 3;
-        private const int skyTile = 0;
-        private const int transparentTile = 278;
-        private const int whiteTile = 1791;
+        
+        public static int DefaultTile = 0;
+        public static int TransparentTile = 278;
+        public static int WhiteTile = 1791;
+
+        public static int TileOffset = 0;
         
         static private List<MapRow> MapCellColumns = new List<MapRow>();
 
@@ -51,13 +54,15 @@ namespace Tile_Engine
         #region Initialization
         public static void Initialize(Texture2D tileTexture) {
             tileSheet = tileTexture;
+
+            MapCellColumns.Clear();
             for (int x = 0; x < MapWidth; ++x)
             {
                 MapRow newColumn = new MapRow();
                 for (int y = 0; y < MapHeight; ++y)
                 {
 
-                    newColumn.AddRow(skyTile, transparentTile, transparentTile, "", true);
+                    newColumn.AddRow(DefaultTile, TransparentTile, TransparentTile, "", true);
 
                     //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
 
@@ -69,11 +74,11 @@ namespace Tile_Engine
 
         #region Tile and Tile Sheet Handling
         public static int TilesPerRow {
-            get { return tileSheet.Width / TileWidth; }
+            get { return tileSheet.Width / (TileWidth+TileOffset); }
         }
 
         public static Rectangle TileSourceRectangle(int tileIndex) {
-            return new Rectangle((tileIndex % TilesPerRow) * TileWidth, (tileIndex / TilesPerRow) * TileHeight, TileWidth, TileHeight);
+            return new Rectangle((tileIndex % TilesPerRow) * (TileWidth+TileOffset), (tileIndex / TilesPerRow) * (TileHeight+TileOffset), TileWidth, TileHeight);
         }
         #endregion
 
@@ -199,7 +204,7 @@ namespace Tile_Engine
                 return;
             }
             if (!CellIsPassable(x, y)) {
-                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(whiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
             }
             if (MapCellColumns[x].MapCellRow[y].CodeValue != "")
             {
@@ -241,7 +246,7 @@ namespace Tile_Engine
                 for (int y = 0; y < MapHeight; ++y)
                 {
                     
-                    newColumn.AddRow(skyTile, transparentTile, transparentTile, "", true);
+                    newColumn.AddRow(DefaultTile, TransparentTile, TransparentTile, "", true);
                     
                     //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
 

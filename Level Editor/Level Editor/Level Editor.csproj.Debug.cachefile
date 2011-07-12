@@ -20,6 +20,8 @@ Content\textures\Sprites\Player\Idle.xnb
 Content\textures\Sprites\Player\Jump.xnb
 Content\textures\Sprites\Player\Run.xnb
 Content\textures\TitleScreen.xnb
-Content\textures\pkmtiles.xnb
+Content\textures\TileSets\rpg.xnb
+Content\textures\TileSets\platform.xnb
 Content\textures\PlatformTiles.png
-Content\textures\pkmtiles.png
+Content\textures\TileSets\rpg.png
+Content\textures\TileSets\platform.png

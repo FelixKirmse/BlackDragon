@@ -206,8 +206,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\pkmtiles.png">
+    <Compile Include="textures\TileSets\pkmtiles.png">
       <Name>pkmtiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\TileSets\platform.png">
+      <Name>platform</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -62,4 +62,5 @@ I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\S
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TitleScreen.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\maps\MAP000.MAP
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\maps\MAP001.MAP
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\pkmtiles.xnb
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\pkmtiles.xnb
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\platform.xnb

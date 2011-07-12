@@ -200,13 +200,22 @@
       <Time>2011-06-12T13:51:52+02:00</Time>
     </Item>
     <Item>
-      <Source>textures\pkmtiles.png</Source>
-      <Name>textures\pkmtiles</Name>
+      <Source>textures\TileSets\rpg.png</Source>
+      <Name>textures\TileSets\rpg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\pkmtiles.xnb</Output>
+      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\rpg.xnb</Output>
       <Time>2011-07-11T12:50:24+02:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\TileSets\platform.png</Source>
+      <Name>textures\TileSets\platform</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\platform.xnb</Output>
+      <Time>2011-07-12T14:28:10+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

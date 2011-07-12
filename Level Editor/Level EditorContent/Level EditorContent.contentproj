@@ -197,8 +197,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\pkmtiles.png">
-      <Name>pkmtiles</Name>
+    <Compile Include="textures\TileSets\rpg.png">
+      <Name>rpg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\TileSets\platform.png">
+      <Name>platform</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

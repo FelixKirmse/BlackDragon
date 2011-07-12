@@ -42,7 +42,7 @@
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interactiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.foregroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imgListTiles = new System.Windows.Forms.ImageList(this.components);
+            this.rpgListTiles = new System.Windows.Forms.ImageList(this.components);
             this.listTiles = new System.Windows.Forms.ListView();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
@@ -65,19 +65,30 @@
             this.tileMapHeightInput = new System.Windows.Forms.TextBox();
             this.tileMapWidthLabel = new System.Windows.Forms.Label();
             this.tileMapHeightLabel = new System.Windows.Forms.Label();
+            this.modeComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.platformListTiles = new System.Windows.Forms.ImageList(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.defaultTileRadioButton = new System.Windows.Forms.RadioButton();
+            this.whiteTileRadioButton = new System.Windows.Forms.RadioButton();
+            this.transparentTileRadioButton = new System.Windows.Forms.RadioButton();
+            this.layerSelectGroupBox = new System.Windows.Forms.GroupBox();
+            this.backgroundRadioButton = new System.Windows.Forms.RadioButton();
+            this.interactiveRadioButton = new System.Windows.Forms.RadioButton();
+            this.foregroundRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.layerSelectGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pctSurface
             // 
-            this.pctSurface.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctSurface.Location = new System.Drawing.Point(184, 192);
+            this.pctSurface.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctSurface.Location = new System.Drawing.Point(758, 27);
             this.pctSurface.Name = "pctSurface";
-            this.pctSurface.Size = new System.Drawing.Size(663, 386);
+            this.pctSurface.Size = new System.Drawing.Size(800, 600);
             this.pctSurface.TabIndex = 0;
             this.pctSurface.TabStop = false;
             // 
@@ -89,7 +100,7 @@
             this.layerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(876, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1584, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -176,46 +187,46 @@
             this.foregroundToolStripMenuItem.Text = "&Foreground";
             this.foregroundToolStripMenuItem.Click += new System.EventHandler(this.foregroundToolStripMenuItem_Click);
             // 
-            // imgListTiles
+            // rpgListTiles
             // 
-            this.imgListTiles.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imgListTiles.ImageSize = new System.Drawing.Size(48, 48);
-            this.imgListTiles.TransparentColor = System.Drawing.Color.Transparent;
+            this.rpgListTiles.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.rpgListTiles.ImageSize = new System.Drawing.Size(28, 28);
+            this.rpgListTiles.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // listTiles
             // 
-            this.listTiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.listTiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.listTiles.AutoArrange = false;
             this.listTiles.HideSelection = false;
-            this.listTiles.LargeImageList = this.imgListTiles;
-            this.listTiles.Location = new System.Drawing.Point(10, 27);
+            this.listTiles.LabelWrap = false;
+            this.listTiles.Location = new System.Drawing.Point(193, 27);
             this.listTiles.MultiSelect = false;
             this.listTiles.Name = "listTiles";
-            this.listTiles.Size = new System.Drawing.Size(437, 159);
+            this.listTiles.Size = new System.Drawing.Size(554, 787);
             this.listTiles.TabIndex = 2;
-            this.listTiles.TileSize = new System.Drawing.Size(32, 32);
+            this.listTiles.TileSize = new System.Drawing.Size(16, 16);
             this.listTiles.UseCompatibleStateImageBehavior = false;
-            this.listTiles.View = System.Windows.Forms.View.Tile;
+            this.listTiles.View = System.Windows.Forms.View.SmallIcon;
             this.listTiles.SelectedIndexChanged += new System.EventHandler(this.listTiles_SelectedIndexChanged);
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.vScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.vScrollBar1.LargeChange = 48;
-            this.vScrollBar1.Location = new System.Drawing.Point(850, 27);
+            this.vScrollBar1.Location = new System.Drawing.Point(1558, 27);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 580);
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 603);
             this.vScrollBar1.TabIndex = 3;
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.hScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hScrollBar1.LargeChange = 48;
-            this.hScrollBar1.Location = new System.Drawing.Point(184, 581);
+            this.hScrollBar1.Location = new System.Drawing.Point(758, 630);
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(666, 20);
+            this.hScrollBar1.Size = new System.Drawing.Size(800, 20);
             this.hScrollBar1.TabIndex = 4;
             // 
             // groupBoxRightClick
@@ -226,7 +237,7 @@
             this.groupBoxRightClick.Controls.Add(this.txtNewCode);
             this.groupBoxRightClick.Controls.Add(this.radioCode);
             this.groupBoxRightClick.Controls.Add(this.radioPassable);
-            this.groupBoxRightClick.Location = new System.Drawing.Point(10, 192);
+            this.groupBoxRightClick.Location = new System.Drawing.Point(758, 653);
             this.groupBoxRightClick.Name = "groupBoxRightClick";
             this.groupBoxRightClick.Size = new System.Drawing.Size(173, 103);
             this.groupBoxRightClick.TabIndex = 5;
@@ -300,7 +311,7 @@
             // lblMapNumber
             // 
             this.lblMapNumber.AutoSize = true;
-            this.lblMapNumber.Location = new System.Drawing.Point(12, 298);
+            this.lblMapNumber.Location = new System.Drawing.Point(11, 27);
             this.lblMapNumber.Name = "lblMapNumber";
             this.lblMapNumber.Size = new System.Drawing.Size(71, 13);
             this.lblMapNumber.TabIndex = 6;
@@ -310,7 +321,7 @@
             // 
             this.cboMapNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMapNumber.FormattingEnabled = true;
-            this.cboMapNumber.Location = new System.Drawing.Point(84, 298);
+            this.cboMapNumber.Location = new System.Drawing.Point(83, 27);
             this.cboMapNumber.Name = "cboMapNumber";
             this.cboMapNumber.Size = new System.Drawing.Size(94, 21);
             this.cboMapNumber.TabIndex = 7;
@@ -323,9 +334,9 @@
             // 
             // cwdButton
             // 
-            this.cwdButton.Location = new System.Drawing.Point(10, 325);
+            this.cwdButton.Location = new System.Drawing.Point(12, 84);
             this.cwdButton.Name = "cwdButton";
-            this.cwdButton.Size = new System.Drawing.Size(160, 23);
+            this.cwdButton.Size = new System.Drawing.Size(159, 23);
             this.cwdButton.TabIndex = 8;
             this.cwdButton.Text = "Change working directory";
             this.cwdButton.UseVisualStyleBackColor = true;
@@ -339,14 +350,14 @@
             // 
             this.cwdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cwdLabel.AutoSize = true;
-            this.cwdLabel.Location = new System.Drawing.Point(13, 614);
+            this.cwdLabel.Location = new System.Drawing.Point(13, 840);
             this.cwdLabel.Name = "cwdLabel";
             this.cwdLabel.Size = new System.Drawing.Size(0, 13);
             this.cwdLabel.TabIndex = 9;
             // 
             // startGameButton
             // 
-            this.startGameButton.Location = new System.Drawing.Point(10, 354);
+            this.startGameButton.Location = new System.Drawing.Point(12, 113);
             this.startGameButton.Name = "startGameButton";
             this.startGameButton.Size = new System.Drawing.Size(159, 23);
             this.startGameButton.TabIndex = 10;
@@ -357,33 +368,31 @@
             // tileIndexLabel
             // 
             this.tileIndexLabel.AutoSize = true;
-            this.tileIndexLabel.Location = new System.Drawing.Point(12, 393);
+            this.tileIndexLabel.Location = new System.Drawing.Point(11, 199);
             this.tileIndexLabel.Name = "tileIndexLabel";
             this.tileIndexLabel.Size = new System.Drawing.Size(0, 13);
             this.tileIndexLabel.TabIndex = 11;
             // 
             // tileMapWidthInput
             // 
-            this.tileMapWidthInput.Location = new System.Drawing.Point(65, 420);
+            this.tileMapWidthInput.Location = new System.Drawing.Point(69, 146);
             this.tileMapWidthInput.Name = "tileMapWidthInput";
             this.tileMapWidthInput.Size = new System.Drawing.Size(100, 20);
             this.tileMapWidthInput.TabIndex = 12;
-            
             this.tileMapWidthInput.Leave += new System.EventHandler(this.tileMapWidthInput_Leave);
             // 
             // tileMapHeightInput
             // 
-            this.tileMapHeightInput.Location = new System.Drawing.Point(65, 446);
+            this.tileMapHeightInput.Location = new System.Drawing.Point(69, 172);
             this.tileMapHeightInput.Name = "tileMapHeightInput";
             this.tileMapHeightInput.Size = new System.Drawing.Size(100, 20);
             this.tileMapHeightInput.TabIndex = 13;
-            
             this.tileMapHeightInput.Leave += new System.EventHandler(this.tileMapHeightInput_Leave);
             // 
             // tileMapWidthLabel
             // 
             this.tileMapWidthLabel.AutoSize = true;
-            this.tileMapWidthLabel.Location = new System.Drawing.Point(7, 423);
+            this.tileMapWidthLabel.Location = new System.Drawing.Point(11, 149);
             this.tileMapWidthLabel.Name = "tileMapWidthLabel";
             this.tileMapWidthLabel.Size = new System.Drawing.Size(56, 13);
             this.tileMapWidthLabel.TabIndex = 14;
@@ -392,17 +401,144 @@
             // tileMapHeightLabel
             // 
             this.tileMapHeightLabel.AutoSize = true;
-            this.tileMapHeightLabel.Location = new System.Drawing.Point(7, 449);
+            this.tileMapHeightLabel.Location = new System.Drawing.Point(11, 175);
             this.tileMapHeightLabel.Name = "tileMapHeightLabel";
             this.tileMapHeightLabel.Size = new System.Drawing.Size(59, 13);
             this.tileMapHeightLabel.TabIndex = 15;
             this.tileMapHeightLabel.Text = "MapHeight";
             // 
+            // modeComboBox
+            // 
+            this.modeComboBox.FormattingEnabled = true;
+            this.modeComboBox.Items.AddRange(new object[] {
+            "RPG",
+            "Platform"});
+            this.modeComboBox.Location = new System.Drawing.Point(48, 54);
+            this.modeComboBox.Name = "modeComboBox";
+            this.modeComboBox.Size = new System.Drawing.Size(125, 21);
+            this.modeComboBox.TabIndex = 16;
+            this.modeComboBox.SelectedIndexChanged += new System.EventHandler(this.modeComboBox_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Mode:";
+            // 
+            // platformListTiles
+            // 
+            this.platformListTiles.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.platformListTiles.ImageSize = new System.Drawing.Size(28, 28);
+            this.platformListTiles.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.transparentTileRadioButton);
+            this.groupBox1.Controls.Add(this.whiteTileRadioButton);
+            this.groupBox1.Controls.Add(this.defaultTileRadioButton);
+            this.groupBox1.Location = new System.Drawing.Point(937, 653);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 103);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Fast Tile Select";
+            // 
+            // defaultTileRadioButton
+            // 
+            this.defaultTileRadioButton.AutoSize = true;
+            this.defaultTileRadioButton.Location = new System.Drawing.Point(7, 20);
+            this.defaultTileRadioButton.Name = "defaultTileRadioButton";
+            this.defaultTileRadioButton.Size = new System.Drawing.Size(79, 17);
+            this.defaultTileRadioButton.TabIndex = 0;
+            this.defaultTileRadioButton.TabStop = true;
+            this.defaultTileRadioButton.Text = "Default Tile";
+            this.defaultTileRadioButton.UseVisualStyleBackColor = true;
+            this.defaultTileRadioButton.CheckedChanged += new System.EventHandler(this.defaultTileRadioButton_CheckedChanged);
+            // 
+            // whiteTileRadioButton
+            // 
+            this.whiteTileRadioButton.AutoSize = true;
+            this.whiteTileRadioButton.Location = new System.Drawing.Point(7, 43);
+            this.whiteTileRadioButton.Name = "whiteTileRadioButton";
+            this.whiteTileRadioButton.Size = new System.Drawing.Size(73, 17);
+            this.whiteTileRadioButton.TabIndex = 1;
+            this.whiteTileRadioButton.TabStop = true;
+            this.whiteTileRadioButton.Text = "White Tile";
+            this.whiteTileRadioButton.UseVisualStyleBackColor = true;
+            this.whiteTileRadioButton.CheckedChanged += new System.EventHandler(this.whiteTileRadioButton_CheckedChanged);
+            // 
+            // transparentTileRadioButton
+            // 
+            this.transparentTileRadioButton.AutoSize = true;
+            this.transparentTileRadioButton.Location = new System.Drawing.Point(7, 66);
+            this.transparentTileRadioButton.Name = "transparentTileRadioButton";
+            this.transparentTileRadioButton.Size = new System.Drawing.Size(102, 17);
+            this.transparentTileRadioButton.TabIndex = 2;
+            this.transparentTileRadioButton.TabStop = true;
+            this.transparentTileRadioButton.Text = "Transparent Tile";
+            this.transparentTileRadioButton.UseVisualStyleBackColor = true;
+            this.transparentTileRadioButton.CheckedChanged += new System.EventHandler(this.transparentTileRadioButton_CheckedChanged);
+            // 
+            // layerSelectGroupBox
+            // 
+            this.layerSelectGroupBox.Controls.Add(this.foregroundRadioButton);
+            this.layerSelectGroupBox.Controls.Add(this.interactiveRadioButton);
+            this.layerSelectGroupBox.Controls.Add(this.backgroundRadioButton);
+            this.layerSelectGroupBox.Location = new System.Drawing.Point(1116, 653);
+            this.layerSelectGroupBox.Name = "layerSelectGroupBox";
+            this.layerSelectGroupBox.Size = new System.Drawing.Size(173, 103);
+            this.layerSelectGroupBox.TabIndex = 19;
+            this.layerSelectGroupBox.TabStop = false;
+            this.layerSelectGroupBox.Text = "Fast Layer Select";
+            // 
+            // backgroundRadioButton
+            // 
+            this.backgroundRadioButton.AutoSize = true;
+            this.backgroundRadioButton.Location = new System.Drawing.Point(6, 20);
+            this.backgroundRadioButton.Name = "backgroundRadioButton";
+            this.backgroundRadioButton.Size = new System.Drawing.Size(83, 17);
+            this.backgroundRadioButton.TabIndex = 0;
+            this.backgroundRadioButton.TabStop = true;
+            this.backgroundRadioButton.Text = "Background";
+            this.backgroundRadioButton.UseVisualStyleBackColor = true;
+            this.backgroundRadioButton.CheckedChanged += new System.EventHandler(this.backgroundRadioButton_CheckedChanged);
+            // 
+            // interactiveRadioButton
+            // 
+            this.interactiveRadioButton.AutoSize = true;
+            this.interactiveRadioButton.Location = new System.Drawing.Point(6, 43);
+            this.interactiveRadioButton.Name = "interactiveRadioButton";
+            this.interactiveRadioButton.Size = new System.Drawing.Size(75, 17);
+            this.interactiveRadioButton.TabIndex = 1;
+            this.interactiveRadioButton.TabStop = true;
+            this.interactiveRadioButton.Text = "Interactive";
+            this.interactiveRadioButton.UseVisualStyleBackColor = true;
+            this.interactiveRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // foregroundRadioButton
+            // 
+            this.foregroundRadioButton.AutoSize = true;
+            this.foregroundRadioButton.Location = new System.Drawing.Point(6, 66);
+            this.foregroundRadioButton.Name = "foregroundRadioButton";
+            this.foregroundRadioButton.Size = new System.Drawing.Size(79, 17);
+            this.foregroundRadioButton.TabIndex = 2;
+            this.foregroundRadioButton.TabStop = true;
+            this.foregroundRadioButton.Text = "Foreground";
+            this.foregroundRadioButton.UseVisualStyleBackColor = true;
+            this.foregroundRadioButton.CheckedChanged += new System.EventHandler(this.foregroundRadioButton_CheckedChanged);
+            // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 636);
+            this.ClientSize = new System.Drawing.Size(1584, 862);
+            this.Controls.Add(this.layerSelectGroupBox);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.modeComboBox);
             this.Controls.Add(this.tileMapHeightLabel);
             this.Controls.Add(this.tileMapWidthLabel);
             this.Controls.Add(this.tileMapHeightInput);
@@ -432,6 +568,10 @@
             this.menuStrip1.PerformLayout();
             this.groupBoxRightClick.ResumeLayout(false);
             this.groupBoxRightClick.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.layerSelectGroupBox.ResumeLayout(false);
+            this.layerSelectGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,7 +592,7 @@
         private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem interactiveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem foregroundToolStripMenuItem;
-        private System.Windows.Forms.ImageList imgListTiles;
+        private System.Windows.Forms.ImageList rpgListTiles;
         private System.Windows.Forms.ListView listTiles;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.HScrollBar hScrollBar1;
@@ -475,5 +615,16 @@
         private System.Windows.Forms.TextBox tileMapHeightInput;
         private System.Windows.Forms.Label tileMapWidthLabel;
         private System.Windows.Forms.Label tileMapHeightLabel;
+        private System.Windows.Forms.ComboBox modeComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ImageList platformListTiles;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton transparentTileRadioButton;
+        private System.Windows.Forms.RadioButton whiteTileRadioButton;
+        private System.Windows.Forms.RadioButton defaultTileRadioButton;
+        private System.Windows.Forms.GroupBox layerSelectGroupBox;
+        private System.Windows.Forms.RadioButton foregroundRadioButton;
+        private System.Windows.Forms.RadioButton interactiveRadioButton;
+        private System.Windows.Forms.RadioButton backgroundRadioButton;
     }
 }

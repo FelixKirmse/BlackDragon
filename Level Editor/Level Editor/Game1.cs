@@ -37,6 +37,9 @@ namespace Level_Editor
         VScrollBar vscroll;
         HScrollBar hscroll;
 
+        public Texture2D RpgTiles;
+        public Texture2D PlatformTiles;
+
 
 
         public Game1(IntPtr drawSurface, Form parentForm, PictureBox surfacePictureBox)
@@ -103,10 +106,20 @@ namespace Level_Editor
             Camera.ViewPortWidth = pictureBox.Width;
             Camera.ViewPortHeight = pictureBox.Height;
             Camera.WorldRectangle = new Rectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.TileHeight * TileMap.MapHeight);
-            TileMap.Initialize(Content.Load<Texture2D>(@"textures/pkmtiles"));
+
+            RpgTiles = Content.Load<Texture2D>(@"textures/TileSets/rpg");
+            PlatformTiles = Content.Load<Texture2D>(@"textures/TileSets/platform");
+
+            TileMap.Initialize(RpgTiles);
             TileMap.spriteFont = Content.Load<SpriteFont>(@"fonts/pericles8");
+
             lastMouseState = Mouse.GetState();
             pictureBox_SizeChanged(null, null);
+        }
+
+        public void ChangeTileMapTileSet(Texture2D tileSet)
+        {
+            TileMap.Initialize(tileSet);
         }
 
         /// <summary>
