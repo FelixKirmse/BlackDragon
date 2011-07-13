@@ -40,7 +40,6 @@ I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\BlackDragon.exe
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\obj\x86\Debug\BlackDragon.pdb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\pericles8.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Gem.xnb
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\PlatformTiles.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Gem.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb
@@ -59,8 +58,6 @@ I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\S
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TitleScreen.xnb
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\maps\MAP000.MAP
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\maps\MAP001.MAP
-I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\pkmtiles.xnb
 I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\platform.xnb
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\rpg.xnb
+I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\misc\TitleScreen.xnb

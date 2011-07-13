@@ -13,13 +13,11 @@ namespace BlackDragon
     public static class LevelManager
     {
         #region Declarations
-        private static ContentManager Content;
-        private static Player player;
+        private static ContentManager Content;        
         private static int currentLevel;
         private static Vector2 respawnLocation;
 
-        private static List<Gemstone> gemstones = new List<Gemstone>();
-        private static List<Enemy> enemies = new List<Enemy>();
+        
         #endregion
 
         #region Properties
@@ -42,7 +40,7 @@ namespace BlackDragon
 
         #region Public Methods
         public static void LoadLevel(int levelNumber) {
-            TileMap.LoadMap((System.IO.FileStream)TitleContainer.OpenStream(@"Content/Maps/MAP" + levelNumber.ToString().PadLeft(3, '0') + ".MAP"));
+            TileMap.LoadMap((System.IO.FileStream)TitleContainer.OpenStream(@"Content/Maps/platform/MAP" + levelNumber.ToString().PadLeft(3, '0') + ".MAP"));
             gemstones.Clear();
             enemies.Clear();
             for (int x = 0; x < TileMap.MapWidth; ++x) {

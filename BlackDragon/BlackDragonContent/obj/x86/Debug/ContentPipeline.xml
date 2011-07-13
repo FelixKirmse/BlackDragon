@@ -20,15 +20,6 @@
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
-      <Source>textures\PlatformTiles.png</Source>
-      <Name>textures\PlatformTiles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\PlatformTiles.xnb</Output>
-      <Time>2011-06-24T10:10:48+02:00</Time>
-    </Item>
-    <Item>
       <Source>textures\Sprites\Gem.png</Source>
       <Name>textures\Sprites\Gem</Name>
       <Importer>TextureImporter</Importer>
@@ -191,21 +182,12 @@
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
-      <Source>textures\TitleScreen.png</Source>
-      <Name>textures\TitleScreen</Name>
+      <Source>textures\TileSets\rpg.png</Source>
+      <Name>textures\TileSets\rpg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TitleScreen.xnb</Output>
-      <Time>2011-06-12T14:04:32+02:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\TileSets\pkmtiles.png</Source>
-      <Name>textures\TileSets\pkmtiles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\pkmtiles.xnb</Output>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\rpg.xnb</Output>
       <Time>2011-07-11T12:50:24+02:00</Time>
     </Item>
     <Item>
@@ -216,6 +198,15 @@
       <Options>None</Options>
       <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\TileSets\platform.xnb</Output>
       <Time>2011-07-12T14:28:10+02:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\misc\TitleScreen.png</Source>
+      <Name>textures\misc\TitleScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\misc\TitleScreen.xnb</Output>
+      <Time>2011-07-13T15:06:10+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

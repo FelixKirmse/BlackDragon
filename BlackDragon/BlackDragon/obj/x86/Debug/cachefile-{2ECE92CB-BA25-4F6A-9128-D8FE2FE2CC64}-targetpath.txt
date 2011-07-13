@@ -1,6 +1,5 @@
 Content\fonts\pericles8.xnb
 Content\textures\Gem.xnb
-Content\textures\PlatformTiles.xnb
 Content\textures\Sprites\Gem.xnb
 Content\textures\Sprites\MonsterA\Die.xnb
 Content\textures\Sprites\MonsterA\Idle.xnb
@@ -19,8 +18,6 @@ Content\textures\Sprites\Player\Die.xnb
 Content\textures\Sprites\Player\Idle.xnb
 Content\textures\Sprites\Player\Jump.xnb
 Content\textures\Sprites\Player\Run.xnb
-Content\textures\TitleScreen.xnb
-Content\textures\TileSets\pkmtiles.xnb
+Content\textures\TileSets\rpg.xnb
 Content\textures\TileSets\platform.xnb
-Content\maps\MAP000.MAP
-Content\maps\MAP001.MAP
+Content\textures\misc\TitleScreen.xnb

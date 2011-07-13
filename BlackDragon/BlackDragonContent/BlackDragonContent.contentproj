@@ -56,13 +56,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\PlatformTiles.png">
-      <Name>PlatformTiles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="textures\Sprites\Gem.png">
       <Name>Gem</Name>
       <Importer>TextureImporter</Importer>
@@ -189,25 +182,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\TitleScreen.png">
-      <Name>TitleScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="maps\MAP000.MAP">
-      <Name>MAP000</Name>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="maps\MAP001.MAP">
-      <Name>MAP001</Name>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\TileSets\pkmtiles.png">
-      <Name>pkmtiles</Name>
+    <Compile Include="textures\TileSets\rpg.png">
+      <Name>rpg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -215,6 +191,13 @@
   <ItemGroup>
     <Compile Include="textures\TileSets\platform.png">
       <Name>platform</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\misc\TitleScreen.png">
+      <Name>TitleScreen</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
