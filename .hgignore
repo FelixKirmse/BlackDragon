@@ -1,6 +1,0 @@
-syntax: glob
-.bin
-.exe
-syntax: regexp
-.exe
-.bin
