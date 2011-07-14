@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Managers
 {
@@ -19,7 +20,7 @@ namespace BlackDragon.Managers
 
         public static void Update()
         {
-            if (InputProvider.KeyState.IsKeyDown(Keys.Enter))
+            if (ShortcutProvider.IsKeyDown(Keys.Enter))
             {
                 StateManager.GameState = StateManager.GameStates.MENU;
                 StateManager.MenuState = StateManager.MenuStates.MAIN;

@@ -34,6 +34,10 @@ namespace BlackDragon.Managers
                 case GameStates.TITLE:
                     TitleScreenManager.Update();
                     break;
+
+                case GameStates.MENU:
+                    MenuManager.Update(gameTime);
+                    break;
             }
         }
 
@@ -43,6 +47,10 @@ namespace BlackDragon.Managers
             {
                 case GameStates.TITLE:
                     TitleScreenManager.Draw(spriteBatch);
+                    break;
+
+                case GameStates.MENU:
+                    MenuManager.Draw(spriteBatch);
                     break;
             }
         }

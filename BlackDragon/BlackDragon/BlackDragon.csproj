@@ -121,18 +121,26 @@
     <Compile Include="Components\RPG\Player\RPGPlayerSoundComponent.cs" />
     <Compile Include="Components\RPG\Player\WorldPlayerInputComponent.cs" />
     <Compile Include="Components\SoundComponent.cs" />
+    <Compile Include="ContentLoader.cs" />
+    <Compile Include="Controller\MenuController.cs" />
     <Compile Include="Entities\GameObject.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Managers\AnimationStrip.cs" />
-    <Compile Include="Managers\InputProvider.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Providers\FontProvider.cs" />
+    <Compile Include="Providers\InputProvider.cs" />
     <Compile Include="Managers\MenuManager.cs" />
     <Compile Include="Managers\PlatformManager.cs" />
     <Compile Include="Managers\RPGManager.cs" />
     <Compile Include="Managers\StateManager.cs" />
     <Compile Include="Managers\TitleScreenManager.cs" />
+    <Compile Include="Menus\MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Providers\ShortcutProvider.cs" />
+    <Compile Include="Providers\VariableProvider.cs" />
+    <Compile Include="StaticClassesImportantVariablesInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

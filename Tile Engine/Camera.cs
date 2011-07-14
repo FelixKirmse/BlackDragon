@@ -64,6 +64,11 @@ namespace Tile_Engine
         public static Rectangle ScreenToWorld(Rectangle screenRectangle) {
             return new Rectangle(screenRectangle.Left + (int)position.X, screenRectangle.Top + (int)position.Y, screenRectangle.Width, screenRectangle.Height);
         }
+
+        public static void UpdateWorldRectangle()
+        {
+            WorldRectangle = new Rectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.MapHeight * TileMap.TileHeight);
+        }
         #endregion
     }
 }
