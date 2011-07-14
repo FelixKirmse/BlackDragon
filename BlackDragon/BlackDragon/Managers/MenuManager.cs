@@ -16,15 +16,24 @@ namespace BlackDragon.Managers
         public static void Initialize()
         {
             mainMenu = new MainMenu();
+            OptionMenuManager.Initialize();
         }
 
         public static void Update(GameTime gameTime)
         {
             VariableProvider.Game.IsMouseVisible = true;
+
             switch (StateManager.MenuState)
             { 
                 case StateManager.MenuStates.MAIN:
                     mainMenu.Update(gameTime);
+                    break;
+
+                case StateManager.MenuStates.OPTIONS:
+                    OptionMenuManager.Update(gameTime);
+                    break;
+
+                case StateManager.MenuStates.INGAME:
                     break;
             }            
         }
@@ -35,6 +44,13 @@ namespace BlackDragon.Managers
             {
                 case StateManager.MenuStates.MAIN:
                     mainMenu.Draw(spriteBatch);
+                    break;
+
+                case StateManager.MenuStates.OPTIONS:
+                    OptionMenuManager.Draw(spriteBatch);
+                    break;
+
+                case StateManager.MenuStates.INGAME:
                     break;
             } 
         }

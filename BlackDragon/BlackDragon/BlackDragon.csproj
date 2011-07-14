@@ -126,7 +126,9 @@
     <Compile Include="Entities\GameObject.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Managers\AnimationStrip.cs" />
+    <Compile Include="Managers\OptionMenuManager.cs" />
     <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\OptionsOverview.cs" />
     <Compile Include="Providers\FontProvider.cs" />
     <Compile Include="Providers\InputProvider.cs" />
     <Compile Include="Managers\MenuManager.cs" />

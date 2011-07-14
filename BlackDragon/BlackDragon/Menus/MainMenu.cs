@@ -29,10 +29,10 @@ namespace BlackDragon.Menus
 
         private Dictionary<string, string> selectedItem = new Dictionary<string, string>(); 
 
-        private Color newGameColor = Color.Red;
-        private Color loadGameColor = Color.White;
-        private Color optionsColor = Color.White;
-        private Color quitColor = Color.White;
+        private Color newGameColor;
+        private Color loadGameColor;
+        private Color optionsColor;
+        private Color quitColor;
 
         public MainMenu()
         {
@@ -168,8 +168,11 @@ namespace BlackDragon.Menus
                 case loadGame:
                     break;
                 case options:
+                    StateManager.MenuState = StateManager.MenuStates.OPTIONS;
+                    StateManager.OptionsState = StateManager.OptionStates.OVERVIEW;
                     break;
                 case quit:
+                    VariableProvider.Game.Exit();
                     break;
             }
         }
