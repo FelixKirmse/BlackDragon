@@ -128,7 +128,12 @@
     <Compile Include="Managers\AnimationStrip.cs" />
     <Compile Include="Managers\OptionMenuManager.cs" />
     <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\MenuItem.cs" />
+    <Compile Include="Menus\OptionsControl.cs" />
+    <Compile Include="Menus\OptionsGeneral.cs" />
+    <Compile Include="Menus\OptionsGraphics.cs" />
     <Compile Include="Menus\OptionsOverview.cs" />
+    <Compile Include="Menus\OptionsSound.cs" />
     <Compile Include="Providers\FontProvider.cs" />
     <Compile Include="Providers\InputProvider.cs" />
     <Compile Include="Managers\MenuManager.cs" />

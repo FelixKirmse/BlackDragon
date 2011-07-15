@@ -26,7 +26,7 @@ namespace BlackDragon.Managers
             switch (StateManager.MenuState)
             { 
                 case StateManager.MenuStates.MAIN:
-                    mainMenu.Update(gameTime);
+                    mainMenu.Update();
                     break;
 
                 case StateManager.MenuStates.OPTIONS:

@@ -22,9 +22,7 @@ namespace BlackDragon.Controller
                 menu.PreviousMenuItem();
             }
 
-            menu.ResolveMouseSelection();
-
-            menu.UpdateColors();
+            menu.ResolveMouseSelection();            
 
             if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Enter) || ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
             {
