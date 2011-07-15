@@ -10,7 +10,9 @@ namespace BlackDragon.Components
 {
     abstract class InputComponent : Component
     {
-        public abstract void Update(GameObject obj);
-        public abstract override void Receive(string message);
+        public abstract void Update(GameObject obj);        
+        public override void Receive<T>(string message, T obj)
+        {
+        }
     }
 }

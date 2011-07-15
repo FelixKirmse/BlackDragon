@@ -6,7 +6,7 @@ using System.Text;
 namespace BlackDragon.Components
 {
     abstract class Component
-    {
-        public abstract void Receive(string message);
+    {        
+        public abstract void Receive<T>(string message, T obj);
     }
 }

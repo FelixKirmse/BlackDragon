@@ -13,7 +13,7 @@ namespace BlackDragon.Components.Platform.Player
             
         }
 
-        public override void Receive(string message)
+        public override void Receive<T>(string message, T desiredPosition)
         {
             string[] messageParts = message.Split('_');
 

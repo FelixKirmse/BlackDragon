@@ -49,13 +49,13 @@ namespace BlackDragon.Entities
         public void Draw(SpriteBatch spriteBatch)
         {
             graphics.Draw(this, spriteBatch);
-        }
+        }        
 
-        public void Send(string message) 
+        public void Send<T>(string Message, T obj)
         {
             foreach (Component component in components)
             {
-                component.Receive(message);
+                component.Receive<T>(Message, obj);
             }
         }
     }

@@ -10,7 +10,9 @@ namespace BlackDragon.Components
 {
     abstract class GraphicsComponent : Component
     {
-        public abstract void Draw(GameObject obj, SpriteBatch spriteBatch);
-        public abstract override void Receive(string message);
+        public abstract void Draw(GameObject obj, SpriteBatch spriteBatch);        
+        public override void Receive<T>(string message, T obj)
+        {
+        }
     }
 }

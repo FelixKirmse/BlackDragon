@@ -10,7 +10,9 @@ namespace BlackDragon.Components
 {
     abstract class PhysicsComponent : Component
     {
-        public abstract void Update(GameObject obj, GameTime gameTime);
-        public abstract override void Receive(string message);
+        public abstract void Update(GameObject obj, GameTime gameTime);       
+        public override void Receive<T>(string message, T obj)
+        {
+        }
     }
 }

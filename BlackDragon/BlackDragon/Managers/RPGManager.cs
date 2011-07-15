@@ -13,7 +13,8 @@ namespace BlackDragon.Managers
 {
     static class RPGManager
     {
-        private static Texture2D rpgTileSet;        
+        private static Texture2D rpgTileSet;
+        public static GameObject Player { get; private set; }
 
         public static void LoadContent(Texture2D tileSet)
         {
@@ -27,6 +28,14 @@ namespace BlackDragon.Managers
             TileMap.WhiteTile = 1791;
             TileMap.TransparentTile = 278;
             TileMap.Initialize(rpgTileSet);
+
+            if (StateManager.RPGState == StateManager.RPGStates.WORLDMAP)            
+                Player = Factory.CreateWorldPlayer();            
+            else
+                Player = Factory.CreateRPGPlayer();
+
+            Player.Velocity = 2;
+            Player.Position = Vector2.Zero;
         }
 
         public static void Update(GameTime gameTime)
@@ -38,6 +47,7 @@ namespace BlackDragon.Managers
                     PlatformManager.Activate();
                     LevelManager.LoadLevel("000");
                 }
+                Player.Update(gameTime);
                 GeneralInputManager.HandleGeneralInput();
             }    
         }
@@ -45,6 +55,7 @@ namespace BlackDragon.Managers
         public static void Draw(SpriteBatch spriteBatch)
         {
             TileMap.Draw(spriteBatch);
+            Player.Draw(spriteBatch);
         }
     }
 }
