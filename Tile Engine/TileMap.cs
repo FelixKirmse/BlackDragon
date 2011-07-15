@@ -208,9 +208,7 @@ namespace Tile_Engine
             }
             if (MapCellColumns[x].MapCellRow[y].CodeValue != "")
             {
-                Rectangle screenRect = CellScreenRectangle(x, y);
-
-                spriteBatch.DrawString(spriteFont, MapCellColumns[x].MapCellRow[y].CodeValue, new Vector2(screenRect.X, screenRect.Y), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(0, 0, 255, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
         #endregion

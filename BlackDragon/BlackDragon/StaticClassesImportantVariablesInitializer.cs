@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Tile_Engine;
+using BlackDragon.Providers;
 
 namespace BlackDragon
 {
@@ -14,6 +15,7 @@ namespace BlackDragon
             Camera.Position = Vector2.Zero;
             Camera.ViewPortWidth = 800;
             Camera.ViewPortHeight = 600;
+           
         }
     }
 }

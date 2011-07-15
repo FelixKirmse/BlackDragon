@@ -35,8 +35,8 @@ namespace BlackDragon
             graphics.PreferredBackBufferHeight = 600;
             graphics.ApplyChanges();
 
+            StaticClassesImportantVariablesInitializer.InitializeImportantVariables();
             StateManager.Initialize();
-            
 
             base.Initialize();
         }
@@ -58,8 +58,12 @@ namespace BlackDragon
         
         protected override void Update(GameTime gameTime)
         {
-            InputProvider.Update();
-            StateManager.Update(gameTime);
+            if (IsActive)
+            {
+                InputProvider.Update();
+                StateManager.Update(gameTime);
+            }
+
             base.Update(gameTime);
         }
 

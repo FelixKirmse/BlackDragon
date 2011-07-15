@@ -48,8 +48,11 @@ namespace BlackDragon.Menus
                     // Temporary Code, change to proper later!!!
                     StateManager.GameState = StateManager.GameStates.RPG;
                     StateManager.RPGState = StateManager.RPGStates.FIELD;
+                    RPGManager.Activate();
+                    LevelManager.LoadLevel("000");
                     break;
                 case loadGame:
+                    StateManager.MenuState = StateManager.MenuStates.LOADGAME;
                     break;
                 case options:
                     StateManager.MenuState = StateManager.MenuStates.OPTIONS;

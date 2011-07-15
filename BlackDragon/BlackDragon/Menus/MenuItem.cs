@@ -58,7 +58,13 @@ namespace BlackDragon.Menus
                 font,
                 ItemName,
                 ItemPosition,
-                itemColor);
+                itemColor,
+                0,
+                Vector2.Zero,
+                1,
+                SpriteEffects.None,
+                0.2f
+                );
         }
     }
 }

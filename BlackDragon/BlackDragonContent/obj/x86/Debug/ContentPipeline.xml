@@ -226,6 +226,24 @@
       <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\Pericles14.xnb</Output>
       <Time>2011-07-14T12:59:56+02:00</Time>
     </Item>
+    <Item>
+      <Source>textures\misc\white.png</Source>
+      <Name>textures\misc\white</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\misc\white.xnb</Output>
+      <Time>2011-07-15T12:40:52+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\pericles21.spritefont</Source>
+      <Name>fonts\pericles21</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\pericles21.xnb</Output>
+      <Time>2011-07-15T14:06:16+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

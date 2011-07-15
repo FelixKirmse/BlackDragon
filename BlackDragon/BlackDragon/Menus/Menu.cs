@@ -11,9 +11,9 @@ namespace BlackDragon.Menus
 {
     class Menu
     {
-        protected Vector2 itemOffset = new Vector2(0, 25);
+        protected Vector2 itemOffset = new Vector2(0, 32);
         protected List<MenuItem> menuItems = new List<MenuItem>();
-        protected string fontName = "Pericles14";
+        protected string fontName = "Pericles21";
 
         public virtual void Update()
         {
@@ -24,7 +24,7 @@ namespace BlackDragon.Menus
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             foreach (MenuItem menuItem in menuItems)
             {
@@ -36,7 +36,7 @@ namespace BlackDragon.Menus
         { 
             for (int i = 0; i < menuItems.Count; ++i)
                 {
-                    menuItems[i].ItemPosition = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[i].ItemName) + i * itemOffset;
+                    menuItems[i].ItemPosition = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[i].ItemName) + (i-2) * itemOffset;
                 } 
         }
 

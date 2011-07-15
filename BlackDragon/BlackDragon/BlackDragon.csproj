@@ -93,6 +93,7 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -126,7 +127,11 @@
     <Compile Include="Entities\GameObject.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Managers\AnimationStrip.cs" />
+    <Compile Include="Managers\GeneralInputManager.cs" />
+    <Compile Include="Managers\LevelManager.cs" />
     <Compile Include="Managers\OptionMenuManager.cs" />
+    <Compile Include="Menus\IngameMenu.cs" />
+    <Compile Include="Menus\LoadGame.cs" />
     <Compile Include="Menus\Menu.cs" />
     <Compile Include="Menus\MenuItem.cs" />
     <Compile Include="Menus\OptionsControl.cs" />

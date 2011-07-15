@@ -69,13 +69,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.platformListTiles = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.defaultTileRadioButton = new System.Windows.Forms.RadioButton();
-            this.whiteTileRadioButton = new System.Windows.Forms.RadioButton();
             this.transparentTileRadioButton = new System.Windows.Forms.RadioButton();
+            this.whiteTileRadioButton = new System.Windows.Forms.RadioButton();
+            this.defaultTileRadioButton = new System.Windows.Forms.RadioButton();
             this.layerSelectGroupBox = new System.Windows.Forms.GroupBox();
-            this.backgroundRadioButton = new System.Windows.Forms.RadioButton();
-            this.interactiveRadioButton = new System.Windows.Forms.RadioButton();
             this.foregroundRadioButton = new System.Windows.Forms.RadioButton();
+            this.interactiveRadioButton = new System.Windows.Forms.RadioButton();
+            this.backgroundRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -233,7 +233,6 @@
             // 
             this.groupBoxRightClick.Controls.Add(this.radioUnpassable);
             this.groupBoxRightClick.Controls.Add(this.cboCodeValues);
-            this.groupBoxRightClick.Controls.Add(this.lblCurrentCode);
             this.groupBoxRightClick.Controls.Add(this.txtNewCode);
             this.groupBoxRightClick.Controls.Add(this.radioCode);
             this.groupBoxRightClick.Controls.Add(this.radioPassable);
@@ -269,7 +268,7 @@
             // lblCurrentCode
             // 
             this.lblCurrentCode.AutoSize = true;
-            this.lblCurrentCode.Location = new System.Drawing.Point(60, 59);
+            this.lblCurrentCode.Location = new System.Drawing.Point(761, 759);
             this.lblCurrentCode.Name = "lblCurrentCode";
             this.lblCurrentCode.Size = new System.Drawing.Size(16, 13);
             this.lblCurrentCode.TabIndex = 3;
@@ -446,17 +445,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fast Tile Select";
             // 
-            // defaultTileRadioButton
+            // transparentTileRadioButton
             // 
-            this.defaultTileRadioButton.AutoSize = true;
-            this.defaultTileRadioButton.Location = new System.Drawing.Point(7, 20);
-            this.defaultTileRadioButton.Name = "defaultTileRadioButton";
-            this.defaultTileRadioButton.Size = new System.Drawing.Size(79, 17);
-            this.defaultTileRadioButton.TabIndex = 0;
-            this.defaultTileRadioButton.TabStop = true;
-            this.defaultTileRadioButton.Text = "Default Tile";
-            this.defaultTileRadioButton.UseVisualStyleBackColor = true;
-            this.defaultTileRadioButton.CheckedChanged += new System.EventHandler(this.defaultTileRadioButton_CheckedChanged);
+            this.transparentTileRadioButton.AutoSize = true;
+            this.transparentTileRadioButton.Location = new System.Drawing.Point(7, 66);
+            this.transparentTileRadioButton.Name = "transparentTileRadioButton";
+            this.transparentTileRadioButton.Size = new System.Drawing.Size(102, 17);
+            this.transparentTileRadioButton.TabIndex = 2;
+            this.transparentTileRadioButton.TabStop = true;
+            this.transparentTileRadioButton.Text = "Transparent Tile";
+            this.transparentTileRadioButton.UseVisualStyleBackColor = true;
+            this.transparentTileRadioButton.CheckedChanged += new System.EventHandler(this.transparentTileRadioButton_CheckedChanged);
             // 
             // whiteTileRadioButton
             // 
@@ -470,17 +469,17 @@
             this.whiteTileRadioButton.UseVisualStyleBackColor = true;
             this.whiteTileRadioButton.CheckedChanged += new System.EventHandler(this.whiteTileRadioButton_CheckedChanged);
             // 
-            // transparentTileRadioButton
+            // defaultTileRadioButton
             // 
-            this.transparentTileRadioButton.AutoSize = true;
-            this.transparentTileRadioButton.Location = new System.Drawing.Point(7, 66);
-            this.transparentTileRadioButton.Name = "transparentTileRadioButton";
-            this.transparentTileRadioButton.Size = new System.Drawing.Size(102, 17);
-            this.transparentTileRadioButton.TabIndex = 2;
-            this.transparentTileRadioButton.TabStop = true;
-            this.transparentTileRadioButton.Text = "Transparent Tile";
-            this.transparentTileRadioButton.UseVisualStyleBackColor = true;
-            this.transparentTileRadioButton.CheckedChanged += new System.EventHandler(this.transparentTileRadioButton_CheckedChanged);
+            this.defaultTileRadioButton.AutoSize = true;
+            this.defaultTileRadioButton.Location = new System.Drawing.Point(7, 20);
+            this.defaultTileRadioButton.Name = "defaultTileRadioButton";
+            this.defaultTileRadioButton.Size = new System.Drawing.Size(79, 17);
+            this.defaultTileRadioButton.TabIndex = 0;
+            this.defaultTileRadioButton.TabStop = true;
+            this.defaultTileRadioButton.Text = "Default Tile";
+            this.defaultTileRadioButton.UseVisualStyleBackColor = true;
+            this.defaultTileRadioButton.CheckedChanged += new System.EventHandler(this.defaultTileRadioButton_CheckedChanged);
             // 
             // layerSelectGroupBox
             // 
@@ -494,17 +493,17 @@
             this.layerSelectGroupBox.TabStop = false;
             this.layerSelectGroupBox.Text = "Fast Layer Select";
             // 
-            // backgroundRadioButton
+            // foregroundRadioButton
             // 
-            this.backgroundRadioButton.AutoSize = true;
-            this.backgroundRadioButton.Location = new System.Drawing.Point(6, 20);
-            this.backgroundRadioButton.Name = "backgroundRadioButton";
-            this.backgroundRadioButton.Size = new System.Drawing.Size(83, 17);
-            this.backgroundRadioButton.TabIndex = 0;
-            this.backgroundRadioButton.TabStop = true;
-            this.backgroundRadioButton.Text = "Background";
-            this.backgroundRadioButton.UseVisualStyleBackColor = true;
-            this.backgroundRadioButton.CheckedChanged += new System.EventHandler(this.backgroundRadioButton_CheckedChanged);
+            this.foregroundRadioButton.AutoSize = true;
+            this.foregroundRadioButton.Location = new System.Drawing.Point(6, 66);
+            this.foregroundRadioButton.Name = "foregroundRadioButton";
+            this.foregroundRadioButton.Size = new System.Drawing.Size(79, 17);
+            this.foregroundRadioButton.TabIndex = 2;
+            this.foregroundRadioButton.TabStop = true;
+            this.foregroundRadioButton.Text = "Foreground";
+            this.foregroundRadioButton.UseVisualStyleBackColor = true;
+            this.foregroundRadioButton.CheckedChanged += new System.EventHandler(this.foregroundRadioButton_CheckedChanged);
             // 
             // interactiveRadioButton
             // 
@@ -518,17 +517,17 @@
             this.interactiveRadioButton.UseVisualStyleBackColor = true;
             this.interactiveRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // foregroundRadioButton
+            // backgroundRadioButton
             // 
-            this.foregroundRadioButton.AutoSize = true;
-            this.foregroundRadioButton.Location = new System.Drawing.Point(6, 66);
-            this.foregroundRadioButton.Name = "foregroundRadioButton";
-            this.foregroundRadioButton.Size = new System.Drawing.Size(79, 17);
-            this.foregroundRadioButton.TabIndex = 2;
-            this.foregroundRadioButton.TabStop = true;
-            this.foregroundRadioButton.Text = "Foreground";
-            this.foregroundRadioButton.UseVisualStyleBackColor = true;
-            this.foregroundRadioButton.CheckedChanged += new System.EventHandler(this.foregroundRadioButton_CheckedChanged);
+            this.backgroundRadioButton.AutoSize = true;
+            this.backgroundRadioButton.Location = new System.Drawing.Point(6, 20);
+            this.backgroundRadioButton.Name = "backgroundRadioButton";
+            this.backgroundRadioButton.Size = new System.Drawing.Size(83, 17);
+            this.backgroundRadioButton.TabIndex = 0;
+            this.backgroundRadioButton.TabStop = true;
+            this.backgroundRadioButton.Text = "Background";
+            this.backgroundRadioButton.UseVisualStyleBackColor = true;
+            this.backgroundRadioButton.CheckedChanged += new System.EventHandler(this.backgroundRadioButton_CheckedChanged);
             // 
             // MapEditor
             // 
@@ -537,6 +536,7 @@
             this.ClientSize = new System.Drawing.Size(1584, 862);
             this.Controls.Add(this.layerSelectGroupBox);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lblCurrentCode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.modeComboBox);
             this.Controls.Add(this.tileMapHeightLabel);

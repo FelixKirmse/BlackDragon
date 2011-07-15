@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Tile_Engine;
+using BlackDragon.Managers;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Managers
 {
@@ -24,6 +26,25 @@ namespace BlackDragon.Managers
             TileMap.WhiteTile = 830;
             TileMap.TransparentTile = 831;
             TileMap.Initialize(platformTileSet);
+        }
+
+        public static void Update(GameTime gameTime)
+        {
+            if (!StateManager.GamePaused)
+            {
+                if (ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
+                {
+                    StateManager.GameState = StateManager.GameStates.RPG;
+                    RPGManager.Activate();
+                    LevelManager.LoadLevel("000");
+                }
+                GeneralInputManager.HandleGeneralInput();
+            }
+        }
+
+        public static void Draw(SpriteBatch spriteBatch)
+        {
+            TileMap.Draw(spriteBatch);
         }
     }
 }
