@@ -75,5 +75,35 @@ namespace BlackDragon.Providers
         public static bool RightButtonClickedButNotLastFrame() {
             return (RightButtonClicked() && (InputProvider.LastMouseState.RightButton == ButtonState.Released));
         }
+
+        public static bool AreAnyKeysDown(Keys[] keys)
+        {
+            foreach (Keys key in keys)
+            {
+                if (IsKeyDown(key))
+                    return true;
+            }
+            return false;
+        }
+
+        public static bool LeftStickUp()
+        {
+            return InputProvider.PadState.ThumbSticks.Left.Y > 0.3f;
+        }
+
+        public static bool LeftStickDown()
+        {
+            return InputProvider.PadState.ThumbSticks.Left.Y < -0.3f;
+        }
+
+        public static bool LeftStickLeft()
+        {
+            return InputProvider.PadState.ThumbSticks.Left.X < -0.3f;
+        }
+
+        public static bool LeftStickRight()
+        {
+            return InputProvider.PadState.ThumbSticks.Left.X > 0.3f;
+        }
     }
 }

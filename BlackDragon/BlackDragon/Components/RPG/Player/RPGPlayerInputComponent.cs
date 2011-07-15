@@ -16,13 +16,13 @@ namespace BlackDragon.Components.RPG.Player
             Vector2 desiredPosition = obj.Position;
             Vector2 direction = Vector2.Zero;
             
-            if (ShortcutProvider.IsKeyDown(Keys.W))
+            if (InputMapper.UP)
                 direction += new Vector2(0, -1);
-            if (ShortcutProvider.IsKeyDown(Keys.A))
+            if (InputMapper.LEFT)
                 direction += new Vector2(-1, 0);
-            if (ShortcutProvider.IsKeyDown(Keys.S))
+            if (InputMapper.DOWN)
                 direction += new Vector2(0, 1);
-            if (ShortcutProvider.IsKeyDown(Keys.D))
+            if (InputMapper.RIGHT)
                 direction += new Vector2(1, 0);
             
             if(direction != Vector2.Zero)

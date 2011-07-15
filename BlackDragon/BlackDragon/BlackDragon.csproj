@@ -126,6 +126,7 @@
     <Compile Include="Controller\MenuController.cs" />
     <Compile Include="Entities\GameObject.cs" />
     <Compile Include="Factory.cs" />
+    <Compile Include="InputMapper.cs" />
     <Compile Include="Managers\AnimationStrip.cs" />
     <Compile Include="Managers\GeneralInputManager.cs" />
     <Compile Include="Managers\LevelManager.cs" />
