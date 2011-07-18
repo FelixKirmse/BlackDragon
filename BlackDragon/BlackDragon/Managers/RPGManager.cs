@@ -35,7 +35,7 @@ namespace BlackDragon.Managers
                 Player = Factory.CreateRPGPlayer();
 
             Player.Velocity = 2;
-            Player.Position = Vector2.Zero;
+                        
         }
 
         public static void Update(GameTime gameTime)
@@ -46,8 +46,10 @@ namespace BlackDragon.Managers
                     StateManager.GameState = StateManager.GameStates.PLATFORM;
                     PlatformManager.Activate();
                     LevelManager.LoadLevel("000");
+                    
                 }
                 Player.Update(gameTime);
+                CodeManager.CheckCodeUnderPlayer(Player);
                 GeneralInputManager.HandleGeneralInput();
             }    
         }

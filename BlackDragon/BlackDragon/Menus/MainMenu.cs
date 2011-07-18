@@ -50,6 +50,7 @@ namespace BlackDragon.Menus
                     StateManager.RPGState = StateManager.RPGStates.FIELD;
                     RPGManager.Activate();
                     LevelManager.LoadLevel("000");
+                    CodeManager.CheckCodes(RPGManager.Player);
                     break;
                 case loadGame:
                     StateManager.MenuState = StateManager.MenuStates.LOADGAME;
