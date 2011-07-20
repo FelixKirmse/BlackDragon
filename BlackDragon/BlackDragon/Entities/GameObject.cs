@@ -11,8 +11,8 @@ namespace BlackDragon.Entities
     class GameObject
     {
         public Vector2 Velocity;
-        public Vector2 Position { get; set; }
-        public Rectangle collisionRectangle { get; set; }
+        public Vector2 Position;
+        public Rectangle collisionRectangle = new Rectangle(0, 0, 16, 24);
         public float Speed { get; set; }
 
         public Rectangle CollisionRectangle

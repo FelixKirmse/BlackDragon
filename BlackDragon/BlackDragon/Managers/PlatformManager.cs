@@ -7,12 +7,14 @@ using Microsoft.Xna.Framework.Graphics;
 using Tile_Engine;
 using BlackDragon.Managers;
 using BlackDragon.Providers;
+using BlackDragon.Entities;
 
 namespace BlackDragon.Managers
 {
     static class PlatformManager
     {
         private static Texture2D platformTileSet;
+        public static GameObject Player;
 
         public static void LoadContent(Texture2D tileSet)
         {
@@ -26,7 +28,14 @@ namespace BlackDragon.Managers
             TileMap.WhiteTile = 830;
             TileMap.TransparentTile = 831;
             TileMap.Initialize(platformTileSet);
-        }
+
+            Player = Factory.CreatePlatformPlayer();
+
+            
+
+            LevelManager.LoadLevel("000");
+            CodeManager.CheckCodes(RPGManager.Player);
+         }
 
         public static void Update(GameTime gameTime)
         {
@@ -35,15 +44,16 @@ namespace BlackDragon.Managers
                 if (ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
                 {
                     StateManager.GameState = StateManager.GameStates.RPG;
-                    RPGManager.Activate();
-                    LevelManager.LoadLevel("000");
+                    RPGManager.Activate();                    
                 }
+                Player.Update(gameTime);
                 GeneralInputManager.HandleGeneralInput();
             }
         }
 
         public static void Draw(SpriteBatch spriteBatch)
         {
+            Player.Draw(spriteBatch);
             TileMap.Draw(spriteBatch);
         }
     }

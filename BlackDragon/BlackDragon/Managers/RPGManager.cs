@@ -29,13 +29,18 @@ namespace BlackDragon.Managers
             TileMap.TransparentTile = 278;
             TileMap.Initialize(rpgTileSet);
 
+
+            /// temporary code
             if (StateManager.RPGState == StateManager.RPGStates.WORLDMAP)            
                 Player = Factory.CreateWorldPlayer();            
             else
                 Player = Factory.CreateRPGPlayer();
 
             Player.Speed = 2;
-            Player.collisionRectangle = new Rectangle(0, 0, 16, 24);
+            
+
+            LevelManager.LoadLevel("000");
+            CodeManager.CheckCodes(RPGManager.Player);            
                         
         }
 
@@ -45,9 +50,7 @@ namespace BlackDragon.Managers
                 if (ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
                 {
                     StateManager.GameState = StateManager.GameStates.PLATFORM;
-                    PlatformManager.Activate();
-                    LevelManager.LoadLevel("000");
-                    
+                    PlatformManager.Activate();  
                 }
                 Player.Update(gameTime);
                 CodeManager.CheckCodeUnderPlayer(Player);
