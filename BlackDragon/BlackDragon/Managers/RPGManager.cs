@@ -8,6 +8,7 @@ using Tile_Engine;
 using BlackDragon.Providers;
 using BlackDragon.Managers;
 using BlackDragon.Entities;
+using BlackDragon.Helpers;
 
 namespace BlackDragon.Managers
 {
@@ -37,6 +38,7 @@ namespace BlackDragon.Managers
                 Player = Factory.CreateRPGPlayer();
 
             Player.Speed = 2;
+            Player.Send <Dictionary<string, AnimationStrip>>("GRAPHICS_SET_ANIMATIONS", AnimationDictionaryProvider.PlayerAnimations);
             
 
             LevelManager.LoadLevel("000");

@@ -26,6 +26,8 @@ namespace BlackDragon
             TitleScreenManager.LoadContent(Content.Load<Texture2D>(@"textures/misc/TitleScreen"));
 
             VariableProvider.WhiteTexture = Content.Load<Texture2D>(@"textures/misc/white");
+
+            AnimationDictionaryProvider.LoadAnimations(Content);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BlackDragon
+namespace BlackDragon.Helpers
 {
     public class AnimationStrip
     {
@@ -76,6 +76,12 @@ namespace BlackDragon
         #endregion
 
         #region Constructor
+        public AnimationStrip(Texture2D texture, int frameWidth, string name, bool loop)
+            :this(texture, frameWidth, name)
+        {
+            loopAnimation = loop;
+        }
+
         public AnimationStrip(Texture2D texture, int frameWidth, string name) {
             this.texture = texture;
             this.frameWidth = frameWidth;

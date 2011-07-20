@@ -50,6 +50,7 @@ namespace BlackDragon.Entities
         {
             input.Update(this);
             physics.Update(this, gameTime);
+            graphics.Update(this, gameTime);
             if(sound != null)
                 sound.Update(this);
         }

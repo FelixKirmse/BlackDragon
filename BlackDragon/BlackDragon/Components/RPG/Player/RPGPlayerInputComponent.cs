@@ -13,16 +13,38 @@ namespace BlackDragon.Components.RPG.Player
     {
         public override void Update(GameObject obj)
         {
-            Vector2 desiredPosition = obj.Position;            
-            
-            if (InputMapper.UP)
-                obj.Velocity += new Vector2(0, -obj.Speed);
+            Vector2 desiredPosition = obj.Position;
+
             if (InputMapper.LEFT)
+            {
                 obj.Velocity += new Vector2(-obj.Speed, 0);
-            if (InputMapper.DOWN)
-                obj.Velocity += new Vector2(0, obj.Speed);
-            if (InputMapper.RIGHT)
+                obj.Send<bool>("GRAPHICS_PLAYANIMATION_WalkSide", true);
+                obj.Send<bool>("GRAPHICS_SET_FLIPPED", true);
+                obj.Send<bool>("GRAPHICS_FACESIDE", true);
+            }
+            else if (InputMapper.RIGHT)
+            {
                 obj.Velocity += new Vector2(obj.Speed, 0);
+                obj.Send<bool>("GRAPHICS_PLAYANIMATION_WalkSide", true);
+                obj.Send<bool>("GRAPHICS_SET_FLIPPED", false);
+                obj.Send<bool>("GRAPHICS_FACESIDE", true);
+            }
+            else if (InputMapper.UP)
+            {
+                obj.Velocity += new Vector2(0, -obj.Speed);
+                obj.Send<bool>("GRAPHICS_PLAYANIMATION_WalkUp", true);
+                obj.Send<bool>("GRAPHICS_SET_FLIPPED", false);
+                obj.Send<bool>("GRAPHICS_FACEUP", true);
+            }
+            else if (InputMapper.DOWN)
+            {
+                obj.Velocity += new Vector2(0, obj.Speed);
+                obj.Send<bool>("GRAPHICS_PLAYANIMATION_WalkDown", true);
+                obj.Send<bool>("GRAPHICS_SET_FLIPPED", false);
+                obj.Send<bool>("GRAPHICS_FACEDOWN", true);
+            }
+             
+
             
            
             //if(obj.Velocity != Vector2.Zero)
