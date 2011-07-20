@@ -25,6 +25,11 @@ namespace BlackDragon.Components.RPG.Player
                 0.85f);                
         }
 
+        public override void Update(GameObject obj, GameTime gameTime)
+        {
+
+        }
+
         public override void Receive<T>(string message, T desiredPosition)
         {
             string[] messageParts = message.Split('_');

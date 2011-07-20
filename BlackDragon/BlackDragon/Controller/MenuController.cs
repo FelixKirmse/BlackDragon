@@ -12,19 +12,19 @@ namespace BlackDragon.Controller
     {
         public static void Update(Menu menu)
         {
-            if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.S) || ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Down))
+            if (InputMapper.STRICTDOWN)
             {
                 menu.NextMenuItem();
             }
 
-            if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.W) || ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Up))
+            if (InputMapper.STRICTUP)
             {
                 menu.PreviousMenuItem();
             }
 
             menu.ResolveMouseSelection();            
 
-            if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Enter) || ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
+            if (InputMapper.STRICTACTION || ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
             {
                 menu.SelectMenuItem();
             }

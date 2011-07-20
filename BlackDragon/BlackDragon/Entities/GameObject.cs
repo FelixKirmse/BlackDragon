@@ -10,8 +10,16 @@ namespace BlackDragon.Entities
 {
     class GameObject
     {
-        public int Velocity { get; set; }
+        public Vector2 Velocity;
         public Vector2 Position { get; set; }
+        public Rectangle collisionRectangle { get; set; }
+        public float Speed { get; set; }
+
+        public Rectangle CollisionRectangle
+        {
+            get { return new Rectangle((int)Position.X + collisionRectangle.X, (int)Position.Y + collisionRectangle.Y, collisionRectangle.Width, collisionRectangle.Height); }
+            set { collisionRectangle = value; }
+        }
 
         private InputComponent input;
         private PhysicsComponent physics;

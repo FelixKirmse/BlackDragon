@@ -34,7 +34,8 @@ namespace BlackDragon.Managers
             else
                 Player = Factory.CreateRPGPlayer();
 
-            Player.Velocity = 2;
+            Player.Speed = 2;
+            Player.collisionRectangle = new Rectangle(0, 0, 16, 24);
                         
         }
 

@@ -13,22 +13,22 @@ namespace BlackDragon.Components.RPG.Player
     {
         public override void Update(GameObject obj)
         {
-            Vector2 desiredPosition = obj.Position;
-            Vector2 direction = Vector2.Zero;
+            Vector2 desiredPosition = obj.Position;            
             
             if (InputMapper.UP)
-                direction += new Vector2(0, -1);
+                obj.Velocity += new Vector2(0, -obj.Speed);
             if (InputMapper.LEFT)
-                direction += new Vector2(-1, 0);
+                obj.Velocity += new Vector2(-obj.Speed, 0);
             if (InputMapper.DOWN)
-                direction += new Vector2(0, 1);
+                obj.Velocity += new Vector2(0, obj.Speed);
             if (InputMapper.RIGHT)
-                direction += new Vector2(1, 0);
+                obj.Velocity += new Vector2(obj.Speed, 0);
             
-            if(direction != Vector2.Zero)
-                direction.Normalize();
+           
+            //if(obj.Velocity != Vector2.Zero)
+              //  obj.Velocity.Normalize();
 
-            desiredPosition += obj.Velocity * direction;
+            desiredPosition += obj.Velocity;
             obj.Send<Vector2>("PHYSICS_DESIREDPOSITION", desiredPosition);
         }
 

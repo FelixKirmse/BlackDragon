@@ -11,6 +11,33 @@
       <Time>2011-06-12T14:04:32+02:00</Time>
     </Item>
     <Item>
+      <Source>fonts\pericles9.spritefont</Source>
+      <Name>fonts\pericles9</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\pericles9.xnb</Output>
+      <Time>2011-07-14T10:57:20+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\Pericles14.spritefont</Source>
+      <Name>fonts\Pericles14</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\Pericles14.xnb</Output>
+      <Time>2011-07-14T12:59:56+02:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\pericles21.spritefont</Source>
+      <Name>fonts\pericles21</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\pericles21.xnb</Output>
+      <Time>2011-07-15T14:06:16+02:00</Time>
+    </Item>
+    <Item>
       <Source>textures\Gem.png</Source>
       <Name>textures\Gem</Name>
       <Importer>TextureImporter</Importer>
@@ -209,24 +236,6 @@
       <Time>2011-07-13T15:06:10+02:00</Time>
     </Item>
     <Item>
-      <Source>fonts\pericles9.spritefont</Source>
-      <Name>fonts\pericles9</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\pericles9.xnb</Output>
-      <Time>2011-07-14T10:57:20+02:00</Time>
-    </Item>
-    <Item>
-      <Source>fonts\Pericles14.spritefont</Source>
-      <Name>fonts\Pericles14</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\Pericles14.xnb</Output>
-      <Time>2011-07-14T12:59:56+02:00</Time>
-    </Item>
-    <Item>
       <Source>textures\misc\white.png</Source>
       <Name>textures\misc\white</Name>
       <Importer>TextureImporter</Importer>
@@ -234,15 +243,6 @@
       <Options>None</Options>
       <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\textures\misc\white.xnb</Output>
       <Time>2011-07-15T12:40:52+02:00</Time>
-    </Item>
-    <Item>
-      <Source>fonts\pericles21.spritefont</Source>
-      <Name>fonts\pericles21</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\BlackDragon\BlackDragon\bin\x86\Debug\Content\fonts\pericles21.xnb</Output>
-      <Time>2011-07-15T14:06:16+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

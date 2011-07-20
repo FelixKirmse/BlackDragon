@@ -16,6 +16,7 @@ namespace BlackDragon
         public static Keys[] JumpKeys = new Keys[2];
         public static Keys[] ActionKeys = new Keys[2];
 
+        #region Normal Actionchecks
         public static bool UP 
         {
             get
@@ -60,5 +61,53 @@ namespace BlackDragon
                 return ShortcutProvider.AreAnyKeysDown(ActionKeys);
             }
         }
+        #endregion
+
+        #region Strict Actionchecks
+        public static bool STRICTUP
+        {
+            get
+            {
+                return ShortcutProvider.AreAnyKeysDown(UpKeys, true) || ShortcutProvider.LeftStickUp();
+            }
+        }
+
+        public static bool STRICTDOWN
+        {
+            get
+            {
+                return ShortcutProvider.AreAnyKeysDown(DownKeys, true) || ShortcutProvider.LeftStickDown();
+            }
+        }
+
+        public static bool STRICTLEFT
+        {
+            get
+            {
+                return ShortcutProvider.AreAnyKeysDown(LeftKeys, true) || ShortcutProvider.LeftStickLeft();
+            }
+        }
+        public static bool STRICTRIGHT
+        {
+            get
+            {
+                return ShortcutProvider.AreAnyKeysDown(RightKeys, true) || ShortcutProvider.LeftStickRight();
+            }
+        }
+        public static bool STRICTJUMP
+        {
+            get
+            {
+                return ShortcutProvider.AreAnyKeysDown(JumpKeys, true);
+            }
+        }
+        public static bool STRICTACTION
+        {
+            get
+            {
+                return ShortcutProvider.AreAnyKeysDown(ActionKeys, true);
+            }
+        }
+        #endregion
     }    
 }

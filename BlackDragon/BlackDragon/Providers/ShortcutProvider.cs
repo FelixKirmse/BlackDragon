@@ -86,6 +86,19 @@ namespace BlackDragon.Providers
             return false;
         }
 
+        public static bool AreAnyKeysDown(Keys[] keys, bool strict)
+        {
+            if (!strict)
+                return AreAnyKeysDown(keys);
+
+            foreach (Keys key in keys)
+            {
+                if (KeyPressedNowButNotLastFrame(key))
+                    return true;
+            }
+            return false;
+        }
+
         public static bool LeftStickUp()
         {
             return InputProvider.PadState.ThumbSticks.Left.Y > 0.3f;
