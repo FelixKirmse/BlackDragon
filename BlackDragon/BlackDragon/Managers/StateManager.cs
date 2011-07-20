@@ -55,7 +55,7 @@ namespace BlackDragon.Managers
                     break;
             }
 
-            if (MenuState == MenuStates.INGAME)
+            if (GamePaused)
             {
                 MenuManager.Update(gameTime);
             }
@@ -82,7 +82,7 @@ namespace BlackDragon.Managers
                     break;
             }
 
-            if (MenuState == MenuStates.INGAME)
+            if (GamePaused)
             {
                 MenuManager.Draw(spriteBatch);
             }

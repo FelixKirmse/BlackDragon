@@ -33,7 +33,10 @@ namespace BlackDragon.Menus
             base.Update();
             if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Escape))
             {
-                StateManager.MenuState = StateManager.MenuStates.MAIN;
+                if (StateManager.GamePaused)
+                    StateManager.MenuState = StateManager.MenuStates.INGAME;
+                else
+                    StateManager.MenuState = StateManager.MenuStates.MAIN;
             }
         }
 
@@ -57,7 +60,10 @@ namespace BlackDragon.Menus
                     StateManager.OptionsState = StateManager.OptionStates.CONTROL;
                     break;
                 case backString:
-                    StateManager.MenuState = StateManager.MenuStates.MAIN;
+                    if (StateManager.GamePaused)
+                        StateManager.MenuState = StateManager.MenuStates.INGAME;
+                    else
+                        StateManager.MenuState = StateManager.MenuStates.MAIN;
                     break;
             }
         }

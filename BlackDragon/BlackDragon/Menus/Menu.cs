@@ -26,6 +26,17 @@ namespace BlackDragon.Menus
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Draw(
+                VariableProvider.WhiteTexture,
+                Vector2.Zero,
+                new Rectangle(0, 0, 800, 600),
+                new Color(0, 0, 0, 200),
+                0,
+                Vector2.Zero,
+                1,
+                SpriteEffects.None,
+                0.3f);
+
             foreach (MenuItem menuItem in menuItems)
             {
                 menuItem.Draw(spriteBatch);

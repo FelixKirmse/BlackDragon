@@ -42,23 +42,7 @@ namespace BlackDragon.Menus
                     StateManager.MenuState = StateManager.MenuStates.NULL;
                 }
             }
-        }
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(
-                VariableProvider.WhiteTexture,
-                Vector2.Zero,
-                new Rectangle(0,0,800,600),
-                new Color(0, 0, 0, 200),
-                0,
-                Vector2.Zero,
-                1,
-                SpriteEffects.None,
-                0.3f);
-            
-            base.Draw(spriteBatch);
-        }
+        }       
 
         public override void SelectMenuItem()
         {
@@ -72,7 +56,13 @@ namespace BlackDragon.Menus
                     StateManager.GamePaused = false;
                     break;
 
+                case optionString:
+                    StateManager.MenuState = StateManager.MenuStates.OPTIONS;
+                    StateManager.OptionsState = StateManager.OptionStates.OVERVIEW;
+                    break;
+
                 case quitString:
+                    StateManager.GamePaused = false;
                     StateManager.GameState = StateManager.GameStates.MENU;
                     StateManager.MenuState = StateManager.MenuStates.MAIN;
                     break;
