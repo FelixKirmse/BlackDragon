@@ -35,9 +35,8 @@ namespace BlackDragon.Managers
             if (StateManager.RPGState == StateManager.RPGStates.WORLDMAP)            
                 Player = Factory.CreateWorldPlayer();            
             else
-                Player = Factory.CreateRPGPlayer();
+                Player = Factory.CreateRPGPlayer();           
             
-            Player.Send <Dictionary<string, AnimationStrip>>("GRAPHICS_SET_ANIMATIONS", AnimationDictionaryProvider.RPGPlayerAnimations);
             
 
             LevelManager.LoadLevel("000");

@@ -13,7 +13,7 @@ namespace BlackDragon.Components
     {
         protected Dictionary<string, AnimationStrip> animations;
         protected bool flipped;
-        protected string currentAnimation = "Idle";
+        protected string currentAnimation;
         protected string receivedAnimation;
 
         public override void Draw(GameObject obj, SpriteBatch spriteBatch)
@@ -46,13 +46,7 @@ namespace BlackDragon.Components
             if (messageParts[0] == "GRAPHICS")
             {
                 if (messageParts[1] == "SET")
-                {
-                    if (messageParts[2] == "ANIMATIONS")
-                    {
-                        if (obj is Dictionary<string, AnimationStrip>)
-                            animations = (Dictionary<string, AnimationStrip>)(object)obj;
-                    }
-
+                {      
                     if (messageParts[2] == "FLIPPED")
                     {
                         if (obj is bool)

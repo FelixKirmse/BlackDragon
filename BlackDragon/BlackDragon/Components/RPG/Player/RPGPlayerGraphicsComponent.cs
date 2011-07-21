@@ -7,42 +7,25 @@ using BlackDragon.Providers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Helpers;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Components.RPG.Player
 {
-    class RPGPlayerGraphicsComponent : GraphicsComponent
-    {
-        private Dictionary<string, AnimationStrip> playerAnimations;
-        private bool flipped;
-        private string currentAnimation = "IdleDown";
+    class RPGPlayerGraphicsComponent : AnimatedGraphicsComponent
+    {        
         private bool faceUp;
         private bool faceDown;
         private bool faceSide;
-        private bool noInput = true;
+        private bool noInput;
 
-        private string receivedAnimation;
-
-        public override void Draw(GameObject obj, SpriteBatch spriteBatch)
+        public RPGPlayerGraphicsComponent()
         {
-            SpriteEffects effects = SpriteEffects.None;
-            if (flipped)
-                effects = SpriteEffects.FlipHorizontally;
-
-            spriteBatch.Draw(
-                playerAnimations[currentAnimation].Texture,
-                obj.Position,
-                playerAnimations[currentAnimation].FrameRectangle,
-                Color.White,
-                0,
-                Vector2.Zero,
-                1,
-                effects,
-                0.85f);                
+            this.currentAnimation = "IdleDown";
+            this.animations = AnimationDictionaryProvider.RPGPlayerAnimations;
         }
 
         public override void Update(GameObject obj, GameTime gameTime)
         {
-
             string newAnimation = "";
             if (noInput)
             {
@@ -66,62 +49,19 @@ namespace BlackDragon.Components.RPG.Player
                     PlayAnimation(receivedAnimation);
                     receivedAnimation = currentAnimation;
                 }
-            }      
+            }  
 
-            updateAnimation(gameTime);
             noInput = false;
-        }
 
-        private void updateAnimation(GameTime gameTime)
-        {
-            if (playerAnimations.ContainsKey(currentAnimation))
-            {
-                if (playerAnimations[currentAnimation].FinishedPlaying)
-                {
-                    PlayAnimation(playerAnimations[currentAnimation].NextAnimation);
-                }
-                else
-                {
-                    playerAnimations[currentAnimation].Update(gameTime);
-                }
-            }
-        }
-
-        public void PlayAnimation(string name)
-        {
-            if (name != null && playerAnimations.ContainsKey(name))
-            {
-                currentAnimation = name;
-                playerAnimations[name].Play();
-            }
-        }
+            base.Update(obj, gameTime);
+        }        
 
         public override void Receive<T>(string message, T obj)
         {
             string[] messageParts = message.Split('_');
 
             if (messageParts[0] == "GRAPHICS")
-            {
-                if (messageParts[1] == "SET")
-                {
-                    if (messageParts[2] == "ANIMATIONS")
-                    {
-                        if (obj is Dictionary<string, AnimationStrip>)
-                            playerAnimations = (Dictionary<string, AnimationStrip>)(object)obj;
-                    }
-
-                    if (messageParts[2] == "FLIPPED")
-                    {
-                        if (obj is bool)
-                            flipped = (bool)(object)obj;
-                    }
-                }
-
-                if (messageParts[1] == "PLAYANIMATION")
-                {
-                    receivedAnimation = messageParts[2];
-                }
-
+            {      
                 if (messageParts[1] == "FACEUP")
                 {
                     faceUp = true;
@@ -148,6 +88,8 @@ namespace BlackDragon.Components.RPG.Player
                     noInput = true;
                 }
             }
+
+            base.Receive<T>(message, obj);
         }
     }
 }

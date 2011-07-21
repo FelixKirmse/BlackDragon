@@ -31,9 +31,7 @@ namespace BlackDragon.Managers
             TileMap.Initialize(platformTileSet);
 
             Player = Factory.CreatePlatformPlayer();
-
-
-            Player.Send<Dictionary<string, AnimationStrip>>("GRAPHICS_SET_ANIMATIONS", AnimationDictionaryProvider.PlatformPlayerAnimations);
+            
             LevelManager.LoadLevel("000");
             CodeManager.CheckCodes(Player);
          }

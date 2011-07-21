@@ -7,39 +7,23 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Providers;
 using BlackDragon.Helpers;
+using System.Diagnostics;
 
 namespace BlackDragon.Components.Platform.Player
 {
-    class PlatformPlayerGraphicsComponent : GraphicsComponent
-    {
-        private Dictionary<string, AnimationStrip> playerAnimations;
-        private bool flipped;
-        private string currentAnimation = "Idle";
-        private string receivedAnimation;
-        private bool noInput;
+    class PlatformPlayerGraphicsComponent : AnimatedGraphicsComponent
+    {        
         private bool onGround;
 
-        public override void Draw(GameObject obj, SpriteBatch spriteBatch)
+        public PlatformPlayerGraphicsComponent()
         {
-            SpriteEffects effects = SpriteEffects.None;
-            if (flipped)
-                effects = SpriteEffects.FlipHorizontally;
-
-            spriteBatch.Draw(
-                playerAnimations[currentAnimation].Texture,
-                obj.Position,
-                playerAnimations[currentAnimation].FrameRectangle,
-                Color.White,
-                0,
-                Vector2.Zero,
-                1,
-                effects,
-                0.85f);  
+            this.currentAnimation = "Idle";
+            this.animations = AnimationDictionaryProvider.PlatformPlayerAnimations;
         }
 
         public override void Update(GameObject obj, GameTime gameTime)
         {
-            
+            Debug.WriteLine("Current: " + currentAnimation + " Received: " + receivedAnimation);
             if(receivedAnimation == "")
             {
                 if (onGround)
@@ -50,34 +34,11 @@ namespace BlackDragon.Components.Platform.Player
             {
                 PlayAnimation(receivedAnimation);
             }
-            
-            updateAnimation(gameTime);
+                        
             receivedAnimation = "";
-        }
 
-        private void updateAnimation(GameTime gameTime)
-        {
-            if (playerAnimations.ContainsKey(currentAnimation))
-            {
-                if (playerAnimations[currentAnimation].FinishedPlaying)
-                {
-                    PlayAnimation(playerAnimations[currentAnimation].NextAnimation);
-                }
-                else
-                {
-                    playerAnimations[currentAnimation].Update(gameTime);
-                }
-            }
-        }
-
-        public void PlayAnimation(string name)
-        {
-            if (name != null && playerAnimations.ContainsKey(name))
-            {
-                currentAnimation = name;
-                playerAnimations[name].Play();
-            }
-        }
+            base.Update(obj, gameTime);
+        }       
 
 
         public override void Receive<T>(string message, T obj)
@@ -87,37 +48,16 @@ namespace BlackDragon.Components.Platform.Player
             if (messageParts[0] == "GRAPHICS")
             {
                 if (messageParts[1] == "SET")
-                {
-                    if (messageParts[2] == "ANIMATIONS")
-                    {
-                        if (obj is Dictionary<string, AnimationStrip>)
-                            playerAnimations = (Dictionary<string, AnimationStrip>)(object)obj;
-                    }
-
-                    if (messageParts[2] == "FLIPPED")
-                    {
-                        if (obj is bool)
-                            flipped = (bool)(object)obj;
-                    }
-
+                {   
                     if (messageParts[2] == "ONGROUND")
                     {
                         if (obj is bool)
                             onGround = (bool)(object)obj;
                     }
-                }
-
-                if (messageParts[1] == "PLAYANIMATION")
-                {
-                    receivedAnimation = messageParts[2];
-                }
-
-                if (messageParts[1] == "NOINPUT")
-                {
-                    if (obj is bool)
-                        noInput = (bool)(object)obj;
-                }
+                } 
             }
+
+            base.Receive<T>(message, obj);
         }
     }
 }

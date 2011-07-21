@@ -13,16 +13,13 @@ namespace BlackDragon.Components.Platform.Player
 
         private float gravity;        
         private bool onGround;
-        private int jumpCount;
-        private bool noInput;
+        private int jumpCount;        
 
         public override void Update(GameObject obj)
-        {
-            noInput = true;
+        {            
             if (!InputMapper.JUMP && gravity < 0)
             {
-                gravity += .45f;
-                noInput = false;
+                gravity += .45f;                
             }
 
             if (gravity < 10)
@@ -32,7 +29,6 @@ namespace BlackDragon.Components.Platform.Player
             {
                 gravity = -8;
                 jumpCount = 2;
-                noInput = false;
             }
             obj.Send<float>("PHYSICS_SET_GRAVITY", gravity);
             obj.Send<GameObject>("PHYSICS_RUN_GRAVITYLOOP", obj);
@@ -43,7 +39,6 @@ namespace BlackDragon.Components.Platform.Player
                 jumpCount = 1;
                 onGround = false;
                 obj.Send<bool>("PHYSICS_SET_ONGROUND", false);
-                noInput = false;
             }
 
             if (gravity > 0 && jumpCount != 2)
@@ -53,7 +48,6 @@ namespace BlackDragon.Components.Platform.Player
 
             if (InputMapper.LEFT)
             {
-                noInput = false;
                 obj.Send<float>("PHYSICS_SET_HORIZ", -3);
                 if (onGround)
                 {
@@ -64,7 +58,6 @@ namespace BlackDragon.Components.Platform.Player
             }
             else if (InputMapper.RIGHT)
             {
-                noInput = false;
                 obj.Send<float>("PHYSICS_SET_HORIZ", 3);
                 if (onGround)
                 {
@@ -80,8 +73,6 @@ namespace BlackDragon.Components.Platform.Player
                     obj.Send<bool>("GRAPHICS_PLAYANIMATION_Idle", true);                    
                 }
             }
-
-            obj.Send<bool>("GRAPHICS_NOINPUT", noInput);
         }
 
         public override void Receive<T>(string message, T obj)
