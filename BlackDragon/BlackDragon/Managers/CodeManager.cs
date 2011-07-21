@@ -26,9 +26,39 @@ namespace BlackDragon.Managers
             }
         }
 
+
         public static void CheckCodeUnderPlayer(GameObject player)
-        {             
-        
+        {
+            string[] codeArray = TileMap.CellCodeValue(TileMap.GetCellByPixel(player.GetCollisionCenter(player.PublicCollisionRectangle))).Split('_');
+
+            switch (codeArray[0])
+            { 
+                case "TRANSITION":
+                    switch (codeArray[1])
+                    { 
+                        case "PLATFORM":
+                            StateManager.GameState = StateManager.GameStates.PLATFORM;
+                            PlatformManager.Activate();
+                            break;
+
+                        case  "RPG":
+                            StateManager.GameState = StateManager.GameStates.RPG;
+                            RPGManager.Activate();
+                            break;
+                    }
+                    LevelManager.LoadLevel(codeArray[2]);
+                    CheckCodes(player);
+                    break;
+
+                case "PIPE":
+                    if (InputMapper.STRICTDOWN)
+                    {
+                        StateManager.GameState = StateManager.GameStates.RPG;
+                        RPGManager.Activate();
+                        
+                    }
+                    break;
+            }
         }
     }
 }

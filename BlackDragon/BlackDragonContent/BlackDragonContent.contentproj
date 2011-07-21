@@ -195,9 +195,7 @@
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="textures\Sprites\Player\Platform\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="textures\Sprites\Player\RPG\idledown.png">
       <Name>idledown</Name>
@@ -226,6 +224,28 @@
     </Compile>
     <Compile Include="textures\Sprites\Player\RPG\walkup.png">
       <Name>walkup</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\Sprites\Player\Platform\idle.png">
+      <Name>idle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\Player\Platform\jumpdown.png">
+      <Name>jumpdown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\Player\Platform\jumpup.png">
+      <Name>jumpup</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\Player\Platform\walk.png">
+      <Name>walk</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

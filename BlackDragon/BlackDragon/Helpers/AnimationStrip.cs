@@ -82,6 +82,12 @@ namespace BlackDragon.Helpers
             loopAnimation = loop;
         }
 
+        public AnimationStrip(Texture2D texture, int frameWidth, string name, bool loop, float frameDelay)
+            : this(texture, frameWidth, name, loop)
+        {
+            this.frameDelay = frameDelay;
+        }
+
         public AnimationStrip(Texture2D texture, int frameWidth, string name) {
             this.texture = texture;
             this.frameWidth = frameWidth;

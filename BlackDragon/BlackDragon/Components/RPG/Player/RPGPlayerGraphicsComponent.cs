@@ -18,6 +18,7 @@ namespace BlackDragon.Components.RPG.Player
         private bool faceUp;
         private bool faceDown;
         private bool faceSide;
+        private bool noInput = true;
 
         private string receivedAnimation;
 
@@ -41,28 +42,34 @@ namespace BlackDragon.Components.RPG.Player
 
         public override void Update(GameObject obj, GameTime gameTime)
         {
+
             string newAnimation = "";
-
-            if (faceUp)
-                newAnimation = "IdleUp";
-            if (faceDown)
-                newAnimation = "IdleDown";
-            if (faceSide)
-                newAnimation = "IdleSide";
-
-            if (receivedAnimation != currentAnimation)
+            if (noInput)
             {
-                newAnimation = receivedAnimation;
+               
+                if (faceUp)
+                    newAnimation = "IdleUp";
+                if (faceDown)
+                    newAnimation = "IdleDown";
+                if (faceSide)
+                    newAnimation = "IdleSide";                
+                if (newAnimation != currentAnimation)
+                {
+                    receivedAnimation = newAnimation;
+                    PlayAnimation(newAnimation);
+                }
             }
-
-            if (newAnimation != currentAnimation)
+            else
             {
-                PlayAnimation(newAnimation);
-            }
-
-            receivedAnimation = currentAnimation;
+                if (receivedAnimation != currentAnimation)
+                {                    
+                    PlayAnimation(receivedAnimation);
+                    receivedAnimation = currentAnimation;
+                }
+            }      
 
             updateAnimation(gameTime);
+            noInput = false;
         }
 
         private void updateAnimation(GameTime gameTime)
@@ -134,6 +141,11 @@ namespace BlackDragon.Components.RPG.Player
                     faceUp = false;
                     faceDown = false;
                     faceSide = true;
+                }
+
+                if (messageParts[1] == "NOINPUT")
+                {
+                    noInput = true;
                 }
             }
         }

@@ -14,7 +14,9 @@ namespace BlackDragon.Components.Platform.Player
     class PlatformPlayerPhysicsComponent : PhysicsComponent
     {
         private float gravity;
-        private float horiz;        
+        private float horiz;
+        private bool onGround;
+        private Rectangle collisionRectangle = new Rectangle(2, 0, 20, 20);
 
         public override void Update(GameObject obj, GameTime gameTime)
         {
@@ -26,14 +28,16 @@ namespace BlackDragon.Components.Platform.Player
                 {           
                     obj.Position.X += horiz / Math.Abs(horiz);
 
-                    bottomLeftCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Left - 1, obj.CollisionRectangle.Bottom));
-                    bottomRightCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Right + 1, obj.CollisionRectangle.Bottom));
+                    Rectangle CollisionRectangle = obj.GetCollisionRectangle(collisionRectangle);
 
-                    topLeftCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Left - 1, obj.CollisionRectangle.Top));
-                    topRightCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Right + 1, obj.CollisionRectangle.Top));
+                    bottomLeftCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Left, CollisionRectangle.Bottom));
+                    bottomRightCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Right, CollisionRectangle.Bottom));
 
-                    middleLeft = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Left - 1, (obj.CollisionRectangle.Bottom + obj.CollisionRectangle.Top) / 2));
-                    middleRight = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Right + 1, (obj.CollisionRectangle.Bottom + obj.CollisionRectangle.Top) / 2));
+                    topLeftCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Left, CollisionRectangle.Top));
+                    topRightCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Right, CollisionRectangle.Top));
+
+                    middleLeft = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Left, (CollisionRectangle.Bottom + CollisionRectangle.Top) / 2));
+                    middleRight = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Right, (CollisionRectangle.Bottom + CollisionRectangle.Top) / 2));
 
                     if (!TileMap.CellIsPassable(bottomLeftCorner) || !TileMap.CellIsPassable(bottomRightCorner) || !TileMap.CellIsPassable(topRightCorner) || !TileMap.CellIsPassable(topLeftCorner) || !TileMap.CellIsPassable(middleRight) || !TileMap.CellIsPassable(middleLeft))
                     {
@@ -43,11 +47,12 @@ namespace BlackDragon.Components.Platform.Player
                     }
                 }
             }
+            obj.Send<bool>("GRAPHICS_SET_ONGROUND", onGround);
         }
 
         private void gravityLoop(GameObject obj)
         {
-            Vector2 bottomLeftCorner, bottomRightCorner, topLeftCorner, topRightCorner;
+            Vector2 bottomLeftCorner, bottomRightCorner, topLeftCorner, topRightCorner, middleTop, middleBottom;
 
             
 
@@ -55,21 +60,27 @@ namespace BlackDragon.Components.Platform.Player
             {
                 for (int i = 0; i < Math.Abs(gravity); ++i)
                 {
-                    bottomLeftCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Left, obj.CollisionRectangle.Bottom + 1));
-                    bottomRightCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Right - 1, obj.CollisionRectangle.Bottom + 1));
+                    Rectangle CollisionRectangle = obj.GetCollisionRectangle(collisionRectangle);
 
-                    topLeftCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Left, obj.CollisionRectangle.Top - 1));
-                    topRightCorner = TileMap.GetCellByPixel(new Vector2(obj.CollisionRectangle.Right - 1, obj.CollisionRectangle.Top - 1));
+                    bottomLeftCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Left, CollisionRectangle.Bottom + 1));
+                    bottomRightCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Right, CollisionRectangle.Bottom + 1));
 
-                    if (gravity > 0 && (!TileMap.CellIsPassable(bottomLeftCorner) || !TileMap.CellIsPassable(bottomRightCorner)))
+                    topLeftCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Left, CollisionRectangle.Top - 1));
+                    topRightCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Right, CollisionRectangle.Top - 1));
+
+                    middleTop = TileMap.GetCellByPixel(new Vector2((CollisionRectangle.Left + CollisionRectangle.Right)/2, CollisionRectangle.Top - 1));
+                    middleBottom = TileMap.GetCellByPixel(new Vector2((CollisionRectangle.Left + CollisionRectangle.Right) / 2, CollisionRectangle.Bottom + 1));
+
+                    if (gravity > 0 && (!TileMap.CellIsPassable(bottomLeftCorner) || !TileMap.CellIsPassable(bottomRightCorner) || !TileMap.CellIsPassable(middleBottom)))
                     {
                         gravity = 0;                        
                         obj.Send<int>("INPUT_SET_JUMPCOUNT", 0);
                         obj.Send<bool>("INPUT_SET_ONGROUND", true);
+                        onGround = true;
                         break;
                     }
 
-                    if (gravity < 0 && (!TileMap.CellIsPassable(topLeftCorner) || !TileMap.CellIsPassable(topRightCorner)))
+                    if (gravity < 0 && (!TileMap.CellIsPassable(topLeftCorner) || !TileMap.CellIsPassable(topRightCorner) || !TileMap.CellIsPassable(middleTop)))
                     {
                         gravity = 0;
                         obj.Position.Y += 1;
@@ -78,12 +89,14 @@ namespace BlackDragon.Components.Platform.Player
 
                     if (gravity > 0)
                     {
-                        obj.Position.Y += 1;                        
+                        obj.Position.Y += 1;
+                        obj.Send<bool>("GRAPHICS_PLAYANIMATION_JumpDown", true);
                     }
 
                     if (gravity < 0)
                     {
-                        obj.Position.Y -= 1;                        
+                        obj.Position.Y -= 1;
+                        obj.Send<bool>("GRAPHICS_PLAYANIMATION_JumpUp", true);
                     }
                 }
             }
@@ -108,7 +121,12 @@ namespace BlackDragon.Components.Platform.Player
                         case "HORIZ":
                             if (obj is float)
                                 horiz = (float)(object)obj;
-                            break;                        
+                            break;  
+                      
+                        case "ONGROUND":
+                            if (obj is bool)
+                                onGround = (bool)(object)obj;
+                            break;
                     }
                 }
                 if (messageParts[1] == "RUN")

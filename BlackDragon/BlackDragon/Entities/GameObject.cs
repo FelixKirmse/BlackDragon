@@ -12,14 +12,7 @@ namespace BlackDragon.Entities
     {
         public Vector2 Velocity;
         public Vector2 Position;
-        public Rectangle collisionRectangle = new Rectangle(0, 0, 16, 24);
-        public float Speed { get; set; }
-
-        public Rectangle CollisionRectangle
-        {
-            get { return new Rectangle((int)Position.X + collisionRectangle.X, (int)Position.Y + collisionRectangle.Y, collisionRectangle.Width, collisionRectangle.Height); }
-            set { collisionRectangle = value; }
-        }
+        public Rectangle PublicCollisionRectangle;
 
         private InputComponent input;
         private PhysicsComponent physics;
@@ -66,6 +59,19 @@ namespace BlackDragon.Entities
             {
                 component.Receive<T>(Message, obj);
             }
+        }
+
+        public Rectangle GetCollisionRectangle(Rectangle collisionRectangle)
+        {
+            if (PublicCollisionRectangle != collisionRectangle)
+                PublicCollisionRectangle = collisionRectangle;
+            return new Rectangle((int)Position.X + collisionRectangle.X, (int)Position.Y + collisionRectangle.Y, collisionRectangle.Width, collisionRectangle.Height);
+        }
+
+        public Vector2 GetCollisionCenter(Rectangle collisionRectangle)
+        {
+            Rectangle CollisionRectangle = GetCollisionRectangle(collisionRectangle);
+            return new Vector2((CollisionRectangle.Right + CollisionRectangle.Left) / 2, (CollisionRectangle.Bottom + CollisionRectangle.Top) / 2);
         }
     }
 }

@@ -36,13 +36,12 @@ namespace BlackDragon.Managers
                 Player = Factory.CreateWorldPlayer();            
             else
                 Player = Factory.CreateRPGPlayer();
-
-            Player.Speed = 2;
-            Player.Send <Dictionary<string, AnimationStrip>>("GRAPHICS_SET_ANIMATIONS", AnimationDictionaryProvider.PlayerAnimations);
+            
+            Player.Send <Dictionary<string, AnimationStrip>>("GRAPHICS_SET_ANIMATIONS", AnimationDictionaryProvider.RPGPlayerAnimations);
             
 
             LevelManager.LoadLevel("000");
-            CodeManager.CheckCodes(RPGManager.Player);            
+            CodeManager.CheckCodes(Player);            
                         
         }
 

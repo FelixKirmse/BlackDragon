@@ -8,6 +8,7 @@ using Tile_Engine;
 using BlackDragon.Managers;
 using BlackDragon.Providers;
 using BlackDragon.Entities;
+using BlackDragon.Helpers;
 
 namespace BlackDragon.Managers
 {
@@ -31,10 +32,10 @@ namespace BlackDragon.Managers
 
             Player = Factory.CreatePlatformPlayer();
 
-            
 
+            Player.Send<Dictionary<string, AnimationStrip>>("GRAPHICS_SET_ANIMATIONS", AnimationDictionaryProvider.PlatformPlayerAnimations);
             LevelManager.LoadLevel("000");
-            CodeManager.CheckCodes(RPGManager.Player);
+            CodeManager.CheckCodes(Player);
          }
 
         public static void Update(GameTime gameTime)
@@ -47,6 +48,7 @@ namespace BlackDragon.Managers
                     RPGManager.Activate();                    
                 }
                 Player.Update(gameTime);
+                CodeManager.CheckCodeUnderPlayer(Player);
                 GeneralInputManager.HandleGeneralInput();
             }
         }

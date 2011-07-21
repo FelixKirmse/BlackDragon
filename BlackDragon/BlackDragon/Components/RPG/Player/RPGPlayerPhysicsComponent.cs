@@ -12,8 +12,8 @@ namespace BlackDragon.Components.RPG.Player
 {
     class RPGPlayerPhysicsComponent : PhysicsComponent
     {
-        private Vector2 desiredPosition;      
-        
+        private Vector2 desiredPosition;
+        private Rectangle collisionRectangle = new Rectangle(2, 10, 12, 10);               
 
         public override void Update(GameObject obj, GameTime gameTime)
         {
@@ -46,7 +46,7 @@ namespace BlackDragon.Components.RPG.Player
         private Vector2 horizontalCollisionTest(Vector2 moveAmount, GameObject obj)
         {
             if (moveAmount.X == 0) return moveAmount;
-            Rectangle afterMoveRect = obj.CollisionRectangle;
+            Rectangle afterMoveRect = obj.GetCollisionRectangle(collisionRectangle);
             afterMoveRect.Offset((int)moveAmount.X, 0);
             Vector2 corner1, corner2, middle;
             if (moveAmount.X < 0)
@@ -76,7 +76,7 @@ namespace BlackDragon.Components.RPG.Player
         private Vector2 verticalCollisionTest(Vector2 moveAmount, GameObject obj)
         {
             if (moveAmount.Y == 0) return moveAmount;
-            Rectangle afterMoveRect = obj.CollisionRectangle;
+            Rectangle afterMoveRect = obj.GetCollisionRectangle(collisionRectangle);
             afterMoveRect.Offset((int)moveAmount.X, (int)moveAmount.Y);
             Vector2 corner1, corner2;
             if (moveAmount.Y < 0)
