@@ -27,7 +27,7 @@ namespace BlackDragon.Components.RPG.Player
             obj.Velocity = Vector2.Zero;
         }
 
-        public override void Receive<T>(string message, T desiredPosition)
+        public override void Receive<T>(string message, T obj)
         {
             string[] messageParts = message.Split('_');
 
@@ -35,10 +35,8 @@ namespace BlackDragon.Components.RPG.Player
             {
                 if (messageParts[1] == "DESIREDPOSITION")
                 {
-                    if (desiredPosition is Vector2)
-                        this.desiredPosition = (Vector2)(object)desiredPosition;
-                    else
-                        return;
+                    if (obj is Vector2)
+                        this.desiredPosition = (Vector2)(object)obj;                    
                 }
             }
         }
