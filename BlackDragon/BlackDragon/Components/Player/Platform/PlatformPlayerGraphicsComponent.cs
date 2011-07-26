@@ -23,7 +23,7 @@ namespace BlackDragon.Components.Platform.Player
 
         public override void Update(GameObject obj, GameTime gameTime)
         {
-            Debug.WriteLine("Current: " + currentAnimation + " Received: " + receivedAnimation);
+            //Debug.WriteLine("Current: " + currentAnimation + " Received: " + receivedAnimation);
             if(receivedAnimation == "")
             {
                 if (onGround)

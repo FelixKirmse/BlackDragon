@@ -7,7 +7,6 @@ using BlackDragon.Providers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Helpers;
-using BlackDragon.Providers;
 
 namespace BlackDragon.Components.RPG.Player
 {
