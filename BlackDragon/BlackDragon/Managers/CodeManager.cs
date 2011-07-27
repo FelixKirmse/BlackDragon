@@ -27,21 +27,72 @@ namespace BlackDragon.Managers
         }
 
 
-        public static void CheckCodeUnderPlayer(GameObject player)
+        public static void CheckPlayerCodes(GameObject player)
+        {
+            checkCodesInPlayerCenter(player);
+            if (StateManager.GameState == StateManager.GameStates.PLATFORM)
+                checkCodesUnderPlayer(player);
+        }
+
+        private static void checkCodesUnderPlayer(GameObject player)
+        {
+            Rectangle playerCollisionRectangle = player.GetCollisionRectangle(player.PublicCollisionRectangle);
+            string[] codeArrayLeft = TileMap.CellCodeValue
+                (
+                    TileMap.GetCellByPixel(
+                        new Vector2(
+                            playerCollisionRectangle.Left,
+                            playerCollisionRectangle.Bottom
+                            )
+                    )
+                ).Split('_');
+
+            string[] codeArrayRight = TileMap.CellCodeValue
+                (
+                    TileMap.GetCellByPixel(
+                        new Vector2(
+                            playerCollisionRectangle.Right,
+                            playerCollisionRectangle.Bottom
+                            )
+                    )
+                ).Split('_');
+
+            string[] codeArrayCenter = TileMap.CellCodeValue
+                (
+                    TileMap.GetCellByPixel(
+                        new Vector2(
+                            playerCollisionRectangle.Center.X,
+                            playerCollisionRectangle.Bottom
+                            )
+                    )
+                ).Split('_');
+
+            string[] firstCode = new string[] { codeArrayCenter[0], codeArrayLeft[0], codeArrayRight[0] };
+            
+
+            if(firstCode.Contains("JUMPTHROUGHTOP"))
+                player.Send<bool>("PHYSICS_SET_JUMPTHROUGHCHECK", true);
+
+            if (firstCode.Contains("WATER"))
+                player.Send<bool>("PHYSICS_SET_INWATER", true);
+            
+        }
+
+        private static void checkCodesInPlayerCenter(GameObject player)
         {
             string[] codeArray = TileMap.CellCodeValue(TileMap.GetCellByPixel(player.GetCollisionCenter(player.PublicCollisionRectangle))).Split('_');
 
             switch (codeArray[0])
-            { 
+            {
                 case "TRANSITION":
                     switch (codeArray[1])
-                    { 
+                    {
                         case "PLATFORM":
                             StateManager.GameState = StateManager.GameStates.PLATFORM;
                             PlatformManager.Activate();
                             break;
 
-                        case  "RPG":
+                        case "RPG":
                             StateManager.GameState = StateManager.GameStates.RPG;
                             RPGManager.Activate();
                             break;
@@ -55,10 +106,9 @@ namespace BlackDragon.Managers
                     {
                         StateManager.GameState = StateManager.GameStates.RPG;
                         RPGManager.Activate();
-                        
                     }
                     break;
-            }
+            }  
         }
     }
 }

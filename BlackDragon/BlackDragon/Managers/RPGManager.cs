@@ -53,7 +53,7 @@ namespace BlackDragon.Managers
                     PlatformManager.Activate();  
                 }
                 Player.Update(gameTime);
-                CodeManager.CheckCodeUnderPlayer(Player);
+                CodeManager.CheckPlayerCodes(Player);
                 GeneralInputManager.HandleGeneralInput();
             }    
         }

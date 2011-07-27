@@ -377,7 +377,7 @@ namespace Level_Editor
                 case "Platform":
                     modeModifier = @"\platform";
                     TileMap.TileOffset = 1;
-                    TileMap.DefaultTile = 475;
+                    TileMap.DefaultTile = 125;
                     TileMap.WhiteTile = 830;
                     TileMap.TransparentTile = 831;
                     ChangeImageList("Platform");

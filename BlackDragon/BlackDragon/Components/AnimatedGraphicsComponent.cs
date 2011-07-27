@@ -24,7 +24,7 @@ namespace BlackDragon.Components
 
             spriteBatch.Draw(
                 animations[currentAnimation].Texture,
-                obj.Position,
+                new Vector2((int)obj.Position.X, (int)obj.Position.Y),
                 animations[currentAnimation].FrameRectangle,
                 Color.White,
                 0,

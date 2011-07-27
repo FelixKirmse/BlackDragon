@@ -25,7 +25,7 @@ namespace BlackDragon.Managers
         public static void Activate()
         {
             TileMap.TileOffset = 1;
-            TileMap.DefaultTile = 475;
+            TileMap.DefaultTile = 125;
             TileMap.WhiteTile = 830;
             TileMap.TransparentTile = 831;
             TileMap.Initialize(platformTileSet);
@@ -46,7 +46,7 @@ namespace BlackDragon.Managers
                     RPGManager.Activate();                    
                 }
                 Player.Update(gameTime);
-                CodeManager.CheckCodeUnderPlayer(Player);
+                CodeManager.CheckPlayerCodes(Player);
                 GeneralInputManager.HandleGeneralInput();
             }
         }

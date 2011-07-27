@@ -17,6 +17,8 @@ namespace BlackDragon.Components.Platform.Player
         private float horiz;
         private bool onGround;
         private Rectangle collisionRectangle = new Rectangle(2, 0, 20, 20);
+        private bool jumpThroughCheck = false;
+        private bool inWater = false;
 
         public override void Update(GameObject obj, GameTime gameTime)
         {
@@ -25,8 +27,11 @@ namespace BlackDragon.Components.Platform.Player
             if (horiz != 0)
             {
                 for (int i = 0; i < Math.Abs(horiz); ++i)
-                {           
-                    obj.Position.X += horiz / Math.Abs(horiz);
+                {
+                    if (inWater)
+                        obj.Position.X += (horiz / Math.Abs(horiz)) / 2;
+                    else
+                        obj.Position.X += horiz / Math.Abs(horiz);
 
                     Rectangle CollisionRectangle = obj.GetCollisionRectangle(collisionRectangle);
 
@@ -41,12 +46,17 @@ namespace BlackDragon.Components.Platform.Player
 
                     if (!TileMap.CellIsPassable(bottomLeftCorner) || !TileMap.CellIsPassable(bottomRightCorner) || !TileMap.CellIsPassable(topRightCorner) || !TileMap.CellIsPassable(topLeftCorner) || !TileMap.CellIsPassable(middleRight) || !TileMap.CellIsPassable(middleLeft))
                     {
-                        obj.Position.X -= horiz / Math.Abs(horiz);                        
+                        if (inWater)
+                            obj.Position.X -= (horiz / Math.Abs(horiz)) / 2;
+                        else
+                            obj.Position.X -= horiz / Math.Abs(horiz);                        
                         horiz = 0;
                         break;
                     }
                 }
             }
+            inWater = false;
+            
             obj.Send<bool>("GRAPHICS_SET_ONGROUND", onGround);
         }
 
@@ -61,6 +71,7 @@ namespace BlackDragon.Components.Platform.Player
                 for (int i = 0; i < Math.Abs(gravity); ++i)
                 {
                     Rectangle CollisionRectangle = obj.GetCollisionRectangle(collisionRectangle);
+                    bool collisionWithSpecialBlock = false;
 
                     bottomLeftCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Left, CollisionRectangle.Bottom + 1));
                     bottomRightCorner = TileMap.GetCellByPixel(new Vector2(CollisionRectangle.Right, CollisionRectangle.Bottom + 1));
@@ -71,7 +82,13 @@ namespace BlackDragon.Components.Platform.Player
                     middleTop = TileMap.GetCellByPixel(new Vector2((CollisionRectangle.Left + CollisionRectangle.Right)/2, CollisionRectangle.Top - 1));
                     middleBottom = TileMap.GetCellByPixel(new Vector2((CollisionRectangle.Left + CollisionRectangle.Right) / 2, CollisionRectangle.Bottom + 1));
 
-                    if (gravity > 0 && (!TileMap.CellIsPassable(bottomLeftCorner) || !TileMap.CellIsPassable(bottomRightCorner) || !TileMap.CellIsPassable(middleBottom)))
+                    if (jumpThroughCheck)
+                    {
+                        if (TileMap.CellCodeValue(bottomLeftCorner) == "JUMPTHROUGH" || TileMap.CellCodeValue(bottomRightCorner) == "JUMPTHROUGH" || TileMap.CellCodeValue(middleBottom) == "JUMPTHROUGH")
+                            collisionWithSpecialBlock = true;                        
+                    }
+
+                    if (gravity > 0 && (!TileMap.CellIsPassable(bottomLeftCorner) || !TileMap.CellIsPassable(bottomRightCorner) || !TileMap.CellIsPassable(middleBottom) || collisionWithSpecialBlock))
                     {
                         gravity = 0;                        
                         obj.Send<int>("INPUT_SET_JUMPCOUNT", 0);
@@ -89,17 +106,25 @@ namespace BlackDragon.Components.Platform.Player
 
                     if (gravity > 0)
                     {
-                        obj.Position.Y += 1;
+                        if (inWater)
+                            obj.Position.Y += .5f;
+                        else
+                            obj.Position.Y += 1;
+
                         obj.Send<bool>("GRAPHICS_PLAYANIMATION_JumpDown", true);
                     }
 
                     if (gravity < 0)
                     {
-                        obj.Position.Y -= 1;
+                        if (inWater)
+                            obj.Position.Y -= .5f;
+                        else
+                            obj.Position.Y -= 1;
                         obj.Send<bool>("GRAPHICS_PLAYANIMATION_JumpUp", true);
                     }
                 }
             }
+            jumpThroughCheck = false;
             obj.Send<float>("INPUT_SET_GRAVITY", gravity);            
         }
 
@@ -126,6 +151,16 @@ namespace BlackDragon.Components.Platform.Player
                         case "ONGROUND":
                             if (obj is bool)
                                 onGround = (bool)(object)obj;
+                            break;
+
+                        case "JUMPTHROUGHCHECK":
+                            if (obj is bool)
+                                jumpThroughCheck = (bool)(object)obj;
+                            break;
+
+                        case "INWATER":
+                            if (obj is bool)
+                                inWater = (bool)(object)obj;
                             break;
                     }
                 }
