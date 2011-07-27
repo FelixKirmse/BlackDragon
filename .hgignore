@@ -1,0 +1,45 @@
+syntax: glob
+BlackDragon/BlackDragon/BlackDragon.csproj.Debug.cachefile
+BlackDragon/BlackDragon/BlackDragon.csproj.Release.cachefile
+BlackDragon/BlackDragon/Entities/old/
+BlackDragon/BlackDragon/Managers/LevelManager_old.cs
+BlackDragon/BlackDragon/bin/x86/Debug/BlackDragon.exe
+BlackDragon/BlackDragon/bin/x86/Debug/BlackDragon.pdb
+BlackDragon/BlackDragon/bin/x86/Debug/Content/fonts/
+BlackDragon/BlackDragon/bin/x86/Debug/Content/textures/
+BlackDragon/BlackDragon/bin/x86/Release/Content/fonts/
+BlackDragon/BlackDragon/bin/x86/Release/Content/textures/
+BlackDragon/BlackDragon/bin/x86/Debug/Tile Engine.dll
+BlackDragon/BlackDragon/bin/x86/Debug/Tile Engine.pdb
+BlackDragon/BlackDragon/bin/x86/Release/BlackDragon.exe
+BlackDragon/BlackDragon/bin/x86/Release/BlackDragon.pdb
+BlackDragon/BlackDragon/bin/x86/Release/Tile Engine.dll
+BlackDragon/BlackDragon/bin/x86/Release/Tile Engine.pdb
+BlackDragon/BlackDragon/obj/x86/Debug/BlackDragon.csproj.FileListAbsolute.txt
+BlackDragon/BlackDragon/obj/x86/Debug/BlackDragon.exe
+BlackDragon/BlackDragon/obj/x86/Debug/BlackDragon.pdb
+BlackDragon/BlackDragon/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+BlackDragon/BlackDragon/obj/x86/Debug/Microsoft.Xna.Framework.RuntimeProfile.txt
+BlackDragon/BlackDragon/obj/
+BlackDragon/BlackDragonContent/obj/
+BlackDragon/BlackDragonContent/textures/mariotiles.png
+Level Editor/Level Editor/Level Editor.csproj.Release.cachefile
+Level Editor/Level Editor/bin/x86/Debug/Content/fonts/
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/Gem.xnb
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/PlatformTiles.xnb
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/Sprites/
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/PlatformTiles.png
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/TileSets/platform.xnb
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/TileSets/rpg.xnb
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/TileSets/rpg.png
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/TileSets/platform.png
+Level Editor/Level Editor/bin/x86/Debug/Content/textures/TitleScreen.xnb
+Level Editor/Level Editor/bin/x86/Debug/Content/
+Level Editor/Level Editor/bin/x86/Debug/
+Level Editor/Level Editor/bin/x86/Debugconfig.cfg
+Level Editor/Level Editor/bin/
+Level Editor/Level Editor/obj/
+Level Editor/Level EditorContent/obj/
+Level Editor/Level EditorContent/textures/mariotiles.png
+Tile Engine/bin/
+Tile Engine/obj/
