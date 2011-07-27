@@ -11,13 +11,12 @@ using Tile_Engine;
 namespace BlackDragon.Components.RPG.Player
 {
     class RPGPlayerPhysicsComponent : PhysicsComponent
-    {
-        private Vector2 desiredPosition;
+    {        
         private Rectangle collisionRectangle = new Rectangle(2, 10, 12, 10);               
 
         public override void Update(GameObject obj, GameTime gameTime)
-        {
-            Vector2 moveAmount = desiredPosition - obj.Position;
+        {            
+            Vector2 moveAmount = obj.Velocity;
 
             moveAmount = horizontalCollisionTest(moveAmount, obj);
             moveAmount = verticalCollisionTest(moveAmount, obj);
@@ -25,21 +24,7 @@ namespace BlackDragon.Components.RPG.Player
             obj.Position +=  moveAmount;
 
             obj.Velocity = Vector2.Zero;
-        }
-
-        public override void Receive<T>(string message, T obj)
-        {
-            string[] messageParts = message.Split('_');
-
-            if (messageParts[0] == "PHYSICS")
-            {
-                if (messageParts[1] == "DESIREDPOSITION")
-                {
-                    if (obj is Vector2)
-                        this.desiredPosition = (Vector2)(object)obj;                    
-                }
-            }
-        }
+        }       
 
         private Vector2 horizontalCollisionTest(Vector2 moveAmount, GameObject obj)
         {

@@ -55,10 +55,10 @@ namespace BlackDragon.Components.RPG.Player
               //  obj.Velocity.Normalize();
 
             desiredPosition += obj.Velocity;
-            obj.Send<Vector2>("PHYSICS_DESIREDPOSITION", desiredPosition);
+            //obj.Send<Vector2>("PHYSICS_DESIREDPOSITION", desiredPosition);
         }
 
-        public override void Receive<T>(string message, T desiredPosition)
+        public override void Receive<T>(string message, T obj)
         {
             string[] messageParts = message.Split('_');
 
