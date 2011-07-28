@@ -129,6 +129,8 @@
     <Compile Include="Helpers\Factory.cs" />
     <Compile Include="Helpers\InputMapper.cs" />
     <Compile Include="Helpers\AnimationStrip.cs" />
+    <Compile Include="Helpers\PathFinder.cs" />
+    <Compile Include="Helpers\PathNode.cs" />
     <Compile Include="Managers\CodeManager.cs" />
     <Compile Include="Managers\GeneralInputManager.cs" />
     <Compile Include="Managers\LevelManager.cs" />

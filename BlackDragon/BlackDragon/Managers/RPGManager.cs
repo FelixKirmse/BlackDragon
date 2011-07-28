@@ -62,6 +62,22 @@ namespace BlackDragon.Managers
         {
             TileMap.Draw(spriteBatch);
             Player.Draw(spriteBatch);
+            #region Test
+            Vector2 mouseLocation = new Vector2(InputProvider.MouseState.X, InputProvider.MouseState.Y);
+            mouseLocation += Camera.Position;
+            List<Vector2> path = new List<Vector2>();
+            if(InputMapper.ACTION)
+                path = PathFinder.FindPath(TileMap.GetCellByPixel(mouseLocation), TileMap.GetCellByPixel(Player.GetCollisionCenter(Player.PublicCollisionRectangle)));
+            else
+                path = PathFinder.FindReducedPath(TileMap.GetCellByPixel(mouseLocation), TileMap.GetCellByPixel(Player.GetCollisionCenter(Player.PublicCollisionRectangle)));
+            if(!(path == null))
+            {
+                foreach (Vector2 node in path)
+                {
+                    spriteBatch.Draw(VariableProvider.WhiteTexture, TileMap.CellScreenRectangle(node), new Rectangle(0, 0, 16, 16), new Color(128, 0, 0, 80));
+                }
+            }
+            #endregion
         }
     }
 }

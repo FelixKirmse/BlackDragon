@@ -12,6 +12,7 @@ using BlackDragon.Managers;
 using BlackDragon.Providers;
 using Tile_Engine;
 using BlackDragon.Menus;
+using BlackDragon.Helpers;
 
 namespace BlackDragon
 {
@@ -72,7 +73,7 @@ namespace BlackDragon
         {
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            StateManager.Draw(spriteBatch);
+            StateManager.Draw(spriteBatch);            
             spriteBatch.End();
             base.Draw(gameTime);
         }               
