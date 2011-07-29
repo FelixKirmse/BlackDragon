@@ -19,7 +19,7 @@ namespace BlackDragon.Managers
                     switch (TileMap.CellCodeValue(x, y))
                     { 
                         case "START":
-                            player.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight - 8);
+                            player.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight - 14);
                             break;
                     }
                 }

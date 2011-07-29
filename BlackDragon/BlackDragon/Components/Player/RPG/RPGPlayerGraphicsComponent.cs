@@ -11,11 +11,9 @@ using BlackDragon.Helpers;
 namespace BlackDragon.Components.RPG.Player
 {
     class RPGPlayerGraphicsComponent : AnimatedGraphicsComponent
-    {        
-        private bool faceUp;
-        private bool faceDown;
-        private bool faceSide;
+    {  
         private bool noInput;
+        private string faceDirection;
 
         public RPGPlayerGraphicsComponent()
         {
@@ -28,13 +26,29 @@ namespace BlackDragon.Components.RPG.Player
             string newAnimation = "";
             if (noInput)
             {
-               
-                if (faceUp)
-                    newAnimation = "IdleUp";
-                if (faceDown)
-                    newAnimation = "IdleDown";
-                if (faceSide)
-                    newAnimation = "IdleSide";                
+                switch (faceDirection)
+                { 
+                    case "Up":
+                        newAnimation = "IdleUp";
+                        break;
+                    
+                    case "Down":
+                        newAnimation = "IdleDown";
+                        break;
+
+                    case "Side":
+                        newAnimation = "IdleSide";
+                        break;
+
+                    case "UpSide":
+                        newAnimation = "IdleUpSide";
+                        break;
+
+                    case "DownSide":
+                        newAnimation = "IdleDownSide";
+                        break;
+                }               
+                              
                 if (newAnimation != currentAnimation)
                 {
                     receivedAnimation = newAnimation;
@@ -51,6 +65,7 @@ namespace BlackDragon.Components.RPG.Player
             }  
 
             noInput = false;
+            obj.Send("INPUT_SET_FLIPPED", flipped);
 
             base.Update(obj, gameTime);
         }        
@@ -60,27 +75,13 @@ namespace BlackDragon.Components.RPG.Player
             string[] messageParts = message.Split('_');
 
             if (messageParts[0] == "GRAPHICS")
-            {      
-                if (messageParts[1] == "FACEUP")
-                {
-                    faceUp = true;
-                    faceDown = false;
-                    faceSide = false;
-                }
+            {
 
-                if (messageParts[1] == "FACEDOWN")
+                if (messageParts[1] == "FACE")
                 {
-                    faceUp = false;
-                    faceDown = true;
-                    faceSide = false;
-                }
-
-                if (messageParts[1] == "FACESIDE")
-                {
-                    faceUp = false;
-                    faceDown = false;
-                    faceSide = true;
-                }
+                    if (obj is string)
+                        faceDirection = (string)(object)obj;
+                }                
 
                 if (messageParts[1] == "NOINPUT")
                 {

@@ -56,7 +56,8 @@ namespace BlackDragon.Components
 
                 if (messageParts[1] == "PLAYANIMATION")
                 {
-                    receivedAnimation = messageParts[2];
+                    if (obj is string)
+                        receivedAnimation = (string)(object)obj;                    
                 }                
             }        
         }

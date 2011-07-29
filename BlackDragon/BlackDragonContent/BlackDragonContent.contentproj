@@ -49,104 +49,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\Gem.png">
-      <Name>Gem</Name>
+    <Compile Include="textures\Sprites\Player\RPG\idledown.png">
+      <Name>idledown</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\Gem.png">
-      <Name>Gem</Name>
+    <Compile Include="textures\Sprites\Player\RPG\idleup.png">
+      <Name>idleup</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterA\Die.png">
-      <Name>Die</Name>
+    <Compile Include="textures\Sprites\Player\RPG\walkdown.png">
+      <Name>walkdown</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterA\Idle.png">
-      <Name>Idle</Name>
+    <Compile Include="textures\Sprites\Player\RPG\walkup.png">
+      <Name>walkup</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterA\Run.png">
-      <Name>Run</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterB\Die.png">
-      <Name>Die</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterB\Idle.png">
-      <Name>Idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterB\Run.png">
-      <Name>Run</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterC\Die.png">
-      <Name>Die</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterC\Idle.png">
-      <Name>Idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterC\Run.png">
-      <Name>Run</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterD\Die.png">
-      <Name>Die</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterD\Idle.png">
-      <Name>Idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\Sprites\MonsterD\Run.png">
-      <Name>Run</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="textures\TileSets\rpg.png">
       <Name>rpg</Name>
       <Importer>TextureImporter</Importer>
@@ -195,35 +117,34 @@
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="textures\Sprites\Player\RPG\idledown.png">
-      <Name>idledown</Name>
+    <Compile Include="textures\Sprites\Player\RPG\idledownright.png">
+      <Name>idledownright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Sprites\Player\RPG\idleside.png">
-      <Name>idleside</Name>
+    <Compile Include="textures\Sprites\Player\RPG\idleright.png">
+      <Name>idleright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Sprites\Player\RPG\idleup.png">
-      <Name>idleup</Name>
+    <Compile Include="textures\Sprites\Player\RPG\idleupright.png">
+      <Name>idleupright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Sprites\Player\RPG\walkdown.png">
-      <Name>walkdown</Name>
+    <Compile Include="textures\Sprites\Player\RPG\walkdownright.png">
+      <Name>walkdownright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Sprites\Player\RPG\walkside.png">
-      <Name>walkside</Name>
+    <Compile Include="textures\Sprites\Player\RPG\walkright.png">
+      <Name>walkright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Sprites\Player\RPG\walkup.png">
-      <Name>walkup</Name>
+    <Compile Include="textures\Sprites\Player\RPG\walkupright.png">
+      <Name>walkupright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -246,6 +167,58 @@
     </Compile>
     <Compile Include="textures\Sprites\Player\Platform\walk.png">
       <Name>walk</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\Sprites\NPCs\Maria\idledown.png">
+      <Name>idledown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\idledownside.png">
+      <Name>idledownside</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\idleside.png">
+      <Name>idleside</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\idleup.png">
+      <Name>idleup</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\idleupside.png">
+      <Name>idleupside</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\walkdown.png">
+      <Name>walkdown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\walkdownside.png">
+      <Name>walkdownside</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\walkside.png">
+      <Name>walkside</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\walkup.png">
+      <Name>walkup</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\Sprites\NPCs\Maria\walkupside.png">
+      <Name>walkupside</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

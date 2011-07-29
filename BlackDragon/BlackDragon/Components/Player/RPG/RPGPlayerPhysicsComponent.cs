@@ -12,7 +12,7 @@ namespace BlackDragon.Components.RPG.Player
 {
     class RPGPlayerPhysicsComponent : PhysicsComponent
     {        
-        private Rectangle collisionRectangle = new Rectangle(2, 10, 12, 10);               
+        private Rectangle collisionRectangle = new Rectangle(2, 14, 12, 12);               
 
         public override void Update(GameObject obj, GameTime gameTime)
         {            
