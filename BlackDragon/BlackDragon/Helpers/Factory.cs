@@ -5,6 +5,10 @@ using System.Text;
 using BlackDragon.Entities;
 using BlackDragon.Components.Platform.Player;
 using BlackDragon.Components.RPG.Player;
+using BlackDragon.Components.NPCs;
+using BlackDragon.Components;
+using BlackDragon.Components.Entities;
+
 
 namespace BlackDragon
 {
@@ -12,28 +16,35 @@ namespace BlackDragon
     {
         public static GameObject CreateRPGPlayer()
         {
-            return new GameObject(
-                new RPGPlayerInputComponent(),
-                new RPGPlayerPhysicsComponent(),
-                new RPGPlayerGraphicsComponent(),
-                new RPGPlayerSoundComponent());
+            List<Component> components = new List<Component>();
+            components.Add(new RPGPlayerPhysicsComponent());
+            components.Add(new RPGPlayerGraphicsComponent());
+            components.Add(new RPGPlayerInputComponent());            
+            return new GameObject(components);
         }
 
         public static GameObject CreatePlatformPlayer()
         {
-            return new GameObject(
-                new PlatformPlayerInputComponent(),
-                new PlatformPlayerPhysicsComponent(),
-                new PlatformPlayerGraphicsComponent(),
-                new PlatformPlayerSoundComponent());
+            List<Component> components = new List<Component>();
+            components.Add(new PlatformPlayerPhysicsComponent());
+            components.Add(new PlatformPlayerGraphicsComponent());
+            components.Add(new PlatformPlayerInputComponent());
+            return new GameObject(components);
         }
 
-        public static GameObject CreateWorldPlayer()
+        public static GameObject CreateMaria()
         {
-            return new GameObject(
-                new WorldPlayerInputComponent(),
-                new RPGPlayerPhysicsComponent(),
-                new RPGPlayerGraphicsComponent());
+            List<Component> components = new List<Component>();
+            components.Add(new MariaGraphicsComponent());
+            components.Add(new MariaWaypointComponent());
+            return new GameObject(components);
+        }
+
+        public static GameObject CreateWater()
+        {
+            List<Component> components = new List<Component>();
+            components.Add(new WaterGraphicsComponent());
+            return new GameObject(components);
         }
     }
 }

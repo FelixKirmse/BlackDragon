@@ -30,6 +30,7 @@ namespace BlackDragon.Managers
                     break;
             }
             TileMap.LoadMap(new FileStream(Application.StartupPath + @"\Content\maps\" + mode + @"\MAP" + levelName + ".MAP", FileMode.Open));
+            CodeManager.CheckCodes();            
         }
 
         public static void ReloadLevel()

@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework;
 using System.IO;
 using Tile_Engine;
 
+using XNARectangle = Microsoft.Xna.Framework.Rectangle;
+
 namespace Level_Editor
 {
     
@@ -121,6 +123,7 @@ namespace Level_Editor
         
 
         private void FixScrollBarScales() {
+            Camera.WorldRectangle = new XNARectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.TileHeight * TileMap.MapHeight);
             Camera.ViewPortWidth = pctSurface.Width;
             Camera.ViewPortHeight = pctSurface.Height;
 
@@ -241,14 +244,16 @@ namespace Level_Editor
 
         private void timerGameUpdate_Tick(object sender, EventArgs e)
         {
-            if (hScrollBar1.Maximum < 0) {
-                FixScrollBarScales();
-            }
+            FixScrollBarScales();
+            
             if(Form.ActiveForm == this)
             game.Tick();
             if (game.HoverCodeValue != lblCurrentCode.Text) {
                 lblCurrentCode.Text = game.HoverCodeValue;
             }
+
+            coordLbl.Text = "MapCell: (" + game.CellCoords.X + @"|" + game.CellCoords.Y+")";
+            
         }
 
         private void loadMapToolStripMenuItem_Click(object sender, EventArgs e)

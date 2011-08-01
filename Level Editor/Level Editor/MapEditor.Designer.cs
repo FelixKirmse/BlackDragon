@@ -49,10 +49,10 @@
             this.groupBoxRightClick = new System.Windows.Forms.GroupBox();
             this.radioUnpassable = new System.Windows.Forms.RadioButton();
             this.cboCodeValues = new System.Windows.Forms.ComboBox();
-            this.lblCurrentCode = new System.Windows.Forms.Label();
             this.txtNewCode = new System.Windows.Forms.TextBox();
             this.radioCode = new System.Windows.Forms.RadioButton();
             this.radioPassable = new System.Windows.Forms.RadioButton();
+            this.lblCurrentCode = new System.Windows.Forms.Label();
             this.lblMapNumber = new System.Windows.Forms.Label();
             this.cboMapNumber = new System.Windows.Forms.ComboBox();
             this.timerGameUpdate = new System.Windows.Forms.Timer(this.components);
@@ -76,6 +76,7 @@
             this.foregroundRadioButton = new System.Windows.Forms.RadioButton();
             this.interactiveRadioButton = new System.Windows.Forms.RadioButton();
             this.backgroundRadioButton = new System.Windows.Forms.RadioButton();
+            this.coordLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -265,15 +266,6 @@
             this.cboCodeValues.TabIndex = 4;
             this.cboCodeValues.SelectedIndexChanged += new System.EventHandler(this.cboCodeValues_SelectedIndexChanged);
             // 
-            // lblCurrentCode
-            // 
-            this.lblCurrentCode.AutoSize = true;
-            this.lblCurrentCode.Location = new System.Drawing.Point(761, 759);
-            this.lblCurrentCode.Name = "lblCurrentCode";
-            this.lblCurrentCode.Size = new System.Drawing.Size(16, 13);
-            this.lblCurrentCode.TabIndex = 3;
-            this.lblCurrentCode.Text = "---";
-            // 
             // txtNewCode
             // 
             this.txtNewCode.Location = new System.Drawing.Point(62, 36);
@@ -306,6 +298,15 @@
             this.radioPassable.Text = "Passable";
             this.radioPassable.UseVisualStyleBackColor = true;
             this.radioPassable.CheckedChanged += new System.EventHandler(this.radioPassable_CheckedChanged);
+            // 
+            // lblCurrentCode
+            // 
+            this.lblCurrentCode.AutoSize = true;
+            this.lblCurrentCode.Location = new System.Drawing.Point(761, 759);
+            this.lblCurrentCode.Name = "lblCurrentCode";
+            this.lblCurrentCode.Size = new System.Drawing.Size(16, 13);
+            this.lblCurrentCode.TabIndex = 3;
+            this.lblCurrentCode.Text = "---";
             // 
             // lblMapNumber
             // 
@@ -529,11 +530,22 @@
             this.backgroundRadioButton.UseVisualStyleBackColor = true;
             this.backgroundRadioButton.CheckedChanged += new System.EventHandler(this.backgroundRadioButton_CheckedChanged);
             // 
+            // coordLbl
+            // 
+            this.coordLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.coordLbl.AutoSize = true;
+            this.coordLbl.Location = new System.Drawing.Point(761, 801);
+            this.coordLbl.Name = "coordLbl";
+            this.coordLbl.Size = new System.Drawing.Size(16, 13);
+            this.coordLbl.TabIndex = 20;
+            this.coordLbl.Text = "---";
+            // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 862);
+            this.Controls.Add(this.coordLbl);
             this.Controls.Add(this.layerSelectGroupBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblCurrentCode);
@@ -626,5 +638,6 @@
         private System.Windows.Forms.RadioButton foregroundRadioButton;
         private System.Windows.Forms.RadioButton interactiveRadioButton;
         private System.Windows.Forms.RadioButton backgroundRadioButton;
+        private System.Windows.Forms.Label coordLbl;
     }
 }

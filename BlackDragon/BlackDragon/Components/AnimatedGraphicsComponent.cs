@@ -15,6 +15,7 @@ namespace BlackDragon.Components
         protected bool flipped;
         protected string currentAnimation;
         protected string receivedAnimation;
+        protected float drawDepth = .89f;
 
         public override void Draw(GameObject obj, SpriteBatch spriteBatch)
         {
@@ -31,7 +32,7 @@ namespace BlackDragon.Components
                 Vector2.Zero,
                 1,
                 effects,
-                0.85f);
+                drawDepth);
         }
 
         public override void Update(GameObject obj, GameTime gameTime)

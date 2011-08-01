@@ -19,6 +19,7 @@ namespace BlackDragon.Components.RPG.Player
         {
             this.currentAnimation = "IdleDown";
             this.animations = AnimationDictionaryProvider.RPGPlayerAnimations;
+            this.drawDepth = .85f;
         }
 
         public override void Update(GameObject obj, GameTime gameTime)

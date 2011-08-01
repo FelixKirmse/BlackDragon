@@ -12,45 +12,32 @@ namespace BlackDragon.Entities
     {
         public Vector2 Velocity;
         public Vector2 Position;
-        public Rectangle PublicCollisionRectangle;
-
-        private InputComponent input;
-        private PhysicsComponent physics;
-        private GraphicsComponent graphics;
-        private SoundComponent sound;
+        public Rectangle PublicCollisionRectangle;        
 
         private List<Component> components = new List<Component>();
 
-        public GameObject(InputComponent input, PhysicsComponent physics, GraphicsComponent graphics)
+        public GameObject(List<Component> components)
         {
-            this.input = input;
-            this.physics = physics;
-            this.graphics = graphics;
-
-            components.Add(input);
-            components.Add(physics);
-            components.Add(graphics);
-        }
-
-        public GameObject(InputComponent input, PhysicsComponent physics, GraphicsComponent graphics, SoundComponent sound)
-            : this(input, physics, graphics)
-        {
-            this.sound = sound;
-            components.Add(sound);
-        }
+            this.components = components;
+        }        
 
         public void Update(GameTime gameTime)
         {
-            input.Update(this);
-            physics.Update(this, gameTime);
-            graphics.Update(this, gameTime);
-            if(sound != null)
-                sound.Update(this);
+            foreach (Component component in components)
+            {
+                component.Update(this, gameTime);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            graphics.Draw(this, spriteBatch);
+            foreach (Component component in components)
+            {
+                if (component is GraphicsComponent)
+                {
+                    ((GraphicsComponent)component).Draw(this, spriteBatch);
+                }
+            }
         }        
 
         public void Send<T>(string Message, T obj)

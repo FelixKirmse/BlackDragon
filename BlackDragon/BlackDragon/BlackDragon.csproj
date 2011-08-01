@@ -110,8 +110,11 @@
   <ItemGroup>
     <Compile Include="Components\AnimatedGraphicsComponent.cs" />
     <Compile Include="Components\Component.cs" />
+    <Compile Include="Components\Entities\WaterGraphicsComponent.cs" />
     <Compile Include="Components\GraphicsComponent.cs" />
     <Compile Include="Components\InputComponent.cs" />
+    <Compile Include="Components\NPCs\MariaGraphicsComponent.cs" />
+    <Compile Include="Components\NPCs\MariaWaypointComponent.cs" />
     <Compile Include="Components\PhysicsComponent.cs" />
     <Compile Include="Components\Player\Platform\PlatformPlayerGraphicsComponent.cs" />
     <Compile Include="Components\Player\Platform\PlatformPlayerInputComponent.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="Components\Player\RPG\RPGPlayerSoundComponent.cs" />
     <Compile Include="Components\Player\RPG\WorldPlayerInputComponent.cs" />
     <Compile Include="Components\SoundComponent.cs" />
+    <Compile Include="Components\WaypointComponent.cs" />
     <Compile Include="Helpers\ContentLoader.cs" />
     <Compile Include="Controller\MenuController.cs" />
     <Compile Include="Entities\GameObject.cs" />
@@ -132,6 +136,7 @@
     <Compile Include="Helpers\PathFinder.cs" />
     <Compile Include="Helpers\PathNode.cs" />
     <Compile Include="Managers\CodeManager.cs" />
+    <Compile Include="Managers\EntityManager.cs" />
     <Compile Include="Managers\GeneralInputManager.cs" />
     <Compile Include="Managers\LevelManager.cs" />
     <Compile Include="Managers\OptionMenuManager.cs" />
@@ -159,6 +164,7 @@
     <Compile Include="Providers\ShortcutProvider.cs" />
     <Compile Include="Providers\VariableProvider.cs" />
     <Compile Include="Helpers\StaticClassesImportantVariablesInitializer.cs" />
+    <Compile Include="Providers\WaypointProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

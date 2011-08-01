@@ -19,11 +19,11 @@ namespace BlackDragon.Components.Platform.Player
         {
             this.currentAnimation = "Idle";
             this.animations = AnimationDictionaryProvider.PlatformPlayerAnimations;
+            this.drawDepth = .85f;
         }
 
         public override void Update(GameObject obj, GameTime gameTime)
-        {
-            //Debug.WriteLine("Current: " + currentAnimation + " Received: " + receivedAnimation);
+        {            
             if(receivedAnimation == "")
             {
                 if (onGround)

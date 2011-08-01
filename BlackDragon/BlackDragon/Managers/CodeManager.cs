@@ -5,13 +5,18 @@ using System.Text;
 using BlackDragon.Entities;
 using Microsoft.Xna.Framework;
 using Tile_Engine;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Managers
 {
     static class CodeManager
     {
-        public static void CheckCodes(GameObject player)
+        public static void CheckCodes()
         {
+            EntityManager.ClearEntities();
+            GameObject player = VariableProvider.CurrentPlayer;
+            EntityManager.SetPlayer();
+
             for (int y = 0; y < TileMap.MapHeight; ++y)
             {
                 for (int x = 0; x < TileMap.MapWidth; ++x)
@@ -19,7 +24,19 @@ namespace BlackDragon.Managers
                     switch (TileMap.CellCodeValue(x, y))
                     { 
                         case "START":
-                            player.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight - 14);
+                            player.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight);
+                            break;
+
+                        case "SPAWN_MARIA":
+                            GameObject maria = Factory.CreateMaria();
+                            maria.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight);
+                            EntityManager.AddEntity(maria);
+                            break;
+
+                        case "WATER_TOP":
+                            GameObject water = Factory.CreateWater();
+                            water.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight);
+                            EntityManager.AddEntity(water);
                             break;
                     }
                 }
@@ -27,8 +44,9 @@ namespace BlackDragon.Managers
         }
 
 
-        public static void CheckPlayerCodes(GameObject player)
+        public static void CheckPlayerCodes()
         {
+            GameObject player = VariableProvider.CurrentPlayer;
             checkCodesInPlayerCenter(player);
             if (StateManager.GameState == StateManager.GameStates.PLATFORM)
                 checkCodesUnderPlayer(player);
@@ -97,8 +115,7 @@ namespace BlackDragon.Managers
                             RPGManager.Activate();
                             break;
                     }
-                    LevelManager.LoadLevel(codeArray[2]);
-                    CheckCodes(player);
+                    LevelManager.LoadLevel(codeArray[2]);                    
                     break;
 
                 case "PIPE":

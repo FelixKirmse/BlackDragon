@@ -55,7 +55,7 @@ namespace BlackDragon.Components.Platform.Player
                     }
                 }
             }
-            inWater = false;
+            
             
             obj.Send<bool>("GRAPHICS_SET_ONGROUND", onGround);
         }
@@ -111,7 +111,7 @@ namespace BlackDragon.Components.Platform.Player
                         else
                             obj.Position.Y += 1;
 
-                        obj.Send<bool>("GRAPHICS_PLAYANIMATION_JumpDown", true);
+                        obj.Send("GRAPHICS_PLAYANIMATION", "JumpDown");
                     }
 
                     if (gravity < 0)
@@ -120,11 +120,14 @@ namespace BlackDragon.Components.Platform.Player
                             obj.Position.Y -= .5f;
                         else
                             obj.Position.Y -= 1;
-                        obj.Send<bool>("GRAPHICS_PLAYANIMATION_JumpUp", true);
+                        obj.Send("GRAPHICS_PLAYANIMATION", "JumpUp");
                     }
                 }
             }
+            if(inWater)
+                obj.Send<int>("INPUT_SET_JUMPCOUNT", 0);
             jumpThroughCheck = false;
+            inWater = false;
             obj.Send<float>("INPUT_SET_GRAVITY", gravity);            
         }
 

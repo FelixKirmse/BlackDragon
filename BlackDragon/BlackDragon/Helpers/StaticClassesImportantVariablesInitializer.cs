@@ -24,6 +24,8 @@ namespace BlackDragon
             InputMapper.DownKeys = new Keys[] { Keys.S, Keys.Down };
             InputMapper.LeftKeys = new Keys[] { Keys.A, Keys.Left };
             InputMapper.RightKeys = new Keys[] { Keys.D, Keys.Right };
+
+            VariableProvider.RandomGenerator = new Random();
         }
     }
 }

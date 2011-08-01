@@ -13,9 +13,9 @@ namespace BlackDragon.Components.Platform.Player
 
         private float gravity;        
         private bool onGround;
-        private int jumpCount;        
+        private int jumpCount;
 
-        public override void Update(GameObject obj)
+        public override void Update(GameObject obj, GameTime gameTime)
         {            
             if (!InputMapper.JUMP && gravity < 0)
             {
@@ -51,7 +51,7 @@ namespace BlackDragon.Components.Platform.Player
                 obj.Send<float>("PHYSICS_SET_HORIZ", -3);
                 if (onGround)
                 {
-                    obj.Send<bool>("GRAPHICS_PLAYANIMATION_Walk", true);                    
+                    obj.Send("GRAPHICS_PLAYANIMATION", "Walk");                    
                 }
                 obj.Send<bool>("GRAPHICS_SET_FLIPPED", true);
                     
@@ -61,7 +61,7 @@ namespace BlackDragon.Components.Platform.Player
                 obj.Send<float>("PHYSICS_SET_HORIZ", 3);
                 if (onGround)
                 {
-                    obj.Send<bool>("GRAPHICS_PLAYANIMATION_Walk", true);                    
+                    obj.Send("GRAPHICS_PLAYANIMATION", "Walk");                    
                 }
                 obj.Send<bool>("GRAPHICS_SET_FLIPPED", false);
             }
@@ -70,7 +70,7 @@ namespace BlackDragon.Components.Platform.Player
                 obj.Send<float>("PHYSICS_SET_HORIZ", 0);
                 if (onGround)
                 {
-                    obj.Send<bool>("GRAPHICS_PLAYANIMATION_Idle", true);                    
+                    obj.Send("GRAPHICS_PLAYANIMATION", "Idle");                    
                 }
             }
         }

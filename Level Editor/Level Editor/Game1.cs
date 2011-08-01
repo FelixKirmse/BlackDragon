@@ -32,6 +32,7 @@ namespace Level_Editor
         public bool MakePassable = true;
         public string CurrentCodeValue = "";
         public string HoverCodeValue = "";
+        public Vector2 CellCoords = Vector2.Zero;
 
         public MouseState lastMouseState;
         VScrollBar vscroll;
@@ -138,35 +139,46 @@ namespace Level_Editor
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            
-            Camera.Position = new Vector2(hscroll.Value, vscroll.Value);
+            if (Form.ActiveForm == parentForm)
+            {
 
-            MouseState ms = Mouse.GetState();
+                Camera.Position = new Vector2(hscroll.Value, vscroll.Value);
 
-            if ((ms.X > 0) && (ms.Y > 0) && (ms.X < Camera.ViewPortWidth) && (ms.Y < Camera.ViewPortHeight)) {
-                Vector2 mouseLoc = Camera.ScreenToWorld(new Vector2(ms.X, ms.Y));
-                int cellX = (int)MathHelper.Clamp(TileMap.GetCellByPixelX((int)mouseLoc.X), 0, TileMap.MapWidth - 1);
-                int cellY = (int)MathHelper.Clamp(TileMap.GetCellByPixelY((int)mouseLoc.Y), 0 , TileMap.MapHeight - 1);                
+                MouseState ms = Mouse.GetState();
 
-                if (Camera.WorldRectangle.Contains((int)mouseLoc.X, (int)mouseLoc.Y)) {
-                    if (ms.LeftButton == ButtonState.Pressed) {
-                        TileMap.SetTileAtCell(cellX, cellY, DrawLayer, DrawTile);
+                if ((ms.X > 0) && (ms.Y > 0) && (ms.X < Camera.ViewPortWidth) && (ms.Y < Camera.ViewPortHeight))
+                {
+                    Vector2 mouseLoc = Camera.ScreenToWorld(new Vector2(ms.X, ms.Y));
+                    int cellX = (int)MathHelper.Clamp(TileMap.GetCellByPixelX((int)mouseLoc.X), 0, TileMap.MapWidth - 1);
+                    int cellY = (int)MathHelper.Clamp(TileMap.GetCellByPixelY((int)mouseLoc.Y), 0, TileMap.MapHeight - 1);
+
+                    if (Camera.WorldRectangle.Contains((int)mouseLoc.X, (int)mouseLoc.Y))
+                    {
+                        if (ms.LeftButton == ButtonState.Pressed)
+                        {
+                            TileMap.SetTileAtCell(cellX, cellY, DrawLayer, DrawTile);
+                        }
+                        if ((ms.RightButton == ButtonState.Pressed))
+                        {
+                            if (EditingCode)
+                            {
+                                TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue = CurrentCodeValue;
+                            }
+                            else if (MakePassable)
+                            {
+                                TileMap.GetMapSquareAtCell(cellX, cellY).Passable = true;
+                            }
+                            else if (MakeUnpassable)
+                            {
+                                TileMap.GetMapSquareAtCell(cellX, cellY).Passable = false;
+                            }
+                        }
+                        HoverCodeValue = TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue;
+                        CellCoords = new Vector2(cellX, cellY);
                     }
-                    if ((ms.RightButton == ButtonState.Pressed)) {
-                        if (EditingCode) {
-                            TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue = CurrentCodeValue;
-                        }
-                        else if(MakePassable) {
-                            TileMap.GetMapSquareAtCell(cellX, cellY).Passable = true;
-                        }
-                        else if (MakeUnpassable) {
-                            TileMap.GetMapSquareAtCell(cellX, cellY).Passable = false;
-                        }
-                    }
-                    HoverCodeValue = TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue;
                 }
+                lastMouseState = ms;
             }
-            lastMouseState = ms;
             base.Update(gameTime);
         }
 

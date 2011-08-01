@@ -46,14 +46,8 @@ namespace BlackDragon.Helpers
         #endregion
 
         #region Helper Methods
-        public float LinearCost() {
-            float diagonal = MathHelper.Min(Math.Abs(this.GridX - EndNode.GridX), Math.Abs(this.GridY - EndNode.GridY));
-            float straight = Math.Abs(this.GridX - EndNode.GridX) + Math.Abs(this.GridY - EndNode.GridY);
-            if (InputMapper.ACTION)
-                return (float)Math.Sqrt(Math.Pow((this.GridX - EndNode.GridX) + (this.GridY - EndNode.GridY),2));
-            if(InputMapper.JUMP)
-                return Math.Abs(this.GridX - EndNode.GridX) + Math.Abs(this.GridY - EndNode.GridY);
-            return (1 + 1/1000)*(PathFinder.CostDiagonal * diagonal + PathFinder.CostStraight * (straight - 2*diagonal));
+        public float LinearCost() {            
+            return (1 + 1/1000) * (Math.Abs(this.GridX - EndNode.GridX) + Math.Abs(this.GridY - EndNode.GridY));            
         }
         #endregion
 

@@ -10,7 +10,7 @@ namespace BlackDragon.Components.Platform.Player
 {
     class PlatformPlayerSoundComponent : SoundComponent
     {
-        public override void Update(GameObject obj)
+        public override void Update(GameObject obj, GameTime gameTime)
         {
             
         }

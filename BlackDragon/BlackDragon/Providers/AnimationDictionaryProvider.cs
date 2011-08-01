@@ -16,6 +16,8 @@ namespace BlackDragon.Providers
 
         public static Dictionary<string, AnimationStrip> MariaAnimations = new Dictionary<string, AnimationStrip>();
 
+        public static Dictionary<string, AnimationStrip> WaterAnimations = new Dictionary<string, AnimationStrip>();
+
         public static void LoadAnimations(ContentManager Content)
         {
             #region RPG Player Animations  
@@ -53,26 +55,30 @@ namespace BlackDragon.Providers
 
             #region NPC Animations
             #region Maria Animations
-            MariaAnimations.Add("IdleSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idleside"), 20, "IdleSide", true, 0.15f));
+            MariaAnimations.Add("IdleSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idleside"), 17, "IdleSide", true, 0.15f));
 
-            MariaAnimations.Add("IdleUp", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idleup"), 20, "IdleUp", true, 0.15f));
+            MariaAnimations.Add("IdleUp", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idleup"), 17, "IdleUp", true, 0.15f));
 
-            MariaAnimations.Add("IdleDown", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idledown"), 20, "IdleDown", true, 0.15f));
+            MariaAnimations.Add("IdleDown", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idledown"), 17, "IdleDown", true, 0.15f));
 
-            MariaAnimations.Add("IdleUpSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idleupside"), 20, "IdleUpSide", true, 0.15f));
+            MariaAnimations.Add("IdleUpSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idleupside"), 17, "IdleUpSide", true, 0.15f));
 
-            MariaAnimations.Add("IdleDownSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idledownside"), 20, "IdleDownSide", true, 0.15f));
+            MariaAnimations.Add("IdleDownSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/idledownside"), 17, "IdleDownSide", true, 0.15f));
 
-            MariaAnimations.Add("WalkSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkside"), 20, "WalkSide", true, 0.15f));
+            MariaAnimations.Add("WalkSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkside"), 17, "WalkSide", true, 0.15f));
 
-            MariaAnimations.Add("WalkDown", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkdown"), 20, "WalkDown", true, 0.15f));
+            MariaAnimations.Add("WalkDown", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkdown"), 17, "WalkDown", true, 0.15f));
 
-            MariaAnimations.Add("WalkUp", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkup"), 20, "WalkUp", true, 0.15f));
+            MariaAnimations.Add("WalkUp", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkup"), 17, "WalkUp", true, 0.15f));
 
-            MariaAnimations.Add("WalkUpSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkupside"), 20, "WalkUpSide", true, 0.15f));
+            MariaAnimations.Add("WalkUpSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkupside"), 17, "WalkUpSide", true, 0.15f));
 
-            MariaAnimations.Add("WalkDownSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkdownside"), 20, "WalkDownSide", true, 0.15f));
+            MariaAnimations.Add("WalkDownSide", new AnimationStrip(Content.Load<Texture2D>(@"textures/Sprites/NPCs/Maria/walkdownside"), 17, "WalkDownSide", true, 0.15f));
             #endregion
+            #endregion
+
+            #region Entities
+            WaterAnimations.Add("Idle", new AnimationStrip(Content.Load<Texture2D>(@"textures/misc/water"), 16, "Idle", true, 3f));
             #endregion
         }
     }
