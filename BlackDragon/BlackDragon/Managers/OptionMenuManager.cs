@@ -29,19 +29,19 @@ namespace BlackDragon.Managers
         {
             switch (StateManager.OptionsState)
             { 
-                case StateManager.OptionStates.OVERVIEW:
+                case OptionStates.OVERVIEW:
                     overview.Update();
                     break;
-                case StateManager.OptionStates.GRAPHICS:
+                case OptionStates.GRAPHICS:
                     graphics.Update(gameTime);
                     break;
-                case StateManager.OptionStates.SOUND:
+                case OptionStates.SOUND:
                     sound.Update(gameTime);
                     break;
-                case StateManager.OptionStates.CONTROL:
+                case OptionStates.CONTROL:
                     controls.Update(gameTime);
                     break;
-                case StateManager.OptionStates.GENERAL:
+                case OptionStates.GENERAL:
                     general.Update(gameTime);
                     break;
             }
@@ -51,19 +51,19 @@ namespace BlackDragon.Managers
         {
             switch (StateManager.OptionsState)
             {
-                case StateManager.OptionStates.OVERVIEW:
+                case OptionStates.OVERVIEW:
                     overview.Draw(spriteBatch);
                     break;
-                case StateManager.OptionStates.GRAPHICS:
+                case OptionStates.GRAPHICS:
                     graphics.Draw(spriteBatch);
                     break;
-                case StateManager.OptionStates.SOUND:
+                case OptionStates.SOUND:
                     sound.Draw(spriteBatch);
                     break;
-                case StateManager.OptionStates.CONTROL:
+                case OptionStates.CONTROL:
                     controls.Draw(spriteBatch);
                     break;
-                case StateManager.OptionStates.GENERAL:
+                case OptionStates.GENERAL:
                     general.Draw(spriteBatch);
                     break;
             }

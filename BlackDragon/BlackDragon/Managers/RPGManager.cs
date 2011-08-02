@@ -37,12 +37,7 @@ namespace BlackDragon.Managers
 
         public static void Update(GameTime gameTime)
         {
-            if (!StateManager.GamePaused) {
-                if (ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
-                {
-                    StateManager.GameState = StateManager.GameStates.PLATFORM;
-                    PlatformManager.Activate();  
-                }
+            if (!StateManager.GamePaused) {                
                 EntityManager.Update(gameTime);                
                 CodeManager.CheckPlayerCodes();
                 GeneralInputManager.HandleGeneralInput();

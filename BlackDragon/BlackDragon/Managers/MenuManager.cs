@@ -29,19 +29,19 @@ namespace BlackDragon.Managers
 
             switch (StateManager.MenuState)
             { 
-                case StateManager.MenuStates.MAIN:
+                case MenuStates.MAIN:
                     mainMenu.Update();
                     break;
 
-                case StateManager.MenuStates.LOADGAME:
+                case MenuStates.LOADGAME:
                     loadGame.Update(gameTime);
                     break;
 
-                case StateManager.MenuStates.OPTIONS:
+                case MenuStates.OPTIONS:
                     OptionMenuManager.Update(gameTime);
                     break;
 
-                case StateManager.MenuStates.INGAME:
+                case MenuStates.INGAME:
                     ingameMenu.Update(gameTime);
                     break;
             }            
@@ -51,19 +51,19 @@ namespace BlackDragon.Managers
         {
             switch (StateManager.MenuState)
             {
-                case StateManager.MenuStates.MAIN:
+                case MenuStates.MAIN:
                     mainMenu.Draw(spriteBatch);
                     break;
 
-                case StateManager.MenuStates.LOADGAME:
+                case MenuStates.LOADGAME:
                     loadGame.Draw(spriteBatch);
                     break;
 
-                case StateManager.MenuStates.OPTIONS:
+                case MenuStates.OPTIONS:
                     OptionMenuManager.Draw(spriteBatch);
                     break;
 
-                case StateManager.MenuStates.INGAME:
+                case MenuStates.INGAME:
                     ingameMenu.Draw(spriteBatch);
                     break;
             } 

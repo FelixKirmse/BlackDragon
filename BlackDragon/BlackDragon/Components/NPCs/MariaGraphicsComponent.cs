@@ -15,7 +15,7 @@ namespace BlackDragon.Components.NPCs
         public MariaGraphicsComponent()
         {
             currentAnimation = "IdleDown";
-            animations = AnimationDictionaryProvider.MariaAnimations;            
+            animations = AnimationDictionaryProvider.GetMariaAnimations();            
         }
 
         public override void Update(GameObject obj, GameTime gameTime)

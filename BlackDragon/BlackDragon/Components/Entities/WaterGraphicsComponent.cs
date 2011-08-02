@@ -11,7 +11,7 @@ namespace BlackDragon.Components.Entities
     {
         public WaterGraphicsComponent()
         {
-            animations = AnimationDictionaryProvider.WaterAnimations;
+            animations = AnimationDictionaryProvider.GetWaterAnimations();
             currentAnimation = "Idle";
             PlayAnimation(currentAnimation);
         }

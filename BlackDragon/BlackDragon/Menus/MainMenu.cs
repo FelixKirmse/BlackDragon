@@ -33,7 +33,7 @@ namespace BlackDragon.Menus
             base.Update();
             if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Escape))
             {
-                StateManager.GameState = StateManager.GameStates.TITLE;
+                StateManager.GameState = GameStates.TITLE;
             }
         }
 
@@ -46,16 +46,16 @@ namespace BlackDragon.Menus
             { 
                 case newGame:
                     // Temporary Code, change to proper later!!!
-                    StateManager.GameState = StateManager.GameStates.RPG;
-                    StateManager.RPGState = StateManager.RPGStates.FIELD;
+                    StateManager.GameState = GameStates.RPG;
+                    StateManager.RPGState = RPGStates.FIELD;
                     RPGManager.Activate();                    
                     break;
                 case loadGame:
-                    StateManager.MenuState = StateManager.MenuStates.LOADGAME;
+                    StateManager.MenuState = MenuStates.LOADGAME;
                     break;
                 case options:
-                    StateManager.MenuState = StateManager.MenuStates.OPTIONS;
-                    StateManager.OptionsState = StateManager.OptionStates.OVERVIEW;
+                    StateManager.MenuState = MenuStates.OPTIONS;
+                    StateManager.OptionsState = OptionStates.OVERVIEW;
                     break;
                 case quit:
                     VariableProvider.Game.Exit();

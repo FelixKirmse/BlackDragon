@@ -77,11 +77,15 @@
             this.interactiveRadioButton = new System.Windows.Forms.RadioButton();
             this.backgroundRadioButton = new System.Windows.Forms.RadioButton();
             this.coordLbl = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.editModeItemCheckBox = new System.Windows.Forms.CheckBox();
+            this.rectangleSelectionCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.layerSelectGroupBox.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pctSurface
@@ -501,7 +505,6 @@
             this.foregroundRadioButton.Name = "foregroundRadioButton";
             this.foregroundRadioButton.Size = new System.Drawing.Size(79, 17);
             this.foregroundRadioButton.TabIndex = 2;
-            this.foregroundRadioButton.TabStop = true;
             this.foregroundRadioButton.Text = "Foreground";
             this.foregroundRadioButton.UseVisualStyleBackColor = true;
             this.foregroundRadioButton.CheckedChanged += new System.EventHandler(this.foregroundRadioButton_CheckedChanged);
@@ -513,7 +516,6 @@
             this.interactiveRadioButton.Name = "interactiveRadioButton";
             this.interactiveRadioButton.Size = new System.Drawing.Size(75, 17);
             this.interactiveRadioButton.TabIndex = 1;
-            this.interactiveRadioButton.TabStop = true;
             this.interactiveRadioButton.Text = "Interactive";
             this.interactiveRadioButton.UseVisualStyleBackColor = true;
             this.interactiveRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
@@ -521,6 +523,7 @@
             // backgroundRadioButton
             // 
             this.backgroundRadioButton.AutoSize = true;
+            this.backgroundRadioButton.Checked = true;
             this.backgroundRadioButton.Location = new System.Drawing.Point(6, 20);
             this.backgroundRadioButton.Name = "backgroundRadioButton";
             this.backgroundRadioButton.Size = new System.Drawing.Size(83, 17);
@@ -540,11 +543,47 @@
             this.coordLbl.TabIndex = 20;
             this.coordLbl.Text = "---";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rectangleSelectionCheckBox);
+            this.groupBox2.Location = new System.Drawing.Point(1295, 653);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(173, 103);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Brushes";
+            // 
+            // editModeItemCheckBox
+            // 
+            this.editModeItemCheckBox.AutoSize = true;
+            this.editModeItemCheckBox.Checked = true;
+            this.editModeItemCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.editModeItemCheckBox.Location = new System.Drawing.Point(14, 244);
+            this.editModeItemCheckBox.Name = "editModeItemCheckBox";
+            this.editModeItemCheckBox.Size = new System.Drawing.Size(155, 17);
+            this.editModeItemCheckBox.TabIndex = 22;
+            this.editModeItemCheckBox.Text = "Draw codes and passability";
+            this.editModeItemCheckBox.UseVisualStyleBackColor = true;
+            this.editModeItemCheckBox.CheckedChanged += new System.EventHandler(this.editModeItemCheckBox_CheckedChanged);
+            // 
+            // rectangleSelectionCheckBox
+            // 
+            this.rectangleSelectionCheckBox.AutoSize = true;
+            this.rectangleSelectionCheckBox.Location = new System.Drawing.Point(6, 21);
+            this.rectangleSelectionCheckBox.Name = "rectangleSelectionCheckBox";
+            this.rectangleSelectionCheckBox.Size = new System.Drawing.Size(104, 17);
+            this.rectangleSelectionCheckBox.TabIndex = 0;
+            this.rectangleSelectionCheckBox.Text = "Rectangle brush";
+            this.rectangleSelectionCheckBox.UseVisualStyleBackColor = true;
+            this.rectangleSelectionCheckBox.CheckedChanged += new System.EventHandler(this.rectangleSelectionCheckBox_CheckedChanged);
+            // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 862);
+            this.Controls.Add(this.editModeItemCheckBox);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.coordLbl);
             this.Controls.Add(this.layerSelectGroupBox);
             this.Controls.Add(this.groupBox1);
@@ -584,6 +623,8 @@
             this.groupBox1.PerformLayout();
             this.layerSelectGroupBox.ResumeLayout(false);
             this.layerSelectGroupBox.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,5 +680,8 @@
         private System.Windows.Forms.RadioButton interactiveRadioButton;
         private System.Windows.Forms.RadioButton backgroundRadioButton;
         private System.Windows.Forms.Label coordLbl;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox editModeItemCheckBox;
+        private System.Windows.Forms.CheckBox rectangleSelectionCheckBox;
     }
 }

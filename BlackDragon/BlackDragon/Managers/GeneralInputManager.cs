@@ -14,7 +14,7 @@ namespace BlackDragon.Managers
         {
             if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Escape))
             {
-                StateManager.MenuState = StateManager.MenuStates.INGAME;
+                StateManager.MenuState = MenuStates.INGAME;
                 StateManager.GamePaused = true;
                 StateManager.InputLock = true;
             }

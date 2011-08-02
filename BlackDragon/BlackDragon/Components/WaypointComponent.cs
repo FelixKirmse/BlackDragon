@@ -62,13 +62,13 @@ namespace BlackDragon.Components
         {    
             obj.Position += speed * direction;
 
-            if (Vector2.Distance(collisionCenter, TileMap.GetCellCenter(currentGoal)) <= 2 && pathIndex != currentPath.Count - 1)
+            if (Vector2.Distance(collisionCenter, TileMap.GetCellCenter(currentGoal)) <= speed*2 && pathIndex != currentPath.Count - 1)
             {
                 currentGoal = currentPath[++pathIndex];
                 changeDirection(collisionCenter, obj);
             }
 
-            if (Vector2.Distance(collisionCenter, TileMap.GetCellCenter(currentWaypoint)) <= 2)
+            if (Vector2.Distance(collisionCenter, TileMap.GetCellCenter(currentWaypoint)) <= speed*2)
             {
                 objectState = ObjectStates.IDLE;
             }
@@ -112,18 +112,18 @@ namespace BlackDragon.Components
             {
                 if (direction.Y > 0)
                 {
-                    if (direction.X < .25f)
+                    if (direction.X < .15f)
                         animation = "WalkDown";
-                    else if (direction.X > .75f)
+                    else if (direction.X > .85f)
                         animation = "WalkSide";
                     else
                         animation = "WalkDownSide";
                 }
                 else
                 {
-                    if (direction.X < .25f)
+                    if (direction.X < .15f)
                         animation = "WalkUp";
-                    else if (direction.X > .75f)
+                    else if (direction.X > .85f)
                         animation = "WalkSide";
                     else
                         animation = "WalkUpSide";
@@ -135,18 +135,18 @@ namespace BlackDragon.Components
             {
                 if (direction.Y > 0)
                 {
-                    if (direction.X > -.25f)
+                    if (direction.X > -.15f)
                         animation = "WalkDown";
-                    else if (direction.X < -.75f)
+                    else if (direction.X < -.85f)
                         animation = "WalkSide";
                     else
                         animation = "WalkDownSide";
                 }
                 else
                 {
-                    if (direction.X > -.25f)
+                    if (direction.X > -.15f)
                         animation = "WalkUp";
-                    else if (direction.X < -.75f)
+                    else if (direction.X < -.85f)
                         animation = "WalkSide";
                     else
                         animation = "WalkUpSide";

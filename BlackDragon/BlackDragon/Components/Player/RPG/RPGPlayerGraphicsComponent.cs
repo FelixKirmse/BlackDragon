@@ -18,7 +18,7 @@ namespace BlackDragon.Components.RPG.Player
         public RPGPlayerGraphicsComponent()
         {
             this.currentAnimation = "IdleDown";
-            this.animations = AnimationDictionaryProvider.RPGPlayerAnimations;
+            this.animations = AnimationDictionaryProvider.GetRPGPlayerAnimations();
             this.drawDepth = .85f;
         }
 

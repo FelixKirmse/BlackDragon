@@ -18,7 +18,7 @@ namespace BlackDragon.Components.Platform.Player
         public PlatformPlayerGraphicsComponent()
         {
             this.currentAnimation = "Idle";
-            this.animations = AnimationDictionaryProvider.PlatformPlayerAnimations;
+            this.animations = AnimationDictionaryProvider.GetPlatformPlayerAnimations();
             this.drawDepth = .85f;
         }
 

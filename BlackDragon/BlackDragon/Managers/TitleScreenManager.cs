@@ -22,8 +22,8 @@ namespace BlackDragon.Managers
         {
             if (ShortcutProvider.IsKeyDown(Keys.Enter))
             {
-                StateManager.GameState = StateManager.GameStates.MENU;
-                StateManager.MenuState = StateManager.MenuStates.MAIN;
+                StateManager.GameState = GameStates.MENU;
+                StateManager.MenuState = MenuStates.MAIN;
             }
         }
 

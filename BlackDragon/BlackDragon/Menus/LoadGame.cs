@@ -25,7 +25,7 @@ namespace BlackDragon.Menus
             base.Update();
             if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Escape))
             {
-                StateManager.MenuState = StateManager.MenuStates.MAIN;
+                StateManager.MenuState = MenuStates.MAIN;
             }
         }
 
@@ -37,7 +37,7 @@ namespace BlackDragon.Menus
             switch (selectedItem)
             {
                 case NYI:
-                    StateManager.MenuState = StateManager.MenuStates.MAIN;
+                    StateManager.MenuState = MenuStates.MAIN;
                     break;
             }
         }

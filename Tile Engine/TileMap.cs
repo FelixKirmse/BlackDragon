@@ -204,11 +204,29 @@ namespace Tile_Engine
                 return;
             }
             if (!CellIsPassable(x, y)) {
-                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
             }
             if (MapCellColumns[x].MapCellRow[y].CodeValue != "")
             {
-                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(0, 0, 255, 80), 0f, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(0, 0, 255, 80), 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+            }
+        }
+
+        public static void DrawRectangleIndicator(SpriteBatch spriteBatch, MouseState ms, Vector2 startCell)
+        {
+            if ((ms.X > 0) && (ms.Y > 0) && (ms.X < Camera.ViewPortWidth) && (ms.Y < Camera.ViewPortHeight))
+            {
+                Vector2 mouseLoc = Camera.ScreenToWorld(new Vector2(ms.X, ms.Y));
+                int cellX = (int)MathHelper.Clamp(TileMap.GetCellByPixelX((int)mouseLoc.X), 0, TileMap.MapWidth - 1);
+                int cellY = (int)MathHelper.Clamp(TileMap.GetCellByPixelY((int)mouseLoc.Y), 0, TileMap.MapHeight - 1);
+
+                for (int cellx = (int)startCell.X; cellx <= cellX; ++cellx)
+                {
+                    for (int celly = (int)startCell.Y; celly <= cellY; ++celly)
+                    {
+                        spriteBatch.Draw(tileSheet, CellScreenRectangle(cellx, celly), TileSourceRectangle(WhiteTile), new Color(1,1,1,80) , 0f, Vector2.Zero, SpriteEffects.None, 0f);
+                    }
+                }
             }
         }
         #endregion

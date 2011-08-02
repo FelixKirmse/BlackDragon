@@ -108,6 +108,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\SpawnManager.cs" />
+    <Compile Include="States.cs" />
     <Compile Include="Components\AnimatedGraphicsComponent.cs" />
     <Compile Include="Components\Component.cs" />
     <Compile Include="Components\Entities\WaterGraphicsComponent.cs" />

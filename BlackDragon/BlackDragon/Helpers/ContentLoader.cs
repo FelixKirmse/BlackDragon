@@ -27,7 +27,7 @@ namespace BlackDragon
 
             VariableProvider.WhiteTexture = Content.Load<Texture2D>(@"textures/misc/white");
 
-            AnimationDictionaryProvider.LoadAnimations(Content);
+            AnimationDictionaryProvider.LoadAnimationStrips(Content);
         }
     }
 }

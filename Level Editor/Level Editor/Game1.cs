@@ -41,7 +41,12 @@ namespace Level_Editor
         public Texture2D RpgTiles;
         public Texture2D PlatformTiles;
 
+        public string FillMode = "TILEFILL";
 
+        public bool WaitingForSecondClick = false;
+        private Vector2 startCell;
+
+        MouseState ms;
 
         public Game1(IntPtr drawSurface, Form parentForm, PictureBox surfacePictureBox)
         {
@@ -141,11 +146,10 @@ namespace Level_Editor
         {
             if (Form.ActiveForm == parentForm)
             {
-
+                
                 Camera.Position = new Vector2(hscroll.Value, vscroll.Value);
-
-                MouseState ms = Mouse.GetState();
-
+                ms = Mouse.GetState();
+                
                 if ((ms.X > 0) && (ms.Y > 0) && (ms.X < Camera.ViewPortWidth) && (ms.Y < Camera.ViewPortHeight))
                 {
                     Vector2 mouseLoc = Camera.ScreenToWorld(new Vector2(ms.X, ms.Y));
@@ -154,25 +158,85 @@ namespace Level_Editor
 
                     if (Camera.WorldRectangle.Contains((int)mouseLoc.X, (int)mouseLoc.Y))
                     {
-                        if (ms.LeftButton == ButtonState.Pressed)
+                        if (FillMode == "TILEFILL")
                         {
-                            TileMap.SetTileAtCell(cellX, cellY, DrawLayer, DrawTile);
+                            if (ms.LeftButton == ButtonState.Pressed)
+                            {
+                                TileMap.SetTileAtCell(cellX, cellY, DrawLayer, DrawTile);
+                            }
+
+                            if ((ms.RightButton == ButtonState.Pressed))
+                            {
+                                if (EditingCode)
+                                {
+                                    TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue = CurrentCodeValue;
+                                }
+                                else if (MakePassable)
+                                {
+                                    TileMap.GetMapSquareAtCell(cellX, cellY).Passable = true;
+                                }
+                                else if (MakeUnpassable)
+                                {
+                                    TileMap.GetMapSquareAtCell(cellX, cellY).Passable = false;
+                                }
+                            }
                         }
-                        if ((ms.RightButton == ButtonState.Pressed))
+                        else if (FillMode == "RECTANGLEFILL")
                         {
-                            if (EditingCode)
+                            if (ms.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
                             {
-                                TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue = CurrentCodeValue;
+                                if (!WaitingForSecondClick)
+                                {
+                                    startCell = new Vector2(cellX, cellY);
+                                    WaitingForSecondClick = true;
+                                }
+                                else
+                                {
+                                    Vector2 endCell = new Vector2(cellX, cellY);
+                                    WaitingForSecondClick = false;
+
+                                    for (int cellx = (int)startCell.X; cellx <= endCell.X; ++cellx)
+                                    {
+                                        for (int celly = (int)startCell.Y; celly <= endCell.Y; ++celly)
+                                        {
+                                            TileMap.SetTileAtCell(cellx, celly, DrawLayer, DrawTile);
+                                        }
+                                    }
+                                }
                             }
-                            else if (MakePassable)
+                            if (ms.RightButton == ButtonState.Pressed && lastMouseState.RightButton == ButtonState.Released)
                             {
-                                TileMap.GetMapSquareAtCell(cellX, cellY).Passable = true;
+                                if (!WaitingForSecondClick)
+                                {
+                                    startCell = new Vector2(cellX, cellY);
+                                    WaitingForSecondClick = true;
+                                }
+                                else
+                                {
+                                    Vector2 endCell = new Vector2(cellX, cellY);
+                                    WaitingForSecondClick = false;
+
+                                    for (int cellx = (int)startCell.X; cellx <= endCell.X; ++cellx)
+                                    {
+                                        for (int celly = (int)startCell.Y; celly <= endCell.Y; ++celly)
+                                        {
+                                            if (EditingCode)
+                                            {
+                                                TileMap.GetMapSquareAtCell(cellx, celly).CodeValue = CurrentCodeValue;
+                                            }
+                                            else if (MakePassable)
+                                            {
+                                                TileMap.GetMapSquareAtCell(cellx, celly).Passable = true;
+                                            }
+                                            else if (MakeUnpassable)
+                                            {
+                                                TileMap.GetMapSquareAtCell(cellx, celly).Passable = false;
+                                            }
+                                        }
+                                    }
+                                }
                             }
-                            else if (MakeUnpassable)
-                            {
-                                TileMap.GetMapSquareAtCell(cellX, cellY).Passable = false;
-                            }
-                        }
+                        }                        
                         HoverCodeValue = TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue;
                         CellCoords = new Vector2(cellX, cellY);
                     }
@@ -192,6 +256,10 @@ namespace Level_Editor
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             TileMap.Draw(spriteBatch);
+            if (WaitingForSecondClick)
+            {
+                TileMap.DrawRectangleIndicator(spriteBatch, ms, startCell);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);

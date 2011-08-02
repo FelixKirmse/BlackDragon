@@ -20,7 +20,7 @@ namespace Level_Editor
     {
         public Game1 game;
         private string cwd;
-        private string modeModifier = @"\rpg";
+        private string modeModifier = @"\rpg";        
 
         public MapEditor()
         {
@@ -449,6 +449,22 @@ namespace Level_Editor
                 interactiveToolStripMenuItem.Checked = false;
                 foregroundToolStripMenuItem.Checked = true;
             }
+        }        
+
+        private void editModeItemCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (editModeItemCheckBox.Checked)
+                TileMap.EditorMode = true;
+            else
+                TileMap.EditorMode = false;
+        }
+
+        private void rectangleSelectionCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rectangleSelectionCheckBox.Checked)
+                game.FillMode = "RECTANGLEFILL";
+            else
+                game.FillMode = "TILEFILL";
         }
 
         

@@ -22,10 +22,10 @@ namespace BlackDragon.Managers
             string mode = "";
             switch(StateManager.GameState)
             {
-                case StateManager.GameStates.RPG:
+                case GameStates.RPG:
                     mode = "rpg";
                     break;
-                case StateManager.GameStates.PLATFORM:
+                case GameStates.PLATFORM:
                     mode = "platform";
                     break;
             }

@@ -84,7 +84,11 @@ namespace BlackDragon.Components.Platform.Player
 
                     if (jumpThroughCheck)
                     {
-                        if (TileMap.CellCodeValue(bottomLeftCorner) == "JUMPTHROUGH" || TileMap.CellCodeValue(bottomRightCorner) == "JUMPTHROUGH" || TileMap.CellCodeValue(middleBottom) == "JUMPTHROUGH")
+                        string[] codePartsLeft = TileMap.CellCodeValue(bottomLeftCorner).Split('*');
+                        string[] codePartsRight = TileMap.CellCodeValue(bottomRightCorner).Split('*');
+                        string[] codePartsCenter = TileMap.CellCodeValue(middleBottom).Split('*');
+
+                        if (codePartsLeft.Contains("JUMPTHROUGH") || codePartsRight.Contains("JUMPTHROUGH") || codePartsCenter.Contains("JUMPTHROUGH"))
                             collisionWithSpecialBlock = true;                        
                     }
 
