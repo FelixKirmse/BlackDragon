@@ -12,16 +12,16 @@ namespace Tile_Engine
     {
         #region Declarations
         public int[] LayerTiles = new int[3];
-        public string CodeValue = "";
+        public List<string> Codes = new List<string>();
         public bool Passable = true;
         #endregion
 
         #region Constructor
-        public MapSquare(int background, int interactive, int foreground, string code, bool passable) {
+        public MapSquare(int background, int interactive, int foreground, bool passable)
+        {
             LayerTiles[0] = background;
             LayerTiles[1] = interactive;
-            LayerTiles[2] = foreground;
-            CodeValue = code;
+            LayerTiles[2] = foreground;            
             Passable = passable;
         }
         #endregion

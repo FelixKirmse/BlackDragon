@@ -140,15 +140,7 @@ namespace Level_Editor
         {
             timerGameUpdate.Stop();
             LoadImageLists();
-            FixScrollBarScales();
-            cboCodeValues.Items.Clear();
-            cboCodeValues.Items.Add("Gemstone");
-            cboCodeValues.Items.Add("Enemy");
-            cboCodeValues.Items.Add("Lethal");
-            cboCodeValues.Items.Add("EnemyBlocking");
-            cboCodeValues.Items.Add("Start");
-            cboCodeValues.Items.Add("Clear");
-            cboCodeValues.Items.Add("Custom");
+            FixScrollBarScales();           
 
             for (int x = 0; x < 100; ++x) {
                 cboMapNumber.Items.Add(x.ToString().PadLeft(3, '0'));
@@ -162,36 +154,7 @@ namespace Level_Editor
         private void MapEditor_Resize(object sender, EventArgs e)
         {
             FixScrollBarScales();
-        }
-
-        private void cboCodeValues_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtNewCode.Enabled = false;
-            switch (cboCodeValues.Items[cboCodeValues.SelectedIndex].ToString()) { 
-                case "Gemstone":
-                    txtNewCode.Text = "GEM";
-                    break;
-                case "Enemy":
-                    txtNewCode.Text = "ENEMY";
-                    break;
-                case "Lethal":
-                    txtNewCode.Text = "DEAD";
-                    break;
-                case "EnemyBlocking":
-                    txtNewCode.Text = "BLOCK";
-                    break;
-                case "Start":
-                    txtNewCode.Text = "START";
-                    break;
-                case "Clear":
-                    txtNewCode.Text = "";
-                    break;
-                case "Custom":
-                    txtNewCode.Text = "";
-                    txtNewCode.Enabled = true;
-                    break;
-            }
-        }
+        }        
 
         private void listTiles_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -211,12 +174,7 @@ namespace Level_Editor
                 game.MakePassable = true;
                 game.MakeUnpassable = false;
             } else game.EditingCode = true;
-        }
-
-        private void txtNewCode_TextChanged(object sender, EventArgs e)
-        {
-            game.CurrentCodeValue = txtNewCode.Text;
-        }
+        }        
 
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -247,10 +205,7 @@ namespace Level_Editor
             FixScrollBarScales();
             
             if(Form.ActiveForm == this)
-            game.Tick();
-            if (game.HoverCodeValue != lblCurrentCode.Text) {
-                lblCurrentCode.Text = game.HoverCodeValue;
-            }
+            game.Tick();           
 
             coordLbl.Text = "MapCell: (" + game.CellCoords.X + @"|" + game.CellCoords.Y+")";
             
@@ -466,8 +421,5 @@ namespace Level_Editor
             else
                 game.FillMode = "TILEFILL";
         }
-
-        
-        
     }
 }

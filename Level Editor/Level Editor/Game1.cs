@@ -29,9 +29,7 @@ namespace Level_Editor
         public int DrawTile = 0;
         public bool EditingCode = false;
         public bool MakeUnpassable = false;
-        public bool MakePassable = true;
-        public string CurrentCodeValue = "";
-        public string HoverCodeValue = "";
+        public bool MakePassable = true;        
         public Vector2 CellCoords = Vector2.Zero;
 
         public MouseState lastMouseState;
@@ -169,7 +167,7 @@ namespace Level_Editor
                             {
                                 if (EditingCode)
                                 {
-                                    TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue = CurrentCodeValue;
+                                    //fix please!
                                 }
                                 else if (MakePassable)
                                 {
@@ -222,7 +220,7 @@ namespace Level_Editor
                                         {
                                             if (EditingCode)
                                             {
-                                                TileMap.GetMapSquareAtCell(cellx, celly).CodeValue = CurrentCodeValue;
+                                                //fix please!
                                             }
                                             else if (MakePassable)
                                             {
@@ -236,8 +234,7 @@ namespace Level_Editor
                                     }
                                 }
                             }
-                        }                        
-                        HoverCodeValue = TileMap.GetMapSquareAtCell(cellX, cellY).CodeValue;
+                        }  
                         CellCoords = new Vector2(cellX, cellY);
                     }
                 }

@@ -48,11 +48,8 @@
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.groupBoxRightClick = new System.Windows.Forms.GroupBox();
             this.radioUnpassable = new System.Windows.Forms.RadioButton();
-            this.cboCodeValues = new System.Windows.Forms.ComboBox();
-            this.txtNewCode = new System.Windows.Forms.TextBox();
             this.radioCode = new System.Windows.Forms.RadioButton();
             this.radioPassable = new System.Windows.Forms.RadioButton();
-            this.lblCurrentCode = new System.Windows.Forms.Label();
             this.lblMapNumber = new System.Windows.Forms.Label();
             this.cboMapNumber = new System.Windows.Forms.ComboBox();
             this.timerGameUpdate = new System.Windows.Forms.Timer(this.components);
@@ -78,14 +75,21 @@
             this.backgroundRadioButton = new System.Windows.Forms.RadioButton();
             this.coordLbl = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.editModeItemCheckBox = new System.Windows.Forms.CheckBox();
             this.rectangleSelectionCheckBox = new System.Windows.Forms.CheckBox();
+            this.editModeItemCheckBox = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.getCodeRadio = new System.Windows.Forms.RadioButton();
+            this.codeListBox = new System.Windows.Forms.ListBox();
+            this.addCodeInput = new System.Windows.Forms.TextBox();
+            this.addCodeButton = new System.Windows.Forms.Button();
+            this.removeCodesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.layerSelectGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pctSurface
@@ -209,7 +213,7 @@
             this.listTiles.Location = new System.Drawing.Point(193, 27);
             this.listTiles.MultiSelect = false;
             this.listTiles.Name = "listTiles";
-            this.listTiles.Size = new System.Drawing.Size(554, 787);
+            this.listTiles.Size = new System.Drawing.Size(554, 600);
             this.listTiles.TabIndex = 2;
             this.listTiles.TileSize = new System.Drawing.Size(16, 16);
             this.listTiles.UseCompatibleStateImageBehavior = false;
@@ -236,9 +240,8 @@
             // 
             // groupBoxRightClick
             // 
+            this.groupBoxRightClick.Controls.Add(this.getCodeRadio);
             this.groupBoxRightClick.Controls.Add(this.radioUnpassable);
-            this.groupBoxRightClick.Controls.Add(this.cboCodeValues);
-            this.groupBoxRightClick.Controls.Add(this.txtNewCode);
             this.groupBoxRightClick.Controls.Add(this.radioCode);
             this.groupBoxRightClick.Controls.Add(this.radioPassable);
             this.groupBoxRightClick.Location = new System.Drawing.Point(758, 653);
@@ -251,7 +254,7 @@
             // radioUnpassable
             // 
             this.radioUnpassable.AutoSize = true;
-            this.radioUnpassable.Location = new System.Drawing.Point(74, 17);
+            this.radioUnpassable.Location = new System.Drawing.Point(80, 17);
             this.radioUnpassable.Name = "radioUnpassable";
             this.radioUnpassable.Size = new System.Drawing.Size(81, 17);
             this.radioUnpassable.TabIndex = 8;
@@ -260,33 +263,15 @@
             this.radioUnpassable.UseVisualStyleBackColor = true;
             this.radioUnpassable.CheckedChanged += new System.EventHandler(this.radioUnpassable_CheckedChanged);
             // 
-            // cboCodeValues
-            // 
-            this.cboCodeValues.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCodeValues.FormattingEnabled = true;
-            this.cboCodeValues.Location = new System.Drawing.Point(5, 75);
-            this.cboCodeValues.Name = "cboCodeValues";
-            this.cboCodeValues.Size = new System.Drawing.Size(160, 21);
-            this.cboCodeValues.TabIndex = 4;
-            this.cboCodeValues.SelectedIndexChanged += new System.EventHandler(this.cboCodeValues_SelectedIndexChanged);
-            // 
-            // txtNewCode
-            // 
-            this.txtNewCode.Location = new System.Drawing.Point(62, 36);
-            this.txtNewCode.Name = "txtNewCode";
-            this.txtNewCode.Size = new System.Drawing.Size(103, 20);
-            this.txtNewCode.TabIndex = 2;
-            this.txtNewCode.TextChanged += new System.EventHandler(this.txtNewCode_TextChanged);
-            // 
             // radioCode
             // 
             this.radioCode.AutoSize = true;
             this.radioCode.Location = new System.Drawing.Point(6, 35);
             this.radioCode.Name = "radioCode";
-            this.radioCode.Size = new System.Drawing.Size(50, 17);
+            this.radioCode.Size = new System.Drawing.Size(69, 17);
             this.radioCode.TabIndex = 1;
             this.radioCode.TabStop = true;
-            this.radioCode.Text = "Code";
+            this.radioCode.Text = "Set Code";
             this.radioCode.UseVisualStyleBackColor = true;
             this.radioCode.CheckedChanged += new System.EventHandler(this.radioCode_CheckedChanged);
             // 
@@ -302,15 +287,6 @@
             this.radioPassable.Text = "Passable";
             this.radioPassable.UseVisualStyleBackColor = true;
             this.radioPassable.CheckedChanged += new System.EventHandler(this.radioPassable_CheckedChanged);
-            // 
-            // lblCurrentCode
-            // 
-            this.lblCurrentCode.AutoSize = true;
-            this.lblCurrentCode.Location = new System.Drawing.Point(761, 759);
-            this.lblCurrentCode.Name = "lblCurrentCode";
-            this.lblCurrentCode.Size = new System.Drawing.Size(16, 13);
-            this.lblCurrentCode.TabIndex = 3;
-            this.lblCurrentCode.Text = "---";
             // 
             // lblMapNumber
             // 
@@ -537,7 +513,7 @@
             // 
             this.coordLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.coordLbl.AutoSize = true;
-            this.coordLbl.Location = new System.Drawing.Point(761, 801);
+            this.coordLbl.Location = new System.Drawing.Point(761, 759);
             this.coordLbl.Name = "coordLbl";
             this.coordLbl.Size = new System.Drawing.Size(16, 13);
             this.coordLbl.TabIndex = 20;
@@ -553,6 +529,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Brushes";
             // 
+            // rectangleSelectionCheckBox
+            // 
+            this.rectangleSelectionCheckBox.AutoSize = true;
+            this.rectangleSelectionCheckBox.Location = new System.Drawing.Point(6, 21);
+            this.rectangleSelectionCheckBox.Name = "rectangleSelectionCheckBox";
+            this.rectangleSelectionCheckBox.Size = new System.Drawing.Size(104, 17);
+            this.rectangleSelectionCheckBox.TabIndex = 0;
+            this.rectangleSelectionCheckBox.Text = "Rectangle brush";
+            this.rectangleSelectionCheckBox.UseVisualStyleBackColor = true;
+            this.rectangleSelectionCheckBox.CheckedChanged += new System.EventHandler(this.rectangleSelectionCheckBox_CheckedChanged);
+            // 
             // editModeItemCheckBox
             // 
             this.editModeItemCheckBox.AutoSize = true;
@@ -566,28 +553,74 @@
             this.editModeItemCheckBox.UseVisualStyleBackColor = true;
             this.editModeItemCheckBox.CheckedChanged += new System.EventHandler(this.editModeItemCheckBox_CheckedChanged);
             // 
-            // rectangleSelectionCheckBox
+            // groupBox3
             // 
-            this.rectangleSelectionCheckBox.AutoSize = true;
-            this.rectangleSelectionCheckBox.Location = new System.Drawing.Point(6, 21);
-            this.rectangleSelectionCheckBox.Name = "rectangleSelectionCheckBox";
-            this.rectangleSelectionCheckBox.Size = new System.Drawing.Size(104, 17);
-            this.rectangleSelectionCheckBox.TabIndex = 0;
-            this.rectangleSelectionCheckBox.Text = "Rectangle brush";
-            this.rectangleSelectionCheckBox.UseVisualStyleBackColor = true;
-            this.rectangleSelectionCheckBox.CheckedChanged += new System.EventHandler(this.rectangleSelectionCheckBox_CheckedChanged);
+            this.groupBox3.Controls.Add(this.removeCodesButton);
+            this.groupBox3.Controls.Add(this.addCodeButton);
+            this.groupBox3.Controls.Add(this.addCodeInput);
+            this.groupBox3.Controls.Add(this.codeListBox);
+            this.groupBox3.Location = new System.Drawing.Point(12, 637);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(735, 200);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Code Handling";
+            // 
+            // getCodeRadio
+            // 
+            this.getCodeRadio.AutoSize = true;
+            this.getCodeRadio.Location = new System.Drawing.Point(80, 35);
+            this.getCodeRadio.Name = "getCodeRadio";
+            this.getCodeRadio.Size = new System.Drawing.Size(70, 17);
+            this.getCodeRadio.TabIndex = 9;
+            this.getCodeRadio.TabStop = true;
+            this.getCodeRadio.Text = "Get Code";
+            this.getCodeRadio.UseVisualStyleBackColor = true;
+            // 
+            // codeListBox
+            // 
+            this.codeListBox.FormattingEnabled = true;
+            this.codeListBox.Location = new System.Drawing.Point(7, 60);
+            this.codeListBox.Name = "codeListBox";
+            this.codeListBox.Size = new System.Drawing.Size(722, 134);
+            this.codeListBox.TabIndex = 0;
+            // 
+            // addCodeInput
+            // 
+            this.addCodeInput.Location = new System.Drawing.Point(7, 21);
+            this.addCodeInput.Name = "addCodeInput";
+            this.addCodeInput.Size = new System.Drawing.Size(100, 20);
+            this.addCodeInput.TabIndex = 1;
+            // 
+            // addCodeButton
+            // 
+            this.addCodeButton.Location = new System.Drawing.Point(113, 21);
+            this.addCodeButton.Name = "addCodeButton";
+            this.addCodeButton.Size = new System.Drawing.Size(75, 20);
+            this.addCodeButton.TabIndex = 2;
+            this.addCodeButton.Text = "Add Code";
+            this.addCodeButton.UseVisualStyleBackColor = true;
+            // 
+            // removeCodesButton
+            // 
+            this.removeCodesButton.Location = new System.Drawing.Point(597, 35);
+            this.removeCodesButton.Name = "removeCodesButton";
+            this.removeCodesButton.Size = new System.Drawing.Size(132, 23);
+            this.removeCodesButton.TabIndex = 3;
+            this.removeCodesButton.Text = "Remove selected codes";
+            this.removeCodesButton.UseVisualStyleBackColor = true;
             // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 862);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.editModeItemCheckBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.coordLbl);
             this.Controls.Add(this.layerSelectGroupBox);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblCurrentCode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.modeComboBox);
             this.Controls.Add(this.tileMapHeightLabel);
@@ -625,6 +658,8 @@
             this.layerSelectGroupBox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,9 +685,6 @@
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.HScrollBar hScrollBar1;
         private System.Windows.Forms.GroupBox groupBoxRightClick;
-        private System.Windows.Forms.ComboBox cboCodeValues;
-        private System.Windows.Forms.Label lblCurrentCode;
-        private System.Windows.Forms.TextBox txtNewCode;
         private System.Windows.Forms.RadioButton radioCode;
         private System.Windows.Forms.RadioButton radioPassable;
         private System.Windows.Forms.Label lblMapNumber;
@@ -683,5 +715,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox editModeItemCheckBox;
         private System.Windows.Forms.CheckBox rectangleSelectionCheckBox;
+        private System.Windows.Forms.RadioButton getCodeRadio;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button removeCodesButton;
+        private System.Windows.Forms.Button addCodeButton;
+        private System.Windows.Forms.TextBox addCodeInput;
+        private System.Windows.Forms.ListBox codeListBox;
     }
 }

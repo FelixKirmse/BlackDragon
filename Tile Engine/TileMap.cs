@@ -20,9 +20,9 @@ namespace Tile_Engine
     {
         public List<MapSquare> MapCellRow = new List<MapSquare>();
 
-        public void AddRow(int background, int interactive, int foreground, string code, bool passable)
+        public void AddRow(int background, int interactive, int foreground, bool passable)
         {
-            MapCellRow.Add(new MapSquare(background, interactive, foreground, code, passable));
+            MapCellRow.Add(new MapSquare(background, interactive, foreground, passable));
         }
     }
 
@@ -62,7 +62,7 @@ namespace Tile_Engine
                 for (int y = 0; y < MapHeight; ++y)
                 {
 
-                    newColumn.AddRow(DefaultTile, TransparentTile, TransparentTile, "", true);
+                    newColumn.AddRow(DefaultTile, TransparentTile, TransparentTile, true);
 
                     //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
 
@@ -131,17 +131,17 @@ namespace Tile_Engine
 
         public static bool CellIsPassableByPixel(Vector2 pixelLocation) { 
             return CellIsPassable(GetCellByPixelX((int)pixelLocation.X), GetCellByPixelY((int)pixelLocation.Y));
-        }
+        }        
 
-        public static string CellCodeValue(int cellX, int cellY) {
+        public static List<string> GetCellCodes(int cellX, int cellY)
+        {
             MapSquare square = GetMapSquareAtCell(cellX, cellY);
-
-            if (square == null) return "";
-            else return square.CodeValue;
+            if (square == null) return null;
+            return square.Codes;
         }
 
-        public static string CellCodeValue(Vector2 cell) {
-            return CellCodeValue((int)cell.X, (int)cell.Y);
+        public static List<string> GetCellCodes(Vector2 cell) {
+            return GetCellCodes((int)cell.X, (int)cell.Y);
         }
         #endregion
 
@@ -206,7 +206,7 @@ namespace Tile_Engine
             if (!CellIsPassable(x, y)) {
                 spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
             }
-            if (MapCellColumns[x].MapCellRow[y].CodeValue != "")
+            if (MapCellColumns[x].MapCellRow[y].Codes.Count != 0)
             {
                 spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(0, 0, 255, 80), 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
             }
@@ -262,7 +262,7 @@ namespace Tile_Engine
                 for (int y = 0; y < MapHeight; ++y)
                 {
                     
-                    newColumn.AddRow(DefaultTile, TransparentTile, TransparentTile, "", true);
+                    newColumn.AddRow(DefaultTile, TransparentTile, TransparentTile, true);
                     
                     //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
 
