@@ -31,24 +31,7 @@ namespace BlackDragon.Managers
                                 break;
 
                             case "SPAWN":
-                                if (code[1] == "MARIA")
-                                {
-                                    GameObject maria = Factory.CreateMaria();
-                                    maria.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight);
-                                    EntityManager.AddEntity(maria);
-                                }
-                                break;
-
-                            case "WATER":
-                                if (code.Length >= 2)
-                                {
-                                    if (code[1] == "TOP")
-                                    {
-                                        GameObject water = Factory.CreateWater();
-                                        water.Position = new Vector2(x * TileMap.TileWidth, y * TileMap.TileHeight);
-                                        EntityManager.AddEntity(water);
-                                    }
-                                }
+                                SpawnManager.Spawn(code[1], x, y);
                                 break;
                         }
                     }
