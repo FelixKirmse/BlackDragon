@@ -15,7 +15,7 @@ namespace BlackDragon.Components
         protected bool flipped;
         protected string currentAnimation;
         protected string receivedAnimation;
-        protected float drawDepth = .89f;
+        protected float drawDepth = .91f;
 
         public override void Draw(GameObject obj, SpriteBatch spriteBatch)
         {

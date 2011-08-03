@@ -20,8 +20,7 @@ namespace BlackDragon.Components.NPCs
 
         protected override Vector2 getNextWaypoint()
         {
-            int index = VariableProvider.RandomGenerator.Next(0, waypoints.Count - 1);
-            return waypoints[index];
+            return new Vector2(VariableProvider.RandomGenerator.Next(0, TileMap.MapWidth), VariableProvider.RandomGenerator.Next(0, TileMap.MapHeight));
         }        
     }
 }

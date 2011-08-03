@@ -32,7 +32,7 @@ namespace Tile_Engine
         public const int TileWidth = 16;
         public const int TileHeight = 16;
         public static int MapWidth = 50;
-        public static int MapHeight = 50;
+        public static int MapHeight = 38;
         public const int MapLayers = 3;
         
         public static int DefaultTile = 0;
@@ -209,8 +209,11 @@ namespace Tile_Engine
             if (MapCellColumns[x].MapCellRow[y].Codes.Count != 0)
             {
                 spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(0, 0, 255, 80), 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
+                spriteBatch.DrawString(spriteFont, MapCellColumns[x].MapCellRow[y].Codes.Count.ToString(), new Vector2(x*TileWidth, y*TileHeight), Color.White, 0f, Vector2.Zero, 1, SpriteEffects.None, .09f);                 
             }
         }
+
+        
 
         public static void DrawRectangleIndicator(SpriteBatch spriteBatch, MouseState ms, Vector2 startCell)
         {

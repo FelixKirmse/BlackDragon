@@ -31,6 +31,7 @@ namespace Level_Editor
         public bool MakeUnpassable = false;
         public bool MakePassable = true;
         public bool GettingCode = false;
+        public bool InsertTile = false;
         public Vector2 CellCoords = Vector2.Zero;
 
         public MouseState lastMouseState;
@@ -182,6 +183,10 @@ namespace Level_Editor
                                 {
                                     ((MapEditor)parentForm).GetCodeList(TileMap.GetCellCodes(cellX, cellY));
                                 }
+                                if (InsertTile)
+                                {
+                                    TileMap.SetTileAtCell(cellX, cellY, DrawLayer, DrawTile);
+                                }
                             }
                         }
                         else if (FillMode == "RECTANGLEFILL")
@@ -234,6 +239,10 @@ namespace Level_Editor
                                             else if (MakeUnpassable)
                                             {
                                                 TileMap.GetMapSquareAtCell(cellx, celly).Passable = false;
+                                            }
+                                            if (InsertTile)
+                                            {
+                                                TileMap.SetTileAtCell(cellx, celly, DrawLayer, DrawTile);
                                             }
                                         }
                                     }

@@ -503,5 +503,10 @@ namespace Level_Editor
                 removeCodesButton_Click(sender, e);
             }
         }
+
+        private void insertTileCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            game.InsertTile = insertTileCheckBox.Checked;
+        }
     }
 }

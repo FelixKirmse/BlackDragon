@@ -15,6 +15,7 @@ namespace BlackDragon.Components.NPCs
         public MariaGraphicsComponent()
         {
             currentAnimation = "IdleDown";
+            drawDepth = .86f;
             animations = AnimationDictionaryProvider.GetMariaAnimations();            
         }
 

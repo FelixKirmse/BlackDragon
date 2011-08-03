@@ -83,6 +83,7 @@
             this.addCodeButton = new System.Windows.Forms.Button();
             this.addCodeInput = new System.Windows.Forms.TextBox();
             this.codeListBox = new System.Windows.Forms.ListBox();
+            this.insertTileCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -240,6 +241,7 @@
             // 
             // groupBoxRightClick
             // 
+            this.groupBoxRightClick.Controls.Add(this.insertTileCheckBox);
             this.groupBoxRightClick.Controls.Add(this.getCodeRadio);
             this.groupBoxRightClick.Controls.Add(this.radioUnpassable);
             this.groupBoxRightClick.Controls.Add(this.radioCode);
@@ -616,6 +618,17 @@
             this.codeListBox.TabIndex = 0;
             this.codeListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codeListBox_KeyPress);
             // 
+            // insertTileCheckBox
+            // 
+            this.insertTileCheckBox.AutoSize = true;
+            this.insertTileCheckBox.Location = new System.Drawing.Point(6, 80);
+            this.insertTileCheckBox.Name = "insertTileCheckBox";
+            this.insertTileCheckBox.Size = new System.Drawing.Size(95, 17);
+            this.insertTileCheckBox.TabIndex = 10;
+            this.insertTileCheckBox.Text = "Also Insert Tile";
+            this.insertTileCheckBox.UseVisualStyleBackColor = true;
+            this.insertTileCheckBox.CheckedChanged += new System.EventHandler(this.insertTileCheckBox_CheckedChanged);
+            // 
             // MapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -727,5 +740,6 @@
         private System.Windows.Forms.Button addCodeButton;
         private System.Windows.Forms.TextBox addCodeInput;
         private System.Windows.Forms.ListBox codeListBox;
+        private System.Windows.Forms.CheckBox insertTileCheckBox;
     }
 }
