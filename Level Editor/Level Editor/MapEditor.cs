@@ -10,6 +10,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using System.IO;
 using Tile_Engine;
+using Microsoft.Xna.Framework.Input;
 
 using XNARectangle = Microsoft.Xna.Framework.Rectangle;
 
@@ -170,10 +171,11 @@ namespace Level_Editor
         private void radioPassable_CheckedChanged(object sender, EventArgs e)
         {
             if (radioPassable.Checked){
-                game.EditingCode = false;
+                game.SettingCode = false;
                 game.MakePassable = true;
                 game.MakeUnpassable = false;
-            } else game.EditingCode = true;
+                game.GettingCode = false;
+            }
         }        
 
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
@@ -244,9 +246,10 @@ namespace Level_Editor
         {
             if (radioUnpassable.Checked)
             {
-                game.EditingCode = false;
+                game.SettingCode = false;
                 game.MakePassable = false;
                 game.MakeUnpassable = true;
+                game.GettingCode = false;
             }            
         }
 
@@ -254,9 +257,10 @@ namespace Level_Editor
         {
             if (radioCode.Checked)
             {
-                game.EditingCode = true;
+                game.SettingCode = true;
                 game.MakePassable = false;
                 game.MakeUnpassable = false;
+                game.GettingCode = false;
             }            
         }
 
@@ -417,9 +421,87 @@ namespace Level_Editor
         private void rectangleSelectionCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (rectangleSelectionCheckBox.Checked)
+            {
                 game.FillMode = "RECTANGLEFILL";
+                getCodeRadio.Enabled = false;
+            }
             else
+            {
                 game.FillMode = "TILEFILL";
+                getCodeRadio.Enabled = true;
+            }
+
+            
+        }
+
+        private void getCodeRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (getCodeRadio.Checked)
+            {
+                game.SettingCode = false;
+                game.MakePassable = false;
+                game.MakeUnpassable = false;
+                game.GettingCode = true;
+            } 
+        }
+
+        public void GetCodeList(List<string> codeList)
+        {
+            codeListBox.Items.Clear();
+            foreach (string code in codeList)
+            {
+                codeListBox.Items.Add(code);
+            }
+        }
+
+        public void SetCodeList(int cellX,int cellY)
+        {
+            List<string> codeList = new List<string>();             
+            foreach (string code in codeListBox.Items)
+            {
+                codeList.Add(code);
+            }
+
+            MapSquare square = TileMap.GetMapSquareAtCell(cellX, cellY);
+            square.Codes = codeList;
+        }
+
+        private void addCodeButton_Click(object sender, EventArgs e)
+        {
+            if(addCodeInput.Text != "")
+                codeListBox.Items.Add(addCodeInput.Text);
+            addCodeInput.Text = "";
+        }
+
+        private void removeCodesButton_Click(object sender, EventArgs e)
+        {
+            string[] items = new string[codeListBox.SelectedItems.Count];
+            for (int i = 0; i < codeListBox.SelectedItems.Count; ++i)
+            {
+                items[i] = (string)codeListBox.SelectedItems[i];
+            }
+            foreach (string item in items)
+            {
+                codeListBox.Items.Remove(item);
+            }
+        }
+
+        private void addCodeInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyboardState ks = Keyboard.GetState();
+            if (ks.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Enter))
+            {
+                addCodeButton_Click(sender, e);
+            }
+        }
+
+        private void codeListBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyboardState ks = Keyboard.GetState();
+            if (ks.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Delete))
+            {
+                removeCodesButton_Click(sender, e);
+            }
         }
     }
 }

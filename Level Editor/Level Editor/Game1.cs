@@ -27,9 +27,10 @@ namespace Level_Editor
         Control gameForm;
         public int DrawLayer = 0;
         public int DrawTile = 0;
-        public bool EditingCode = false;
+        public bool SettingCode = false;
         public bool MakeUnpassable = false;
-        public bool MakePassable = true;        
+        public bool MakePassable = true;
+        public bool GettingCode = false;
         public Vector2 CellCoords = Vector2.Zero;
 
         public MouseState lastMouseState;
@@ -165,9 +166,9 @@ namespace Level_Editor
 
                             if ((ms.RightButton == ButtonState.Pressed))
                             {
-                                if (EditingCode)
+                                if (SettingCode)
                                 {
-                                    //fix please!
+                                    ((MapEditor)parentForm).SetCodeList(cellX, cellY);
                                 }
                                 else if (MakePassable)
                                 {
@@ -176,6 +177,10 @@ namespace Level_Editor
                                 else if (MakeUnpassable)
                                 {
                                     TileMap.GetMapSquareAtCell(cellX, cellY).Passable = false;
+                                }
+                                else if (GettingCode)
+                                {
+                                    ((MapEditor)parentForm).GetCodeList(TileMap.GetCellCodes(cellX, cellY));
                                 }
                             }
                         }
@@ -218,9 +223,9 @@ namespace Level_Editor
                                     {
                                         for (int celly = (int)startCell.Y; celly <= endCell.Y; ++celly)
                                         {
-                                            if (EditingCode)
+                                            if (SettingCode)
                                             {
-                                                //fix please!
+                                                ((MapEditor)parentForm).SetCodeList(cellx, celly);
                                             }
                                             else if (MakePassable)
                                             {

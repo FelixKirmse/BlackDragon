@@ -83,10 +83,10 @@ namespace BlackDragon.Components.Platform.Player
                     middleBottom = TileMap.GetCellByPixel(new Vector2((CollisionRectangle.Left + CollisionRectangle.Right) / 2, CollisionRectangle.Bottom + 1));
 
                     if (jumpThroughCheck)
-                    {
-                        string[] codePartsLeft = TileMap.CellCodeValue(bottomLeftCorner).Split('*');
-                        string[] codePartsRight = TileMap.CellCodeValue(bottomRightCorner).Split('*');
-                        string[] codePartsCenter = TileMap.CellCodeValue(middleBottom).Split('*');
+                    {                        
+                        List<string> codePartsLeft = TileMap.GetCellCodes(bottomLeftCorner);
+                        List<string> codePartsRight = TileMap.GetCellCodes(bottomRightCorner);
+                        List<string> codePartsCenter = TileMap.GetCellCodes(middleBottom);
 
                         if (codePartsLeft.Contains("JUMPTHROUGH") || codePartsRight.Contains("JUMPTHROUGH") || codePartsCenter.Contains("JUMPTHROUGH"))
                             collisionWithSpecialBlock = true;                        

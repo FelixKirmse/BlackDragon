@@ -43,3 +43,6 @@ Level Editor/Level EditorContent/obj/
 Level Editor/Level EditorContent/textures/mariotiles.png
 Tile Engine/bin/
 Tile Engine/obj/
+BlackDragon/BlackDragon/bin/x86/Debug/BlackDragon.suo
+BlackDragon/BlackDragon/ClassDiagram1.cd
+Level Editor/Level Editor/ClassDiagram1.cd

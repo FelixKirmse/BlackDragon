@@ -20,9 +20,8 @@ namespace BlackDragon.Managers
             for (int y = 0; y < TileMap.MapHeight; ++y)
             {
                 for (int x = 0; x < TileMap.MapWidth; ++x)
-                {
-                    string[] codeParts = TileMap.CellCodeValue(x, y).Split('*');
-                    foreach (string codePart in codeParts)
+                {                    
+                    foreach (string codePart in TileMap.GetCellCodes(x,y))
                     {
                         string[] code = codePart.Split('_'); 
                         switch (code[0])
@@ -69,8 +68,7 @@ namespace BlackDragon.Managers
         private static void checkCodesUnderPlayer(GameObject player)
         {
             Rectangle playerCollisionRectangle = player.GetCollisionRectangle(player.PublicCollisionRectangle);
-
-            string codeLeft = TileMap.CellCodeValue
+            checkCodesUnderPlayer(player, TileMap.GetCellCodes
                 (
                     TileMap.GetCellByPixel(
                         new Vector2(
@@ -78,9 +76,8 @@ namespace BlackDragon.Managers
                             playerCollisionRectangle.Bottom
                             )
                     )
-                );
-
-            string codeParts = TileMap.CellCodeValue
+                ));
+            checkCodesUnderPlayer(player, TileMap.GetCellCodes
                 (
                     TileMap.GetCellByPixel(
                         new Vector2(
@@ -88,9 +85,8 @@ namespace BlackDragon.Managers
                             playerCollisionRectangle.Bottom
                             )
                     )
-                );
-
-            string codeCenter = TileMap.CellCodeValue
+                ));
+            checkCodesUnderPlayer(player, TileMap.GetCellCodes
                 (
                     TileMap.GetCellByPixel(
                         new Vector2(
@@ -98,22 +94,32 @@ namespace BlackDragon.Managers
                             playerCollisionRectangle.Bottom
                             )
                     )
-                );
+                ));
+        }
 
-            string longCode = codeLeft + codeParts + codeCenter;
-            if(longCode.Contains("JUMPTHROUGHTOP"))            
-                player.Send<bool>("PHYSICS_SET_JUMPTHROUGHCHECK", true);
-            if(longCode.Contains("WATER"))
-                player.Send<bool>("PHYSICS_SET_INWATER", true);
+        private static void checkCodesUnderPlayer(GameObject player, List<string> codes )
+        {
+            foreach (string code in codes)
+            {
+                string[] codeArray = code.Split('_');
+                switch (codeArray[0])
+                { 
+                    case "JUMPTHROUGHTOP":
+                        player.Send<bool>("PHYSICS_SET_JUMPTHROUGHCHECK", true);
+                        break;
 
-            
+                    case "WATER":
+                        player.Send<bool>("PHYSICS_SET_INWATER", true);
+                        break;
+                }
+            }
         }
 
         private static void checkCodesInPlayerCenter(GameObject player)
         {
-            string[] codeParts = TileMap.CellCodeValue(TileMap.GetCellByPixel(player.GetCollisionCenter(player.PublicCollisionRectangle))).Split('*');
+            Vector2 collisionCenter = player.GetCollisionCenter(player.PublicCollisionRectangle);
 
-            foreach (string codePart in codeParts)
+            foreach (string codePart in TileMap.GetCellCodes(TileMap.GetCellByPixel(collisionCenter)))
             {
                 string[] codeArray = codePart.Split('_');
                 switch (codeArray[0])

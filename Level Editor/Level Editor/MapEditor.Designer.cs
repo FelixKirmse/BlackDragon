@@ -47,6 +47,7 @@
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.groupBoxRightClick = new System.Windows.Forms.GroupBox();
+            this.getCodeRadio = new System.Windows.Forms.RadioButton();
             this.radioUnpassable = new System.Windows.Forms.RadioButton();
             this.radioCode = new System.Windows.Forms.RadioButton();
             this.radioPassable = new System.Windows.Forms.RadioButton();
@@ -78,11 +79,10 @@
             this.rectangleSelectionCheckBox = new System.Windows.Forms.CheckBox();
             this.editModeItemCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.getCodeRadio = new System.Windows.Forms.RadioButton();
-            this.codeListBox = new System.Windows.Forms.ListBox();
-            this.addCodeInput = new System.Windows.Forms.TextBox();
-            this.addCodeButton = new System.Windows.Forms.Button();
             this.removeCodesButton = new System.Windows.Forms.Button();
+            this.addCodeButton = new System.Windows.Forms.Button();
+            this.addCodeInput = new System.Windows.Forms.TextBox();
+            this.codeListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -250,6 +250,18 @@
             this.groupBoxRightClick.TabIndex = 5;
             this.groupBoxRightClick.TabStop = false;
             this.groupBoxRightClick.Text = "Right Click Mode";
+            // 
+            // getCodeRadio
+            // 
+            this.getCodeRadio.AutoSize = true;
+            this.getCodeRadio.Location = new System.Drawing.Point(80, 35);
+            this.getCodeRadio.Name = "getCodeRadio";
+            this.getCodeRadio.Size = new System.Drawing.Size(70, 17);
+            this.getCodeRadio.TabIndex = 9;
+            this.getCodeRadio.TabStop = true;
+            this.getCodeRadio.Text = "Get Code";
+            this.getCodeRadio.UseVisualStyleBackColor = true;
+            this.getCodeRadio.CheckedChanged += new System.EventHandler(this.getCodeRadio_CheckedChanged);
             // 
             // radioUnpassable
             // 
@@ -559,38 +571,22 @@
             this.groupBox3.Controls.Add(this.addCodeButton);
             this.groupBox3.Controls.Add(this.addCodeInput);
             this.groupBox3.Controls.Add(this.codeListBox);
-            this.groupBox3.Location = new System.Drawing.Point(12, 637);
+            this.groupBox3.Location = new System.Drawing.Point(391, 630);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(735, 200);
+            this.groupBox3.Size = new System.Drawing.Size(356, 200);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Code Handling";
             // 
-            // getCodeRadio
+            // removeCodesButton
             // 
-            this.getCodeRadio.AutoSize = true;
-            this.getCodeRadio.Location = new System.Drawing.Point(80, 35);
-            this.getCodeRadio.Name = "getCodeRadio";
-            this.getCodeRadio.Size = new System.Drawing.Size(70, 17);
-            this.getCodeRadio.TabIndex = 9;
-            this.getCodeRadio.TabStop = true;
-            this.getCodeRadio.Text = "Get Code";
-            this.getCodeRadio.UseVisualStyleBackColor = true;
-            // 
-            // codeListBox
-            // 
-            this.codeListBox.FormattingEnabled = true;
-            this.codeListBox.Location = new System.Drawing.Point(7, 60);
-            this.codeListBox.Name = "codeListBox";
-            this.codeListBox.Size = new System.Drawing.Size(722, 134);
-            this.codeListBox.TabIndex = 0;
-            // 
-            // addCodeInput
-            // 
-            this.addCodeInput.Location = new System.Drawing.Point(7, 21);
-            this.addCodeInput.Name = "addCodeInput";
-            this.addCodeInput.Size = new System.Drawing.Size(100, 20);
-            this.addCodeInput.TabIndex = 1;
+            this.removeCodesButton.Location = new System.Drawing.Point(194, 21);
+            this.removeCodesButton.Name = "removeCodesButton";
+            this.removeCodesButton.Size = new System.Drawing.Size(149, 23);
+            this.removeCodesButton.TabIndex = 3;
+            this.removeCodesButton.Text = "Remove selected codes";
+            this.removeCodesButton.UseVisualStyleBackColor = true;
+            this.removeCodesButton.Click += new System.EventHandler(this.removeCodesButton_Click);
             // 
             // addCodeButton
             // 
@@ -600,15 +596,25 @@
             this.addCodeButton.TabIndex = 2;
             this.addCodeButton.Text = "Add Code";
             this.addCodeButton.UseVisualStyleBackColor = true;
+            this.addCodeButton.Click += new System.EventHandler(this.addCodeButton_Click);
             // 
-            // removeCodesButton
+            // addCodeInput
             // 
-            this.removeCodesButton.Location = new System.Drawing.Point(597, 35);
-            this.removeCodesButton.Name = "removeCodesButton";
-            this.removeCodesButton.Size = new System.Drawing.Size(132, 23);
-            this.removeCodesButton.TabIndex = 3;
-            this.removeCodesButton.Text = "Remove selected codes";
-            this.removeCodesButton.UseVisualStyleBackColor = true;
+            this.addCodeInput.Location = new System.Drawing.Point(7, 21);
+            this.addCodeInput.Name = "addCodeInput";
+            this.addCodeInput.Size = new System.Drawing.Size(100, 20);
+            this.addCodeInput.TabIndex = 1;
+            this.addCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addCodeInput_KeyPress);
+            // 
+            // codeListBox
+            // 
+            this.codeListBox.FormattingEnabled = true;
+            this.codeListBox.Location = new System.Drawing.Point(7, 60);
+            this.codeListBox.Name = "codeListBox";
+            this.codeListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.codeListBox.Size = new System.Drawing.Size(336, 134);
+            this.codeListBox.TabIndex = 0;
+            this.codeListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codeListBox_KeyPress);
             // 
             // MapEditor
             // 

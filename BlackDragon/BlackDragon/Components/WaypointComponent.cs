@@ -41,9 +41,12 @@ namespace BlackDragon.Components
         }
 
         protected virtual void idleUpdate(Vector2 collisionCenter, GameObject obj)
-        {
-            currentWaypoint = getNextWaypoint();
-            currentPath = PathFinder.FindReducedPath(TileMap.GetCellByPixel(collisionCenter), currentWaypoint);
+        {            
+            do
+            {
+                currentWaypoint = getNextWaypoint();
+                currentPath = PathFinder.FindReducedPath(TileMap.GetCellByPixel(collisionCenter), currentWaypoint);
+            } while (currentPath == null);
             pathIndex = 0;
             currentGoal = currentPath[pathIndex];
             changeDirection(collisionCenter, obj);
