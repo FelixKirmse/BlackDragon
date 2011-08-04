@@ -59,7 +59,16 @@ namespace BlackDragon.Components
                 {
                     if (obj is string)
                         receivedAnimation = (string)(object)obj;                    
-                }                
+                }
+
+                if (messageParts[1] == "SEND")
+                {
+                    if (messageParts[3] == "CURRENTANIMATION")
+                    {
+                        if (obj is GameObject)
+                            ((GameObject)(object)obj).Send(messageParts[2] + "_SET_CURRENTANIMATION", currentAnimation);
+                    }
+                }
             }        
         }
 

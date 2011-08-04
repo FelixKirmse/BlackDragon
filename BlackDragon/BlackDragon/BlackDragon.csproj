@@ -108,6 +108,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\NPCs\PartyMemberWaypointComponent.cs" />
+    <Compile Include="Managers\PartyManager.cs" />
     <Compile Include="Managers\SpawnManager.cs" />
     <Compile Include="States.cs" />
     <Compile Include="Components\AnimatedGraphicsComponent.cs" />

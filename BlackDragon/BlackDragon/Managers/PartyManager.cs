@@ -17,13 +17,13 @@ namespace BlackDragon.Managers
         public static GameObject MemberThree;
 
         public static void Update(GameTime gameTime)
-        { 
+        {
             
         }
 
         public static void Draw(SpriteBatch spriteBatch)
-        { 
-        
+        {
+           
         }
     }
 }

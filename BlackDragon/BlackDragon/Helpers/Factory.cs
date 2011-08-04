@@ -46,5 +46,13 @@ namespace BlackDragon
             components.Add(new WaterGraphicsComponent());
             return new GameObject(components);
         }
+
+        public static GameObject CreatePartyMember()
+        {
+            List<Component> components = new List<Component>();
+            components.Add(new MariaGraphicsComponent());
+            components.Add(new PartyMemberWaypointComponent());
+            return new GameObject(components);
+        }
     }
 }

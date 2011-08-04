@@ -12,7 +12,7 @@ namespace BlackDragon.Entities
     {
         public Vector2 Velocity;
         public Vector2 Position;
-        public Rectangle PublicCollisionRectangle;        
+        public Rectangle PublicCollisionRectangle = new Rectangle(2, 14, 12, 12);       
 
         private List<Component> components = new List<Component>();
 

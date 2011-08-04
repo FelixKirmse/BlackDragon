@@ -11,8 +11,7 @@ namespace BlackDragon.Providers
     {
         public static Game1 Game { get; set; }
         public static Texture2D WhiteTexture { get; set; }
-        public static GameObject CurrentPlayer { get; set; }
-        public static GameObject Maria { get; set; }
+        public static GameObject CurrentPlayer { get; set; }        
         public static Random RandomGenerator { get; set; }
     }
 }

@@ -25,6 +25,7 @@ namespace BlackDragon.Components
         protected Rectangle collisionRectangle = new Rectangle(2, 14, 12, 12);
         protected Vector2 direction;
 
+
         public override void Update(GameObject obj, GameTime gameTime)
         {
             Vector2 collisionCenter = obj.GetCollisionCenter(collisionRectangle);
@@ -156,6 +157,10 @@ namespace BlackDragon.Components
                 }
                 flipped = true;
             }
+
+            if (direction == Vector2.Zero)
+                animation = "IdleSide";
+
             obj.Send("GRAPHICS_SET_FLIPPED", flipped);
             obj.Send("GRAPHICS_PLAYANIMATION", animation);
         }
