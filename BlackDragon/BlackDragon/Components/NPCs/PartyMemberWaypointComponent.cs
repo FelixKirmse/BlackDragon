@@ -5,6 +5,7 @@ using System.Text;
 using Tile_Engine;
 using BlackDragon.Entities;
 using Microsoft.Xna.Framework;
+using BlackDragon.Helpers;
 
 namespace BlackDragon.Components.NPCs
 {
@@ -27,6 +28,26 @@ namespace BlackDragon.Components.NPCs
             }
             else
                 determineIdleAnimation(obj);
+        }
+
+        protected override void idleUpdate(Vector2 collisionCenter, GameObject obj)
+        {
+            int counter = 0;
+            do
+            {
+                ++counter;
+                if (counter == 5)
+                {
+                    obj.Position = objectToFollow.Position;
+                    return;
+                }
+                currentWaypoint = getNextWaypoint();
+                currentPath = PathFinder.FindReducedPath(TileMap.GetCellByPixel(collisionCenter), currentWaypoint);                
+            } while (currentPath == null);
+            pathIndex = 0;
+            currentGoal = currentPath[pathIndex];
+            changeDirection(collisionCenter, obj);
+            objectState = ObjectStates.WALKING;
         }
 
         protected void determineIdleAnimation(GameObject obj)
