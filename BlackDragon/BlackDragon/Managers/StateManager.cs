@@ -16,6 +16,7 @@ namespace BlackDragon.Managers
         public static PlatformStates PlatformState { get; set; }
         public static RPGStates RPGState { get; set; }
         public static OptionStates OptionsState { get; set; }
+        public static DialogueStates DialogState { get; set; }
 
         public static bool GamePaused { get; set; }
         public static bool InputLock { get; set; }
@@ -23,6 +24,7 @@ namespace BlackDragon.Managers
         public static void Initialize()
         {
             GameState = GameStates.TITLE;
+            DialogState = DialogueStates.INACTIVE;
             GamePaused = false;
             InputLock = false;
         }

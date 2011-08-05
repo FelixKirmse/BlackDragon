@@ -109,7 +109,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\NPCs\PartyMemberWaypointComponent.cs" />
-    <Compile Include="Managers\PartyManager.cs" />
+    <Compile Include="Dialogue\DialogScript.cs" />
+    <Compile Include="Dialogue\Dialogs\Dummy.cs" />
+    <Compile Include="Dialogue\Dialogs\DummyDialog.cs" />
+    <Compile Include="Managers\DialogManager.cs" />
+    <Compile Include="Managers\SpawnManager.cs" />
+    <Compile Include="Providers\DialogDictionaryProvider.cs" />
+    <Compile Include="Providers\MugShotProvider.cs" />
     <Compile Include="States.cs" />
     <Compile Include="Components\AnimatedGraphicsComponent.cs" />
     <Compile Include="Components\Component.cs" />
@@ -211,6 +217,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

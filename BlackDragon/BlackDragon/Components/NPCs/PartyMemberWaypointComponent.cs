@@ -16,7 +16,7 @@ namespace BlackDragon.Components.NPCs
 
         public PartyMemberWaypointComponent()
         {
-            speed = 1.3f;
+            speed = 1.4f;
             objectState = ObjectStates.IDLE;
         }
 
@@ -27,7 +27,10 @@ namespace BlackDragon.Components.NPCs
                 base.Update(obj, gameTime);
             }
             else
+            {
+                objectState = ObjectStates.IDLE;
                 determineIdleAnimation(obj);
+            }
         }
 
         protected override void idleUpdate(Vector2 collisionCenter, GameObject obj)
@@ -38,7 +41,7 @@ namespace BlackDragon.Components.NPCs
                 ++counter;
                 if (counter == 5)
                 {
-                    obj.Position = objectToFollow.Position;
+                    //obj.Position = objectToFollow.Position;
                     return;
                 }
                 currentWaypoint = getNextWaypoint();

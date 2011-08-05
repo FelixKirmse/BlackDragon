@@ -19,6 +19,7 @@ namespace BlackDragon
             FontProvider.AddFont("Pericles9", Content.Load<SpriteFont>(@"fonts/pericles9")); 
             FontProvider.AddFont("Pericles14", Content.Load<SpriteFont>(@"fonts/pericles14"));
             FontProvider.AddFont("Pericles21", Content.Load<SpriteFont>(@"fonts/pericles21"));
+            FontProvider.AddFont("Mono14", Content.Load<SpriteFont>(@"fonts/mono14"));
 
             PlatformManager.LoadContent(Content.Load<Texture2D>(@"textures/TileSets/platform"));
             RPGManager.LoadContent(Content.Load<Texture2D>(@"textures/TileSets/rpg"));
@@ -28,6 +29,12 @@ namespace BlackDragon
             VariableProvider.WhiteTexture = Content.Load<Texture2D>(@"textures/misc/white");
 
             AnimationDictionaryProvider.LoadAnimationStrips(Content);
+
+            MugShotProvider.DummyMugShotAngry = Content.Load<Texture2D>(@"textures/misc/mugshots/dummyangry");
+            MugShotProvider.DummyMugShotNormal = Content.Load<Texture2D>(@"textures/misc/mugshots/dummynormal");
+
+            DialogManager.Initialize();
+            DialogDictionaryProvider.Initialize(); 
         }
     }
 }

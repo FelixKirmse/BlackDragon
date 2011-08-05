@@ -38,7 +38,7 @@ namespace BlackDragon
 
             StaticClassesImportantVariablesInitializer.InitializeImportantVariables();
             StateManager.Initialize();
-            WaypointProvider.Initialize();
+            WaypointProvider.Initialize();                       
 
             base.Initialize();
         }

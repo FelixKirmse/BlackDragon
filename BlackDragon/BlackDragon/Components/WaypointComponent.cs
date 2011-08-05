@@ -55,7 +55,7 @@ namespace BlackDragon.Components
         }
 
         protected void changeDirection(Vector2 collisionCenter, GameObject obj)
-        {
+        {            
             direction = TileMap.GetCellCenter(currentGoal) - collisionCenter;            
             if (direction != Vector2.Zero)
                 direction.Normalize();
@@ -91,76 +91,23 @@ namespace BlackDragon.Components
 
         protected virtual void determineAnimation(GameObject obj)
         {
-            string animation = null;
-            bool flipped = false;
+            string animation = direction.Y > 0 ? "WalkDown" : "WalkUp";
+            bool flipped = direction.X < 0;
 
-            if (direction.X == 0)
+            if (direction.X != 0)
             {
-                if (direction.Y > 0)
-                    animation = "WalkDown";
-                else
-                    animation = "WalkUp";
-
-                flipped = false;
-            }
-            else if (direction.Y == 0)
-            {
-                if (direction.X > 0)
-                    flipped = false;
-                else
-                    flipped = true;
-
-                animation = "WalkSide";
-            }
-            else if (direction.X > 0)
-            {
-                if (direction.Y > 0)
+                if (direction.Y == 0)
                 {
-                    if (direction.X < .15f)
-                        animation = "WalkDown";
-                    else if (direction.X > .85f)
-                        animation = "WalkSide";
-                    else
-                        animation = "WalkDownSide";
+                    animation = "WalkSide";
                 }
                 else
                 {
-                    if (direction.X < .15f)
-                        animation = "WalkUp";
-                    else if (direction.X > .85f)
+                    if (Math.Abs(direction.X) > .85f)
                         animation = "WalkSide";
-                    else
-                        animation = "WalkUpSide";
+                    else if (Math.Abs(direction.X) > .15f)
+                        animation += "Side";
                 }
-
-                flipped = false;
             }
-            else if (direction.X < 0)
-            {
-                if (direction.Y > 0)
-                {
-                    if (direction.X > -.15f)
-                        animation = "WalkDown";
-                    else if (direction.X < -.85f)
-                        animation = "WalkSide";
-                    else
-                        animation = "WalkDownSide";
-                }
-                else
-                {
-                    if (direction.X > -.15f)
-                        animation = "WalkUp";
-                    else if (direction.X < -.85f)
-                        animation = "WalkSide";
-                    else
-                        animation = "WalkUpSide";
-                }
-                flipped = true;
-            }
-
-            if (direction == Vector2.Zero)
-                animation = "IdleSide";
-
             obj.Send("GRAPHICS_SET_FLIPPED", flipped);
             obj.Send("GRAPHICS_PLAYANIMATION", animation);
         }

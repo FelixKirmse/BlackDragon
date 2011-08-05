@@ -9,6 +9,8 @@ using BlackDragon.Providers;
 using BlackDragon.Managers;
 using BlackDragon.Entities;
 using BlackDragon.Helpers;
+using BlackDragon.Dialogue;
+using BlackDragon.Dialogue.Dialogs;
 
 namespace BlackDragon.Managers
 {
@@ -32,22 +34,34 @@ namespace BlackDragon.Managers
 
             /// temporary code            
             VariableProvider.CurrentPlayer = Factory.CreateRPGPlayer();
-            LevelManager.LoadLevel("000"); 
+            LevelManager.LoadLevel("000");            
         }
 
         public static void Update(GameTime gameTime)
         {
-            if (!StateManager.GamePaused) {                
-                EntityManager.Update(gameTime);                
-                CodeManager.CheckPlayerCodes();
-                GeneralInputManager.HandleGeneralInput();
-            }    
+            if (StateManager.DialogState == DialogueStates.INACTIVE)
+            {
+                if (!StateManager.GamePaused)
+                {
+                    EntityManager.Update(gameTime);
+                    CodeManager.CheckPlayerCodes();
+                    GeneralInputManager.HandleGeneralInput();
+                }
+            }
+            else 
+            {
+                DialogManager.Update(gameTime);
+            }  
         }
 
         public static void Draw(SpriteBatch spriteBatch)
         {
             TileMap.Draw(spriteBatch);
-            EntityManager.Draw(spriteBatch);         
+            EntityManager.Draw(spriteBatch);
+            if (StateManager.DialogState == DialogueStates.ACTIVE)
+            {
+                DialogManager.Draw(spriteBatch);
+            }
         }
     }
 }

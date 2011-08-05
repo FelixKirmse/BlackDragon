@@ -33,6 +33,7 @@ namespace BlackDragon.Managers
                             case "SPAWN":
                                 SpawnManager.Spawn(code[1], x, y);
                                 break;
+
                         }
                     }
                 }
@@ -128,6 +129,14 @@ namespace BlackDragon.Managers
                         {
                             StateManager.GameState = GameStates.RPG;
                             RPGManager.Activate();
+                        }
+                        break;
+
+                    case "DIALOG":
+                        if (InputMapper.STRICTACTION)
+                        {
+                            DialogManager.PlayDialog(DialogDictionaryProvider.DummyDialog, "Test1");
+                            StateManager.DialogState = DialogueStates.ACTIVE;
                         }
                         break;
                 }
