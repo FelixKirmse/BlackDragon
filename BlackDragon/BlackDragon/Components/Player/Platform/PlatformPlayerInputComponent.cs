@@ -15,7 +15,7 @@ namespace BlackDragon.Components.Platform.Player
         private bool onGround;
         private int jumpCount;
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {            
             if (!InputMapper.JUMP && gravity < 0)
             {

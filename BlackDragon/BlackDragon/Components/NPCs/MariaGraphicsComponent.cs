@@ -19,15 +19,15 @@ namespace BlackDragon.Components.NPCs
             animations = AnimationDictionaryProvider.GetMariaAnimations();            
         }
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {    
             if (receivedAnimation != currentAnimation)
             {
                 PlayAnimation(receivedAnimation);
             }
             receivedAnimation = "";
-            
-            base.Update(obj, gameTime);
+
+            base.Update(obj);
         }
     }
 }

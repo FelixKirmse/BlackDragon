@@ -22,7 +22,7 @@ namespace BlackDragon.Components.Platform.Player
             this.drawDepth = .85f;
         }
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {            
             if(receivedAnimation == "")
             {
@@ -37,7 +37,7 @@ namespace BlackDragon.Components.Platform.Player
                         
             receivedAnimation = "";
 
-            base.Update(obj, gameTime);
+            base.Update(obj);
         }       
 
 

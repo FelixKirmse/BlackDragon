@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Helpers
 {
@@ -102,8 +103,9 @@ namespace BlackDragon.Helpers
             finishedPlaying = false;
         }
 
-        public void Update(GameTime gameTime) {
-            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        public void Update()
+        {
+            float elapsed = ShortcutProvider.ElapsedSeconds;
             frameTimer += elapsed;
             if (frameTimer >= frameDelay) {
                 ++currentFrame;

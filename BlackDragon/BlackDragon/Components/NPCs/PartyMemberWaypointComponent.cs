@@ -20,11 +20,11 @@ namespace BlackDragon.Components.NPCs
             objectState = ObjectStates.IDLE;
         }
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {
             if (Vector2.Distance(objectToFollow.GetCollisionCenter(objectToFollow.PublicCollisionRectangle), obj.GetCollisionCenter(collisionRectangle)) >= 24)
             {
-                base.Update(obj, gameTime);
+                base.Update(obj);
             }
             else
             {

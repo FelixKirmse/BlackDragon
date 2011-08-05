@@ -22,7 +22,7 @@ namespace BlackDragon.Components.RPG.Player
             this.drawDepth = .85f;
         }
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {
             string newAnimation = "";
             if (noInput)
@@ -68,7 +68,7 @@ namespace BlackDragon.Components.RPG.Player
             noInput = false;
             obj.Send("INPUT_SET_FLIPPED", flipped);
 
-            base.Update(obj, gameTime);
+            base.Update(obj);
         }        
 
         public override void Receive<T>(string message, T obj)

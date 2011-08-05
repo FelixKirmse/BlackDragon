@@ -10,7 +10,7 @@ namespace BlackDragon.Components.RPG.Player
 {
     class WorldPlayerInputComponent : InputComponent
     {
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {
             
         }

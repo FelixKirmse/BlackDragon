@@ -19,13 +19,13 @@ namespace BlackDragon.Entities
         public GameObject(List<Component> components)
         {
             this.components = components;
-        }        
+        }
 
-        public void Update(GameTime gameTime)
+        public void Update()
         {
             foreach (Component component in components)
             {
-                component.Update(this, gameTime);
+                component.Update(this);
             }
         }
 

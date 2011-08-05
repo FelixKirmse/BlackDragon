@@ -63,7 +63,7 @@ namespace BlackDragon.Managers
             dialogState = DialogueStates.TALKING;
         }
 
-        public static void Update(GameTime gameTime)
+        public static void Update()
         {            
             if (dialogState == DialogueStates.TALKING)
             {

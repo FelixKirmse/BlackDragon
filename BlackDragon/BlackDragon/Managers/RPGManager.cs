@@ -37,20 +37,20 @@ namespace BlackDragon.Managers
             LevelManager.LoadLevel("000");            
         }
 
-        public static void Update(GameTime gameTime)
+        public static void Update()
         {
             if (StateManager.DialogState == DialogueStates.INACTIVE)
             {
                 if (!StateManager.GamePaused)
                 {
-                    EntityManager.Update(gameTime);
+                    EntityManager.Update();
                     CodeManager.CheckPlayerCodes();
                     GeneralInputManager.HandleGeneralInput();
                 }
             }
             else 
             {
-                DialogManager.Update(gameTime);
+                DialogManager.Update();
             }  
         }
 

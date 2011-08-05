@@ -26,7 +26,7 @@ namespace BlackDragon.Components
         protected Vector2 direction;
 
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {
             Vector2 collisionCenter = obj.GetCollisionCenter(collisionRectangle);
 

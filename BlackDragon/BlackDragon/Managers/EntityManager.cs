@@ -13,20 +13,20 @@ namespace BlackDragon.Managers
     {
         private static GameObject player;
         private static List<GameObject> partyMembers = new List<GameObject>();
-        private static List<GameObject> entities = new List<GameObject>();        
+        private static List<GameObject> entities = new List<GameObject>();
 
-        public static void Update(GameTime gameTime)
+        public static void Update()
         {
             foreach (GameObject entity in entities)
             {
-                entity.Update(gameTime);
-            }            
-            player.Update(gameTime);
+                entity.Update();
+            }
+            player.Update();
             CodeManager.CheckPlayerCodes();
             checkPartyMemberDistances();
             foreach (GameObject partyMember in partyMembers)
             {
-                partyMember.Update(gameTime);
+                partyMember.Update();
             }
         }
 

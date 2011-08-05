@@ -35,9 +35,9 @@ namespace BlackDragon.Components
                 drawDepth);
         }
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {
-            updateAnimation(gameTime);
+            updateAnimation();
         }
 
         public override void Receive<T>(string message, T obj)
@@ -72,7 +72,7 @@ namespace BlackDragon.Components
             }        
         }
 
-        protected void updateAnimation(GameTime gameTime)
+        protected void updateAnimation()
         {
             if (animations.ContainsKey(currentAnimation))
             {
@@ -82,7 +82,7 @@ namespace BlackDragon.Components
                 }
                 else
                 {
-                    animations[currentAnimation].Update(gameTime);
+                    animations[currentAnimation].Update();
                 }
             }
         }

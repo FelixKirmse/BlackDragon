@@ -118,5 +118,15 @@ namespace BlackDragon.Providers
         {
             return InputProvider.PadState.ThumbSticks.Left.X > 0.3f;
         }
+
+        public static float ElapsedMilliseconds
+        {
+            get { return (float)VariableProvider.GameTime.ElapsedGameTime.TotalMilliseconds; }
+        }
+
+        public static float ElapsedSeconds
+        {
+            get { return (float)VariableProvider.GameTime.ElapsedGameTime.TotalSeconds; }
+        }
     }
 }

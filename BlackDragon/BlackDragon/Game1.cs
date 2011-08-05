@@ -59,11 +59,12 @@ namespace BlackDragon
 
         
         protected override void Update(GameTime gameTime)
-        {
+        {            
             if (IsActive)
             {
+                VariableProvider.GameTime = gameTime;
                 InputProvider.Update();
-                StateManager.Update(gameTime);
+                StateManager.Update();
             }
 
             base.Update(gameTime);

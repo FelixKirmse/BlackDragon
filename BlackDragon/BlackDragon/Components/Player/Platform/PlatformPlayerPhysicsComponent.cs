@@ -20,7 +20,7 @@ namespace BlackDragon.Components.Platform.Player
         private bool jumpThroughCheck = false;
         private bool inWater = false;
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {
             Vector2 bottomLeftCorner, bottomRightCorner, topLeftCorner, topRightCorner, middleLeft, middleRight;            
 

@@ -29,7 +29,7 @@ namespace BlackDragon.Menus
             SetPositions();
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update()
         {
             base.Update();
             if (StateManager.InputLock)

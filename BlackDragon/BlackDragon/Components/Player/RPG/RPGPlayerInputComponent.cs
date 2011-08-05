@@ -14,7 +14,7 @@ namespace BlackDragon.Components.RPG.Player
         private float speed = 1.5f;
         bool flipped;
 
-        public override void Update(GameObject obj, GameTime gameTime)
+        public override void Update(GameObject obj)
         {            
             string playAnimation = null;            
             string faceDirection = null;

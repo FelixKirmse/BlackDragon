@@ -29,7 +29,7 @@ namespace BlackDragon.Managers
             InputLock = false;
         }
 
-        public static void Update(GameTime gameTime)
+        public static void Update()
         {
             switch (GameState)
             { 
@@ -38,21 +38,21 @@ namespace BlackDragon.Managers
                     break;
 
                 case GameStates.MENU:
-                    MenuManager.Update(gameTime);
+                    MenuManager.Update();
                     break;
 
-                case GameStates.PLATFORM:                    
-                    PlatformManager.Update(gameTime);
+                case GameStates.PLATFORM:
+                    PlatformManager.Update();
                     break;
 
-                case GameStates.RPG:                    
-                    RPGManager.Update(gameTime);
+                case GameStates.RPG:
+                    RPGManager.Update();
                     break;
             }
 
             if (GamePaused)
             {
-                MenuManager.Update(gameTime);
+                MenuManager.Update();
             }
         }
 

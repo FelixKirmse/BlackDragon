@@ -23,7 +23,7 @@ namespace BlackDragon.Managers
             OptionMenuManager.Initialize();
         }
 
-        public static void Update(GameTime gameTime)
+        public static void Update()
         {
             VariableProvider.Game.IsMouseVisible = true;
 
@@ -34,15 +34,15 @@ namespace BlackDragon.Managers
                     break;
 
                 case MenuStates.LOADGAME:
-                    loadGame.Update(gameTime);
+                    loadGame.Update();
                     break;
 
                 case MenuStates.OPTIONS:
-                    OptionMenuManager.Update(gameTime);
+                    OptionMenuManager.Update();
                     break;
 
                 case MenuStates.INGAME:
-                    ingameMenu.Update(gameTime);
+                    ingameMenu.Update();
                     break;
             }            
         }

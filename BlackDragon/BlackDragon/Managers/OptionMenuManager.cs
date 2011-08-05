@@ -25,7 +25,7 @@ namespace BlackDragon.Managers
             general = new OptionsGeneral();
         }
 
-        public static void Update(GameTime gameTime)
+        public static void Update()
         {
             switch (StateManager.OptionsState)
             { 
@@ -33,16 +33,16 @@ namespace BlackDragon.Managers
                     overview.Update();
                     break;
                 case OptionStates.GRAPHICS:
-                    graphics.Update(gameTime);
+                    graphics.Update();
                     break;
                 case OptionStates.SOUND:
-                    sound.Update(gameTime);
+                    sound.Update();
                     break;
                 case OptionStates.CONTROL:
-                    controls.Update(gameTime);
+                    controls.Update();
                     break;
                 case OptionStates.GENERAL:
-                    general.Update(gameTime);
+                    general.Update();
                     break;
             }
         }
