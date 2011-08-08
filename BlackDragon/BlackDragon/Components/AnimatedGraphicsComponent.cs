@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Entities;
 using BlackDragon.Helpers;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Components
 {
@@ -25,7 +26,7 @@ namespace BlackDragon.Components
 
             spriteBatch.Draw(
                 animations[currentAnimation].Texture,
-                new Vector2((int)obj.Position.X, (int)obj.Position.Y),
+                ShortcutProvider.Vector2Point(obj.Position),
                 animations[currentAnimation].FrameRectangle,
                 Color.White,
                 0,

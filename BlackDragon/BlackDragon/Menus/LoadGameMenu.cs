@@ -9,11 +9,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BlackDragon.Menus
 {
-    class LoadGame : Menu
+    class LoadGameMenu : Menu
     {
         private const string NYI = "Not Yet Implemented";
 
-        public LoadGame()
+        public LoadGameMenu()
         {
             menuItems.Add(new MenuItem(NYI, fontName, true));
 

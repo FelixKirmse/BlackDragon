@@ -38,7 +38,8 @@ namespace BlackDragon
 
             StaticClassesImportantVariablesInitializer.InitializeImportantVariables();
             StateManager.Initialize();
-            WaypointProvider.Initialize();                       
+            WaypointProvider.Initialize();
+            SaveManager.Initialize();       
 
             base.Initialize();
         }
@@ -73,7 +74,7 @@ namespace BlackDragon
         
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.Black);           
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             StateManager.Draw(spriteBatch);            
             spriteBatch.End();

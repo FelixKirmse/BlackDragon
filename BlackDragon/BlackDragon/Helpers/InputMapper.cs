@@ -15,6 +15,7 @@ namespace BlackDragon
         public static Keys[] RightKeys = new Keys[2];
         public static Keys[] JumpKeys = new Keys[2];
         public static Keys[] ActionKeys = new Keys[2];
+        public static Keys[] CancelKeys = new Keys[2];
 
         #region Normal Actionchecks
         public static bool UP 
@@ -59,6 +60,13 @@ namespace BlackDragon
             get
             {
                 return ShortcutProvider.AreAnyKeysDown(ActionKeys);
+            }
+        }
+        public static bool CANCEL
+        {
+            get 
+            {
+                return ShortcutProvider.AreAnyKeysDown(CancelKeys);
             }
         }
         #endregion
@@ -106,6 +114,13 @@ namespace BlackDragon
             get
             {
                 return ShortcutProvider.AreAnyKeysDown(ActionKeys, true);
+            }
+        }
+        public static bool STRICTCANCEL
+        {
+            get
+            {
+                return ShortcutProvider.AreAnyKeysDown(CancelKeys, true);
             }
         }
         #endregion

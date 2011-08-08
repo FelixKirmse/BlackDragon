@@ -128,5 +128,10 @@ namespace BlackDragon.Providers
         {
             get { return (float)VariableProvider.GameTime.ElapsedGameTime.TotalSeconds; }
         }
+
+        public static Vector2 Vector2Point(Vector2 vector)
+        {
+            return new Vector2((int)vector.X, (int)vector.Y);
+        }
     }
 }

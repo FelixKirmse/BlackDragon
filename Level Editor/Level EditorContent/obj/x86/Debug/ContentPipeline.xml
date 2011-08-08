@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\fonts\pericles8.xnb</Output>
-      <Time>2011-06-12T13:51:36+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\fonts\pericles8.xnb</Output>
+      <Time>2011-08-08T09:32:06.9957743+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Gem.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Gem.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Gem.xnb</Output>
+      <Time>2011-08-08T09:32:07.0037748+02:00</Time>
     </Item>
     <Item>
       <Source>textures\PlatformTiles.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.xnb</Output>
-      <Time>2011-06-24T10:10:48+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\PlatformTiles.xnb</Output>
+      <Time>2011-08-08T09:32:07.0057749+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\Gem.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Gem.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Gem.xnb</Output>
+      <Time>2011-08-08T09:32:07.006775+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterA\Die.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Die.xnb</Output>
+      <Time>2011-08-08T09:32:07.0087751+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterA\Idle.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Idle.xnb</Output>
+      <Time>2011-08-08T09:32:07.0107752+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterA\Run.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Run.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterA\Run.xnb</Output>
+      <Time>2011-08-08T09:32:07.0117753+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterB\Die.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Die.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Die.xnb</Output>
+      <Time>2011-08-08T09:32:07.0127753+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterB\Idle.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Idle.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Idle.xnb</Output>
+      <Time>2011-08-08T09:32:07.0147754+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterB\Run.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Run.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterB\Run.xnb</Output>
+      <Time>2011-08-08T09:32:07.0157755+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterC\Die.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Die.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Die.xnb</Output>
+      <Time>2011-08-08T09:32:07.0177756+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterC\Idle.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Idle.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Idle.xnb</Output>
+      <Time>2011-08-08T09:32:07.0187757+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterC\Run.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Run.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterC\Run.xnb</Output>
+      <Time>2011-08-08T09:32:07.0197757+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterD\Die.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Die.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Die.xnb</Output>
+      <Time>2011-08-08T09:32:07.0217758+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterD\Idle.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Idle.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Idle.xnb</Output>
+      <Time>2011-08-08T09:32:07.0237759+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\MonsterD\Run.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Run.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\MonsterD\Run.xnb</Output>
+      <Time>2011-08-08T09:32:07.024776+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\Player\Celebrate.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Celebrate.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Celebrate.xnb</Output>
+      <Time>2011-08-08T09:32:07.0267761+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\Player\Die.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Die.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Die.xnb</Output>
+      <Time>2011-08-08T09:32:07.0287762+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\Player\Idle.png</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Idle.xnb</Output>
+      <Time>2011-08-08T09:32:07.0297763+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\Player\Jump.png</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Jump.xnb</Output>
+      <Time>2011-08-08T09:32:07.0307763+02:00</Time>
     </Item>
     <Item>
       <Source>textures\Sprites\Player\Run.png</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\Sprites\Player\Run.xnb</Output>
+      <Time>2011-08-08T09:32:07.0317764+02:00</Time>
     </Item>
     <Item>
       <Source>textures\TitleScreen.png</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TitleScreen.xnb</Output>
-      <Time>2011-06-12T13:51:52+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TitleScreen.xnb</Output>
+      <Time>2011-08-08T09:32:07.0467773+02:00</Time>
     </Item>
     <Item>
       <Source>textures\TileSets\rpg.png</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\rpg.xnb</Output>
-      <Time>2011-07-11T12:50:24+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\rpg.xnb</Output>
+      <Time>2011-08-08T09:32:07.0367767+02:00</Time>
     </Item>
     <Item>
       <Source>textures\TileSets\platform.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\platform.xnb</Output>
-      <Time>2011-07-27T13:08:16+02:00</Time>
+      <Output>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\textures\TileSets\platform.xnb</Output>
+      <Time>2011-08-08T09:32:07.0347766+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -223,10 +223,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>I:\Projects\BlackDragon\Level Editor\Level EditorContent\</RootDirectory>
-      <LoggerRootDirectory>I:\Projects\BlackDragon\Level Editor\Level Editor\</LoggerRootDirectory>
-      <IntermediateDirectory>I:\Projects\BlackDragon\Level Editor\Level EditorContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>I:\Projects\BlackDragon\Level Editor\Level Editor\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level EditorContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level EditorContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Level Editor\Level Editor\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

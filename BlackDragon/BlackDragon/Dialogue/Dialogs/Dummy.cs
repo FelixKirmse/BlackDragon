@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BlackDragon.Providers;
+using BlackDragon.Managers;
 
 namespace BlackDragon.Dialogue.Dialogs
 {
@@ -22,7 +23,9 @@ namespace BlackDragon.Dialogue.Dialogs
     {
         public DummyDialogTest2()
         {
-            Text = "Bitch, I'm a bus.";
+            Text = "Greetings " + SaveManager.SaveState.PlayerName + "\n"
+                +"You have 1 new message:\n"
+                +"Bitch, I'm a bus.";
             MugShot = MugShotProvider.DummyMugShotAngry;
             NextDialog = "STOPDIALOG";
             SpeakerName = "BattleToad";

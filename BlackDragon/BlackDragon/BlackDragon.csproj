@@ -111,8 +111,12 @@
     <Compile Include="Components\NPCs\PartyMemberWaypointComponent.cs" />
     <Compile Include="Dialogue\DialogScript.cs" />
     <Compile Include="Dialogue\Dialogs\Dummy.cs" />
+    <Compile Include="Helpers\SaveState.cs" />
     <Compile Include="Managers\DialogManager.cs" />
+    <Compile Include="Managers\SaveManager.cs" />
     <Compile Include="Managers\SpawnManager.cs" />
+    <Compile Include="Menus\NewGameMenu.cs" />
+    <Compile Include="Overlays\ConfirmOverlay.cs" />
     <Compile Include="Providers\DialogDictionaryProvider.cs" />
     <Compile Include="Providers\MugShotProvider.cs" />
     <Compile Include="States.cs" />
@@ -149,7 +153,7 @@
     <Compile Include="Managers\LevelManager.cs" />
     <Compile Include="Managers\OptionMenuManager.cs" />
     <Compile Include="Menus\IngameMenu.cs" />
-    <Compile Include="Menus\LoadGame.cs" />
+    <Compile Include="Menus\LoadGameMenu.cs" />
     <Compile Include="Menus\Menu.cs" />
     <Compile Include="Menus\MenuItem.cs" />
     <Compile Include="Menus\OptionsControl.cs" />
@@ -179,6 +183,10 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BufferedInput\BufferedInput.csproj">
+      <Project>{9B960308-6EB9-4BE3-B9B4-C6E319A5C126}</Project>
+      <Name>BufferedInput</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Tile Engine\Tile Engine.csproj">
       <Project>{B182F8AE-FD0D-4B57-BC85-E51A63CE99CC}</Project>
       <Name>Tile Engine</Name>

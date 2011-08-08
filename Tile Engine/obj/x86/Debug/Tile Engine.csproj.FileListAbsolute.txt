@@ -16,3 +16,9 @@ I:\Projects\BlackDragon\Tile Engine\obj\x86\Debug\ResolveAssemblyReference.cache
 I:\Projects\BlackDragon\Tile Engine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 I:\Projects\BlackDragon\Tile Engine\obj\x86\Debug\Tile Engine.dll
 I:\Projects\BlackDragon\Tile Engine\obj\x86\Debug\Tile Engine.pdb
+C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Tile Engine\bin\x86\Debug\Tile Engine.dll
+C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Tile Engine\bin\x86\Debug\Tile Engine.pdb
+C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Tile Engine\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Tile Engine\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Tile Engine\obj\x86\Debug\Tile Engine.dll
+C:\Users\Nidhogg\Desktop\Emergency Black Dragon\Tile Engine\obj\x86\Debug\Tile Engine.pdb

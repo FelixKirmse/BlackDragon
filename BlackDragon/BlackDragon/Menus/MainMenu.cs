@@ -45,10 +45,7 @@ namespace BlackDragon.Menus
             switch (selectedItem)
             { 
                 case newGame:
-                    // Temporary Code, change to proper later!!!
-                    StateManager.GameState = GameStates.RPG;
-                    StateManager.RPGState = RPGStates.FIELD;
-                    RPGManager.Activate();                    
+                    StateManager.MenuState = MenuStates.NEWGAME;                    
                     break;
                 case loadGame:
                     StateManager.MenuState = MenuStates.LOADGAME;

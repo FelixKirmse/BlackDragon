@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackDragon", "BlackDragon\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackDragonContent", "BlackDragon\BlackDragonContent\BlackDragonContent.contentproj", "{2ECE92CB-BA25-4F6A-9128-D8FE2FE2CC64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BufferedInput", "BufferedInput\BufferedInput.csproj", "{9B960308-6EB9-4BE3-B9B4-C6E319A5C126}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -33,6 +35,10 @@ Global
 		{0EBF6E5F-9266-4ADE-A3DD-ABFCF9B83270}.Release|x86.Build.0 = Release|x86
 		{2ECE92CB-BA25-4F6A-9128-D8FE2FE2CC64}.Debug|x86.ActiveCfg = Debug|x86
 		{2ECE92CB-BA25-4F6A-9128-D8FE2FE2CC64}.Release|x86.ActiveCfg = Release|x86
+		{9B960308-6EB9-4BE3-B9B4-C6E319A5C126}.Debug|x86.ActiveCfg = Debug|x86
+		{9B960308-6EB9-4BE3-B9B4-C6E319A5C126}.Debug|x86.Build.0 = Debug|x86
+		{9B960308-6EB9-4BE3-B9B4-C6E319A5C126}.Release|x86.ActiveCfg = Release|x86
+		{9B960308-6EB9-4BE3-B9B4-C6E319A5C126}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

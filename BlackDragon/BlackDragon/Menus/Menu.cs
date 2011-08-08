@@ -13,7 +13,7 @@ namespace BlackDragon.Menus
     {
         protected Vector2 itemOffset = new Vector2(0, 32);
         protected List<MenuItem> menuItems = new List<MenuItem>();
-        protected string fontName = "Pericles21";
+        protected string fontName = "Mono21";
 
         public virtual void Update()
         {
@@ -51,7 +51,7 @@ namespace BlackDragon.Menus
                 } 
         }
 
-        public void NextMenuItem()
+        public virtual void NextMenuItem()
         {
             for (int i = 0; i < menuItems.Count; ++i)
             {
@@ -67,7 +67,7 @@ namespace BlackDragon.Menus
             }
         }
 
-        public void PreviousMenuItem()
+        public virtual void PreviousMenuItem()
         {
             for (int i = 0; i < menuItems.Count; ++i)
             {
@@ -83,7 +83,7 @@ namespace BlackDragon.Menus
             }
         }
 
-        public void ResolveMouseSelection()
+        public virtual void ResolveMouseSelection()
         {
             foreach (MenuItem menuItem in menuItems)
             {

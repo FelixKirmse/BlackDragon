@@ -57,7 +57,7 @@ namespace BlackDragon.Menus
             spriteBatch.DrawString(
                 font,
                 ItemName,
-                ItemPosition,
+                ShortcutProvider.Vector2Point(ItemPosition),
                 itemColor,
                 0,
                 Vector2.Zero,

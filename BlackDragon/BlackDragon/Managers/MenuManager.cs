@@ -12,14 +12,16 @@ namespace BlackDragon.Managers
     static class MenuManager
     {
         private static MainMenu mainMenu;
-        private static LoadGame loadGame;
+        private static LoadGameMenu loadGameMenu;
         private static IngameMenu ingameMenu;
+        private static NewGameMenu newGameMenu;
 
         public static void Initialize()
         {
             mainMenu = new MainMenu();
-            loadGame = new LoadGame();
+            loadGameMenu = new LoadGameMenu();
             ingameMenu = new IngameMenu();
+            newGameMenu = new NewGameMenu();
             OptionMenuManager.Initialize();
         }
 
@@ -34,7 +36,7 @@ namespace BlackDragon.Managers
                     break;
 
                 case MenuStates.LOADGAME:
-                    loadGame.Update();
+                    loadGameMenu.Update();
                     break;
 
                 case MenuStates.OPTIONS:
@@ -43,6 +45,10 @@ namespace BlackDragon.Managers
 
                 case MenuStates.INGAME:
                     ingameMenu.Update();
+                    break;
+
+                case MenuStates.NEWGAME:
+                    newGameMenu.Update();
                     break;
             }            
         }
@@ -56,7 +62,7 @@ namespace BlackDragon.Managers
                     break;
 
                 case MenuStates.LOADGAME:
-                    loadGame.Draw(spriteBatch);
+                    loadGameMenu.Draw(spriteBatch);
                     break;
 
                 case MenuStates.OPTIONS:
@@ -65,6 +71,10 @@ namespace BlackDragon.Managers
 
                 case MenuStates.INGAME:
                     ingameMenu.Draw(spriteBatch);
+                    break;
+
+                case MenuStates.NEWGAME:
+                    newGameMenu.Draw(spriteBatch);
                     break;
             } 
         }

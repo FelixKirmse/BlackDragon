@@ -97,7 +97,7 @@ namespace BlackDragon.Managers
             spriteBatch.DrawString(
                 font,
                 displayText,
-                textPosition,
+                ShortcutProvider.Vector2Point(textPosition),
                 Color.White,
                 0,
                 Vector2.Zero,
@@ -107,7 +107,7 @@ namespace BlackDragon.Managers
 
             spriteBatch.Draw(
                 dialog[currentDialogue].MugShot,
-                mugShotPosition,
+                ShortcutProvider.Vector2Point(mugShotPosition),
                 new Rectangle(0, 0, CurrentMugShot.Width, CurrentMugShot.Height),
                 Color.White,
                 0,

@@ -135,7 +135,7 @@ namespace BlackDragon.Managers
                     case "DIALOG":
                         if (InputMapper.STRICTACTION)
                         {
-                            DialogManager.PlayDialog(DialogDictionaryProvider.DummyDialog, "Test1");
+                            DialogManager.PlayDialog(DialogDictionaryProvider.GetDummyDialog(), "Test1");
                             StateManager.DialogState = DialogueStates.ACTIVE;
                         }
                         break;
