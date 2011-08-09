@@ -39,7 +39,7 @@ namespace BlackDragon.Menus
                 if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Escape))
                 {
                     StateManager.GamePaused = false;
-                    StateManager.MenuState = MenuStates.NULL;
+                    StateManager.MenuState = MenuStates.Null;
                 }
             }
         }       
@@ -52,19 +52,30 @@ namespace BlackDragon.Menus
             switch (selectedItem)
             {
                 case continueString:
-                    StateManager.MenuState = MenuStates.NULL;
+                    StateManager.MenuState = MenuStates.Null;
                     StateManager.GamePaused = false;
                     break;
 
                 case optionString:
-                    StateManager.MenuState = MenuStates.OPTIONS;
-                    StateManager.OptionsState = OptionStates.OVERVIEW;
+                    StateManager.MenuState = MenuStates.Options;
+                    StateManager.OptionsState = OptionStates.Overview;
                     break;
 
                 case quitString:
                     StateManager.GamePaused = false;
-                    StateManager.GameState = GameStates.MENU;
-                    StateManager.MenuState = MenuStates.MAIN;
+                    StateManager.GameState = GameStates.Menu;
+                    StateManager.MenuState = MenuStates.Main;
+                    break;
+
+                case saveString:                                        
+                    SaveManager.SaveSaveState(VariableProvider.SaveSlot);
+                    StateManager.MenuState = MenuStates.Null;
+                    StateManager.GamePaused = false;
+                    MenuManager.LoadGameMenu.RebuildItems();
+                    break;
+
+                case loadString:
+                    StateManager.MenuState = MenuStates.LoadGame;
                     break;
             }
         }

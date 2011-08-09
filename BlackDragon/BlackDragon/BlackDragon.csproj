@@ -115,7 +115,9 @@
     <Compile Include="Managers\DialogManager.cs" />
     <Compile Include="Managers\SaveManager.cs" />
     <Compile Include="Managers\SpawnManager.cs" />
+    <Compile Include="Menus\MenuLabel.cs" />
     <Compile Include="Menus\NewGameMenu.cs" />
+    <Compile Include="Menus\SlotSelector.cs" />
     <Compile Include="Overlays\ConfirmOverlay.cs" />
     <Compile Include="Providers\DialogDictionaryProvider.cs" />
     <Compile Include="Providers\MugShotProvider.cs" />

@@ -25,12 +25,13 @@ namespace BlackDragon.Managers
                 case GameStates.RPG:
                     mode = "rpg";
                     break;
-                case GameStates.PLATFORM:
+                case GameStates.Platform:
                     mode = "platform";
                     break;
             }
             TileMap.LoadMap(new FileStream(Application.StartupPath + @"\Content\maps\" + mode + @"\MAP" + levelName + ".MAP", FileMode.Open));
-            CodeManager.CheckCodes();            
+            CodeManager.CheckCodes();
+            SaveManager.SaveState.CurrentLevel = levelName;
         }
 
         public static void ReloadLevel()

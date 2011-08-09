@@ -11,28 +11,22 @@ namespace BlackDragon.Managers
 {
     static class EntityManager
     {
-        private static GameObject player;
-        private static List<GameObject> partyMembers = new List<GameObject>();
-        private static List<GameObject> entities = new List<GameObject>();
+        private static GameObject player;        
+        public static List<GameObject> Entities = new List<GameObject>();
 
         public static void Update()
         {
-            foreach (GameObject entity in entities)
+            foreach (GameObject entity in Entities)
             {
                 entity.Update();
             }
             player.Update();
-            CodeManager.CheckPlayerCodes();
-            checkPartyMemberDistances();
-            foreach (GameObject partyMember in partyMembers)
-            {
-                partyMember.Update();
-            }
+            CodeManager.CheckPlayerCodes();  
         }
 
         public static void Draw(SpriteBatch spriteBatch)
         {
-            foreach (GameObject entity in entities)
+            foreach (GameObject entity in Entities)
             {
                 entity.Draw(spriteBatch);
             }
@@ -46,17 +40,12 @@ namespace BlackDragon.Managers
 
         public static void AddEntity(GameObject entity)
         {
-            entities.Add(entity);
+            Entities.Add(entity);
         }
 
         public static void ClearEntities()
         {
-            entities.Clear();
-        }
-
-        private static void checkPartyMemberDistances()
-        { 
-            
-        }
+            Entities.Clear();
+        }        
     }
 }

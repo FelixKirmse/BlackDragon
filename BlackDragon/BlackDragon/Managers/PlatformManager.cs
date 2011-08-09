@@ -28,10 +28,9 @@ namespace BlackDragon.Managers
             TileMap.WhiteTile = 830;
             TileMap.TransparentTile = 831;
             TileMap.Initialize(platformTileSet);
+            SaveManager.SaveState.CurrentMode = GameStates.Platform;
 
             VariableProvider.CurrentPlayer = Factory.CreatePlatformPlayer();            
-            
-            LevelManager.LoadLevel("000");            
          }
 
         public static void Update()

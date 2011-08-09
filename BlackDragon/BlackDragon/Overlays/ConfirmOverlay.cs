@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Managers;
 using BlackDragon.Menus;
 using BlackDragon.Providers;
+using System.IO;
 
 namespace BlackDragon.Overlays
 {
@@ -36,13 +37,14 @@ namespace BlackDragon.Overlays
 
             switch (selectedItem)
             {
-                case yes:
-                    SaveManager.SaveSaveState();
+                case yes:                    
+                    SaveManager.SaveSaveState(VariableProvider.SaveSlot);
                     StateManager.GameState = GameStates.RPG;
                     StateManager.RPGState = RPGStates.FIELD;
                     RPGManager.Activate();
                     parent.Confirmation = false;
                     parent.TextBuffer = "";
+                    LevelManager.LoadLevel("000");
                     break;
 
                 case no:

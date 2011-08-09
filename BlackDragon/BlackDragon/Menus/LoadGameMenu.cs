@@ -6,26 +6,20 @@ using Microsoft.Xna.Framework;
 using BlackDragon.Providers;
 using BlackDragon.Managers;
 using Microsoft.Xna.Framework.Input;
+using System.IO;
 
 namespace BlackDragon.Menus
 {
-    class LoadGameMenu : Menu
+    class LoadGameMenu : SlotSelector
     {
-        private const string NYI = "Not Yet Implemented";
-
-        public LoadGameMenu()
+        protected override void CancelAction()
         {
-            menuItems.Add(new MenuItem(NYI, fontName, true));
-
-            SetPositions();
-        }
-
-        public override void Update()
-        {
-            base.Update();
-            if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Escape))
+            if (InputMapper.STRICTCANCEL)
             {
-                StateManager.MenuState = MenuStates.MAIN;
+                if (StateManager.GamePaused)
+                    StateManager.MenuState = MenuStates.Ingame;
+                else
+                    StateManager.MenuState = MenuStates.Main;
             }
         }
 
@@ -34,11 +28,26 @@ namespace BlackDragon.Menus
             string selectedItem;
             GetSelectedItem(out selectedItem);
 
-            switch (selectedItem)
+            if (selectedItem != back)
             {
-                case NYI:
-                    StateManager.MenuState = MenuStates.MAIN;
-                    break;
+                VariableProvider.SaveSlot = selectedItem == slot1 ? "1" : selectedItem == slot2 ? "2" : selectedItem == slot3 ? "3" : null;
+
+                try
+                {
+                    SaveManager.LoadSaveState(VariableProvider.SaveSlot);
+                }
+                catch (FileNotFoundException)
+                { 
+                    
+                }
+                
+            }
+            else
+            {
+                if (StateManager.GamePaused)
+                    StateManager.MenuState = MenuStates.Ingame;
+                else
+                    StateManager.MenuState = MenuStates.Main;
             }
         }
     }

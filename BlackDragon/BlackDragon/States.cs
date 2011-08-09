@@ -5,13 +5,13 @@ using System.Text;
 
 namespace BlackDragon
 {
-    public enum GameStates { TITLE, MENU, RPG, PLATFORM, SAVING, LOADING }
-    public enum MenuStates { MAIN, LOADGAME, NEWGAME, OPTIONS, INGAME, NULL }
-    public enum OptionStates { OVERVIEW, GRAPHICS, SOUND, CONTROL, GENERAL }
+    public enum GameStates { Title, Menu, RPG, Platform, Saving, Loading }
+    public enum MenuStates { Main, LoadGame, SlotSelector, NewGame, Options, Ingame, Null }
+    public enum OptionStates { Overview, Graphics, Sound, Controls, General }
     public enum PlayerStates { IDLE, ATTACKING, DAMAGED, DEAD }
     public enum PlatformStates { PLAYING, SCRIPTEDEVENT }
     public enum RPGStates { WORLDMAP, SAVEZONE, FIELD, BATTLE }
 
-    public enum ObjectStates { WALKING, IDLE, STOP }
-    public enum DialogueStates { TALKING, PAUSE , ACTIVE, INACTIVE }
+    public enum ObjectStates { Walking, Idle, Stop }
+    public enum DialogueStates { Talking, Pause , Active, Inactive }
 }

@@ -15,24 +15,43 @@ namespace BlackDragon.Managers
     {
         public static SaveState SaveState { get; set; }
 
+        public static readonly string SaveFilePath = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\Project Black Dragon\saves\";
+
         public static void Initialize()
         {
             SaveState = new SaveState();
         }
 
-        public static void SaveSaveState()
-        {
-            FileStream fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\Project Black Dragon\saves\" + GetMD5Hash(SaveState.PlayerName), FileMode.Create);
+        public static void SaveSaveState(string saveSlot)
+        {                      
+            FileStream fs = new FileStream(SaveFilePath + GetMD5Hash(saveSlot) + ".svf", FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fs, SaveState);
-            fs.Close();
+            fs.Close();            
         }
 
-        public static void LoadSaveState(string playerName)
+        public static void LoadSaveState(string saveSlot)
         {
-            FileStream fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\Project Black Dragon\saves\" + playerName + ".svs", FileMode.Open);
+            FileStream fs = new FileStream(SaveFilePath + GetMD5Hash(saveSlot) + ".svf", FileMode.Open);
             BinaryFormatter formatter = new BinaryFormatter();
             SaveState = (SaveState)formatter.Deserialize(fs);
+            fs.Close();
+            AssignValues();
+        }
+
+        private static void AssignValues()
+        {
+            StateManager.GameState = SaveState.CurrentMode;
+            switch (StateManager.GameState)
+            {
+                case GameStates.Platform:
+                    PlatformManager.Activate();
+                    break;
+                case GameStates.RPG:
+                    RPGManager.Activate();
+                    break;
+            }
+            LevelManager.LoadLevel(SaveState.CurrentLevel);            
         }
 
         public static string GetMD5Hash(string TextToHash)

@@ -8,6 +8,7 @@ using BlackDragon.Providers;
 
 namespace BlackDragon.Helpers
 {
+
     public class AnimationStrip
     {
         #region Declarations

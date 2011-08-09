@@ -23,8 +23,8 @@ namespace BlackDragon.Managers
 
         public static void Initialize()
         {
-            GameState = GameStates.TITLE;
-            DialogState = DialogueStates.INACTIVE;
+            GameState = GameStates.Title;
+            DialogState = DialogueStates.Inactive;
             GamePaused = false;
             InputLock = false;
         }
@@ -33,15 +33,15 @@ namespace BlackDragon.Managers
         {
             switch (GameState)
             { 
-                case GameStates.TITLE:
+                case GameStates.Title:
                     TitleScreenManager.Update();
                     break;
 
-                case GameStates.MENU:
+                case GameStates.Menu:
                     MenuManager.Update();
                     break;
 
-                case GameStates.PLATFORM:
+                case GameStates.Platform:
                     PlatformManager.Update();
                     break;
 
@@ -60,15 +60,15 @@ namespace BlackDragon.Managers
         { 
             switch (GameState)
             {
-                case GameStates.TITLE:
+                case GameStates.Title:
                     TitleScreenManager.Draw(spriteBatch);
                     break;
 
-                case GameStates.MENU:
+                case GameStates.Menu:
                     MenuManager.Draw(spriteBatch);
                     break;
                 
-                case GameStates.PLATFORM:                   
+                case GameStates.Platform:                   
                     PlatformManager.Draw(spriteBatch);
                     break;
 

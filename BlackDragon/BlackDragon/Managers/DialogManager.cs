@@ -59,13 +59,13 @@ namespace BlackDragon.Managers
             currentChar = 0;
             dialog = dialogue;
             currentDialogue = startDialog;
-            StateManager.DialogState = DialogueStates.ACTIVE;
-            dialogState = DialogueStates.TALKING;
+            StateManager.DialogState = DialogueStates.Active;
+            dialogState = DialogueStates.Talking;
         }
 
         public static void Update()
         {            
-            if (dialogState == DialogueStates.TALKING)
+            if (dialogState == DialogueStates.Talking)
             {
                 if (currentChar < TextLength)
                 {
@@ -73,7 +73,7 @@ namespace BlackDragon.Managers
                 }
                 else
                 {                    
-                    dialogState = DialogueStates.PAUSE;
+                    dialogState = DialogueStates.Pause;
                 }
             }
             else if (InputMapper.STRICTACTION)
@@ -83,11 +83,11 @@ namespace BlackDragon.Managers
                 currentDialogue = dialog[currentDialogue].NextDialog;
                 if (currentDialogue == "STOPDIALOG")
                 {
-                    StateManager.DialogState = DialogueStates.INACTIVE;
+                    StateManager.DialogState = DialogueStates.Inactive;
                 }
                 else
                 {
-                    dialogState = DialogueStates.TALKING;
+                    dialogState = DialogueStates.Talking;
                 }
             }
         }

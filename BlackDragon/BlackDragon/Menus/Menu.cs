@@ -13,6 +13,7 @@ namespace BlackDragon.Menus
     {
         protected Vector2 itemOffset = new Vector2(0, 32);
         protected List<MenuItem> menuItems = new List<MenuItem>();
+        protected List<MenuLabel> menuLabels = new List<MenuLabel>();
         protected string fontName = "Mono21";
 
         public virtual void Update()
@@ -21,7 +22,7 @@ namespace BlackDragon.Menus
             foreach (MenuItem menuItem in menuItems)
             {
                 menuItem.Update();
-            }
+            }            
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
@@ -40,6 +41,11 @@ namespace BlackDragon.Menus
             foreach (MenuItem menuItem in menuItems)
             {
                 menuItem.Draw(spriteBatch);
+            }
+
+            foreach (MenuLabel menuLabel in menuLabels)
+            {
+                menuLabel.Draw(spriteBatch);
             }
         }
 

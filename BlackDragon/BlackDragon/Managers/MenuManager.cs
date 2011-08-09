@@ -12,16 +12,18 @@ namespace BlackDragon.Managers
     static class MenuManager
     {
         private static MainMenu mainMenu;
-        private static LoadGameMenu loadGameMenu;
+        public static LoadGameMenu LoadGameMenu;
         private static IngameMenu ingameMenu;
         private static NewGameMenu newGameMenu;
+        public static SlotSelector SlotSelector;
 
         public static void Initialize()
         {
             mainMenu = new MainMenu();
-            loadGameMenu = new LoadGameMenu();
+            LoadGameMenu = new LoadGameMenu();
             ingameMenu = new IngameMenu();
             newGameMenu = new NewGameMenu();
+            SlotSelector = new SlotSelector();
             OptionMenuManager.Initialize();
         }
 
@@ -31,24 +33,28 @@ namespace BlackDragon.Managers
 
             switch (StateManager.MenuState)
             { 
-                case MenuStates.MAIN:
+                case MenuStates.Main:
                     mainMenu.Update();
                     break;
 
-                case MenuStates.LOADGAME:
-                    loadGameMenu.Update();
+                case MenuStates.LoadGame:
+                    LoadGameMenu.Update();
                     break;
 
-                case MenuStates.OPTIONS:
+                case MenuStates.Options:
                     OptionMenuManager.Update();
                     break;
 
-                case MenuStates.INGAME:
+                case MenuStates.Ingame:
                     ingameMenu.Update();
                     break;
 
-                case MenuStates.NEWGAME:
+                case MenuStates.NewGame:
                     newGameMenu.Update();
+                    break;
+
+                case MenuStates.SlotSelector:
+                    SlotSelector.Update();
                     break;
             }            
         }
@@ -57,24 +63,28 @@ namespace BlackDragon.Managers
         {
             switch (StateManager.MenuState)
             {
-                case MenuStates.MAIN:
+                case MenuStates.Main:
                     mainMenu.Draw(spriteBatch);
                     break;
 
-                case MenuStates.LOADGAME:
-                    loadGameMenu.Draw(spriteBatch);
+                case MenuStates.LoadGame:
+                    LoadGameMenu.Draw(spriteBatch);
                     break;
 
-                case MenuStates.OPTIONS:
+                case MenuStates.Options:
                     OptionMenuManager.Draw(spriteBatch);
                     break;
 
-                case MenuStates.INGAME:
+                case MenuStates.Ingame:
                     ingameMenu.Draw(spriteBatch);
                     break;
 
-                case MenuStates.NEWGAME:
+                case MenuStates.NewGame:
                     newGameMenu.Draw(spriteBatch);
+                    break;
+
+                case MenuStates.SlotSelector:
+                    SlotSelector.Draw(spriteBatch);
                     break;
             } 
         }

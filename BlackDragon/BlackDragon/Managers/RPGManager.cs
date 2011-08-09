@@ -30,16 +30,15 @@ namespace BlackDragon.Managers
             TileMap.WhiteTile = 1791;
             TileMap.TransparentTile = 278;
             TileMap.Initialize(rpgTileSet);
-
+            SaveManager.SaveState.CurrentMode = GameStates.RPG;
 
             /// temporary code            
-            VariableProvider.CurrentPlayer = Factory.CreateRPGPlayer();
-            LevelManager.LoadLevel("000");            
+            VariableProvider.CurrentPlayer = Factory.CreateRPGPlayer();                
         }
 
         public static void Update()
         {
-            if (StateManager.DialogState == DialogueStates.INACTIVE)
+            if (StateManager.DialogState == DialogueStates.Inactive)
             {
                 if (!StateManager.GamePaused)
                 {
@@ -58,7 +57,7 @@ namespace BlackDragon.Managers
         {
             TileMap.Draw(spriteBatch);
             EntityManager.Draw(spriteBatch);
-            if (StateManager.DialogState == DialogueStates.ACTIVE)
+            if (StateManager.DialogState == DialogueStates.Active)
             {
                 DialogManager.Draw(spriteBatch);
             }

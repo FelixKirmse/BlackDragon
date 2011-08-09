@@ -15,5 +15,6 @@ namespace BlackDragon.Providers
         public static GameObject CurrentPlayer { get; set; }        
         public static Random RandomGenerator { get; set; }
         public static GameTime GameTime { get; set; }
+        public static string SaveSlot { get; set; }
     }
 }

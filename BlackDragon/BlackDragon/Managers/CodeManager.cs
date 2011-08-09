@@ -33,7 +33,6 @@ namespace BlackDragon.Managers
                             case "SPAWN":
                                 SpawnManager.Spawn(code[1], x, y);
                                 break;
-
                         }
                     }
                 }
@@ -45,7 +44,7 @@ namespace BlackDragon.Managers
         {
             GameObject player = VariableProvider.CurrentPlayer;
             checkCodesInPlayerCenter(player);
-            if (StateManager.GameState == GameStates.PLATFORM)
+            if (StateManager.GameState == GameStates.Platform)
                 checkCodesUnderPlayer(player);
         }
 
@@ -112,7 +111,7 @@ namespace BlackDragon.Managers
                         switch (codeArray[1])
                         {
                             case "PLATFORM":
-                                StateManager.GameState = GameStates.PLATFORM;
+                                StateManager.GameState = GameStates.Platform;
                                 PlatformManager.Activate();
                                 break;
 
@@ -136,7 +135,7 @@ namespace BlackDragon.Managers
                         if (InputMapper.STRICTACTION)
                         {
                             DialogManager.PlayDialog(DialogDictionaryProvider.GetDummyDialog(), "Test1");
-                            StateManager.DialogState = DialogueStates.ACTIVE;
+                            StateManager.DialogState = DialogueStates.Active;
                         }
                         break;
                 }

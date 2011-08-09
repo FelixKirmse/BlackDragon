@@ -24,13 +24,13 @@ namespace BlackDragon.Menus
 
         public NewGameMenu()
         {
-            menuItems.Add(new MenuItem(name, fontName, false));
-            menuItems.Add(new MenuItem(ok, fontName, true));
-            menuItems.Add(new MenuItem(back, fontName, false));
+            menuLabels.Add(new MenuLabel(name, fontName));
+            menuItems.Add(new MenuItem(ok, fontName, false));
+            menuItems.Add(new MenuItem(back, fontName, true));
 
-            menuItems[0].ItemPosition = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[0].ItemName) + new Vector2(-200, 0);
-            menuItems[1].ItemPosition = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[1].ItemName) + 2 * itemOffset;
-            menuItems[2].ItemPosition = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[1].ItemName) + 3 * itemOffset;
+            menuLabels[0].Position = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[0].ItemName) + new Vector2(-200, 0);
+            menuItems[0].ItemPosition = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[1].ItemName) + 2 * itemOffset;
+            menuItems[1].ItemPosition = ShortcutProvider.ScreenCenter - ShortcutProvider.GetFontCenter(fontName, menuItems[1].ItemName) + 3 * itemOffset;
 
             EventInput.EventInput.Initialize(VariableProvider.Game.Window);            
             EventInput.EventInput.CharEntered += new EventInput.CharEnteredHandler(CharacterEntered);
@@ -70,12 +70,12 @@ namespace BlackDragon.Menus
             }
             if (InputMapper.STRICTCANCEL)
             {
-                StateManager.MenuState = MenuStates.MAIN;
+                StateManager.MenuState = MenuStates.Main;
             }
             if (TextBuffer.Length == 0)
             {
-                menuItems[1].IsSelected = false;
-                menuItems[2].IsSelected = true;
+                menuItems[0].IsSelected = false;
+                menuItems[1].IsSelected = true;
             }
         }
 
@@ -92,7 +92,7 @@ namespace BlackDragon.Menus
             spriteBatch.DrawString(
                 FontProvider.GetFont(fontName),
                 TextBuffer,
-                ShortcutProvider.Vector2Point(menuItems[0].ItemPosition + new Vector2(FontProvider.GetFont(fontName).MeasureString(menuItems[0].ItemName).X + 14, 0)),
+                ShortcutProvider.Vector2Point(menuLabels[0].Position + new Vector2(FontProvider.GetFont(fontName).MeasureString(menuLabels[0].Text).X + 14, 0)),
                 Color.White,
                 0,
                 Vector2.Zero,
@@ -103,7 +103,7 @@ namespace BlackDragon.Menus
 
         private void CharacterEntered(object sender, EventInput.CharacterEventArgs e)
         {
-            if (StateManager.GameState != GameStates.MENU || StateManager.MenuState != MenuStates.NEWGAME || Confirmation)
+            if (StateManager.GameState != GameStates.Menu || StateManager.MenuState != MenuStates.NewGame || Confirmation)
                 return;
             // Add key to text buffer. If not a symbol key. 
             if (!((int)e.Character < 32 || (int)e.Character > 126)) //From space to tilde
@@ -138,58 +138,9 @@ namespace BlackDragon.Menus
                     break;
 
                 case back:
-                    StateManager.MenuState = MenuStates.MAIN;
+                    StateManager.MenuState = MenuStates.Main;
                     break;
             }
-        }
-
-        public override void NextMenuItem()
-        {
-            for (int i = 1; i < menuItems.Count; ++i)
-            {
-                if (menuItems[i].IsSelected)
-                {
-                    menuItems[i].IsSelected = false;
-                    if (i == menuItems.Count - 1)
-                        menuItems[1].IsSelected = true;
-                    else
-                        menuItems[i + 1].IsSelected = true;
-                    break;
-                }
-            }
-        }
-
-        public override void PreviousMenuItem()
-        {
-            for (int i = 1; i < menuItems.Count; ++i)
-            {
-                if (menuItems[i].IsSelected)
-                {
-                    menuItems[i].IsSelected = false;
-                    if (i == 1)
-                        menuItems[menuItems.Count - 1].IsSelected = true;
-                    else
-                        menuItems[i - 1].IsSelected = true;
-                    break;
-                }
-            }
-        }
-
-        public override void ResolveMouseSelection()
-        {
-            foreach (MenuItem menuItem in menuItems)
-            {
-                if (ShortcutProvider.MouseIntersectsRectangle(ShortcutProvider.GetFontRectangle(menuItem.ItemPosition, fontName, menuItem.ItemName)))
-                {
-                    if (menuItem.ItemName != name)
-                    {
-                        foreach (MenuItem item in menuItems)
-                            item.IsSelected = false;
-                        menuItem.IsSelected = true;
-                        break;
-                    }
-                }
-            }
-        }
+        }        
     }
 }

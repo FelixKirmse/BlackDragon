@@ -43,6 +43,7 @@ namespace BlackDragon.Menus
             : this(itemName, Vector2.Zero, isSelected, FontProvider.GetFont(fontName))
         { 
         }
+        
 
         public void Update()
         {
