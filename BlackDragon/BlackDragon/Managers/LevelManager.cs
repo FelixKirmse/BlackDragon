@@ -32,6 +32,7 @@ namespace BlackDragon.Managers
             TileMap.LoadMap(new FileStream(Application.StartupPath + @"\Content\maps\" + mode + @"\MAP" + levelName + ".MAP", FileMode.Open));
             CodeManager.CheckCodes();
             SaveManager.SaveState.CurrentLevel = levelName;
+            Camera.UpdateWorldRectangle();
         }
 
         public static void ReloadLevel()

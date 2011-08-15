@@ -11,7 +11,7 @@ namespace BlackDragon.Components.RPG.Player
 {
     class RPGPlayerInputComponent : InputComponent
     {
-        private float speed = 1.5f;
+        private float speed = 2.5f;
         bool flipped;
 
         public override void Update(GameObject obj)

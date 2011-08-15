@@ -23,7 +23,7 @@ namespace BlackDragon.Managers
         }
 
         public static void SaveSaveState(string saveSlot)
-        {                      
+        {            
             FileStream fs = new FileStream(SaveFilePath + GetMD5Hash(saveSlot) + ".svf", FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fs, SaveState);

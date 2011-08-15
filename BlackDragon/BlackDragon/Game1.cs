@@ -13,6 +13,7 @@ using BlackDragon.Providers;
 using Tile_Engine;
 using BlackDragon.Menus;
 using BlackDragon.Helpers;
+using System.IO;
 
 namespace BlackDragon
 {
@@ -39,7 +40,10 @@ namespace BlackDragon
             StaticClassesImportantVariablesInitializer.InitializeImportantVariables();
             StateManager.Initialize();
             WaypointProvider.Initialize();
-            SaveManager.Initialize();       
+            SaveManager.Initialize();
+
+            if (!Directory.Exists(SaveManager.SaveFilePath))
+                Directory.CreateDirectory(SaveManager.SaveFilePath);
 
             base.Initialize();
         }
