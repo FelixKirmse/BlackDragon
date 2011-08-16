@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using BlackDragon.Providers;
+using BlackDragonEngine.Components;
 
 namespace BlackDragon.Components.Entities
 {

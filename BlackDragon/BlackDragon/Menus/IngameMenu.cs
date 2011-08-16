@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using BlackDragon.Providers;
 using BlackDragon.Managers;
+using BlackDragonEngine.Managers;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using BlackDragonEngine.Menus;
+using BlackDragonEngine.Providers;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Menus
 {
@@ -68,7 +71,7 @@ namespace BlackDragon.Menus
                     break;
 
                 case saveString:                                        
-                    SaveManager.SaveSaveState(VariableProvider.SaveSlot);
+                    SaveManager.SaveSaveState(GameVariableProvider.SaveState, VariableProvider.SaveSlot);
                     StateManager.MenuState = MenuStates.Null;
                     StateManager.GamePaused = false;
                     MenuManager.LoadGameMenu.RebuildItems();

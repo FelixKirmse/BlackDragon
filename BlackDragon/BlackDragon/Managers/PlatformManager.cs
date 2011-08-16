@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Tile_Engine;
-using BlackDragon.Managers;
-using BlackDragon.Providers;
-using BlackDragon.Entities;
+using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.Managers;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Entities;
 using BlackDragon.Helpers;
+using BlackDragon.Providers;
 
 namespace BlackDragon.Managers
 {
@@ -28,7 +29,7 @@ namespace BlackDragon.Managers
             TileMap.WhiteTile = 830;
             TileMap.TransparentTile = 831;
             TileMap.Initialize(platformTileSet);
-            SaveManager.SaveState.CurrentMode = GameStates.Platform;
+            GameVariableProvider.SaveState.CurrentMode = GameStates.Platform;
 
             VariableProvider.CurrentPlayer = Factory.CreatePlatformPlayer();            
          }

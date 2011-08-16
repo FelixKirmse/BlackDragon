@@ -8,6 +8,10 @@ using BlackDragon.Managers;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Overlays;
+using BlackDragonEngine.Menus;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Managers;
+using BlackDragonEngine.Helpers;
 
 namespace BlackDragon.Menus
 {
@@ -133,7 +137,7 @@ namespace BlackDragon.Menus
             switch (selectedItem)
             { 
                 case ok:                    
-                    SaveManager.SaveState.PlayerName = TextBuffer;
+                    GameVariableProvider.SaveState.PlayerName = TextBuffer;
                     Confirmation = true;
                     break;
 

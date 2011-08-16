@@ -109,27 +109,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\NPCs\PartyMemberWaypointComponent.cs" />
-    <Compile Include="Dialogue\DialogScript.cs" />
     <Compile Include="Dialogue\Dialogs\Dummy.cs" />
     <Compile Include="Helpers\SaveState.cs" />
-    <Compile Include="Managers\DialogManager.cs" />
-    <Compile Include="Managers\SaveManager.cs" />
     <Compile Include="Managers\SpawnManager.cs" />
-    <Compile Include="Menus\MenuLabel.cs" />
     <Compile Include="Menus\NewGameMenu.cs" />
     <Compile Include="Menus\SlotSelector.cs" />
     <Compile Include="Overlays\ConfirmOverlay.cs" />
     <Compile Include="Providers\DialogDictionaryProvider.cs" />
+    <Compile Include="Providers\GameVariableProvider.cs" />
     <Compile Include="Providers\MugShotProvider.cs" />
-    <Compile Include="States.cs" />
-    <Compile Include="Components\AnimatedGraphicsComponent.cs" />
-    <Compile Include="Components\Component.cs" />
+    <Compile Include="GameStates.cs" />
     <Compile Include="Components\Entities\WaterGraphicsComponent.cs" />
-    <Compile Include="Components\GraphicsComponent.cs" />
-    <Compile Include="Components\InputComponent.cs" />
     <Compile Include="Components\NPCs\MariaGraphicsComponent.cs" />
     <Compile Include="Components\NPCs\MariaWaypointComponent.cs" />
-    <Compile Include="Components\PhysicsComponent.cs" />
     <Compile Include="Components\Player\Platform\PlatformPlayerGraphicsComponent.cs" />
     <Compile Include="Components\Player\Platform\PlatformPlayerInputComponent.cs" />
     <Compile Include="Components\Player\Platform\PlatformPlayerPhysicsComponent.cs" />
@@ -139,33 +131,20 @@
     <Compile Include="Components\Player\RPG\RPGPlayerPhysicsComponent.cs" />
     <Compile Include="Components\Player\RPG\RPGPlayerSoundComponent.cs" />
     <Compile Include="Components\Player\RPG\WorldPlayerInputComponent.cs" />
-    <Compile Include="Components\SoundComponent.cs" />
-    <Compile Include="Components\WaypointComponent.cs" />
     <Compile Include="Helpers\ContentLoader.cs" />
-    <Compile Include="Controller\MenuController.cs" />
-    <Compile Include="Entities\GameObject.cs" />
     <Compile Include="Helpers\Factory.cs" />
-    <Compile Include="Helpers\InputMapper.cs" />
-    <Compile Include="Helpers\AnimationStrip.cs" />
-    <Compile Include="Helpers\PathFinder.cs" />
-    <Compile Include="Helpers\PathNode.cs" />
     <Compile Include="Managers\CodeManager.cs" />
-    <Compile Include="Managers\EntityManager.cs" />
     <Compile Include="Managers\GeneralInputManager.cs" />
     <Compile Include="Managers\LevelManager.cs" />
     <Compile Include="Managers\OptionMenuManager.cs" />
     <Compile Include="Menus\IngameMenu.cs" />
     <Compile Include="Menus\LoadGameMenu.cs" />
-    <Compile Include="Menus\Menu.cs" />
-    <Compile Include="Menus\MenuItem.cs" />
     <Compile Include="Menus\OptionsControl.cs" />
     <Compile Include="Menus\OptionsGeneral.cs" />
     <Compile Include="Menus\OptionsGraphics.cs" />
     <Compile Include="Menus\OptionsOverview.cs" />
     <Compile Include="Menus\OptionsSound.cs" />
     <Compile Include="Providers\AnimationDictionaryProvider.cs" />
-    <Compile Include="Providers\FontProvider.cs" />
-    <Compile Include="Providers\InputProvider.cs" />
     <Compile Include="Managers\MenuManager.cs" />
     <Compile Include="Managers\PlatformManager.cs" />
     <Compile Include="Managers\RPGManager.cs" />
@@ -174,9 +153,7 @@
     <Compile Include="Menus\MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
-    <Compile Include="Providers\ShortcutProvider.cs" />
-    <Compile Include="Providers\VariableProvider.cs" />
+    <Compile Include="BlackDragon.cs" />
     <Compile Include="Helpers\StaticClassesImportantVariablesInitializer.cs" />
     <Compile Include="Providers\WaypointProvider.cs" />
   </ItemGroup>
@@ -185,13 +162,9 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BufferedInput\BufferedInput.csproj">
-      <Project>{9B960308-6EB9-4BE3-B9B4-C6E319A5C126}</Project>
-      <Name>BufferedInput</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Tile Engine\Tile Engine.csproj">
-      <Project>{B182F8AE-FD0D-4B57-BC85-E51A63CE99CC}</Project>
-      <Name>Tile Engine</Name>
+    <ProjectReference Include="..\..\BlackDragonEngine\BlackDragonEngine.csproj">
+      <Project>{5540C64E-2DAA-4B51-A628-0328C36A8B21}</Project>
+      <Name>BlackDragonEngine</Name>
     </ProjectReference>
     <ProjectReference Include="..\BlackDragonContent\BlackDragonContent.contentproj">
       <Name>BlackDragonContent %28Content%29</Name>

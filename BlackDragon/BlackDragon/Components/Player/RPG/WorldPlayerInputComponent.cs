@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BlackDragon.Entities;
+using BlackDragonEngine.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using BlackDragonEngine.Components;
 
 namespace BlackDragon.Components.RPG.Player
 {

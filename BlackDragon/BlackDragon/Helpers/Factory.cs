@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BlackDragon.Entities;
+using BlackDragonEngine.Entities;
 using BlackDragon.Components.Platform.Player;
 using BlackDragon.Components.RPG.Player;
 using BlackDragon.Components.NPCs;
-using BlackDragon.Components;
+using BlackDragonEngine.Components;
 using BlackDragon.Components.Entities;
 
 

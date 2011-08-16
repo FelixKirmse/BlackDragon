@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using BlackDragon.Providers;
 using BlackDragon.Managers;
 using Microsoft.Xna.Framework.Input;
+using BlackDragonEngine.Menus;
+using BlackDragonEngine.Helpers;
 
 namespace BlackDragon.Menus
 {
@@ -23,7 +25,7 @@ namespace BlackDragon.Menus
         public override void Update()
         {
             base.Update();
-            if (ShortcutProvider.KeyPressedNowButNotLastFrame(Keys.Escape))
+            if (InputMapper.STRICTCANCEL)
             {
                 StateManager.OptionsState = OptionStates.Overview;
             }

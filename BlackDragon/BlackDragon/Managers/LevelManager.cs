@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Tile_Engine;
+using BlackDragonEngine.TileEngine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
@@ -31,7 +31,7 @@ namespace BlackDragon.Managers
             }
             TileMap.LoadMap(new FileStream(Application.StartupPath + @"\Content\maps\" + mode + @"\MAP" + levelName + ".MAP", FileMode.Open));
             CodeManager.CheckCodes();
-            SaveManager.SaveState.CurrentLevel = levelName;
+            GameVariableProvider.SaveState.CurrentLevel = levelName;
             Camera.UpdateWorldRectangle();
         }
 

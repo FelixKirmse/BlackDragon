@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Tile_Engine;
+using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Helpers;
 using BlackDragon.Providers;
 using Microsoft.Xna.Framework.Input;
 
@@ -26,7 +28,7 @@ namespace BlackDragon
             InputMapper.RightKeys = new Keys[] { Keys.D, Keys.Right };
             InputMapper.CancelKeys = new Keys[] { Keys.Escape };
 
-            VariableProvider.RandomGenerator = new Random();
+            VariableProvider.GenerateNewRandomSeed();
         }
     }
 }

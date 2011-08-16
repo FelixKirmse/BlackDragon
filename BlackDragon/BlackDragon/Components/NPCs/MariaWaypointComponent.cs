@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using BlackDragon.Helpers;
-using Tile_Engine;
+using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Entities;
+using BlackDragonEngine.Components;
 using BlackDragon.Providers;
-using BlackDragon.Entities;
 
 namespace BlackDragon.Components.NPCs
 {
@@ -20,7 +22,7 @@ namespace BlackDragon.Components.NPCs
 
         protected override Vector2 getNextWaypoint()
         {
-            return new Vector2(VariableProvider.RandomGenerator.Next(0, TileMap.MapWidth), VariableProvider.RandomGenerator.Next(0, TileMap.MapHeight));
+            return new Vector2(VariableProvider.RandomSeed.Next(0, TileMap.MapWidth), VariableProvider.RandomSeed.Next(0, TileMap.MapHeight));
         }        
     }
 }

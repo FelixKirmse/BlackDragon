@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BlackDragon.Entities;
+using BlackDragonEngine.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Managers;
-using Tile_Engine;
+using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.Components;
 
 namespace BlackDragon.Components.RPG.Player
 {

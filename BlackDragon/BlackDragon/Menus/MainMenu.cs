@@ -5,9 +5,10 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using BlackDragon.Providers;
+using BlackDragonEngine.Providers;
 using BlackDragon.Managers;
-using BlackDragon.Controller;
+using BlackDragonEngine.Controller;
+using BlackDragonEngine.Menus;
 
 namespace BlackDragon.Menus
 {

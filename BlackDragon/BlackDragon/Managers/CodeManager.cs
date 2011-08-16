@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BlackDragon.Entities;
+using BlackDragonEngine.Entities;
+using BlackDragonEngine.Components;
 using Microsoft.Xna.Framework;
-using Tile_Engine;
+using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Managers;
+using BlackDragonEngine.Helpers;
 using BlackDragon.Providers;
 
 namespace BlackDragon.Managers

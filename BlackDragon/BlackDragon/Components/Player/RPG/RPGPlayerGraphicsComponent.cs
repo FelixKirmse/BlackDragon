@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BlackDragon.Entities;
+using BlackDragonEngine.Entities;
 using BlackDragon.Providers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Helpers;
+using BlackDragonEngine.Components;
 
 namespace BlackDragon.Components.RPG.Player
 {

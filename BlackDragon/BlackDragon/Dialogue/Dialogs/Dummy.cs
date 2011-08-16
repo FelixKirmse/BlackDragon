@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using BlackDragon.Providers;
 using BlackDragon.Managers;
+using BlackDragonEngine.Dialogue;
+using BlackDragonEngine.Managers;
 
 namespace BlackDragon.Dialogue.Dialogs
 {
@@ -23,7 +25,7 @@ namespace BlackDragon.Dialogue.Dialogs
     {
         public DummyDialogTest2()
         {
-            Text = "Greetings " + SaveManager.SaveState.PlayerName + "\n"
+            Text = "Greetings " + GameVariableProvider.SaveState.PlayerName + "\n"
                 +"You have 1 new message:\n"
                 +"Bitch, I'm a bus.";
             MugShot = MugShotProvider.DummyMugShotAngry;

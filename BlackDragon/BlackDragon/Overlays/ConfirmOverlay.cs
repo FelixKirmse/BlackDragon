@@ -6,8 +6,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Managers;
 using BlackDragon.Menus;
+using BlackDragonEngine.Menus;
 using BlackDragon.Providers;
 using System.IO;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Managers;
 
 namespace BlackDragon.Overlays
 {
@@ -37,8 +40,8 @@ namespace BlackDragon.Overlays
 
             switch (selectedItem)
             {
-                case yes:                    
-                    SaveManager.SaveSaveState(VariableProvider.SaveSlot);
+                case yes:
+                    SaveManager.SaveSaveState(GameVariableProvider.SaveState, VariableProvider.SaveSlot);
                     StateManager.GameState = GameStates.RPG;
                     StateManager.RPGState = RPGStates.FIELD;
                     RPGManager.Activate();
@@ -60,8 +63,8 @@ namespace BlackDragon.Overlays
 
             spriteBatch.DrawString(
                 FontProvider.GetFont(fontName),
-                confirmText + SaveManager.SaveState.PlayerName + "?",
-                ShortcutProvider.Vector2Point(menuItems[0].ItemPosition - itemOffset - new Vector2(ShortcutProvider.GetFontCenter(fontName, confirmText + SaveManager.SaveState.PlayerName + "?").X  ,0)),
+                confirmText + GameVariableProvider.SaveState.PlayerName + "?",
+                ShortcutProvider.Vector2Point(menuItems[0].ItemPosition - itemOffset - new Vector2(ShortcutProvider.GetFontCenter(fontName, confirmText + GameVariableProvider.SaveState.PlayerName + "?").X, 0)),
                 Color.White,
                 0,
                 Vector2.Zero,

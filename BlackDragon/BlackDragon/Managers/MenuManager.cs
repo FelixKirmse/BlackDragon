@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Menus;
-using BlackDragon.Providers;
+using BlackDragonEngine.Providers;
 
 namespace BlackDragon.Managers
 {

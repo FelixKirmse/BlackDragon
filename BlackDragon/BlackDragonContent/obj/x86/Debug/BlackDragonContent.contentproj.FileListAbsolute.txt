@@ -1,4 +1,4 @@
 I:\Projects\Gemstone Hunter\Gemstone Hunter\Gemstone HunterContent\obj\x86\Debug\ResolveAssemblyReference.cache
-I:\Projects\BlackDragon\BlackDragon\BlackDragonContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Nidhogg\Desktop\Emergency Black Dragon\BlackDragon\BlackDragonContent\obj\x86\Debug\ResolveAssemblyReference.cache
 K:\Projects\BlackDragon\BlackDragon\BlackDragonContent\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Projects\BlackDragon\BlackDragon\BlackDragonContent\obj\x86\Debug\ResolveAssemblyReference.cache

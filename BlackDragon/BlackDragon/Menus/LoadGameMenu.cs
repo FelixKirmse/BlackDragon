@@ -7,6 +7,10 @@ using BlackDragon.Providers;
 using BlackDragon.Managers;
 using Microsoft.Xna.Framework.Input;
 using System.IO;
+using BlackDragonEngine.Menus;
+using BlackDragonEngine.Helpers;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Managers;
 
 namespace BlackDragon.Menus
 {
@@ -34,7 +38,7 @@ namespace BlackDragon.Menus
 
                 try
                 {
-                    SaveManager.LoadSaveState(VariableProvider.SaveSlot);
+                    SaveManager.LoadSaveState(ref GameVariableProvider.SaveState, VariableProvider.SaveSlot);
                 }
                 catch (FileNotFoundException)
                 { 

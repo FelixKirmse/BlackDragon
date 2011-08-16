@@ -125,9 +125,9 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Tile Engine\Tile Engine.csproj">
-      <Project>{B182F8AE-FD0D-4B57-BC85-E51A63CE99CC}</Project>
-      <Name>Tile Engine</Name>
+    <ProjectReference Include="..\..\BlackDragonEngine\BlackDragonEngine.csproj">
+      <Project>{5540C64E-2DAA-4B51-A628-0328C36A8B21}</Project>
+      <Name>BlackDragonEngine</Name>
     </ProjectReference>
     <ProjectReference Include="..\Level EditorContent\Level EditorContent.contentproj">
       <Name>Level EditorContent %28Content%29</Name>

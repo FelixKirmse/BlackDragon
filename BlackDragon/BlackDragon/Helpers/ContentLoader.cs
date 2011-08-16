@@ -5,9 +5,11 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Tile_Engine;
-using BlackDragon.Managers;
+using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.Managers;
+using BlackDragonEngine.Providers;
 using BlackDragon.Providers;
+using BlackDragon.Managers;
 
 namespace BlackDragon
 {

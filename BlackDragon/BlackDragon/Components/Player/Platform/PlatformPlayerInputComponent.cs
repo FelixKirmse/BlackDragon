@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using BlackDragon.Entities;
+using BlackDragonEngine.Entities;
+using BlackDragonEngine.Components;
+using BlackDragonEngine.Helpers;
 
 
 namespace BlackDragon.Components.Platform.Player

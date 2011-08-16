@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Tile_Engine;
 using BlackDragon.Providers;
-using BlackDragon.Managers;
-using BlackDragon.Entities;
-using BlackDragon.Helpers;
-using BlackDragon.Dialogue;
+using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.Providers;
+using BlackDragonEngine.Managers;
+using BlackDragonEngine.Entities;
+using BlackDragonEngine.Helpers;
+using BlackDragonEngine.Dialogue;
 using BlackDragon.Dialogue.Dialogs;
 
 namespace BlackDragon.Managers
@@ -30,7 +31,7 @@ namespace BlackDragon.Managers
             TileMap.WhiteTile = 1791;
             TileMap.TransparentTile = 278;
             TileMap.Initialize(rpgTileSet);
-            SaveManager.SaveState.CurrentMode = GameStates.RPG;
+            GameVariableProvider.SaveState.CurrentMode = GameStates.RPG;
 
             /// temporary code            
             VariableProvider.CurrentPlayer = Factory.CreateRPGPlayer();                

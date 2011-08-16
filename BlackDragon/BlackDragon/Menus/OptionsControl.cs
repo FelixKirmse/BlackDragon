@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using BlackDragon.Providers;
 using BlackDragon.Managers;
 using Microsoft.Xna.Framework.Input;
+using BlackDragonEngine.Menus;
+using BlackDragonEngine.Providers;
 
 namespace BlackDragon.Menus
 {
