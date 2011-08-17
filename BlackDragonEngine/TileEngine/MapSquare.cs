@@ -17,6 +17,10 @@ namespace BlackDragonEngine.TileEngine
         #endregion
 
         #region Constructor
+        private MapSquare()
+        { 
+        }
+
         public MapSquare(int background, int interactive, int foreground, bool passable)
         {
             LayerTiles[0] = background;

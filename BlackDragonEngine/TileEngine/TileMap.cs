@@ -2,30 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Storage;
 using System.IO;
 using System.Xml.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace BlackDragonEngine.TileEngine
-{
-    [Serializable]
-    public class MapRow
-    {
-        public List<MapSquare> MapCellRow = new List<MapSquare>();
-
-        public void AddRow(int background, int interactive, int foreground, bool passable)
-        {
-            MapCellRow.Add(new MapSquare(background, interactive, foreground, passable));
-        }
-    }
-
+{   
     public static class TileMap
     {
         #region Declarations
@@ -40,8 +23,8 @@ namespace BlackDragonEngine.TileEngine
         public static int WhiteTile = 1791;
 
         public static int TileOffset = 0;
-        
-        static private List<MapRow> MapCellColumns = new List<MapRow>();
+                
+        static private Map map = new Map();
 
         //static private MapSquare[,] mapCells = new MapSquare[MapWidth, MapHeight];
 
@@ -55,7 +38,7 @@ namespace BlackDragonEngine.TileEngine
         public static void Initialize(Texture2D tileTexture) {
             tileSheet = tileTexture;
 
-            MapCellColumns.Clear();
+            map.MapCellColumns.Clear();
             for (int x = 0; x < MapWidth; ++x)
             {
                 MapRow newColumn = new MapRow();
@@ -67,7 +50,7 @@ namespace BlackDragonEngine.TileEngine
                     //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
 
                 }
-                MapCellColumns.Add(newColumn);
+                map.MapCellColumns.Add(newColumn);
             }
         }
         #endregion
@@ -148,7 +131,7 @@ namespace BlackDragonEngine.TileEngine
         #region Information about MapSquare objects
         public static MapSquare GetMapSquareAtCell(int tileX, int tileY) {
             if ((tileX >= 0) && (tileX < MapWidth) && (tileY >= 0) && (tileY < MapHeight)) {
-                return MapCellColumns[tileX].MapCellRow[tileY];
+                return map.MapCellColumns[tileX].MapCellRow[tileY];
                 // return mapCells[tileX, tileY];
             }
             else return null;
@@ -156,14 +139,14 @@ namespace BlackDragonEngine.TileEngine
 
         public static void SetMapSquareAtCell(int tileX, int tileY, MapSquare tile) {
             if ((tileX >= 0) && (tileX < MapWidth) && (tileY >= 0) && (tileY < MapHeight)) {
-                MapCellColumns[tileX].MapCellRow[tileY] = tile;
+                map.MapCellColumns[tileX].MapCellRow[tileY] = tile;
                 //mapCells[tileX, tileY] = tile;
             }
         }
 
         public static void SetTileAtCell(int tileX, int tileY, int layer, int tileIndex) {
             if ((tileX >= 0) && (tileX < MapWidth) && (tileY >= 0) && (tileY < MapHeight)) {
-                MapCellColumns[tileX].MapCellRow[tileY].LayerTiles[layer] = tileIndex;
+                map.MapCellColumns[tileX].MapCellRow[tileY].LayerTiles[layer] = tileIndex;
                 //mapCells[tileX, tileY].LayerTiles[layer] = tileIndex;
             }
         }
@@ -189,7 +172,7 @@ namespace BlackDragonEngine.TileEngine
                 for (int y = startY; y <= endY; ++y) {
                     for (int z = 0; z < MapLayers; ++z) {
                         if ((x >= 0) && (y >= 0) && (x < MapWidth) && (y < MapHeight)) {
-                            spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(MapCellColumns[x].MapCellRow[y].LayerTiles[z]), Color.White, 0.0f, Vector2.Zero, SpriteEffects.None, 1f - ((float)z * 0.1f));
+                            spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(map.MapCellColumns[x].MapCellRow[y].LayerTiles[z]), Color.White, 0.0f, Vector2.Zero, SpriteEffects.None, 1f - ((float)z * 0.1f));
                         }
                     }
                     if (EditorMode) {
@@ -206,10 +189,10 @@ namespace BlackDragonEngine.TileEngine
             if (!CellIsPassable(x, y)) {
                 spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(255, 0, 0, 80), 0f, Vector2.Zero, SpriteEffects.None, 0.2f);
             }
-            if (MapCellColumns[x].MapCellRow[y].Codes.Count != 0)
+            if (map.MapCellColumns[x].MapCellRow[y].Codes.Count != 0)
             {
                 spriteBatch.Draw(tileSheet, CellScreenRectangle(x, y), TileSourceRectangle(WhiteTile), new Color(0, 0, 255, 80), 0f, Vector2.Zero, SpriteEffects.None, 0.1f);
-                spriteBatch.DrawString(spriteFont, MapCellColumns[x].MapCellRow[y].Codes.Count.ToString(), Camera.WorldToScreen(new Vector2(x*TileWidth, y*TileHeight)), Color.White, 0f, Vector2.Zero, 1, SpriteEffects.None, .09f);                 
+                spriteBatch.DrawString(spriteFont, map.MapCellColumns[x].MapCellRow[y].Codes.Count.ToString(), Camera.WorldToScreen(new Vector2(x*TileWidth, y*TileHeight)), Color.White, 0f, Vector2.Zero, 1, SpriteEffects.None, .09f);                 
             }
         }
 
@@ -235,21 +218,21 @@ namespace BlackDragonEngine.TileEngine
         #endregion
 
         #region Loading and Saving
-        public static void SaveMap(FileStream fileStream) {
-            BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fileStream, MapCellColumns);
+        public static void SaveMap(FileStream fileStream) {            
+            XmlSerializer xmlSer = new XmlSerializer(map.GetType());           
+            xmlSer.Serialize(fileStream, map);
             fileStream.Close();
         }
 
         public static void LoadMap(FileStream fileStream) {
             try {
-                MapCellColumns.Clear();
-                BinaryFormatter formatter = new BinaryFormatter();
-                MapCellColumns = (List<MapRow>)formatter.Deserialize(fileStream);
+                map.MapCellColumns.Clear();
+                XmlSerializer xmlSer = new XmlSerializer(map.GetType());                
+                map = (Map)xmlSer.Deserialize(fileStream);
                 fileStream.Close();
 
-                MapWidth = MapCellColumns.Count;
-                MapHeight = MapCellColumns[0].MapCellRow.Count;
+                MapWidth = map.MapCellColumns.Count;
+                MapHeight = map.MapCellColumns[0].MapCellRow.Count;
             } catch {
                 ClearMap();
                 fileStream.Close();
@@ -258,7 +241,7 @@ namespace BlackDragonEngine.TileEngine
 
         public static void ClearMap()
         {
-            MapCellColumns.Clear();
+            map.MapCellColumns.Clear();
             for (int x = 0; x < MapWidth; ++x)
             {
                 MapRow newColumn = new MapRow();
@@ -270,7 +253,7 @@ namespace BlackDragonEngine.TileEngine
                     //mapCells[x, y] = new MapSquare(skyTile, transparentTile, transparentTile, "", true);
 
                 }
-                MapCellColumns.Add(newColumn);
+                map.MapCellColumns.Add(newColumn);
             }
         }
         #endregion

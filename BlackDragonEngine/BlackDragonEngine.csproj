@@ -121,6 +121,7 @@
     <Compile Include="Providers\VariableProvider.cs" />
     <Compile Include="States.cs" />
     <Compile Include="TileEngine\Camera.cs" />
+    <Compile Include="TileEngine\Map.cs" />
     <Compile Include="TileEngine\MapSquare.cs" />
     <Compile Include="TileEngine\TileMap.cs" />
   </ItemGroup>

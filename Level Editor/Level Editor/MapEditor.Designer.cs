@@ -47,12 +47,11 @@
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.groupBoxRightClick = new System.Windows.Forms.GroupBox();
+            this.insertTileCheckBox = new System.Windows.Forms.CheckBox();
             this.getCodeRadio = new System.Windows.Forms.RadioButton();
             this.radioUnpassable = new System.Windows.Forms.RadioButton();
             this.radioCode = new System.Windows.Forms.RadioButton();
             this.radioPassable = new System.Windows.Forms.RadioButton();
-            this.lblMapNumber = new System.Windows.Forms.Label();
-            this.cboMapNumber = new System.Windows.Forms.ComboBox();
             this.timerGameUpdate = new System.Windows.Forms.Timer(this.components);
             this.cwdButton = new System.Windows.Forms.Button();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
@@ -83,7 +82,10 @@
             this.addCodeButton = new System.Windows.Forms.Button();
             this.addCodeInput = new System.Windows.Forms.TextBox();
             this.codeListBox = new System.Windows.Forms.ListBox();
-            this.insertTileCheckBox = new System.Windows.Forms.CheckBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.saveMapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -117,7 +119,9 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newMapToolStripMenuItem,
             this.loadMapToolStripMenuItem,
+            this.saveMapToolStripMenuItem1,
             this.saveMapToolStripMenuItem,
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
@@ -135,8 +139,8 @@
             // saveMapToolStripMenuItem
             // 
             this.saveMapToolStripMenuItem.Name = "saveMapToolStripMenuItem";
-            this.saveMapToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.saveMapToolStripMenuItem.Text = "&Save Map";
+            this.saveMapToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveMapToolStripMenuItem.Text = "&Save Map as...";
             this.saveMapToolStripMenuItem.Click += new System.EventHandler(this.saveMapToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
@@ -253,6 +257,17 @@
             this.groupBoxRightClick.TabStop = false;
             this.groupBoxRightClick.Text = "Right Click Mode";
             // 
+            // insertTileCheckBox
+            // 
+            this.insertTileCheckBox.AutoSize = true;
+            this.insertTileCheckBox.Location = new System.Drawing.Point(6, 80);
+            this.insertTileCheckBox.Name = "insertTileCheckBox";
+            this.insertTileCheckBox.Size = new System.Drawing.Size(95, 17);
+            this.insertTileCheckBox.TabIndex = 10;
+            this.insertTileCheckBox.Text = "Also Insert Tile";
+            this.insertTileCheckBox.UseVisualStyleBackColor = true;
+            this.insertTileCheckBox.CheckedChanged += new System.EventHandler(this.insertTileCheckBox_CheckedChanged);
+            // 
             // getCodeRadio
             // 
             this.getCodeRadio.AutoSize = true;
@@ -301,24 +316,6 @@
             this.radioPassable.Text = "Passable";
             this.radioPassable.UseVisualStyleBackColor = true;
             this.radioPassable.CheckedChanged += new System.EventHandler(this.radioPassable_CheckedChanged);
-            // 
-            // lblMapNumber
-            // 
-            this.lblMapNumber.AutoSize = true;
-            this.lblMapNumber.Location = new System.Drawing.Point(11, 27);
-            this.lblMapNumber.Name = "lblMapNumber";
-            this.lblMapNumber.Size = new System.Drawing.Size(71, 13);
-            this.lblMapNumber.TabIndex = 6;
-            this.lblMapNumber.Text = "Map Number:";
-            // 
-            // cboMapNumber
-            // 
-            this.cboMapNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMapNumber.FormattingEnabled = true;
-            this.cboMapNumber.Location = new System.Drawing.Point(83, 27);
-            this.cboMapNumber.Name = "cboMapNumber";
-            this.cboMapNumber.Size = new System.Drawing.Size(94, 21);
-            this.cboMapNumber.TabIndex = 7;
             // 
             // timerGameUpdate
             // 
@@ -618,16 +615,34 @@
             this.codeListBox.TabIndex = 0;
             this.codeListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codeListBox_KeyPress);
             // 
-            // insertTileCheckBox
+            // openFileDialog
             // 
-            this.insertTileCheckBox.AutoSize = true;
-            this.insertTileCheckBox.Location = new System.Drawing.Point(6, 80);
-            this.insertTileCheckBox.Name = "insertTileCheckBox";
-            this.insertTileCheckBox.Size = new System.Drawing.Size(95, 17);
-            this.insertTileCheckBox.TabIndex = 10;
-            this.insertTileCheckBox.Text = "Also Insert Tile";
-            this.insertTileCheckBox.UseVisualStyleBackColor = true;
-            this.insertTileCheckBox.CheckedChanged += new System.EventHandler(this.insertTileCheckBox_CheckedChanged);
+            this.openFileDialog.DefaultExt = "map";
+            this.openFileDialog.Filter = "Map-Files|*.map";
+            this.openFileDialog.Title = "Load a Map";
+            this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_FileOk);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "map";
+            this.saveFileDialog.Filter = "Map-Files|*.map";
+            this.saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog_FileOk);
+            // 
+            // saveMapToolStripMenuItem1
+            // 
+            this.saveMapToolStripMenuItem1.Name = "saveMapToolStripMenuItem1";
+            this.saveMapToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveMapToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.saveMapToolStripMenuItem1.Text = "&Save Map";
+            this.saveMapToolStripMenuItem1.Click += new System.EventHandler(this.saveMapToolStripMenuItem1_Click);
+            // 
+            // newMapToolStripMenuItem
+            // 
+            this.newMapToolStripMenuItem.Name = "newMapToolStripMenuItem";
+            this.newMapToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newMapToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.newMapToolStripMenuItem.Text = "New Map";
+            this.newMapToolStripMenuItem.Click += new System.EventHandler(this.newMapToolStripMenuItem_Click);
             // 
             // MapEditor
             // 
@@ -650,8 +665,6 @@
             this.Controls.Add(this.startGameButton);
             this.Controls.Add(this.cwdLabel);
             this.Controls.Add(this.cwdButton);
-            this.Controls.Add(this.cboMapNumber);
-            this.Controls.Add(this.lblMapNumber);
             this.Controls.Add(this.groupBoxRightClick);
             this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.vScrollBar1);
@@ -706,8 +719,6 @@
         private System.Windows.Forms.GroupBox groupBoxRightClick;
         private System.Windows.Forms.RadioButton radioCode;
         private System.Windows.Forms.RadioButton radioPassable;
-        private System.Windows.Forms.Label lblMapNumber;
-        private System.Windows.Forms.ComboBox cboMapNumber;
         private System.Windows.Forms.Timer timerGameUpdate;
         private System.Windows.Forms.RadioButton radioUnpassable;
         private System.Windows.Forms.Button cwdButton;
@@ -741,5 +752,9 @@
         private System.Windows.Forms.TextBox addCodeInput;
         private System.Windows.Forms.ListBox codeListBox;
         private System.Windows.Forms.CheckBox insertTileCheckBox;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem saveMapToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem newMapToolStripMenuItem;
     }
 }

@@ -29,7 +29,7 @@ namespace BlackDragon.Managers
                     mode = "platform";
                     break;
             }
-            TileMap.LoadMap(new FileStream(Application.StartupPath + @"\Content\maps\" + mode + @"\MAP" + levelName + ".MAP", FileMode.Open));
+            TileMap.LoadMap(new FileStream(Application.StartupPath + @"\Content\maps\" + mode + @"\" + levelName + ".map", FileMode.Open));
             CodeManager.CheckCodes();
             GameVariableProvider.SaveState.CurrentLevel = levelName;
             Camera.UpdateWorldRectangle();

@@ -21,7 +21,8 @@ namespace Level_Editor
     {
         public Game1 game;
         private string cwd;
-        private string modeModifier = @"\rpg";        
+        private string modeModifier = @"\rpg";
+        private string currentMapName;
 
         public MapEditor()
         {
@@ -141,13 +142,8 @@ namespace Level_Editor
         {
             timerGameUpdate.Stop();
             LoadImageLists();
-            FixScrollBarScales();           
-
-            for (int x = 0; x < 100; ++x) {
-                cboMapNumber.Items.Add(x.ToString().PadLeft(3, '0'));
-            }
-
-            cboMapNumber.SelectedIndex = 0;            
+            FixScrollBarScales();   
+                     
             TileMap.EditorMode = true;
             backgroundToolStripMenuItem.Checked = true;                        
         }
@@ -215,8 +211,9 @@ namespace Level_Editor
 
         private void loadMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openFileDialog.ShowDialog();            
             try {
-                TileMap.LoadMap(new FileStream(cwd + modeModifier + @"/MAP" + cboMapNumber.Items[cboMapNumber.SelectedIndex] + ".MAP", FileMode.Open));
+                TileMap.LoadMap(new FileStream(cwd + modeModifier + @"/" + currentMapName, FileMode.Open));
                 tileMapHeightInput.Text = TileMap.MapHeight.ToString();
                 tileMapWidthInput.Text = TileMap.MapWidth.ToString();
             }
@@ -228,7 +225,8 @@ namespace Level_Editor
 
         private void saveMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TileMap.SaveMap(new FileStream(cwd + modeModifier + @"/MAP" + cboMapNumber.Items[cboMapNumber.SelectedIndex] + ".MAP", FileMode.Create));
+            saveFileDialog.ShowDialog();
+            SaveMap();
         }
 
         private void clearMapToolStripMenuItem_Click(object sender, EventArgs e)
@@ -305,6 +303,8 @@ namespace Level_Editor
             }            
             modeComboBox.SelectedIndex = 0;
             timerGameUpdate.Start();
+            openFileDialog.InitialDirectory = cwd + modeModifier;
+            saveFileDialog.InitialDirectory = cwd + modeModifier;
         }
 
         private void startGameButton_Click(object sender, EventArgs e)
@@ -507,6 +507,36 @@ namespace Level_Editor
         private void insertTileCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             game.InsertTile = insertTileCheckBox.Checked;
+        }
+
+        private void openFileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            currentMapName = openFileDialog.SafeFileName;
+        }
+
+        private void saveFileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            string[] filePathArray = saveFileDialog.FileName.Split('\\');
+            currentMapName = filePathArray[filePathArray.Length - 1];
+        }
+
+        private void saveMapToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(currentMapName))
+                saveFileDialog.ShowDialog();
+            if(!string.IsNullOrEmpty(currentMapName))
+            SaveMap();
+        }
+
+        private void SaveMap()
+        {
+            TileMap.SaveMap(new FileStream(cwd + modeModifier + @"/" + currentMapName, FileMode.Create));
+        }
+
+        private void newMapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TileMap.ClearMap();
+            currentMapName = "";
         }
     }
 }
