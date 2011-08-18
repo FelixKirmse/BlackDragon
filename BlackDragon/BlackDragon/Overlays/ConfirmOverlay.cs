@@ -47,7 +47,7 @@ namespace BlackDragon.Overlays
                     RPGManager.Activate();
                     parent.Confirmation = false;
                     parent.TextBuffer = "";
-                    LevelManager.LoadLevel("000");
+                    LevelManager.LoadLevel("FieldTest");
                     break;
 
                 case no:

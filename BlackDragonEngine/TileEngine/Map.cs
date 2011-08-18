@@ -17,7 +17,7 @@ namespace BlackDragonEngine.TileEngine
     }
 
     [Serializable]
-    public class Map
+    public class HelpMap
     {
         public List<MapRow> MapCellColumns = new List<MapRow>();
     }

@@ -24,7 +24,7 @@ namespace BlackDragonEngine.TileEngine
 
         public static int TileOffset = 0;
                 
-        static private Map map = new Map();
+        static private HelpMap map = new HelpMap();
 
         //static private MapSquare[,] mapCells = new MapSquare[MapWidth, MapHeight];
 
@@ -228,7 +228,7 @@ namespace BlackDragonEngine.TileEngine
             try {
                 map.MapCellColumns.Clear();
                 XmlSerializer xmlSer = new XmlSerializer(map.GetType());                
-                map = (Map)xmlSer.Deserialize(fileStream);
+                map = (HelpMap)xmlSer.Deserialize(fileStream);
                 fileStream.Close();
 
                 MapWidth = map.MapCellColumns.Count;

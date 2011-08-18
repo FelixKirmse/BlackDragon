@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragonEngine.Entities;
 using Microsoft.Xna.Framework;
+using xTile.Display;
+using xTile;
 
 namespace BlackDragonEngine.Providers
 {
@@ -16,6 +18,8 @@ namespace BlackDragonEngine.Providers
         public static Random RandomSeed { get; set; }
         public static GameTime GameTime { get; set; }
         public static string SaveSlot { get; set; }
+        public static XnaDisplayDevice DisplayDevice { get; set; }
+        public static xTile.Dimensions.Rectangle Viewport;
 
         public static void GenerateNewRandomSeed()
         {

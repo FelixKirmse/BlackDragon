@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackDragonContent", "Black
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackDragonEngine", "BlackDragonEngine\BlackDragonEngine.csproj", "{5540C64E-2DAA-4B51-A628-0328C36A8B21}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xTile", "xTile", "{69E7C350-A397-414F-82A8-C009B72E43AC}"
+	ProjectSection(SolutionItems) = preProject
+		xTile\xTile.dll = xTile\xTile.dll
+		xTile\xTile.Pipeline.dll = xTile\xTile.Pipeline.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

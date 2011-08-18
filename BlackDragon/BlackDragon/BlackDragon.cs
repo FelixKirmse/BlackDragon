@@ -12,6 +12,7 @@ using BlackDragon.Helpers;
 using BlackDragonEngine.Providers;
 using BlackDragonEngine.Managers;
 using System.IO;
+using xTile.Display;
 
 namespace BlackDragon
 {
@@ -50,8 +51,11 @@ namespace BlackDragon
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            VariableProvider.DisplayDevice = new XnaDisplayDevice(Content, GraphicsDevice);
+            VariableProvider.Viewport = new xTile.Dimensions.Rectangle(new xTile.Dimensions.Size(800, 600));            
             ContentLoader.LoadContent(Content);
-            MenuManager.Initialize();
+            MenuManager.Initialize();            
         }
 
         

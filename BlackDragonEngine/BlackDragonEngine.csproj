@@ -91,6 +91,9 @@
     <Reference Include="System.Net">
       <Private>False</Private>
     </Reference>
+    <Reference Include="xTile">
+      <HintPath>..\xTile\xTile.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\AnimatedGraphicsComponent.cs" />
@@ -117,6 +120,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\FontProvider.cs" />
     <Compile Include="Providers\InputProvider.cs" />
+    <Compile Include="Providers\MapProvider.cs" />
     <Compile Include="Providers\ShortcutProvider.cs" />
     <Compile Include="Providers\VariableProvider.cs" />
     <Compile Include="States.cs" />

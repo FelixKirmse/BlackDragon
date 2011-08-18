@@ -46,6 +46,7 @@ namespace BlackDragon.Managers
                     EntityManager.Update();
                     CodeManager.CheckPlayerCodes();
                     GeneralInputManager.HandleGeneralInput();
+                    VariableProvider.Viewport.X++;
                 }
             }
             else 
@@ -56,7 +57,8 @@ namespace BlackDragon.Managers
 
         public static void Draw(SpriteBatch spriteBatch)
         {
-            TileMap.Draw(spriteBatch);
+            //TileMap.Draw(spriteBatch);
+            LevelManager.Draw();
             EntityManager.Draw(spriteBatch);
             if (StateManager.DialogState == DialogueStates.Active)
             {

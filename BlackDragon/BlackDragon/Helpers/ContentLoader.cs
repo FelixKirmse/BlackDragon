@@ -5,11 +5,11 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using BlackDragonEngine.TileEngine;
 using BlackDragonEngine.Managers;
 using BlackDragonEngine.Providers;
 using BlackDragon.Providers;
 using BlackDragon.Managers;
+using xTile;
 
 namespace BlackDragon
 {
@@ -24,8 +24,7 @@ namespace BlackDragon
             FontProvider.AddFont("Mono14", Content.Load<SpriteFont>(@"fonts/mono14"));
             FontProvider.AddFont("Mono21", Content.Load<SpriteFont>(@"fonts/mono21"));
 
-            PlatformManager.LoadContent(Content.Load<Texture2D>(@"textures/TileSets/platform"));
-            RPGManager.LoadContent(Content.Load<Texture2D>(@"textures/TileSets/rpg"));
+            MapProvider.AddMap("FieldTest", Content.Load<Map>(@"Maps/FieldTest"));
 
             TitleScreenManager.LoadContent(Content.Load<Texture2D>(@"textures/misc/TitleScreen"));
 
