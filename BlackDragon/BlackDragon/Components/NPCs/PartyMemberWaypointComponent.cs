@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 using BlackDragonEngine.Entities;
 using BlackDragonEngine.Components;
 using Microsoft.Xna.Framework;

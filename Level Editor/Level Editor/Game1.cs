@@ -8,9 +8,10 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 using System.Windows.Forms;
 using ButtonState = Microsoft.Xna.Framework.Input.ButtonState;
+using BlackDragonEngine.Helpers;
 
 namespace Level_Editor
 {

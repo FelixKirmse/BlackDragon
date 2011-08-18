@@ -9,8 +9,9 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using System.IO;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 using Microsoft.Xna.Framework.Input;
+using BlackDragonEngine.Helpers;
 
 using XNARectangle = Microsoft.Xna.Framework.Rectangle;
 

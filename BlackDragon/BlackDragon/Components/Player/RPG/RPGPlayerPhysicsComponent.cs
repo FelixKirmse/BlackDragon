@@ -6,7 +6,7 @@ using BlackDragonEngine.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Managers;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 using BlackDragonEngine.Components;
 
 namespace BlackDragon.Components.RPG.Player

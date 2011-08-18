@@ -124,10 +124,10 @@
     <Compile Include="Providers\ShortcutProvider.cs" />
     <Compile Include="Providers\VariableProvider.cs" />
     <Compile Include="States.cs" />
-    <Compile Include="TileEngine\Camera.cs" />
-    <Compile Include="TileEngine\Map.cs" />
-    <Compile Include="TileEngine\MapSquare.cs" />
-    <Compile Include="TileEngine\TileMap.cs" />
+    <Compile Include="HelpMaps\Camera.cs" />
+    <Compile Include="HelpMaps\Map.cs" />
+    <Compile Include="HelpMaps\MapSquare.cs" />
+    <Compile Include="HelpMaps\TileMap.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

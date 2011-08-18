@@ -17,8 +17,9 @@ namespace BlackDragonEngine.Providers
         }
 
         public static Map GetMap(string name)
-        {
+        {            
             return maps[name];
         }
+        
     }
 }

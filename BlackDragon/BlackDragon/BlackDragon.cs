@@ -6,13 +6,14 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Managers;
 using BlackDragon.Providers;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 using BlackDragon.Menus;
 using BlackDragon.Helpers;
 using BlackDragonEngine.Providers;
 using BlackDragonEngine.Managers;
 using System.IO;
 using xTile.Display;
+using BlackDragonEngine.Helpers;
 
 namespace BlackDragon
 {
@@ -72,6 +73,7 @@ namespace BlackDragon
                 VariableProvider.GameTime = gameTime;
                 InputProvider.Update();
                 StateManager.Update();
+                Camera.Update();
             }
 
             base.Update(gameTime);
@@ -85,6 +87,21 @@ namespace BlackDragon
             StateManager.Draw(spriteBatch);            
             spriteBatch.End();
             base.Draw(gameTime);
-        }               
+        }
+
+        public void OnAfterDraw(object sender, xTile.Layers.LayerEventArgs layerEventArgs)
+        {
+            SpriteBatch spriteBatch = VariableProvider.DisplayDevice.SpriteBatchAlpha;
+            switch (StateManager.GameState)
+            {
+                case GameStates.RPG:
+                    RPGManager.Draw(spriteBatch);
+                    break;
+
+                case GameStates.Platform:
+                    PlatformManager.Draw(spriteBatch);
+                    break;
+            }
+        }
     }
 }

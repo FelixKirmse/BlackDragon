@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 
 namespace BlackDragonEngine.Helpers
 {

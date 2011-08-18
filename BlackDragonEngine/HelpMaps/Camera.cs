@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using BlackDragonEngine.HelpMaps;
+using BlackDragonEngine.Providers;
 
-namespace BlackDragonEngine.TileEngine
+namespace BlackDragonEngine.Helpers
 {
     public static class Camera
     {
@@ -68,6 +70,11 @@ namespace BlackDragonEngine.TileEngine
         public static void UpdateWorldRectangle()
         {
             WorldRectangle = new Rectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.MapHeight * TileMap.TileHeight);
+        }
+
+        public static void Update()
+        {
+            Position = new Vector2(VariableProvider.Viewport.X, VariableProvider.Viewport.Y);
         }
         #endregion
     }

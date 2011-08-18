@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
@@ -11,6 +11,7 @@ using BlackDragon.Providers;
 using System.Windows.Forms;
 using xTile;
 using BlackDragonEngine.Providers;
+using BlackDragonEngine.Helpers;
 
 namespace BlackDragon.Managers
 {
@@ -37,6 +38,7 @@ namespace BlackDragon.Managers
             CodeManager.CheckCodes();
             GameVariableProvider.SaveState.CurrentLevel = levelName;
             Camera.UpdateWorldRectangle();
+            CurrentMap.Layers[CurrentMap.Properties["DrawPlayerAfter"]].AfterDraw += ((BlackDragon)VariableProvider.Game).OnAfterDraw;            
         }
 
         public static void Draw()

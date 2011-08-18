@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using BlackDragon.Helpers;
-using BlackDragonEngine.TileEngine;
+using BlackDragonEngine.HelpMaps;
 using BlackDragonEngine.Providers;
 using BlackDragonEngine.Entities;
 using BlackDragonEngine.Components;

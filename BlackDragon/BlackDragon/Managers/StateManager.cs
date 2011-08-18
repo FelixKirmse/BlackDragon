@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Providers;
+using BlackDragonEngine.Providers;
+using xTile.Layers;
 
 namespace BlackDragon.Managers
 {
@@ -68,19 +70,21 @@ namespace BlackDragon.Managers
                     MenuManager.Draw(spriteBatch);
                     break;
                 
+                
                 case GameStates.Platform:                   
-                    PlatformManager.Draw(spriteBatch);
+                    LevelManager.Draw();
                     break;
 
                 case GameStates.RPG:                    
-                    RPGManager.Draw(spriteBatch);
+                    LevelManager.Draw();
                     break;
+                 
             }
 
             if (GamePaused)
             {
                 MenuManager.Draw(spriteBatch);
             }
-        }
+        }        
     }
 }

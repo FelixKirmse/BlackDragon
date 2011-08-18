@@ -6,8 +6,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.IO;
 using System.Xml.Serialization;
+using BlackDragonEngine.Helpers;
 
-namespace BlackDragonEngine.TileEngine
+namespace BlackDragonEngine.HelpMaps
 {   
     public static class TileMap
     {
