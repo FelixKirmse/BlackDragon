@@ -6,29 +6,27 @@ using BlackDragonEngine.HelpMaps;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
-using BlackDragon.Managers;
-using BlackDragon.Providers;
 using System.Windows.Forms;
 using xTile;
 using BlackDragonEngine.Providers;
 using BlackDragonEngine.Helpers;
 
-namespace BlackDragon.Managers
+namespace BlackDragonEngine.Managers
 {
-    static class LevelManager
+    public delegate void OnLevelLoadEventHandler();
+
+    public static class LevelManager
     {
-        private static string currentLevel;
+        public static string CurrentLevel;
         public static Map CurrentMap;
+
+        public static event OnLevelLoadEventHandler OnLevelLoad;
 
         public static void LoadLevel(string levelName)
         {
-            currentLevel = levelName;                        
+            CurrentLevel = levelName;                        
             
-            CurrentMap = MapProvider.GetMap(levelName);
-            
-            GameVariableProvider.SaveState.CurrentLevel = levelName;
-            
-            CurrentMap.Layers[CurrentMap.Properties["PlayerLayer"]].AfterDraw += ((BlackDragon)VariableProvider.Game).OnAfterDraw;
+            CurrentMap = MapProvider.GetMap(levelName);  
 
             int editorLayerInt = CurrentMap.Properties["PlayerLayer"];
             xTile.Layers.Layer editorLayer = CurrentMap.Layers[editorLayerInt];
@@ -39,7 +37,8 @@ namespace BlackDragon.Managers
 
             TileMap.LoadMap(new FileStream(Application.StartupPath + @"\Content\maps\" + levelName + ".map", FileMode.Open), true);
             Camera.UpdateWorldRectangle();
-            CodeManager.CheckCodes();
+            if (OnLevelLoad != null)
+                OnLevelLoad();
         }
 
         public static void Draw()
@@ -49,7 +48,7 @@ namespace BlackDragon.Managers
 
         public static void ReloadLevel()
         {
-            LoadLevel(currentLevel);
+            LoadLevel(CurrentLevel);
         }
     }
 }

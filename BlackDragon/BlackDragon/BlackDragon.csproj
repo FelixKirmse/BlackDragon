@@ -139,7 +139,6 @@
     <Compile Include="Helpers\Factory.cs" />
     <Compile Include="Managers\CodeManager.cs" />
     <Compile Include="Managers\GeneralInputManager.cs" />
-    <Compile Include="Managers\LevelManager.cs" />
     <Compile Include="Managers\OptionMenuManager.cs" />
     <Compile Include="Menus\IngameMenu.cs" />
     <Compile Include="Menus\LoadGameMenu.cs" />

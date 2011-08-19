@@ -45,6 +45,9 @@ namespace BlackDragon
             if (!Directory.Exists(SaveManager.SaveFilePath))
                 Directory.CreateDirectory(SaveManager.SaveFilePath);
 
+            LevelManager.OnLevelLoad += CodeManager.CheckCodes;
+            LevelManager.OnLevelLoad += OnLevelLoad;
+
             base.Initialize();
         }
 
@@ -99,6 +102,12 @@ namespace BlackDragon
                     IngameManager.Draw(spriteBatch);
                     break;
             }
+        }
+
+        public void OnLevelLoad()
+        {
+            GameVariableProvider.SaveState.CurrentLevel = LevelManager.CurrentLevel;
+            LevelManager.CurrentMap.Layers[LevelManager.CurrentMap.Properties["PlayerLayer"]].AfterDraw += OnAfterDraw;            
         }
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using BlackDragon.Providers;
 using BlackDragonEngine.Providers;
 using xTile.Layers;
+using BlackDragonEngine.Managers;
 
 namespace BlackDragon.Managers
 {
