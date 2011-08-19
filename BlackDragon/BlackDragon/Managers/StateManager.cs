@@ -43,12 +43,9 @@ namespace BlackDragon.Managers
                     MenuManager.Update();
                     break;
 
-                case GameStates.Platform:
-                    PlatformManager.Update();
-                    break;
-
+                case GameStates.Platform:                    
                 case GameStates.RPG:
-                    RPGManager.Update();
+                    IngameManager.Update();
                     break;
             }
 
@@ -68,13 +65,9 @@ namespace BlackDragon.Managers
 
                 case GameStates.Menu:
                     MenuManager.Draw(spriteBatch);
-                    break;
+                    break;                
                 
-                
-                case GameStates.Platform:                   
-                    LevelManager.Draw();
-                    break;
-
+                case GameStates.Platform: 
                 case GameStates.RPG:                    
                     LevelManager.Draw();
                     break;

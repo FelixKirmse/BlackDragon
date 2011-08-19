@@ -55,3 +55,6 @@ BlackDragon/BlackDragon/bin/x86/Debug/BlackDragonEngine.pdb
 BlackDragon/BlackDragon/bin/x86/Debug/BlackDragonEngine.dll
 BlackDragonEngine/obj/
 BlackDragonEngine/bin/
+CodeEditor/CodeEditor/obj/
+CodeEditor/CodeEditorContent/obj/
+CodeEditor/CodeEditor/bin/

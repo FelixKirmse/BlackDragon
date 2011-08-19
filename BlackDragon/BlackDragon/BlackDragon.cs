@@ -95,11 +95,8 @@ namespace BlackDragon
             switch (StateManager.GameState)
             {
                 case GameStates.RPG:
-                    RPGManager.Draw(spriteBatch);
-                    break;
-
                 case GameStates.Platform:
-                    PlatformManager.Draw(spriteBatch);
+                    IngameManager.Draw(spriteBatch);
                     break;
             }
         }

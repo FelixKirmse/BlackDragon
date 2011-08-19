@@ -260,7 +260,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Maps\FieldTest.tide">
+    <Compile Include="maps\FieldTest.tide">
       <Name>FieldTest</Name>
       <Importer>TideImporter</Importer>
       <Processor>TideProcessor</Processor>

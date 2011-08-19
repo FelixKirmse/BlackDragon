@@ -13,8 +13,8 @@ namespace BlackDragonEngine.HelpMaps
     public static class TileMap
     {
         #region Declarations
-        public const int TileWidth = 16;
-        public const int TileHeight = 16;
+        public static int TileWidth = 16;
+        public static int TileHeight = 16;
         public static int MapWidth = 50;
         public static int MapHeight = 38;
         public const int MapLayers = 3;

@@ -112,18 +112,11 @@ namespace BlackDragon.Managers
                 switch (codeArray[0])
                 {
                     case "TRANSITION":
-                        switch (codeArray[1])
-                        {
-                            case "PLATFORM":
-                                StateManager.GameState = GameStates.Platform;
-                                PlatformManager.Activate();
-                                break;
-
-                            case "RPG":
-                                StateManager.GameState = GameStates.RPG;
-                                RPGManager.Activate();
-                                break;
-                        }
+                        if (LevelManager.CurrentMap.Properties["Mode"] == "RPG")
+                            StateManager.GameState = GameStates.RPG;
+                        else if (LevelManager.CurrentMap.Properties["Mode"] == "Platform")
+                            StateManager.GameState = GameStates.Platform;
+                        IngameManager.Activate();
                         LevelManager.LoadLevel(codeArray[2]);
                         break;
 

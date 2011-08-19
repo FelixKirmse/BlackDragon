@@ -32,7 +32,9 @@
             this.pctSurface = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveMapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,15 +79,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rectangleSelectionCheckBox = new System.Windows.Forms.CheckBox();
             this.editModeItemCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.removeCodesButton = new System.Windows.Forms.Button();
-            this.addCodeButton = new System.Windows.Forms.Button();
-            this.addCodeInput = new System.Windows.Forms.TextBox();
-            this.codeListBox = new System.Windows.Forms.ListBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.saveMapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.codeListBox = new System.Windows.Forms.ListBox();
+            this.addCodeInput = new System.Windows.Forms.TextBox();
+            this.addCodeButton = new System.Windows.Forms.Button();
+            this.removeCodesButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxRightClick.SuspendLayout();
@@ -129,29 +129,45 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // newMapToolStripMenuItem
+            // 
+            this.newMapToolStripMenuItem.Name = "newMapToolStripMenuItem";
+            this.newMapToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newMapToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.newMapToolStripMenuItem.Text = "New Map";
+            this.newMapToolStripMenuItem.Click += new System.EventHandler(this.newMapToolStripMenuItem_Click);
+            // 
             // loadMapToolStripMenuItem
             // 
             this.loadMapToolStripMenuItem.Name = "loadMapToolStripMenuItem";
-            this.loadMapToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.loadMapToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.loadMapToolStripMenuItem.Text = "&Load Map";
             this.loadMapToolStripMenuItem.Click += new System.EventHandler(this.loadMapToolStripMenuItem_Click);
+            // 
+            // saveMapToolStripMenuItem1
+            // 
+            this.saveMapToolStripMenuItem1.Name = "saveMapToolStripMenuItem1";
+            this.saveMapToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveMapToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.saveMapToolStripMenuItem1.Text = "&Save Map";
+            this.saveMapToolStripMenuItem1.Click += new System.EventHandler(this.saveMapToolStripMenuItem1_Click);
             // 
             // saveMapToolStripMenuItem
             // 
             this.saveMapToolStripMenuItem.Name = "saveMapToolStripMenuItem";
-            this.saveMapToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveMapToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.saveMapToolStripMenuItem.Text = "&Save Map as...";
             this.saveMapToolStripMenuItem.Click += new System.EventHandler(this.saveMapToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -564,57 +580,6 @@
             this.editModeItemCheckBox.UseVisualStyleBackColor = true;
             this.editModeItemCheckBox.CheckedChanged += new System.EventHandler(this.editModeItemCheckBox_CheckedChanged);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.removeCodesButton);
-            this.groupBox3.Controls.Add(this.addCodeButton);
-            this.groupBox3.Controls.Add(this.addCodeInput);
-            this.groupBox3.Controls.Add(this.codeListBox);
-            this.groupBox3.Location = new System.Drawing.Point(391, 630);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(356, 200);
-            this.groupBox3.TabIndex = 23;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Code Handling";
-            // 
-            // removeCodesButton
-            // 
-            this.removeCodesButton.Location = new System.Drawing.Point(194, 21);
-            this.removeCodesButton.Name = "removeCodesButton";
-            this.removeCodesButton.Size = new System.Drawing.Size(149, 23);
-            this.removeCodesButton.TabIndex = 3;
-            this.removeCodesButton.Text = "Remove selected codes";
-            this.removeCodesButton.UseVisualStyleBackColor = true;
-            this.removeCodesButton.Click += new System.EventHandler(this.removeCodesButton_Click);
-            // 
-            // addCodeButton
-            // 
-            this.addCodeButton.Location = new System.Drawing.Point(113, 21);
-            this.addCodeButton.Name = "addCodeButton";
-            this.addCodeButton.Size = new System.Drawing.Size(75, 20);
-            this.addCodeButton.TabIndex = 2;
-            this.addCodeButton.Text = "Add Code";
-            this.addCodeButton.UseVisualStyleBackColor = true;
-            this.addCodeButton.Click += new System.EventHandler(this.addCodeButton_Click);
-            // 
-            // addCodeInput
-            // 
-            this.addCodeInput.Location = new System.Drawing.Point(7, 21);
-            this.addCodeInput.Name = "addCodeInput";
-            this.addCodeInput.Size = new System.Drawing.Size(100, 20);
-            this.addCodeInput.TabIndex = 1;
-            this.addCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addCodeInput_KeyPress);
-            // 
-            // codeListBox
-            // 
-            this.codeListBox.FormattingEnabled = true;
-            this.codeListBox.Location = new System.Drawing.Point(7, 60);
-            this.codeListBox.Name = "codeListBox";
-            this.codeListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.codeListBox.Size = new System.Drawing.Size(336, 134);
-            this.codeListBox.TabIndex = 0;
-            this.codeListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codeListBox_KeyPress);
-            // 
             // openFileDialog
             // 
             this.openFileDialog.DefaultExt = "map";
@@ -628,21 +593,56 @@
             this.saveFileDialog.Filter = "Map-Files|*.map";
             this.saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog_FileOk);
             // 
-            // saveMapToolStripMenuItem1
+            // codeListBox
             // 
-            this.saveMapToolStripMenuItem1.Name = "saveMapToolStripMenuItem1";
-            this.saveMapToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveMapToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.saveMapToolStripMenuItem1.Text = "&Save Map";
-            this.saveMapToolStripMenuItem1.Click += new System.EventHandler(this.saveMapToolStripMenuItem1_Click);
+            this.codeListBox.FormattingEnabled = true;
+            this.codeListBox.Location = new System.Drawing.Point(7, 60);
+            this.codeListBox.Name = "codeListBox";
+            this.codeListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.codeListBox.Size = new System.Drawing.Size(336, 134);
+            this.codeListBox.TabIndex = 0;
+            this.codeListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codeListBox_KeyPress);
             // 
-            // newMapToolStripMenuItem
+            // addCodeInput
             // 
-            this.newMapToolStripMenuItem.Name = "newMapToolStripMenuItem";
-            this.newMapToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newMapToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.newMapToolStripMenuItem.Text = "New Map";
-            this.newMapToolStripMenuItem.Click += new System.EventHandler(this.newMapToolStripMenuItem_Click);
+            this.addCodeInput.Location = new System.Drawing.Point(7, 21);
+            this.addCodeInput.Name = "addCodeInput";
+            this.addCodeInput.Size = new System.Drawing.Size(100, 20);
+            this.addCodeInput.TabIndex = 1;
+            this.addCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addCodeInput_KeyPress);
+            // 
+            // addCodeButton
+            // 
+            this.addCodeButton.Location = new System.Drawing.Point(113, 21);
+            this.addCodeButton.Name = "addCodeButton";
+            this.addCodeButton.Size = new System.Drawing.Size(75, 20);
+            this.addCodeButton.TabIndex = 2;
+            this.addCodeButton.Text = "Add Code";
+            this.addCodeButton.UseVisualStyleBackColor = true;
+            this.addCodeButton.Click += new System.EventHandler(this.addCodeButton_Click);
+            // 
+            // removeCodesButton
+            // 
+            this.removeCodesButton.Location = new System.Drawing.Point(194, 21);
+            this.removeCodesButton.Name = "removeCodesButton";
+            this.removeCodesButton.Size = new System.Drawing.Size(149, 23);
+            this.removeCodesButton.TabIndex = 3;
+            this.removeCodesButton.Text = "Remove selected codes";
+            this.removeCodesButton.UseVisualStyleBackColor = true;
+            this.removeCodesButton.Click += new System.EventHandler(this.removeCodesButton_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.removeCodesButton);
+            this.groupBox3.Controls.Add(this.addCodeButton);
+            this.groupBox3.Controls.Add(this.addCodeInput);
+            this.groupBox3.Controls.Add(this.codeListBox);
+            this.groupBox3.Location = new System.Drawing.Point(391, 630);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(356, 200);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Code Handling";
             // 
             // MapEditor
             // 
@@ -746,15 +746,15 @@
         private System.Windows.Forms.CheckBox editModeItemCheckBox;
         private System.Windows.Forms.CheckBox rectangleSelectionCheckBox;
         private System.Windows.Forms.RadioButton getCodeRadio;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button removeCodesButton;
-        private System.Windows.Forms.Button addCodeButton;
-        private System.Windows.Forms.TextBox addCodeInput;
-        private System.Windows.Forms.ListBox codeListBox;
         private System.Windows.Forms.CheckBox insertTileCheckBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.ToolStripMenuItem saveMapToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem newMapToolStripMenuItem;
+        private System.Windows.Forms.ListBox codeListBox;
+        private System.Windows.Forms.TextBox addCodeInput;
+        private System.Windows.Forms.Button addCodeButton;
+        private System.Windows.Forms.Button removeCodesButton;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
