@@ -22,9 +22,7 @@ namespace BlackDragon
             FontProvider.AddFont("Pericles14", Content.Load<SpriteFont>(@"fonts/pericles14"));
             FontProvider.AddFont("Pericles21", Content.Load<SpriteFont>(@"fonts/pericles21"));
             FontProvider.AddFont("Mono14", Content.Load<SpriteFont>(@"fonts/mono14"));
-            FontProvider.AddFont("Mono21", Content.Load<SpriteFont>(@"fonts/mono21"));
-
-            MapProvider.AddMap("FieldTest", Content.Load<Map>(@"Maps/FieldTest"));
+            FontProvider.AddFont("Mono21", Content.Load<SpriteFont>(@"fonts/mono21"));            
 
             TitleScreenManager.LoadContent(Content.Load<Texture2D>(@"textures/misc/TitleScreen"));
 

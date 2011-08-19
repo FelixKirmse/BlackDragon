@@ -2625,5 +2625,6 @@
   <Properties>
     <Property Key="PlayerLayer" Type="Int32"><![CDATA[1]]></Property>
     <Property Key="Mode" Type="String"><![CDATA[RPG]]></Property>
+    <Property Key="TileSize" Type="Int32"><![CDATA[16]]></Property>
   </Properties>
 </Map>

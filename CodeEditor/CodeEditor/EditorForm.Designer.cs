@@ -54,6 +54,8 @@
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.contentCopyButton = new System.Windows.Forms.Button();
+            this.rectangleSelector = new System.Windows.Forms.CheckBox();
+            this.showStuff = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.editorOutput)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.rightClickGroupBox.SuspendLayout();
@@ -94,7 +96,7 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -102,14 +104,14 @@
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.Exit);
             // 
@@ -134,7 +136,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.rightClickGroupBox.Controls.Add(this.getCodeRadioButton);
             this.rightClickGroupBox.Controls.Add(this.setCodeRadio);
-            this.rightClickGroupBox.Location = new System.Drawing.Point(12, 100);
+            this.rightClickGroupBox.Location = new System.Drawing.Point(12, 125);
             this.rightClickGroupBox.Name = "rightClickGroupBox";
             this.rightClickGroupBox.Size = new System.Drawing.Size(385, 56);
             this.rightClickGroupBox.TabIndex = 2;
@@ -163,6 +165,7 @@
             this.setCodeRadio.TabStop = true;
             this.setCodeRadio.Text = "Set Codes";
             this.setCodeRadio.UseVisualStyleBackColor = true;
+            this.setCodeRadio.CheckedChanged += new System.EventHandler(this.setCodeRadio_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -172,7 +175,7 @@
             this.groupBox3.Controls.Add(this.addCodeButton);
             this.groupBox3.Controls.Add(this.addCodeInput);
             this.groupBox3.Controls.Add(this.codeListBox);
-            this.groupBox3.Location = new System.Drawing.Point(12, 162);
+            this.groupBox3.Location = new System.Drawing.Point(12, 187);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(385, 200);
             this.groupBox3.TabIndex = 24;
@@ -189,6 +192,7 @@
             this.removeCodesButton.TabIndex = 3;
             this.removeCodesButton.Text = "Remove selected codes";
             this.removeCodesButton.UseVisualStyleBackColor = true;
+            this.removeCodesButton.Click += new System.EventHandler(this.removeCodesButton_Click);
             // 
             // addCodeButton
             // 
@@ -198,6 +202,7 @@
             this.addCodeButton.TabIndex = 2;
             this.addCodeButton.Text = "Add Code";
             this.addCodeButton.UseVisualStyleBackColor = true;
+            this.addCodeButton.Click += new System.EventHandler(this.addCodeButton_Click);
             // 
             // addCodeInput
             // 
@@ -205,6 +210,7 @@
             this.addCodeInput.Name = "addCodeInput";
             this.addCodeInput.Size = new System.Drawing.Size(100, 20);
             this.addCodeInput.TabIndex = 1;
+            this.addCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addCodeInput_KeyPress);
             // 
             // codeListBox
             // 
@@ -216,6 +222,7 @@
             this.codeListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.codeListBox.Size = new System.Drawing.Size(372, 134);
             this.codeListBox.TabIndex = 0;
+            this.codeListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codeListBox_KeyPress);
             // 
             // leftClickModeGroupBox
             // 
@@ -223,7 +230,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.leftClickModeGroupBox.Controls.Add(this.setUnpassableRadio);
             this.leftClickModeGroupBox.Controls.Add(this.setPassableRadio);
-            this.leftClickModeGroupBox.Location = new System.Drawing.Point(12, 38);
+            this.leftClickModeGroupBox.Location = new System.Drawing.Point(12, 63);
             this.leftClickModeGroupBox.Name = "leftClickModeGroupBox";
             this.leftClickModeGroupBox.Size = new System.Drawing.Size(385, 56);
             this.leftClickModeGroupBox.TabIndex = 3;
@@ -252,6 +259,7 @@
             this.setPassableRadio.TabStop = true;
             this.setPassableRadio.Text = "Set Passable";
             this.setPassableRadio.UseVisualStyleBackColor = true;
+            this.setPassableRadio.CheckedChanged += new System.EventHandler(this.setPassableRadio_CheckedChanged);
             // 
             // vScrollBar1
             // 
@@ -271,6 +279,7 @@
             // 
             // gameUpdate
             // 
+            this.gameUpdate.Interval = 16;
             this.gameUpdate.Tick += new System.EventHandler(this.gameUpdate_Tick);
             // 
             // openFileDialog
@@ -284,15 +293,41 @@
             this.contentCopyButton.Name = "contentCopyButton";
             this.contentCopyButton.Size = new System.Drawing.Size(385, 23);
             this.contentCopyButton.TabIndex = 27;
-            this.contentCopyButton.Text = "Prepare Content Ressources for Building";
+            this.contentCopyButton.Text = "Clear Map";
             this.contentCopyButton.UseVisualStyleBackColor = true;
             this.contentCopyButton.Click += new System.EventHandler(this.contentCopyButton_Click);
+            // 
+            // rectangleSelector
+            // 
+            this.rectangleSelector.AutoSize = true;
+            this.rectangleSelector.Location = new System.Drawing.Point(12, 40);
+            this.rectangleSelector.Name = "rectangleSelector";
+            this.rectangleSelector.Size = new System.Drawing.Size(105, 17);
+            this.rectangleSelector.TabIndex = 28;
+            this.rectangleSelector.Text = "Rectangle Mode";
+            this.rectangleSelector.UseVisualStyleBackColor = true;
+            this.rectangleSelector.CheckedChanged += new System.EventHandler(this.rectangleSelector_CheckedChanged);
+            // 
+            // showStuff
+            // 
+            this.showStuff.AutoSize = true;
+            this.showStuff.Checked = true;
+            this.showStuff.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showStuff.Location = new System.Drawing.Point(125, 40);
+            this.showStuff.Name = "showStuff";
+            this.showStuff.Size = new System.Drawing.Size(113, 17);
+            this.showStuff.TabIndex = 29;
+            this.showStuff.Text = "Visualize HelpMap";
+            this.showStuff.UseVisualStyleBackColor = true;
+            this.showStuff.CheckedChanged += new System.EventHandler(this.showStuff_CheckedChanged);
             // 
             // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 652);
+            this.Controls.Add(this.showStuff);
+            this.Controls.Add(this.rectangleSelector);
             this.Controls.Add(this.contentCopyButton);
             this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.vScrollBar1);
@@ -348,6 +383,8 @@
         private System.Windows.Forms.ToolStripMenuItem newWorkingDirectoryToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button contentCopyButton;
+        private System.Windows.Forms.CheckBox rectangleSelector;
+        private System.Windows.Forms.CheckBox showStuff;
 
     }
 }

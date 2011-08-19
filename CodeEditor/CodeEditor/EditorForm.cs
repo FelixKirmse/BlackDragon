@@ -27,7 +27,7 @@ namespace CodeEditor
         private string currentMap;
 
         public EditorForm()
-        {
+        {           
             InitializeComponent();
         }
 
@@ -47,20 +47,23 @@ namespace CodeEditor
 
         public void FixScrollBarScales()
         {
-            Camera.WorldRectangle = new XNARectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.TileHeight * TileMap.MapHeight);
+            Camera.WorldRectangle = new Microsoft.Xna.Framework.Rectangle(0, 0, Editor.CurrentMap.DisplayWidth, Editor.CurrentMap.DisplayHeight);
             Camera.ViewPortWidth = editorOutput.Width;
             Camera.ViewPortHeight = editorOutput.Height;
+
+            Editor.Viewport.Height = editorOutput.Height;
+            Editor.Viewport.Width = editorOutput.Width;
                         
             vScrollBar1.Minimum = 0;
-            vScrollBar1.Maximum = Camera.WorldRectangle.Height - Camera.ViewPortHeight;
+            vScrollBar1.Maximum = Camera.WorldRectangle.Height - Editor.Viewport.Height;
 
             hScrollBar1.Minimum = 0;
-            hScrollBar1.Maximum = Camera.WorldRectangle.Width - Camera.ViewPortWidth;
+            hScrollBar1.Maximum = Camera.WorldRectangle.Width - Editor.Viewport.Width;
         }
 
         private void EditorForm_Load(object sender, EventArgs e)
-        {
-            FixScrollBarScales();
+        {            
+            
         }
 
         private void EditorForm_Shown(object sender, EventArgs e)
@@ -70,7 +73,7 @@ namespace CodeEditor
                 StreamReader sr = new StreamReader(Application.StartupPath + @"\config.cfg");
                 cwd = sr.ReadLine();
                 editorContentPath = sr.ReadLine();
-                sr.Close();               
+                sr.Close();
             }
             catch
             {
@@ -102,7 +105,7 @@ namespace CodeEditor
                 sw.WriteLine(editorContentPath);
                 sw.Close();
             }
-            gameUpdate.Start();
+            
             CopyContentFiles();
             openFileDialog.Title = "Select Map to Load";
             openFileDialog.ShowDialog();
@@ -124,10 +127,21 @@ namespace CodeEditor
 
             int editorLayerInt = Editor.CurrentMap.Properties["PlayerLayer"];
             xTile.Layers.Layer editorLayer = Editor.CurrentMap.Layers[editorLayerInt];
-            TileMap.TileHeight = editorLayer.TileHeight;
-            TileMap.TileWidth = editorLayer.TileWidth;
-            TileMap.MapHeight = editorLayer.LayerHeight;
-            TileMap.MapWidth = editorLayer.LayerWidth;
+            TileMap.TileHeight = Editor.CurrentMap.Properties["TileSize"];
+            TileMap.TileWidth = Editor.CurrentMap.Properties["TileSize"];
+            TileMap.MapHeight = editorLayer.TileHeight / TileMap.TileHeight * editorLayer.LayerHeight;
+            TileMap.MapWidth = editorLayer.TileWidth / TileMap.TileWidth * editorLayer.LayerWidth;
+
+            Camera.UpdateWorldRectangle();
+            try
+            {
+                TileMap.LoadMap(new FileStream(mapPath + @"/" + currentMap + ".map", FileMode.Open), true);
+            }
+            catch
+            {
+                TileMap.ClearMap();
+            }
+            gameUpdate.Start();
         }
 
         private void newWorkingDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,13 +167,93 @@ namespace CodeEditor
 
         private void contentCopyButton_Click(object sender, EventArgs e)
         {
-            CopyContentFiles();
-            Exit(null, null);
+            TileMap.ClearMap();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TileMap.SaveMap(new FileStream(mapPath + @"/" + currentMap + ".map", FileMode.Create));
+            TileMap.SaveMap(new FileStream(mapPath + @"/" + currentMap + ".map", FileMode.Create), true);
+        }
+
+        private void rectangleSelector_CheckedChanged(object sender, EventArgs e)
+        {
+            Editor.RectangleMode = rectangleSelector.Checked;
+            getCodeRadioButton.Enabled = !rectangleSelector.Checked;
+            setCodeRadio.Checked = true;
+        }
+
+        private void showStuff_CheckedChanged(object sender, EventArgs e)
+        {
+            Editor.DrawStuff = showStuff.Checked;
+        }
+
+        public void GetCodeList(List<string> codeList)
+        {
+            codeListBox.Items.Clear();
+            foreach (string code in codeList)
+            {
+                codeListBox.Items.Add(code);
+            }
+        }
+
+        public void SetCodeList(int cellX, int cellY)
+        {
+            List<string> codeList = new List<string>();
+            foreach (string code in codeListBox.Items)
+            {
+                codeList.Add(code);
+            }
+
+            MapSquare square = TileMap.GetMapSquareAtCell(cellX, cellY);
+            square.Codes = codeList;
+        }
+
+        private void setPassableRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            Editor.Passable = setPassableRadio.Checked;
+        }
+
+        private void setCodeRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            Editor.SetCode = setCodeRadio.Checked;
+        }
+
+        private void addCodeButton_Click(object sender, EventArgs e)
+        {
+            if(addCodeInput.Text != "")
+                codeListBox.Items.Add(addCodeInput.Text);
+            addCodeInput.Text = "";
+        }
+
+        private void removeCodesButton_Click(object sender, EventArgs e)
+        {
+            string[] items = new string[codeListBox.SelectedItems.Count];
+            for (int i = 0; i < codeListBox.SelectedItems.Count; ++i)
+            {
+                items[i] = (string)codeListBox.SelectedItems[i];
+            }
+            foreach (string item in items)
+            {
+                codeListBox.Items.Remove(item);
+            }
+        }
+
+        private void addCodeInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyboardState ks = Keyboard.GetState();
+            if (ks.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Enter))
+            {
+                addCodeButton_Click(sender, e);
+            }
+        }
+
+        private void codeListBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyboardState ks = Keyboard.GetState();
+            if (ks.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Delete))
+            {
+                removeCodesButton_Click(sender, e);
+            }
         }
     }
 }

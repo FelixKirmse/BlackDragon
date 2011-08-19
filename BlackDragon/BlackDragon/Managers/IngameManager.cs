@@ -39,8 +39,7 @@ namespace BlackDragon.Managers
                 {
                     EntityManager.Update();
                     CodeManager.CheckPlayerCodes();
-                    GeneralInputManager.HandleGeneralInput();
-                    VariableProvider.Viewport.X++;
+                    GeneralInputManager.HandleGeneralInput();                    
                 }
             }
             else 

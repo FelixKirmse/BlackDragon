@@ -117,7 +117,7 @@ namespace BlackDragon.Managers
                         else if (LevelManager.CurrentMap.Properties["Mode"] == "Platform")
                             StateManager.GameState = GameStates.Platform;
                         IngameManager.Activate();
-                        LevelManager.LoadLevel(codeArray[2]);
+                        LevelManager.LoadLevel(codeArray[1]);
                         break;
 
                     case "PIPE":

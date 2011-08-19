@@ -10,9 +10,9 @@ namespace BlackDragonEngine.HelpMaps
     {
         public List<MapSquare> MapCellRow = new List<MapSquare>();
 
-        public void AddRow(int background, int interactive, int foreground, bool passable)
+        public void AddRow(bool passable)
         {
-            MapCellRow.Add(new MapSquare(background, interactive, foreground, passable));
+            MapCellRow.Add(new MapSquare(passable));
         }
     }
 

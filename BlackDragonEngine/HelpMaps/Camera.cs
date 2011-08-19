@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using BlackDragonEngine.HelpMaps;
 using BlackDragonEngine.Providers;
+using xTile;
 
 namespace BlackDragonEngine.Helpers
 {
@@ -69,12 +70,12 @@ namespace BlackDragonEngine.Helpers
 
         public static void UpdateWorldRectangle()
         {
-            WorldRectangle = new Rectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.MapHeight * TileMap.TileHeight);
+            WorldRectangle = new Rectangle(0, 0, TileMap.TileWidth * TileMap.MapWidth, TileMap.TileHeight * TileMap.MapHeight);
         }
 
         public static void Update()
         {
-            Position = new Vector2(VariableProvider.Viewport.X, VariableProvider.Viewport.Y);
+            Position = new Vector2(VariableProvider.Viewport.X, VariableProvider.Viewport.Y);            
         }
         #endregion
     }

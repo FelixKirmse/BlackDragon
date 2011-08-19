@@ -15,6 +15,8 @@ using xTile;
 using xTile.Display;
 using xTile.Dimensions;
 using xRectangle = xTile.Dimensions.Rectangle;
+using XNARectangle = Microsoft.Xna.Framework.Rectangle;
+using BlackDragonEngine.Providers;
 
 namespace CodeEditor
 {
@@ -25,14 +27,21 @@ namespace CodeEditor
         IntPtr drawSurface;
         Form parentForm;
         PictureBox pictureBox;
-        Control gameForm;
-        MouseState ms;
+        Control gameForm;        
         VScrollBar vscroll;
         HScrollBar hscroll;
 
         public XnaDisplayDevice DisplayDevice;
         public xRectangle Viewport;
         public Map CurrentMap;
+
+        public bool RectangleMode = false;
+        private bool waitingForSecondClick;
+        private Vector2 startCell;
+        public bool DrawStuff = true;
+
+        public bool Passable = true;
+        public bool SetCode = true;
 
         public Editor(IntPtr drawSurface, Form parentForm, PictureBox surfacePictureBox)
         {
@@ -53,6 +62,8 @@ namespace CodeEditor
 
             vscroll = (VScrollBar)parentForm.Controls["vScrollBar1"];
             hscroll = (HScrollBar)parentForm.Controls["hScrollBar1"];
+
+            VariableProvider.Game = this;
         }
 
         void graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
@@ -73,13 +84,16 @@ namespace CodeEditor
                 graphics.PreferredBackBufferHeight = pictureBox.Height;
                 Camera.ViewPortWidth = pictureBox.Width;
                 Camera.ViewPortHeight = pictureBox.Height;
+                Viewport.Width = pictureBox.Width;
+                Viewport.Height = pictureBox.Height;
                 graphics.ApplyChanges();
             }
         }
 
         protected override void Initialize()
-        {
+        {            
             base.Initialize();
+            pictureBox_SizeChanged(null, null);
         }
 
         protected override void LoadContent()
@@ -87,7 +101,7 @@ namespace CodeEditor
             spriteBatch = new SpriteBatch(GraphicsDevice);
             DisplayDevice = new XnaDisplayDevice(Content, GraphicsDevice);
             Viewport = new xRectangle(new Size(800, 600));
-
+            TileMap.Initialize(Content.Load<Texture2D>(@"textures/white"), Content.Load<SpriteFont>(@"fonts/pericles8"));
         }
 
         protected override void UnloadContent()
@@ -99,13 +113,90 @@ namespace CodeEditor
         {
             if (Form.ActiveForm == parentForm)
             {
-                Viewport.Location = new Location(hscroll.Value, vscroll.Value);
-                Camera.Position = new Vector2(hscroll.Value, vscroll.Value);
-                ms = Mouse.GetState();
-
-                if (CurrentMap != null)
+                if(CurrentMap != null)
                 {
-                    CurrentMap.Update(gameTime.ElapsedGameTime.Milliseconds);
+                    Viewport.Location = new Location(hscroll.Value, vscroll.Value);
+                    Camera.Position = new Vector2(hscroll.Value, vscroll.Value);
+                    InputProvider.Update();                    
+                    CurrentMap.Update(gameTime.ElapsedGameTime.Milliseconds);                    
+
+                    MouseState ms = InputProvider.MouseState;
+                    if ((ms.X > 0) && (ms.Y > 0) && (ms.X < Camera.ViewPortWidth) && (ms.Y < Camera.ViewPortHeight))
+                    {
+                        Vector2 mouseLoc = Camera.ScreenToWorld(new Vector2(ms.X, ms.Y));
+                        int cellX = (int)MathHelper.Clamp(TileMap.GetCellByPixelX((int)mouseLoc.X), 0, TileMap.MapWidth - 1);
+                        int cellY = (int)MathHelper.Clamp(TileMap.GetCellByPixelY((int)mouseLoc.Y), 0, TileMap.MapHeight - 1);
+
+                        if (Camera.WorldRectangle.Contains((int)mouseLoc.X, (int)mouseLoc.Y))
+                        {
+                            if (!RectangleMode)
+                            {
+                                if (ShortcutProvider.LeftButtonClicked())
+                                {
+                                    TileMap.GetMapSquareAtCell(cellX, cellY).Passable = Passable;
+                                }
+                                if (ShortcutProvider.RightButtonClicked())
+                                {
+                                    if (SetCode)
+                                    {
+                                        ((EditorForm)parentForm).SetCodeList(cellX, cellY);
+                                    }
+                                    else
+                                    {
+                                        ((EditorForm)parentForm).GetCodeList(TileMap.GetCellCodes(cellX, cellY));
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (ShortcutProvider.LeftButtonClickedNowButNotLastFrame())
+                                {
+                                    if (!waitingForSecondClick)
+                                    {
+                                        startCell = new Vector2(cellX, cellY);
+                                        waitingForSecondClick = true;
+                                    }
+                                    else
+                                    {
+                                        Vector2 endCell = new Vector2(cellX, cellY);
+                                        waitingForSecondClick = false;
+
+                                        for (int cellx = (int)startCell.X; cellx <= endCell.X; ++cellx)
+                                        {
+                                            for (int celly = (int)startCell.Y; celly <= endCell.Y; ++celly)
+                                            {
+                                                TileMap.GetMapSquareAtCell(cellx, celly).Passable = Passable;
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (ShortcutProvider.RightButtonClickedButNotLastFrame())
+                                {
+                                    if (!waitingForSecondClick)
+                                    {
+                                        startCell = new Vector2(cellX, cellY);
+                                        waitingForSecondClick = true;
+                                    }
+                                    else
+                                    {
+                                        Vector2 endCell = new Vector2(cellX, cellY);
+                                        waitingForSecondClick = false;
+
+                                        for (int cellx = (int)startCell.X; cellx <= endCell.X; ++cellx)
+                                        {
+                                            for (int celly = (int)startCell.Y; celly <= endCell.Y; ++celly)
+                                            {
+                                                if (SetCode)
+                                                {
+                                                    ((EditorForm)parentForm).SetCodeList(cellx, celly);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             base.Update(gameTime);
@@ -114,9 +205,19 @@ namespace CodeEditor
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
+
             if (CurrentMap != null)
             {
                 CurrentMap.Draw(DisplayDevice, Viewport);
+
+
+                spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+                TileMap.Draw(spriteBatch);
+                if (waitingForSecondClick)
+                {
+                    TileMap.DrawRectangleIndicator(spriteBatch, InputProvider.MouseState, startCell);
+                }
+                spriteBatch.End();
             }
             base.Draw(gameTime);
         }

@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level Editor", "Level Editor\Level Editor\Level Editor.csproj", "{C512C2F2-C061-49E3-87F7-C9A6A8BEB425}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level EditorContent", "Level Editor\Level EditorContent\Level EditorContent.contentproj", "{68FF630D-40AB-442F-9D79-B16920B988A3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackDragon", "BlackDragon\BlackDragon\BlackDragon.csproj", "{0EBF6E5F-9266-4ADE-A3DD-ABFCF9B83270}"
 	ProjectSection(ProjectDependencies) = postProject
 		{716FA4F8-22DD-472F-AAD1-8643846528B7} = {716FA4F8-22DD-472F-AAD1-8643846528B7}
@@ -32,16 +28,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C512C2F2-C061-49E3-87F7-C9A6A8BEB425}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{C512C2F2-C061-49E3-87F7-C9A6A8BEB425}.Debug|x86.ActiveCfg = Debug|x86
-		{C512C2F2-C061-49E3-87F7-C9A6A8BEB425}.Debug|x86.Build.0 = Debug|x86
-		{C512C2F2-C061-49E3-87F7-C9A6A8BEB425}.Release|Any CPU.ActiveCfg = Release|x86
-		{C512C2F2-C061-49E3-87F7-C9A6A8BEB425}.Release|x86.ActiveCfg = Release|x86
-		{C512C2F2-C061-49E3-87F7-C9A6A8BEB425}.Release|x86.Build.0 = Release|x86
-		{68FF630D-40AB-442F-9D79-B16920B988A3}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{68FF630D-40AB-442F-9D79-B16920B988A3}.Debug|x86.ActiveCfg = Debug|x86
-		{68FF630D-40AB-442F-9D79-B16920B988A3}.Release|Any CPU.ActiveCfg = Release|x86
-		{68FF630D-40AB-442F-9D79-B16920B988A3}.Release|x86.ActiveCfg = Release|x86
 		{0EBF6E5F-9266-4ADE-A3DD-ABFCF9B83270}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{0EBF6E5F-9266-4ADE-A3DD-ABFCF9B83270}.Debug|x86.ActiveCfg = Debug|x86
 		{0EBF6E5F-9266-4ADE-A3DD-ABFCF9B83270}.Debug|x86.Build.0 = Debug|x86

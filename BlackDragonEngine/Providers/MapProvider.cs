@@ -7,18 +7,13 @@ using xTile;
 namespace BlackDragonEngine.Providers
 {
     public static class MapProvider
-    {
-        private static Dictionary<string, Map> maps = new Dictionary<string, Map>();
-
-        public static void AddMap(string name, Map map)
-        {
-            maps.Add(name, map);
-            maps[name].LoadTileSheets(VariableProvider.DisplayDevice);
-        }
-
+    {      
         public static Map GetMap(string name)
-        {            
-            return maps[name];
+        {
+            Map map = VariableProvider.Game.Content.Load<Map>(@"maps/" + name);
+            map.LoadTileSheets(VariableProvider.DisplayDevice);
+            return map;
+            
         }
         
     }

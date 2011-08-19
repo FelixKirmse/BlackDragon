@@ -10,8 +10,7 @@ namespace BlackDragonEngine.HelpMaps
     [Serializable]
     public class MapSquare
     {
-        #region Declarations
-        public int[] LayerTiles = new int[3];
+        #region Declarations        
         public List<string> Codes = new List<string>();
         public bool Passable = true;
         #endregion
@@ -21,11 +20,8 @@ namespace BlackDragonEngine.HelpMaps
         { 
         }
 
-        public MapSquare(int background, int interactive, int foreground, bool passable)
-        {
-            LayerTiles[0] = background;
-            LayerTiles[1] = interactive;
-            LayerTiles[2] = foreground;            
+        public MapSquare(bool passable)
+        {                      
             Passable = passable;
         }
         #endregion
